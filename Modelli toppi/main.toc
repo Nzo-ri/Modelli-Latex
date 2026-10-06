@@ -1,0 +1,35 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduzione alla complessità}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Complessità dell'organismo umano}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Feedback}{3}{subsection.1.1.1}%
+\contentsline {subsubsection}{Negative feedback}{3}{section*.2}%
+\contentsline {subsubsection}{Positive feedback}{3}{section*.3}%
+\contentsline {subsubsection}{Feedback intrinseco}{3}{section*.4}%
+\contentsline {subsubsection}{Feedback nei sistemi dinamici}{3}{section*.5}%
+\contentsline {subsubsection}{Altri tipi di feedback}{3}{section*.6}%
+\contentsline {subsection}{\numberline {1.1.2}Controllo}{4}{subsection.1.1.2}%
+\contentsline {subsubsection}{Enzimi}{4}{section*.7}%
+\contentsline {subsubsection}{Ormoni}{4}{section*.9}%
+\contentsline {subsection}{\numberline {1.1.3}Gerarchia}{5}{subsection.1.1.3}%
+\contentsline {chapter}{\numberline {2}Introduzione alla Modellizzazione}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Obiettivo e Categorie dei Modelli Matematici}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Approcci alla Modellizzazione}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Modello dei dati (Data-driven o Black-box)}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Modello del sistema}{8}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}L'Approssimazione della Realtà}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Identificazione e Validazione del Modello}{10}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Identificazione del modello}{10}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Validazione}{10}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Soluzione e Simulazione}{11}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Identificazione dei modelli}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Raccolta Dati e Disegno Sperimentale}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Selezione dei Segnali di Test}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Segnali Transitori}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Segnali Armonici}{13}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Segnali Random}{14}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Sorgenti di Errore}{15}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Il Processo di Identificazione}{16}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Stima dei Parametri}{16}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Stima del Segnale}{16}{subsection.3.4.2}%
+\contentsline {chapter}{\numberline {A}Domande delle lezioni}{17}{appendix.A}%

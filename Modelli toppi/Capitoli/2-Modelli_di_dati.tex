@@ -1,0 +1,69 @@
+\chapter{Modelli di Dati}
+I \textbf{modelli dei dati} (noti anche come modelli \textit{data-driven} o \textit{black-box}) forniscono una descrizione quantitativa di un sistema biologico attraverso l'analisi diretta dei dati sperimentali di ingresso e di uscita (input/output). A differenza dei modelli a base fisiologica (white-box), in questo approccio vi \`e solo una corrispondenza implicita tra il modello matematico impiegato e la reale fisiologia del sistema che dà luogo alle misure. Il sistema stesso viene spesso trattato come un blocco (es. un sistema Lineare Tempo-Invariante, o LTI) di cui si analizzano le risposte $y(t)$ a determinati stimoli $x(t)$.
+
+\section{Quando utilizzare un modello dei dati?}
+L'impiego di un approccio \textit{black-box} \`e particolarmente indicato nelle seguenti condizioni:
+\begin{enumerate}
+    \item Non si ha a disposizione una conoscenza approfondita o completa della fisiologia del sistema. Questa condizione \`e tipica, ad esempio, in ambiti complessi come l'elettrofisiologia e la neurofisiologia.
+    \item Una semplice rappresentazione della relazione input/output del sistema \`e sufficiente per gli scopi della ricerca o dell'applicazione clinica.
+    \item Non sussiste la necessità di specificare e modellare i meccanismi fisiologici fondamentali alla base del comportamento del sistema.
+\end{enumerate}
+
+\section{Categorie di Approccio ai Modelli dei Dati}
+L'applicazione dei modelli dei dati in fisiologia e medicina pu\`o essere classificata in cinque categorie principali, a seconda del tipo di variabili misurate e dello scopo della modellizzazione.
+
+\subsection{1. Variabile singola ottenuta spontaneamente}
+Questa categoria analizza i ritmi e le oscillazioni biologiche naturali senza l'applicazione di perturbazioni esterne.
+\begin{itemize}
+    \item \textbf{Temperatura corporea:} Un classico esempio \`e la variazione del ritmo biologico della temperatura corporea durante il ciclo mestruale femminile, caratterizzato da una periodicità mensile. In prima approssimazione, questo andamento pu\`o essere descritto in modo efficace mediante una funzione sinusoidale:
+    \begin{equation}
+        y = A_1 \sin\left[ \frac{6.2832(A_2 + t)}{A_3} \right] + A_4
+    \end{equation}
+    dove i parametri stimati dai dati rappresentano l'ampiezza dell'oscillazione ($A_1 \approx 0.191 ^\circ\text{C}$), lo sfasamento ($A_2 \approx 12.85 \text{ giorni}$), il periodo ($A_3 \approx 27.07 \text{ giorni}$) e il valore medio ($A_4 \approx 36.56 ^\circ\text{C}$).
+    
+    \item \textbf{Ritmi gastro-intestinali:} I dati elettrici del tratto gastro-intestinale possono essere modellizzati impiegando complessi sistemi di oscillatori non lineari. Ad esempio, l'attività può essere riprodotta mediante un \textit{oscillatore di Van der Pol}:
+    \begin{equation}
+        \frac{d^2x}{dt^2} - \epsilon(\alpha^2 - x^2)\frac{dx}{dt} + \omega^2 x = 0
+    \end{equation}
+    I parametri da determinare dai dati sono $\epsilon$, $\alpha$ e $\omega$, i quali definiscono rispettivamente la forma, l'ampiezza e la frequenza dell'oscillazione. Per modellizzare l'intero intestino umano (lungo circa 240 cm), \`e necessario concatenare una rete di circa 100 oscillatori di questo tipo accoppiati tra loro.
+\end{itemize}
+
+\subsection{2. Variabile singola in risposta ad una perturbazione}
+In questo caso, si analizza la variazione di una singola grandezza fisiologica a seguito di un evento controllato, come una \textbf{terapia farmacologica}.
+Un esempio applicativo \`e la predizione della risposta polmonare in pazienti affetti da disturbo cronico ostruttivo (COPD) a seguito della somministrazione di un broncodilatatore (la teofillina). Il modello permette di aggiustare il dosaggio ottimale valutando l'effetto terapeutico:
+\begin{equation}
+    FVC = m C_{p_{ss}} + i
+\end{equation}
+dove \textit{FVC} (Forced Vital Capacity) rappresenta la risposta ventilatoria (capacità vitale forzata), $C_{p_{ss}}$ \`e la concentrazione \textit{steady-state} del farmaco nel plasma, $m$ \`e la sensibilità individuale al farmaco, e $i$ \`e il livello di base di FVC in assenza di trattamento.
+
+\subsection{3. Due variabili legate causalmente}
+Nello studio dei sistemi endocrini e metabolici, \`e frequente dover descrivere la relazione \textbf{ormone/ormone} (es. Testosterone/LH) oppure \textbf{substrato/ormone} (es. Glucosio/C-peptide). Storicamente, per analizzare la sincronia di secrezione, si sono utilizzati metodi classici come la \textit{cross-correlazione} e l'analisi dei \textit{cross-spettri}. Tuttavia, questi metodi matematici si rivelano poco performanti quando si dispone di una scarsa quantità di dati o in presenza di misure altamente rumorose. Una valida alternativa utilizzata nella modellistica odierna \`e lo studio della \textit{coerenza dei picchi} di secrezione.
+
+\subsection{4. Modelli input-output per il controllo}
+Questi modelli sono tipici dei sistemi fisiologici di regolazione (omeostasi), rappresentabili mediante schemi a blocchi e sistemi controreazionati (feedback).
+\begin{itemize}
+    \item \textbf{Controllo della pupilla:} La quantità di luce che entra nella retina ($L_c$) \`e determinata dal diametro della pupilla. Se la luce in ingresso supera un valore di riferimento ($L_{REF}$), il riflesso pupillare contrae l'iride riducendo la radiazione. Questo sistema di controllo controreazionato pu\`o essere studiato nel dominio della frequenza (risposta \textit{open-loop}). La funzione di trasferimento $G(s)$ derivata empiricamente dai dati di ampiezza e fase mostra la forma:
+    \begin{equation}
+        G(s) = \frac{0.16 \exp(-0.18s)}{(1 + 0.1s)^3}
+    \end{equation}
+    con un guadagno stimato pari a $0.16$.
+    
+    \item \textbf{Regolazione del glucosio:} In condizioni di salute, l'insulina secreta dal pancreas regola il glucosio. Nei soggetti con diabete di tipo 1, le cellule beta pancreatiche perdono la loro funzione. Il sistema di controllo fisiologico viene meno e deve essere sostituito da un "controllore esterno" (infusione di insulina esogena), concetto alla base dello sviluppo del \textit{pancreas artificiale}.
+\end{itemize}
+
+\subsection{5. Modelli input-output: Deconvoluzione}
+La stima della risposta impulsiva \`e fondamentale per caratterizzare compiutamente un sistema lineare. Considerando un sistema LTI, l'uscita $c(t)$ in base all'ingresso $u(t)$ \`e data dall'\textbf{integrale di convoluzione}:
+\begin{equation}
+    c(t) = \int_{-\infty}^{t} g(t-\tau)u(\tau)d\tau
+\end{equation}
+dove $g(t)$ \`e la risposta impulsiva del sistema (l'uscita a fronte di un ingresso a delta di Dirac $\delta(t)$).
+\\
+L'uso dell'integrale di convoluzione si distingue in due branche:
+\begin{enumerate}
+    \item \textbf{Problema Diretto:} Conoscendo l'input (es. dosaggio di un farmaco) e la risposta impulsiva del sistema, si stima l'uscita (es. livello terapeutico e concentrazione nel tempo).
+    \item \textbf{Problema Inverso (Deconvoluzione):} Modalità ben più potente in ambito fisiologico. Conoscendo la risposta impulsiva e misurando l'uscita, si stima un \textit{ingresso non direttamente misurabile in vivo} (es. il tasso di secrezione di una ghiandola).
+\end{enumerate}
+
+\subsubsection*{Esempio clinico di Deconvoluzione: Secrezione di Insulina}
+Per stimare il tasso di secrezione dell'insulina da parte del pancreas, si misurano i dati di concentrazione plasmatica del \textbf{C-peptide} (un sottoprodotto della sintesi dell'insulina).
+Si calcola innanzitutto la risposta impulsiva $g(t)$ del C-peptide somministrando un bolo ed effettuando campionamenti frequenti (la curva \`e approssimata tipicamente come somma di due esponenziali). Successivamente, misurando la concentrazione plasmatica nel tempo e applicando l'operazione matematica di \textbf{deconvoluzione}, si pu\`o ricostruire con precisione l'andamento pulsatile (ultradiano) del tasso di secrezione endogena di insulina ($u(t)$ espresso in pmol/min), sia in condizioni basali che durante un test endovenoso di tolleranza al glucosio (IVGTT).

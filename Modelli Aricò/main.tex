@@ -1,0 +1,89 @@
+\documentclass{report}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[italian]{babel} %use this package for a thesis written in Italian
+\usepackage[utf8]{inputenx}
+\usepackage{indentfirst}
+\usepackage{microtype}
+%\usepackage{chemformula}
+\usepackage{mhchem}
+\usepackage{setspace}
+\usepackage{yfonts,color}
+%\usepackage{siunitx}
+\usepackage{comment}
+%\usepackage{multirow}
+%\usepackage{varioref}
+%\usepackage[bottom]{footmisc}
+\usepackage{wrapfig}
+%\usepackage{float}
+%\usepackage{type1cm}
+\usepackage{lettrine}
+\linespread{1.1}
+%\usepackage{chngcntr}
+\usepackage[nottoc, notlof, notlot]{tocbibind}
+%\onehalfspacing
+%\counterwithout{footnote}{chapter}
+\usepackage{hyperref}
+\usepackage[margin=3cm]{geometry}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\color{teal}\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\color{teal!80}\bfseries\normalfont\large}
+  {\thesubsection}{1em}{}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+
+\usepackage{lipsum}
+
+\lstset{
+    language=Matlab,
+    style= Matlab-editor,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=8pt,
+    breaklines=true,
+    frame=single,
+    showstringspaces=false,
+    tabsize=4
+}
+
+\hypersetup{
+			hyperfootnotes=true,			
+			bookmarks=true,			
+			colorlinks=true,
+			linkcolor=blue,
+            linktoc=page,
+			anchorcolor=black,
+			citecolor=blue,
+			urlcolor=blue,
+			pdftitle={Tesi Risi},
+			pdfauthor={Lorenzo Risi},
+			pdfkeywords={thesis, sapienza, roma, university}
+ }
+
+
+\title{Modelli di sistemi biologici\\Modulo Pietro Aricò}
+\author{Lorenzo Risi}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\input{Capitoli/0-Richiami_di_elettrofisiologia}
+\input{Capitoli/1-Modelli_di_Encoding_e_Decoding_Neuronale}
+\input{Capitoli/appendice}
+
+\end{document}
