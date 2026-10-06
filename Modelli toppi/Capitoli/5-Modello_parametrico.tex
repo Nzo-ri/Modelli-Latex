@@ -1,0 +1,227 @@
+\chapter{Modello parametrico}
+\section{Identificazione}
+
+Dopo aver formulato un modello parametrico (sia esso di natura puramente \textit{input/output} o un modello \textit{strutturale} del sistema), il passo successivo e fondamentale è l'assegnazione dei valori numerici ai parametri incogniti $p_1, p_2, \dots, p_p$. Tale procedura prende il nome di \textbf{Identificazione} e si basa su misurazioni sperimentali eseguite sul sistema fisiologico in esame.
+
+Le misurazioni, effettuate in funzione del tempo $t$, dipendono dai parametri incogniti raggruppati nel vettore $p = [p_1, p_2, \dots, p_p]^T$. Il legame tra il modello e le misure è espresso da una generica funzione $g(t,p)$:
+\begin{equation}
+y(t) = g(t,p)
+\end{equation}
+
+Tuttavia, nella pratica sperimentale, il segnale ideale $y(t)$ generato dal sistema fisiologico non è mai disponibile in modo esatto e continuo. Se ne misura invece una versione campionata a specifici istanti temporali $t_1, t_2, \dots, t_N$, la quale risulta inevitabilmente corrotta da un rumore di misura. La variabile effettivamente misurata $z(t_i)$ all'istante $t_i$ assume quindi la forma:
+\begin{equation}
+z(t_i) = z_i = y_i + v_i = g(t_i, p) + v_i
+\end{equation}
+dove $v_i$ è l'errore sull'i-esima misura. Questo errore viene tipicamente modellizzato come una variabile casuale a media nulla, scorrelata (rumore bianco) e con una determinata varianza $\sigma_i^2$.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Immagini/sistemafisiologico.png}
+\end{figure}
+
+\subsection{Esempi di funzione}
+Consideriamo il classico esperimento di iniezione endovenosa (a bolo) di un farmaco a tempo $t=0$ e la successiva misurazione della sua scomparsa nel plasma sanguigno. 
+Se adottiamo un \textbf{modello input/output}, la curva di concentrazione plasmatica può assumere la forma tipica di una somma di esponenziali:
+\begin{equation}
+y(t, p) = A_1 e^{-\lambda_1 t} + A_2 e^{-\lambda_2 t}
+\end{equation}
+In questo scenario, il problema dell'identificazione consiste nello stimare il vettore dei parametri $p = [A_1, \lambda_1, A_2, \lambda_2]^T$ a partire dal set di misure discrete $z_1, z_2, \dots, z_N$.
+
+In alternativa, gli stessi dati sperimentali possono essere descritti mediante un \textbf{modello strutturale} multicompartimentale che ricalca la reale cinetica del farmaco nel corpo. Ad esempio, un modello a due compartimenti ($Q_1$ e $Q_2$ indicanti la massa del farmaco, con un volume centrale $V_1$) governato dal seguente sistema di equazioni differenziali:
+\begin{align}
+\dot{Q}_1(t) &= -(k_{01} + k_{21})Q_1(t) + k_{12}Q_2(t) + U(t) \\
+\dot{Q}_2(t) &= k_{21}Q_1(t) - k_{12}Q_2(t)
+\end{align}
+con condizioni iniziali $Q_1(0) = 0$, $Q_2(0) = 0$. L'uscita misurabile, ovvero la concentrazione nel primo compartimento, sarà:
+\begin{equation}
+y(t) = \frac{Q_1(t)}{V_1}
+\end{equation}
+In questo caso, i parametri da stimare acquisiscono un preciso significato biologico: i tassi di trasferimento $k_{21}, k_{12}, k_{01}$ e il volume di distribuzione $V_1$, pertanto $p = [k_{21}, k_{01}, k_{12}, V_1]^T$. Se il modello includesse un'ulteriore via di eliminazione dal secondo compartimento, il set di equazioni subirebbe una modifica ($\dot{Q}_2 = k_{21}Q_1 - (k_{02}+k_{12})Q_2$) e si renderebbe necessario stimare anche $k_{02}$.
+
+\section{Identificabilità a Priori}
+
+Mentre i modelli input/output sono strutturalmente costruiti per essere sempre identificabili, per i modelli strutturali l'identificabilità non è affatto garantita. 
+Il passo chiave che precede qualsiasi tentativo algoritmico di stima dai dati sperimentali è l'analisi dell'\textbf{Identificabilità a priori} (o identificabilità strutturale). La domanda fondamentale a cui rispondere è: \textit{supponendo di possedere dati continui e ideali (privi di rumore), la struttura del modello e l'esperimento progettato (input e output scelti) contengono informazioni sufficienti per determinare univocamente i parametri incogniti?}
+
+Se il modello risulta identificabile, si può procedere alla stima. Se non lo è, è necessario ricorrere a strategie alternative:
+\begin{itemize}
+    \item Aumentare il contenuto informativo dell'esperimento (es. misurare altre variabili di uscita, o aggiungere nuovi ingressi).
+    \item Ridurre la complessità del modello semplificandone la struttura, per diminuire il numero di parametri incogniti.
+\end{itemize}
+
+\subsection{Definizione formale}
+Un generico modello è descritto da un sistema di equazioni differenziali ordinarie:
+\begin{align}
+\dot{x}(t, p) &= f[x(t, p), u(t), t; p], \quad x(t_0, p) = x_0 \\
+y(t, p) &= g[x(t, p); p]
+\end{align}
+dove $x$ è il vettore di stato ($n \times 1$), $u$ è il vettore degli ingressi ($r \times 1$), $y$ è il vettore delle uscite misurate ($m \times 1$), $f$ e $g$ sono funzioni che definiscono la struttura, parametrizzate da $p$. Nel caso in cui l'equazione di uscita sia lineare, $g$ assume la forma matriciale $y(t,p) = C(p)x(t,p)$.
+
+Definiamo il vettore dei \textbf{parametri osservazionali} $\Phi = [\phi_1, \dots, \phi_R]^T$. Questi parametri rappresentano tutte le grandezze macroscopiche che è possibile dedurre (osservare) in modo univoco direttamente dai dati dell'esperimento input/output ideale. Tali parametri osservazionali sono funzioni algebriche dei parametri incogniti di base $p_i$, ossia $\Phi = \Phi(p)$.
+
+Per testare l'identificabilità a priori, occorre impostare e risolvere il sistema di equazioni algebriche non lineari, noto come \textbf{riassunto esaustivo}:
+\begin{equation}
+\Phi(p) = \hat{\Phi}
+\end{equation}
+In base alle soluzioni di tale sistema, i parametri $p_i$ (e di riflesso l'intero modello) possono essere classificati come:
+\begin{enumerate}
+    \item \textbf{Univocamente (o globalmente) identificabili}: il sistema ammette una ed una sola soluzione.
+    \item \textbf{Non univocamente (o localmente) identificabili}: il sistema ammette più di una soluzione, ma in numero finito. Esistono set di parametri discreti e alternativi che producono esattamente lo stesso andamento in uscita.
+    \item \textbf{Non identificabili}: il sistema ammette infinite soluzioni.
+    \item \textbf{Identificabili in un intervallo}: pur ammettendo infinite soluzioni, il sistema di equazioni, unitamente a vincoli fisici (es. costanti di tempo positive, masse positive), impone limiti inferiori e superiori definendo uno spazio ristretto in cui i parametri devono trovarsi.
+\end{enumerate}
+Un modello si definisce globalmente identificabile solo se \textit{tutti} i suoi parametri lo sono. Diventa locale se almeno uno è locale (e nessuno non-identificabile), ed è non identificabile se anche un solo parametro risulta tale.
+
+\section{Metodo della Funzione di Trasferimento}
+
+L'analisi dell'identificabilità per semplice ispezione della soluzione nel dominio del tempo è spesso impraticabile nei sistemi strutturali complessi. Per i \textbf{modelli lineari tempo-invarianti}, il metodo d'elezione sfrutta il dominio della variabile complessa di Laplace $s$ e il concetto di matrice di trasferimento. 
+
+Dato un modello lineare:
+\begin{align}
+\dot{x}(t) &= A(p)x(t) + B(p)u(t) \\
+y(t, p) &= C(p)x(t, p)
+\end{align}
+Ipotizzando condizioni iniziali nulle, applicando la trasformata di Laplace si ricava lo stato $X(s)$:
+\begin{equation}
+sX(s) = A(p)X(s) + B(p)U(s) \implies X(s) = [sI - A(p)]^{-1}B(p)U(s)
+\end{equation}
+Sostituendolo nell'equazione di uscita, si ottiene la matrice di trasferimento $H(s,p)$:
+\begin{equation}
+H(s, p) = \frac{Y(s, p)}{U(s)} = C(p)[sI - A(p)]^{-1}B(p)
+\end{equation}
+Ogni elemento $H_{ij}(s,p)$ rappresenta la funzione di trasferimento tra l'ingresso alla porta $j$ e l'uscita alla porta $i$. Questa funzione sarà data dal rapporto di due polinomi in $s$. 
+I coefficienti dei polinomi al numeratore ($\beta_1^{ij}, \dots, \beta_{n}^{ij}$) e al denominatore ($\alpha_1^{ij}, \dots, \alpha_{n}^{ij}$) costituiscono l'insieme esatto dei parametri osservazionali.
+
+Pertanto, il riassunto esaustivo diviene il sistema che uguaglia i coefficienti incogniti (funzioni dei parametri fisiologici $p$) ai valori numerici "estratti" idealmente dalla curva osservata:
+\begin{align*}
+\beta_k^{ij}(p) &= \phi_{\dots} \\
+\alpha_k^{ij}(p) &= \phi_{\dots}
+\end{align*}
+
+\section{Esempi Pratici e Classificazione}
+
+Analizziamo alcuni casi di studio emblematici per comprendere in pratica la classificazione dell'identificabilità a priori.
+
+\subsection{Esempio 1: Identificabilità Univoca (Singolo compartimento)}
+Sia dato un modello a singolo compartimento, con ingresso impulsivo a tempo zero $U(t) = D\delta(t)$.
+Equazioni: $\dot{Q}(t) = -kQ(t) + U(t)$, con $Q(0) = 0$ e uscita $y(t) = Q(t)/V$.
+I parametri incogniti sono $p = [k, V]^T$.
+La funzione di trasferimento è:
+\begin{equation}
+H(s) = \frac{Y(s)}{U(s)} = \frac{1/V}{s + k} \equiv \frac{\beta}{s + \alpha}
+\end{equation}
+Uguagliando i coefficienti si ottiene il riassunto esaustivo:
+\begin{equation}
+\begin{cases}
+\beta = \frac{1}{V} \\
+\alpha = k
+\end{cases}
+\end{equation}
+Il sistema è banale da risolvere in modo univoco: $V = 1/\beta$ e $k = \alpha$. Il modello è \textbf{univocamente identificabile a priori}.
+
+\subsection{Esempio 2: Identificabilità Locale (Due compartimenti)}
+Consideriamo un sistema a due compartimenti: ingresso nel comparto 1, ma si osserva la concentrazione solo nel comparto 2.
+\begin{align}
+\dot{Q}_1(t) &= -k_{21}Q_1(t) + U(t) \\
+\dot{Q}_2(t) &= k_{21}Q_1(t) - k_{02}Q_2(t) \\
+y(t) &= \frac{Q_2(t)}{V_2}
+\end{align}
+Parametri incogniti: $p = [k_{21}, k_{02}, V_2]^T$. 
+La funzione di trasferimento, ottenuta applicando Laplace, diviene:
+\begin{equation}
+H(s) = \frac{k_{21}/V_2}{(s+k_{21})(s+k_{02})} \equiv \frac{\beta_1}{s^2 + \alpha_2 s + \alpha_1}
+\end{equation}
+Il riassunto esaustivo è:
+\begin{equation}
+\begin{cases}
+\beta_1 = \frac{k_{21}}{V_2} \\
+\alpha_2 = k_{21} + k_{02} \\
+\alpha_1 = k_{21}k_{02}
+\end{cases}
+\end{equation}
+Le ultime due equazioni sono le classiche formule della somma e del prodotto delle radici di un'equazione di secondo grado in $k_{21}$ e $k_{02}$. Esse determinano due soluzioni simmetriche: o $k_{21}$ è la radice maggiore e $k_{02}$ la minore, oppure viceversa. Di conseguenza, essendovi due soluzioni per la coppia cinetica, vi saranno due soluzioni corrispondenti per il volume $V_2 = k_{21}/\beta_1$. Il modello risulta \textbf{non univocamente (localmente) identificabile}.
+
+\subsection{Esempio 3: Identificabilità in Intervallo (Due compartimenti)}
+Ingresso al comparto 1, uscita al comparto 1, ma vi è sia perdita verso l'esterno ($k_{01}$) sia verso un comparto "cieco" ($k_{21}$) senza vie di ritorno.
+\begin{align}
+\dot{Q}_1(t) &= -(k_{01} + k_{21})Q_1(t) + U(t) \\
+\dot{Q}_2(t) &= k_{21}Q_1(t)
+\end{align}
+Con uscita misurata $y(t) = Q_1(t)/V_1$. La funzione di trasferimento sarà:
+\begin{equation}
+H(s) = \frac{1/V_1}{s + k_{21} + k_{01}} \equiv \frac{\beta}{s + \alpha}
+\end{equation}
+Riassunto esaustivo: $\beta = 1/V_1$ e $\alpha = k_{21} + k_{01}$.
+Mentre $V_1$ è determinato univocamente, per i parametri cinetici abbiamo un'unica equazione lineare in due incognite ($k_{21}, k_{01}$). Ciò ammette infinite soluzioni: il modello è \textbf{non identificabile}. Tuttavia, per il vincolo di plausibilità fisica, le costanti cinetiche devono essere non-negative.
+Essendo $k_{21} = \alpha - k_{01}$ e richiedendo $k_{21} \ge 0$, si deduce che $k_{01} \le \alpha$. Ne consegue l'identificabilità in intervallo:
+\begin{align}
+0 &\le k_{01} \le \alpha \\
+0 &\le k_{21} \le \alpha
+\end{align}
+
+\subsection{Esempio Complesso: Modello di Controllo Glucosio-Insulina}
+Sia dato un sistema di interazione tra glucosio ($q_1$) e insulina ($q_2$) nel circolo ematico:
+\begin{align}
+\dot{q}_1(t) &= -p_1 q_1(t) + p_2 q_2(t) + \delta(t) \quad \text{(ingresso impulsivo sul glucosio)}\\
+\dot{q}_2(t) &= -p_3 q_2(t) + p_4 q_1(t)
+\end{align}
+Il vettore dei parametri incogniti è $p = [p_1, p_2, p_3, p_4, V_1]^T$.
+
+\textbf{Scenario A: Si misura solo la concentrazione di glucosio} ($C_1(t) = q_1(t)/V_1$).
+Calcolando $H_{11}(s) = \frac{C_1(s)}{U(s)}$ si estrae un riassunto esaustivo di 4 equazioni:
+\begin{equation}
+\begin{cases}
+\beta_2^{11} = 1/V_1 \\
+\beta_1^{11} = p_3/V_1 \\
+\alpha_2^{11} = p_1 + p_3 \\
+\alpha_1^{11} = p_1 p_3 - p_2 p_4
+\end{cases}
+\end{equation}
+Avendo 4 equazioni in 5 incognite, il modello \textbf{non è a priori identificabile} (ammette infinite soluzioni).
+
+\textbf{Scenario B: Si aggiunge la misura della concentrazione di insulina} ($C_2(t) = q_2(t)/V_2$).
+In questo caso, calcoliamo anche la seconda funzione di trasferimento $H_{21}(s) = C_2(s)/U(s)$, e il riassunto esaustivo acquisisce due ulteriori equazioni provenienti dal numeratore di $H_{21}(s)$:
+\begin{equation}
+\beta_1^{21} = p_4 / V_2 \quad \text{e} \quad \alpha \text{ invariate dal denominatore.}
+\end{equation}
+Se assumiamo nota una relazione fisiologica tra i volumi, ad esempio $V_1 = V_2$ (oppure che $V_2$ sia noto), il sistema diviene un set pareggiato di equazioni indipendenti che permette di calcolare tutti i parametri cinetici, rendendo il modello \textbf{univocamente identificabile a priori}. Questo dimostra come l'aggiunta di una misura risolva criticità strutturali profonde.
+
+\section{Identificabilità nei Modelli Non Lineari}
+
+Quando il modello presenta equazioni differenziali non lineari, il calcolo della funzione di trasferimento non è più applicabile (il principio di sovrapposizione degli effetti crolla e la trasformata di Laplace non disaccoppia le equazioni). Il problema diviene molto complesso dal punto di vista computazionale.
+
+Un approccio diffuso è l'espansione in \textbf{Serie di Taylor} dell'uscita nell'intorno del tempo di somministrazione $t_0 = 0$. Consideriamo il caso scalare per l'i-esima misura:
+\begin{equation}
+y_i(t) = y_i(0) + t \dot{y}_i(0) + \frac{t^2}{2!} \ddot{y}_i(0) + \frac{t^3}{3!} \dddot{y}_i(0) + \dots
+\end{equation}
+I coefficienti di tale espansione (le derivate successive valutate nell'istante inziale) costituiscono i parametri osservazionali $\phi_k$. Il riassunto esaustivo assume quindi la forma:
+\begin{equation}
+y_i^{(k)}(0, p) = \phi_k, \quad k = 0, 1, 2, \dots
+\end{equation}
+dove $k$ è l'ordine della derivata. Se il sistema di equazioni algebriche (sovente altamente non lineari e incrociate) ricavato da queste derivate ammette soluzione unica rispetto a $p$, il modello è univocamente identificabile. Se la soluzione non è unica o non si risolve facilmente, il test \textit{non è conclusivo} in merito all'identificabilità globale del modello. Il limite pratico principale di tale approccio risiede nel fatto che non è noto a priori a quale termine $k$ dell'espansione occorre arrestarsi per estrarre tutte le informazioni indipendenti disponibili.
+
+\subsection{Esempio di Analisi di un Modello Non Lineare}
+Si consideri un modello in cui il tasso di trasferimento di massa verso un secondo compartimento è saturabile (inibizione di feedback proporzionale allo stato $Q_2$ rispetto ad una soglia $s_2$):
+\begin{align}
+\dot{Q}_1(t) &= -k_{01}Q_1(t) - k_{21}\left(1 - \frac{Q_2(t)}{s_2}\right)Q_1(t) + U(t) \\
+\dot{Q}_2(t) &= k_{21}\left(1 - \frac{Q_2(t)}{s_2}\right)Q_1(t)
+\end{align}
+con le consuete condizioni iniziali $Q_1(0)=0, Q_2(0)=0$ (l'istante successivo all'iniezione $U(t)=D\delta(t)$ sarà indicato con $0^+$, per cui $Q_1(0^+) = D$). L'uscita è $y(t) = Q_1(t)/V_1$.
+I parametri incogniti sono $p = [V_1, k_{01}, k_{21}, s_2]^T$. 
+
+Calcolando analiticamente le derivate in $t=0^+$ dell'uscita $y$, tenendo presente che $Q_2(0^+)=0$, e ponendole pari a costanti osservazionali generiche $\phi_i$, si costruisce l'espansione:
+\begin{align*}
+y(0^+) &= \frac{D}{V_1} = \phi_1 \\
+\dot{y}(0^+) &= \frac{1}{V_1}[-(k_{01} + k_{21})Q_1(0^+)] = \phi_2 \\
+\ddot{y}(0^+) &= \frac{1}{V_1}\left[-(k_{01} + k_{21})\dot{Q}_1(0^+) + \frac{k_{21}^2}{s_2}Q_1^2(0^+)\right] = \phi_3 \\
+\dddot{y}(0^+) &= \frac{1}{V_1}\left[-\frac{k_{21}^2}{s_2}\left(\frac{k_{21}}{s_2}Q_1^2(0^+) - 3\dot{Q}_1(0^+)\right)Q_1(0^+) - (k_{01} + k_{21})\ddot{Q}_1(0^+)\right] = \phi_4
+\end{align*}
+Semplificando e raggruppando i termini derivati dalle costanti $\phi_i$ nel vettore ridotto di coefficienti calcolati $[c_1, c_2, c_3, c_4]$, il sistema di equazioni si manipola come segue:
+\begin{equation}
+\begin{cases}
+V_1 = c_1 \\
+k_{01} + k_{21} = c_2 \\
+\frac{k_{21}^2}{s_2} = c_3 \\
+\frac{k_{21}}{s_2} = c_4
+\end{cases}
+\end{equation}
+Essendo equazioni algebriche elementari inserite in una sequenza risolutiva triangolare, la soluzione procede per sostituzione: $k_{21} = c_3/c_4$, $s_2 = k_{21}/c_4$, ed infine $k_{01} = c_2 - c_3/c_4$. Essendo possibile isolare in modo univoco ed esplicito ciascun parametro, si conclude, grazie al calcolo delle prime tre derivate, che il modello non lineare proposto risulta \textbf{a priori identificabile}.
