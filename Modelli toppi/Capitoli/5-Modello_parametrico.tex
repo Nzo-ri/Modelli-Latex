@@ -1,7 +1,7 @@
 \chapter{Modello parametrico}
 \section{Identificazione}
 
-Dopo aver formulato un modello parametrico (sia esso di natura puramente \textit{input/output} o un modello \textit{strutturale} del sistema), il passo successivo e fondamentale è l'assegnazione dei valori numerici ai parametri incogniti $p_1, p_2, \dots, p_p$. Tale procedura prende il nome di \textbf{Identificazione} e si basa su misurazioni sperimentali eseguite sul sistema fisiologico in esame.
+Dopo aver formulato un modello parametrico (sia esso di natura puramente \textit{input/output} o un modello \textit{strutturale} del sistema), il passo successivo e fondamentale è l'assegnazione dei valori numerici ai \textbf{parametri} incogniti $p_1, p_2, \dots, p_p$. Tale procedura prende il nome di \textbf{Identificazione} e si basa su misurazioni sperimentali eseguite sul sistema fisiologico in esame.
 
 Le misurazioni, effettuate in funzione del tempo $t$, dipendono dai parametri incogniti raggruppati nel vettore $p = [p_1, p_2, \dots, p_p]^T$. Il legame tra il modello e le misure è espresso da una generica funzione $g(t,p)$:
 \begin{equation}
@@ -12,20 +12,25 @@ Tuttavia, nella pratica sperimentale, il segnale ideale $y(t)$ generato dal sist
 \begin{equation}
 z(t_i) = z_i = y_i + v_i = g(t_i, p) + v_i
 \end{equation}
-dove $v_i$ è l'errore sull'i-esima misura. Questo errore viene tipicamente modellizzato come una variabile casuale a media nulla, scorrelata (rumore bianco) e con una determinata varianza $\sigma_i^2$.
+dove $v_i$ è l'errore sull'i-esima misura. Questo errore viene modellizzato come rumore bianco: media nulla, scorrelata e con una determinata varianza $\sigma_i^2$.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{Immagini/sistemafisiologico.png}
+    \includegraphics[width=1\textwidth]{Immagini/sistemafisiologico.png}
 \end{figure}
 
 \subsection{Esempi di funzione}
 Consideriamo il classico esperimento di iniezione endovenosa (a bolo) di un farmaco a tempo $t=0$ e la successiva misurazione della sua scomparsa nel plasma sanguigno. 
+In questo scenario, il problema dell'identificazione consiste nello stimare il vettore dei parametri $p$ a partire dal set di misure discrete $z_1, z_2, \dots, z_N$ indicate con le x.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/modellofarmaco.png}
+\end{figure}\\
+Guardando il plot delle misure possiamo intuire il tipo di modello che possiamo utilizzare per descrivere il sistema.
 Se adottiamo un \textbf{modello input/output}, la curva di concentrazione plasmatica può assumere la forma tipica di una somma di esponenziali:
 \begin{equation}
 y(t, p) = A_1 e^{-\lambda_1 t} + A_2 e^{-\lambda_2 t}
 \end{equation}
-In questo scenario, il problema dell'identificazione consiste nello stimare il vettore dei parametri $p = [A_1, \lambda_1, A_2, \lambda_2]^T$ a partire dal set di misure discrete $z_1, z_2, \dots, z_N$.
-
+A questo punto andiamo a stimare il vettore dei parametri $= [A_1, \lambda_1, A_2, \lambda_2]^T$.\\
 In alternativa, gli stessi dati sperimentali possono essere descritti mediante un \textbf{modello strutturale} multicompartimentale che ricalca la reale cinetica del farmaco nel corpo. Ad esempio, un modello a due compartimenti ($Q_1$ e $Q_2$ indicanti la massa del farmaco, con un volume centrale $V_1$) governato dal seguente sistema di equazioni differenziali:
 \begin{align}
 \dot{Q}_1(t) &= -(k_{01} + k_{21})Q_1(t) + k_{12}Q_2(t) + U(t) \\
@@ -36,10 +41,15 @@ con condizioni iniziali $Q_1(0) = 0$, $Q_2(0) = 0$. L'uscita misurabile, ovvero 
 y(t) = \frac{Q_1(t)}{V_1}
 \end{equation}
 In questo caso, i parametri da stimare acquisiscono un preciso significato biologico: i tassi di trasferimento $k_{21}, k_{12}, k_{01}$ e il volume di distribuzione $V_1$, pertanto $p = [k_{21}, k_{01}, k_{12}, V_1]^T$. Se il modello includesse un'ulteriore via di eliminazione dal secondo compartimento, il set di equazioni subirebbe una modifica ($\dot{Q}_2 = k_{21}Q_1 - (k_{02}+k_{12})Q_2$) e si renderebbe necessario stimare anche $k_{02}$.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\linewidth]{immagini/modellofarmaco2.png}
+\end{figure}
+
 
 \section{Identificabilità a Priori}
 
-Mentre i modelli input/output sono strutturalmente costruiti per essere sempre identificabili, per i modelli strutturali l'identificabilità non è affatto garantita. 
+Mentre i modelli input/output sono costruiti per essere sempre identificabili, per i modelli strutturali l'identificabilità non è affatto garantita. 
 Il passo chiave che precede qualsiasi tentativo algoritmico di stima dai dati sperimentali è l'analisi dell'\textbf{Identificabilità a priori} (o identificabilità strutturale). La domanda fondamentale a cui rispondere è: \textit{supponendo di possedere dati continui e ideali (privi di rumore), la struttura del modello e l'esperimento progettato (input e output scelti) contengono informazioni sufficienti per determinare univocamente i parametri incogniti?}
 
 Se il modello risulta identificabile, si può procedere alla stima. Se non lo è, è necessario ricorrere a strategie alternative:
@@ -47,7 +57,41 @@ Se il modello risulta identificabile, si può procedere alla stima. Se non lo è
     \item Aumentare il contenuto informativo dell'esperimento (es. misurare altre variabili di uscita, o aggiungere nuovi ingressi).
     \item Ridurre la complessità del modello semplificandone la struttura, per diminuire il numero di parametri incogniti.
 \end{itemize}
-
+\subsection{Esempio 1: Identificabilità Univoca (Singolo compartimento)}
+Sia dato un modello a singolo compartimento, con ingresso impulsivo a tempo zero $U(t) = D\delta(t)$.
+Equazioni:
+$$\dot{Q}(t) = -kQ(t) + U(t)$$ 
+Con $Q(0) = 0$ e uscita $y(t) = Q(t)/V$.
+I parametri incogniti sono $p = [k, V]^T$.
+La soluzione è:
+\begin{equation}
+    Q(t)=De^{-k}
+\end{equation}
+I parametri osservazionali sono $A$ e $\lambda$, scriviamo le relazioni tra i parametri osservazionali e le incognite.
+\begin{equation}
+    \begin{split}
+        & A = D/V\\
+        & \lambda = k
+    \end{split}
+\end{equation}
+I parametri sono univocamente identificabili a priori.
+\iffalse
+\begin{equation}
+H(s) = \frac{Y(s)}{U(s)} = \frac{1/V}{s + k} \equiv \frac{\beta}{s + \alpha}
+\end{equation}
+Uguagliando i coefficienti si ottiene il riassunto esaustivo:
+\begin{equation}
+\begin{cases}
+\beta = \frac{1}{V} \\
+\alpha = k
+\end{cases}
+\end{equation}
+Il sistema è banale da risolvere in modo univoco: $V = 1/\beta$ e $k = \alpha$. Il modello è \textbf{univocamente identificabile a priori}.
+\fi
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{immagini/esempio1indetificabilità.png}
+\end{figure}
 \subsection{Definizione formale}
 Un generico modello è descritto da un sistema di equazioni differenziali ordinarie:
 \begin{align}
@@ -101,22 +145,6 @@ Pertanto, il riassunto esaustivo diviene il sistema che uguaglia i coefficienti 
 
 Analizziamo alcuni casi di studio emblematici per comprendere in pratica la classificazione dell'identificabilità a priori.
 
-\subsection{Esempio 1: Identificabilità Univoca (Singolo compartimento)}
-Sia dato un modello a singolo compartimento, con ingresso impulsivo a tempo zero $U(t) = D\delta(t)$.
-Equazioni: $\dot{Q}(t) = -kQ(t) + U(t)$, con $Q(0) = 0$ e uscita $y(t) = Q(t)/V$.
-I parametri incogniti sono $p = [k, V]^T$.
-La funzione di trasferimento è:
-\begin{equation}
-H(s) = \frac{Y(s)}{U(s)} = \frac{1/V}{s + k} \equiv \frac{\beta}{s + \alpha}
-\end{equation}
-Uguagliando i coefficienti si ottiene il riassunto esaustivo:
-\begin{equation}
-\begin{cases}
-\beta = \frac{1}{V} \\
-\alpha = k
-\end{cases}
-\end{equation}
-Il sistema è banale da risolvere in modo univoco: $V = 1/\beta$ e $k = \alpha$. Il modello è \textbf{univocamente identificabile a priori}.
 
 \subsection{Esempio 2: Identificabilità Locale (Due compartimenti)}
 Consideriamo un sistema a due compartimenti: ingresso nel comparto 1, ma si osserva la concentrazione solo nel comparto 2.

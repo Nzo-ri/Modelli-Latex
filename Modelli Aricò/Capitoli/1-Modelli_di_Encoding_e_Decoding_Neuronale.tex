@@ -54,30 +54,51 @@ P(\text{spike in } [t, t+\Delta t]) \approx r(t)\Delta t
 \subsection{Metodologie Avanzate per il Calcolo di $r(t)$}
 
 La scelta di come calcolare $r(t)$ determina il compromesso tra risoluzione temporale e regolarità della stima (smoothness). Possiamo identificare quattro approcci principali, basati sull'utilizzo di diverse funzioni di finestratura (kernel). 
-
 Il calcolo della frequenza istantanea può essere generalizzato come l'integrale di convoluzione tra la funzione di risposta $\rho(t)$ e una determinata funzione finestra $\omega(\tau)$ a energia unitaria:
 \begin{equation}
 r(t) = \int_{-\infty}^{+\infty} \omega(\tau) \rho(t-\tau) \, d\tau = \sum_{i=1}^{n} \omega(t - t_i)
 \end{equation}
 
-\begin{itemize}
-    \item \textbf{1. Finestra rettangolare fissa}: Si divide l'asse temporale in bin discreti non sovrapposti. Ha il vantaggio di essere semplice da calcolare, ma offre una bassa risoluzione temporale. Assume che all'interno di ogni bin il tasso di scarica sia costante.
-    \begin{figure}
+\begin{enumerate}
+    \item \textbf{Finestra rettangolare fissa}: Si divide l'asse temporale in bin discreti non sovrapposti. Ha il vantaggio di essere semplice da calcolare, ma offre una bassa risoluzione temporale. Assume che all'interno di ogni bin il tasso di scarica sia costante.
+    \begin{figure}[h]
         \centering
         \includegraphics[width=0.5\linewidth]{immagini/rt1.png}
     \end{figure}
-    \item \textbf{2. Finestra rettangolare mobile}: Un kernel rettangolare di ampiezza $\Delta t$ viene fatto scorrere in modo continuo lungo l'asse dei tempi. Questo migliora la continuità della curva di $r(t)$, ma genera misure vicine che non sono statisticamente indipendenti, poiché condividono una parte degli spike calcolati.
-    \item \textbf{3. Finestra Gaussiana}: Utilizza come funzione $\omega(\tau)$ una Gaussiana a media nulla. Il parametro $\sigma_\omega$ regola l'ampiezza e quindi la risoluzione temporale:
+    \newpage
+    \item \textbf{Finestra rettangolare mobile}: Un kernel rettangolare di ampiezza $\Delta t$ viene fatto scorrere in modo continuo lungo l'asse dei tempi. Questo migliora la continuità della curva di $r(t)$, ma genera misure vicine che non sono statisticamente indipendenti, poiché condividono una parte degli spike calcolati.
+    \begin{equation}
+        \begin{split}
+        &\int_{-\infty}^{+\infty} \omega(\tau) \rho(t-\tau) \, \mathrm{d}\tau 
+= \int_{-\infty}^{+\infty} \omega(\tau) \sum_{i=1}^{n} \delta(t - t_i - \tau) \, \mathrm{d}\tau 
+= \\ &\sum_{i=1}^{n} \int_{-\infty}^{+\infty} \omega(\tau) \delta(t - t_i - \tau) \, \mathrm{d}\tau 
+= \sum_{i=1}^{n} \omega(t - t_i)
+        \end{split}
+    \end{equation}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{immagini/rt2.png}
+    \end{figure}
+    \item \textbf{Finestra Gaussiana}: Utilizza come funzione $\omega(\tau)$ una Gaussiana a media nulla. Il parametro $\sigma_\omega$ regola l'ampiezza e quindi la risoluzione temporale:
     \begin{equation}
     \omega(\tau) = \frac{1}{\sqrt{2\pi}\sigma_\omega} e^{-\frac{\tau^2}{2\sigma_\omega^2}}
     \end{equation}
     Produce una stima estremamente fluida. Tuttavia, essendo una finestra simmetrica, "guarda" al futuro e al passato dello spike (è un filtro non causale), violando in parte il realismo fisiologico del processo di elaborazione in tempo reale da parte della sinapsi post-sinaptica.
-    \item \textbf{4. Finestra Causale}: Utilizza una funzione asimmetrica ($\omega(\tau) = 0$ per $\tau < 0$). Mima più da vicino l'integrazione di membrana post-sinaptica (come la forma di un potenziale post-sinaptico eccitatorio). Sebbene sia la più accurata biologicamente, produce un segnale più asimmetrico e difficile da analizzare matematicamente rispetto alla Gaussiana.
-\end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{immagini/rt3.png}
+    \end{figure}
+    \newpage
+    \item \textbf{Finestra Causale}: Utilizza una funzione asimmetrica ($\omega(\tau) = 0$ per $\tau < 0$). Mima più da vicino l'integrazione di membrana post-sinaptica (come la forma di un potenziale post-sinaptico eccitatorio). Sebbene sia la più accurata biologicamente, produce un segnale più asimmetrico e difficile da analizzare matematicamente rispetto alla Gaussiana.
+\end{enumerate}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/rt4.png}
+\end{figure}
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lp{4cm}p{4cm}}
+\begin{tabular}{lp{4cm}p{4.3cm}}
 \toprule
 \textbf{Finestra $\omega(t)$} & \textbf{Pro} & \textbf{Contro} \\
 \midrule
@@ -90,16 +111,19 @@ Filtro Causale & Rispetta la fisiologia cellulare & Matematicamente complessa \\
 \caption{Confronto tra le funzioni di finestratura per il calcolo di $r(t)$.}
 \end{table}
 
-%%%
-\iffalse %%%%%
-%%%%
-
+\newpage
 \section{Le Curve di Tuning}
 
-Una \textbf{curva di tuning} descrive l'andamento della risposta media di un neurone, espressa come $\langle r \rangle$, in funzione di una specifica caratteristica $s$ dello stimolo, considerata stazionaria durante ogni prova.
+Una \textbf{curva di tuning} descrive l'andamento della risposta media di un neurone, espressa come $\langle r \rangle$, in funzione di una specifica caratteristica $s$ dello stimolo, considerata stazionaria (la risposta del soggetto rimane costante) durante ogni prova.
 
-Sperimentalmente, la curva si costruisce facendo variare sistematicamente il parametro $s$ (ad esempio l'angolo visivo, il contrasto o la direzione acustica) lungo diverse ripetizioni. Per ogni valore di $s$, si calcola la frequenza di scarica media sui trial. Infine, i punti sperimentali vengono interpolati mediante una funzione matematica $f(s)$ che modella la capacità del neurone di "sintonizzarsi" su determinati parametri fisici.
+Sperimentalmente, la curva si costruisce facendo variare sistematicamente il parametro $s$ (ad esempio l'angolo visivo, il contrasto o la direzione acustica) lungo diverse ripetizioni. Per ogni valore di $s$ viene misurata la risposta neuronale e si calcola la frequenza di scarica media sui trial. Infine, i punti sperimentali vengono interpolati mediante una funzione matematica $f(s)$ che modella la capacità del neurone di "sintonizzarsi" su determinati parametri fisici.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/tuningintro.png}
+\end{figure}
+
+La risposta neuronale può variare lungo le ripetizioni (trial) anche se lo stimolo presentato è identico. Non è possibile descrivere in modo deterministico l’apparire del singolo potenziale d’azione quindi si usa un approccio probabilistico.\\
 Esempi classici di curve di tuning includono:
 \begin{enumerate}
     \item \textbf{Neuroni della corteccia visiva primaria (orientamento)}: Rispondono in maniera selettiva a barre luminose presentate in determinati angoli. La curva di tuning assume spesso una forma Gaussiana:
@@ -107,25 +131,50 @@ Esempi classici di curve di tuning includono:
     f(s) = r_{max} e^{-\frac{1}{2}\left(\frac{s-s_{max}}{\sigma_f}\right)^2}
     \end{equation}
     dove $s_{max}$ è l'angolo preferito che evoca la scarica massima $r_{max}$, e $\sigma_f$ determina la selettività (la "larghezza" della sintonizzazione).
-    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{immagini/esempiocurva1.png}
+    \end{figure}
     \item \textbf{Neuroni della corteccia motoria primaria (direzione)}: La frequenza di scarica modula in base all'angolo del movimento compiuto da un arto. L'adattamento segue generalmente una legge del coseno:
     \begin{equation}
     f(s) = r_0 + (r_{max}-r_0)\cos(s-s_{max})
     \end{equation}
     dove $r_0$ fornisce un offset di frequenza a riposo.
-    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\linewidth]{immagini/esempiocurva2.png}
+    \end{figure}
     \item \textbf{Neuroni per la disparità retinica binoculare}: Implicati nella percezione della profondità spaziale, mostrano una transizione repentina (a gradino o sigmoide) in corrispondenza del passaggio dalla disparità negativa a quella positiva:
     \begin{equation}
     f(s) = \frac{r_{max}}{1+\exp[(s_{1/2}-s)/\Delta_s]}
     \end{equation}
     Questo modello indica l'esistenza di una soglia netta di attivazione rispetto alla posizione degli oggetti osservati in tre dimensioni.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\linewidth]{immagini/esempiocurva3.png}
+    \end{figure}
 \end{enumerate}
-
+\newpage
 \section{Fondamenti del Decoding Neuronale e Probabilità}
 
 Nel decodificare una risposta neuronale ci affidiamo all'uso della probabilità condizionata. L'encoding determina la probabilità $P[r \mid s]$ (la probabilità di registrare il tasso di scarica $r$ se l'ambiente presenta lo stimolo $s$). Il decoding, mediante l'inversione Bayesiana, indaga invece la $P[s \mid r]$: ricevendo un segnale di frequenza $r$, qual è lo stimolo $s$ che ha massimizzato tale probabilità?
 
-Si consideri un classico esperimento di discriminazione visiva in cui si richiede di indicare la direzione globale di punti in movimento su uno schermo. Lo stimolo possiede due livelli di direzione (positiva +, che coincide con la preferenza del neurone, e negativa -). Un parametro cruciale è la \textbf{coerenza} del movimento: quando essa è del 100\%, tutti i punti si muovono all'unisono; allo 0\%, il moto è totalmente casuale e dominato dal rumore visivo.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/decodingneuronale.png}
+\end{figure}
+
+\subsection{Esempio di decoding}
+Nell'esempio preso in cosiderazione si hanno due fattori: la direzione del movimento (positiva o negativa) e la coerenza del movimento (0\%, 25\%, 50\%, 75\%, 100\%). Per ogni combinazione di questi fattori, si registra il firing rate $r$ del neurone. Le distribuzioni di $r$ per le due direzioni a ciascun livello di coerenza vengono quindi confrontate per valutare quanto bene il neurone può discriminare tra le due direzioni.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/esempiodecoding.png}
+\end{figure}\\
+Vengono registrati i dati comportamentali del soggetto (ad esempio, la percentuale di risposte corrette) e confrontati con le prestazioni del neurone singolo. Questo confronto permette di valutare quanto l'informazione codificata nel firing rate del neurone sia sufficiente per spiegare il comportamento osservato.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/daticomportamentali.png}
+\end{figure}
 
 Registrando il tasso di scarica $r$ del neurone a vari livelli di coerenza per entrambe le direzioni, possiamo generare due distribuzioni statistiche: $P[r \mid +]$ e $P[r \mid -]$. Assumendo che si tratti di distribuzioni gaussiane con medie distinte $\langle r \rangle_+$ e $\langle r \rangle_-$ ma varianza comune $\sigma_r^2$, possiamo definire l'indice di discriminabilità $d'$:
 \begin{equation}
@@ -145,7 +194,7 @@ Scegliere la corretta posizione della soglia $z$ lungo l'asse delle ascisse è u
     \item \textbf{Falso Negativo (FN)}: $1 - \beta(z) = P[r < z \mid +]$ (direzione + ignorata).
 \end{itemize}
 
-\section{Accuratezza e Curve ROC}
+\subsection{Accuratezza e Curve ROC}
 
 In ambito clinico e neuroscientifico, il compromesso tra l'identificazione corretta di eventi rari e l'evitamento dei falsi allarmi è studiato mediante la Sensibilità (\textit{True Positive Rate}, TPR) e la Specificità (\textit{True Negative Rate}, TNR). 
 \begin{equation}
@@ -169,4 +218,3 @@ Applicando l'analisi ROC ai trial neurofisiologici precedentemente discussi (l'e
 Il modello a soglia dimostra che un decoder biologico o artificiale può sfruttare la sola frequenza statistica per interpretare il mondo in presenza di rumore. Tuttavia, si tratta di un costrutto puramente matematico e descrittivo: non considera l'architettura biologica reale delle reti cerebrali, l'integrazione di centinaia di migliaia di sinapsi o le complesse tempistiche elettrochimiche, che andrebbero investigate tramite modelli a rete più evoluti.
 
 Ciononostante, i risultati dell'analisi del decoding hanno generato applicazioni di portata storica nella riabilitazione medica. L'acquisizione di segnali da \textit{microelectrode arrays} impiantati nel cervello permette ai computer di applicare modelli statistici e reti neurali in tempo reale. Dedurre le traiettorie motorie tridimensionali (3D arm trajectory) dal firing rate di una popolazione di cellule è il principio cardine delle \textbf{Brain-Computer Interfaces} e delle neuroprotesi. Elaborando gli spike isolati dal rumore di fondo, i decoder neuronali permettono ai pazienti con deficit motori severi di tradurre l'intento cerebrale direttamente nel controllo cinetico di bracci robotici, creando un ponte ingegneristico lì dove la biologia ha interrotto la comunicazione naturale.
-\fi
