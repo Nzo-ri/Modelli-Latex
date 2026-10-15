@@ -24,7 +24,13 @@
 %\counterwithout{footnote}{chapter}
 \usepackage{hyperref}
 \usepackage[margin=3cm]{geometry}
-
+\usepackage{titlesec}
+\titleformat{\section}
+  {\color{teal}\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\color{teal!80}\bfseries\normalfont\large}
+  {\thesubsection}{1em}{}
 
 \usepackage{caption}
 \usepackage{subcaption}

@@ -57,41 +57,7 @@ Se il modello risulta identificabile, si può procedere alla stima. Se non lo è
     \item Aumentare il contenuto informativo dell'esperimento (es. misurare altre variabili di uscita, o aggiungere nuovi ingressi).
     \item Ridurre la complessità del modello semplificandone la struttura, per diminuire il numero di parametri incogniti.
 \end{itemize}
-\subsection{Esempio 1: Identificabilità Univoca (Singolo compartimento)}
-Sia dato un modello a singolo compartimento, con ingresso impulsivo a tempo zero $U(t) = D\delta(t)$.
-Equazioni:
-$$\dot{Q}(t) = -kQ(t) + U(t)$$ 
-Con $Q(0) = 0$ e uscita $y(t) = Q(t)/V$.
-I parametri incogniti sono $p = [k, V]^T$.
-La soluzione è:
-\begin{equation}
-    Q(t)=De^{-k}
-\end{equation}
-I parametri osservazionali sono $A$ e $\lambda$, scriviamo le relazioni tra i parametri osservazionali e le incognite.
-\begin{equation}
-    \begin{split}
-        & A = D/V\\
-        & \lambda = k
-    \end{split}
-\end{equation}
-I parametri sono univocamente identificabili a priori.
-\iffalse
-\begin{equation}
-H(s) = \frac{Y(s)}{U(s)} = \frac{1/V}{s + k} \equiv \frac{\beta}{s + \alpha}
-\end{equation}
-Uguagliando i coefficienti si ottiene il riassunto esaustivo:
-\begin{equation}
-\begin{cases}
-\beta = \frac{1}{V} \\
-\alpha = k
-\end{cases}
-\end{equation}
-Il sistema è banale da risolvere in modo univoco: $V = 1/\beta$ e $k = \alpha$. Il modello è \textbf{univocamente identificabile a priori}.
-\fi
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.4\linewidth]{immagini/esempio1indetificabilità.png}
-\end{figure}
+
 \subsection{Definizione formale}
 Un generico modello è descritto da un sistema di equazioni differenziali ordinarie:
 \begin{align}
@@ -115,44 +81,94 @@ In base alle soluzioni di tale sistema, i parametri $p_i$ (e di riflesso l'inter
 \end{enumerate}
 Un modello si definisce globalmente identificabile solo se \textit{tutti} i suoi parametri lo sono. Diventa locale se almeno uno è locale (e nessuno non-identificabile), ed è non identificabile se anche un solo parametro risulta tale.
 
-\section{Metodo della Funzione di Trasferimento}
+\subsection{Esempio 1: Identificabilità Univoca (Singolo compartimento)}
+Sia dato un modello a singolo compartimento, con ingresso impulsivo a tempo zero $U(t) = D\delta(t)$.
+Equazioni:
+$$\dot{Q}(t) = -kQ(t) + U(t)$$ 
+Con $Q(0) = 0$ e uscita $y(t) = Q(t)/V$.
+I parametri incogniti sono $p = [k, V]^T$.
+La soluzione è:
+\begin{equation}
+    Q(t)=De^{-k}
+\end{equation}
+I parametri osservazionali sono $A$ e $\lambda$, scriviamo le relazioni tra i parametri osservazionali e le incognite.
+\begin{equation}
+    \begin{split}
+        & A = D/V\\
+        & \lambda = k
+    \end{split}
+\end{equation}
+I parametri sono univocamente identificabili a priori.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{immagini/esempio1identificazione.png}
+\end{figure}
 
-L'analisi dell'identificabilità per semplice ispezione della soluzione nel dominio del tempo è spesso impraticabile nei sistemi strutturali complessi. Per i \textbf{modelli lineari tempo-invarianti}, il metodo d'elezione sfrutta il dominio della variabile complessa di Laplace $s$ e il concetto di matrice di trasferimento. 
+\newpage
+\section{Metodo della trasformata di Laplace}
 
+L'analisi dell'identificabilità nel dominio del tempo è spesso impraticabile nei sistemi strutturali complessi. Per i \textbf{modelli lineari tempo-invarianti}, si sfrutta il dominio della variabile complessa di Laplace $s$ e la matrice di trasferimento. La trasformata di Laplace è una operazione che si esegue sulle funzioni a variabile reale per trasformarle in funzioni a variabile complessa. Questa operazione, contrariamente a quello che si può pensare, consente di apportare notevoli semplificazioni nei calcoli matematici. Data una funzione $f(t)$ reale e nulla per $t < 0$, si definisce trasformata di Laplace della $f(t)$ e la si indica con $F(s) = \mathcal{L}[f(t)]$ la seguente funzione:
+\begin{equation}
+F(s) = \int_0^{\infty} f(t)e^{-st} dt
+\end{equation}
+Per il calcolo viene utilizzato il teorema di derivazione: $\mathcal{L}[\dot{f}(t)] = sF(s) - f(0)$, che consente di trasformare equazioni differenziali in equazioni algebriche.\\
 Dato un modello lineare:
-\begin{align}
-\dot{x}(t) &= A(p)x(t) + B(p)u(t) \\
-y(t, p) &= C(p)x(t, p)
-\end{align}
+\begin{equation}
+\begin{cases}
+\dot{x}(t) = A(p)x(t) + B(p)u(t) \\
+y(t) = C(p)x(t)
+\end{cases}
+\end{equation}
 Ipotizzando condizioni iniziali nulle, applicando la trasformata di Laplace si ricava lo stato $X(s)$:
 \begin{equation}
 sX(s) = A(p)X(s) + B(p)U(s) \implies X(s) = [sI - A(p)]^{-1}B(p)U(s)
 \end{equation}
-Sostituendolo nell'equazione di uscita, si ottiene la matrice di trasferimento $H(s,p)$:
+Sostituendolo nell'equazione di uscita, si ottiene la \textbf{matrice di trasferimento} $H(s,p)$:
 \begin{equation}
 H(s, p) = \frac{Y(s, p)}{U(s)} = C(p)[sI - A(p)]^{-1}B(p)
 \end{equation}
-Ogni elemento $H_{ij}(s,p)$ rappresenta la funzione di trasferimento tra l'ingresso alla porta $j$ e l'uscita alla porta $i$. Questa funzione sarà data dal rapporto di due polinomi in $s$. 
-I coefficienti dei polinomi al numeratore ($\beta_1^{ij}, \dots, \beta_{n}^{ij}$) e al denominatore ($\alpha_1^{ij}, \dots, \alpha_{n}^{ij}$) costituiscono l'insieme esatto dei parametri osservazionali.
 
-Pertanto, il riassunto esaustivo diviene il sistema che uguaglia i coefficienti incogniti (funzioni dei parametri fisiologici $p$) ai valori numerici "estratti" idealmente dalla curva osservata:
-\begin{align*}
-\beta_k^{ij}(p) &= \phi_{\dots} \\
-\alpha_k^{ij}(p) &= \phi_{\dots}
-\end{align*}
 
-\section{Esempi Pratici e Classificazione}
-
-Analizziamo alcuni casi di studio emblematici per comprendere in pratica la classificazione dell'identificabilità a priori.
-
+\subsection{Esempio 1 con metodo di Laplace}
+Sia dato un modello a singolo compartimento, con ingresso impulsivo a tempo zero $U(t) = D\delta(t)$.
+Equazioni:
+\begin{equation}
+    \begin{cases}
+\dot{Q}(t) = -kQ(t) + U(t) \\
+y(t) = \frac{Q(t)}{V}
+    \end{cases}
+    \quad \text{con } Q(0) = 0
+\end{equation}
+La trasformata di Laplace del sistema è:
+\begin{equation}
+\begin{cases}
+sQ(s) = -kQ(s) + D \\
+Y(s) = \frac{Q(s)}{V}
+\end{cases}
+\end{equation}
+E la funzione di trasferimento è:
+\begin{equation}
+H(s) = \frac{Y(s)}{U(s)} = \frac{Q(s)/V}{D} = \frac{[D/(s+k)]/V}{D} = \frac{1/V}{s + k} \equiv \frac{\beta}{s + \alpha}
+\end{equation}
+I parametri osservazionali sono:
+\begin{equation}
+\begin{cases}
+\beta = \frac{1}{V} \\
+\alpha = k
+\end{cases}
+\end{equation}
+Il sistema è banale da risolvere in modo univoco: $V = 1/\beta$ e $k = \alpha$. \\
+Il modello è \textbf{univocamente identificabile a priori}.
 
 \subsection{Esempio 2: Identificabilità Locale (Due compartimenti)}
 Consideriamo un sistema a due compartimenti: ingresso nel comparto 1, ma si osserva la concentrazione solo nel comparto 2.
-\begin{align}
-\dot{Q}_1(t) &= -k_{21}Q_1(t) + U(t) \\
-\dot{Q}_2(t) &= k_{21}Q_1(t) - k_{02}Q_2(t) \\
+\begin{equation}
+    \begin{cases}
+\dot{Q}_1(t) &= -k_{21}Q_1(t) + U(t) \quad Q_1(0) = 0 \\
+\dot{Q}_2(t) &= k_{21}Q_1(t) - k_{02}Q_2(t) \quad Q_2(0) = 0\\
 y(t) &= \frac{Q_2(t)}{V_2}
-\end{align}
+    \end{cases}
+\end{equation}
 Parametri incogniti: $p = [k_{21}, k_{02}, V_2]^T$. 
 La funzione di trasferimento, ottenuta applicando Laplace, diviene:
 \begin{equation}
@@ -166,14 +182,21 @@ Il riassunto esaustivo è:
 \alpha_1 = k_{21}k_{02}
 \end{cases}
 \end{equation}
-Le ultime due equazioni sono le classiche formule della somma e del prodotto delle radici di un'equazione di secondo grado in $k_{21}$ e $k_{02}$. Esse determinano due soluzioni simmetriche: o $k_{21}$ è la radice maggiore e $k_{02}$ la minore, oppure viceversa. Di conseguenza, essendovi due soluzioni per la coppia cinetica, vi saranno due soluzioni corrispondenti per il volume $V_2 = k_{21}/\beta_1$. Il modello risulta \textbf{non univocamente (localmente) identificabile}.
-
+Le ultime due equazioni sono le classiche formule della somma e del prodotto delle radici di un'equazione di secondo grado in $k_{21}$ e $k_{02}$. Esse determinano due soluzioni simmetriche: o $k_{21}$ è la radice maggiore e $k_{02}$ la minore, oppure viceversa. Di conseguenza, essendovi due soluzioni il modello risulta \textbf{non univocamente (localmente) identificabile}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/esempio2identificazione.png}
+    \includegraphics[width=0.3\linewidth]{immagini/graficoesempio2.png}
+\end{figure}
+\newpage
 \subsection{Esempio 3: Identificabilità in Intervallo (Due compartimenti)}
 Ingresso al comparto 1, uscita al comparto 1, ma vi è sia perdita verso l'esterno ($k_{01}$) sia verso un comparto "cieco" ($k_{21}$) senza vie di ritorno.
-\begin{align}
+\begin{equation}
+    \begin{cases}
 \dot{Q}_1(t) &= -(k_{01} + k_{21})Q_1(t) + U(t) \\
 \dot{Q}_2(t) &= k_{21}Q_1(t)
-\end{align}
+\end{cases}
+\end{equation}
 Con uscita misurata $y(t) = Q_1(t)/V_1$. La funzione di trasferimento sarà:
 \begin{equation}
 H(s) = \frac{1/V_1}{s + k_{21} + k_{01}} \equiv \frac{\beta}{s + \alpha}
@@ -185,7 +208,10 @@ Essendo $k_{21} = \alpha - k_{01}$ e richiedendo $k_{21} \ge 0$, si deduce che $
 0 &\le k_{01} \le \alpha \\
 0 &\le k_{21} \le \alpha
 \end{align}
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/esempio3identificazione.png}
+\end{figure}
 \subsection{Esempio Complesso: Modello di Controllo Glucosio-Insulina}
 Sia dato un sistema di interazione tra glucosio ($q_1$) e insulina ($q_2$) nel circolo ematico:
 \begin{align}

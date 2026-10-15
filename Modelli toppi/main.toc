@@ -3,14 +3,14 @@
 \contentsline {chapter}{\numberline {1}Introduzione alla complessità}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Complessità dell'organismo umano}{3}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Feedback}{4}{subsection.1.1.1}%
-\contentsline {subsubsection}{Negative feedback}{4}{section*.2}%
-\contentsline {subsubsection}{Positive feedback}{4}{section*.3}%
-\contentsline {subsubsection}{Feedback intrinseco}{4}{section*.4}%
-\contentsline {subsubsection}{Feedback nei sistemi dinamici}{4}{section*.5}%
-\contentsline {subsubsection}{Altri tipi di feedback}{4}{section*.6}%
+\contentsline {subsubsection}{Negative feedback}{4}{subsection.1.1.1}%
+\contentsline {subsubsection}{Positive feedback}{4}{subsection.1.1.1}%
+\contentsline {subsubsection}{Feedback intrinseco}{4}{subsection.1.1.1}%
+\contentsline {subsubsection}{Feedback nei sistemi dinamici}{4}{equation.1.1}%
+\contentsline {subsubsection}{Altri tipi di feedback}{4}{equation.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Controllo}{5}{subsection.1.1.2}%
-\contentsline {subsubsection}{Enzimi}{5}{section*.7}%
-\contentsline {subsubsection}{Ormoni}{5}{section*.9}%
+\contentsline {subsubsection}{Enzimi}{5}{subsection.1.1.2}%
+\contentsline {subsubsection}{Ormoni}{5}{figure.caption.2}%
 \contentsline {subsection}{\numberline {1.1.3}Gerarchia}{6}{subsection.1.1.3}%
 \contentsline {chapter}{\numberline {2}Introduzione alla Modellizzazione}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Obiettivo e Categorie dei Modelli Matematici}{8}{section.2.1}%
@@ -36,13 +36,13 @@
 \contentsline {section}{\numberline {4.1}Identificazione}{18}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Esempi di funzione}{19}{subsection.4.1.1}%
 \contentsline {section}{\numberline {4.2}Identificabilità a Priori}{20}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Esempio 1: Identificabilità Univoca (Singolo compartimento)}{20}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Definizione formale}{21}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Metodo della Funzione di Trasferimento}{21}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Esempi Pratici e Classificazione}{22}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Esempio 2: Identificabilità Locale (Due compartimenti)}{22}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Esempio 3: Identificabilità in Intervallo (Due compartimenti)}{23}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Esempio Complesso: Modello di Controllo Glucosio-Insulina}{23}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Identificabilità nei Modelli Non Lineari}{24}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Esempio di Analisi di un Modello Non Lineare}{24}{subsection.4.5.1}%
-\contentsline {chapter}{\numberline {A}Domande delle lezioni}{26}{appendix.A}%
+\contentsline {subsection}{\numberline {4.2.1}Definizione formale}{20}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Esempio 1: Identificabilità Univoca (Singolo compartimento)}{21}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Metodo della trasformata di Laplace}{22}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Esempio 1 con metodo di Laplace}{22}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Esempio 2: Identificabilità Locale (Due compartimenti)}{23}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Esempio 3: Identificabilità in Intervallo (Due compartimenti)}{24}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Esempio Complesso: Modello di Controllo Glucosio-Insulina}{24}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Identificabilità nei Modelli Non Lineari}{25}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Esempio di Analisi di un Modello Non Lineare}{26}{subsection.4.4.1}%
+\contentsline {chapter}{\numberline {A}Domande delle lezioni}{27}{appendix.A}%
