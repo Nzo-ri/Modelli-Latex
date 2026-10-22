@@ -1,0 +1,138 @@
+\chapter{Modello del Sistema}
+Un modello matematico applicato alla biologia rappresenta un tentativo di descrivere esplicitamente la fisiologia alla base di un sistema. Qualunque modello, per quanto complesso, costituisce sempre e comunque una \textit{semplificazione della realtà} (modello approssimato). 
+
+Il vantaggio principale dell'impiego di modelli matematici risiede nel fatto che i parametri fisiologici e le variabili utilizzate sono direttamente correlati alla dinamica e al comportamento del sistema biologico in esame.
+
+I modelli possono essere classificati secondo diversi approcci e proprietà:
+\begin{itemize}
+    \item Statico vs. Dinamico
+    \item Lineare vs. Non lineare
+    \item Deterministico vs. Stocastico
+    \item Tempo-invariante vs. Tempo-variante
+    \item Concentrato vs. Distribuito
+    \item Continuo vs. Discreto
+\end{itemize}
+
+\section{Modelli Statici: Lineari e Non Lineari}
+
+\subsection{Modello statico e lineare}
+Un esempio classico di modello statico e lineare è la relazione tra la pressione e il flusso sanguigno in un vaso. È possibile modellizzare questa relazione attraverso l'equazione:
+\begin{equation}
+    (P_2 - P_1) = R \cdot Q
+\end{equation}
+dove $P$ è la pressione sanguigna, $Q$ il flusso vascolare e $R$ la resistenza vascolare, descritta dalla legge di Poiseuille:
+\begin{equation}
+    R = \frac{8\eta L}{\pi r^4}
+\end{equation}
+con $\eta$ che rappresenta la viscosità del sangue.
+
+\subsection{Modello statico e non lineare}
+Un esempio di modello statico non lineare è descritto dall'equazione di Michaelis-Menten, che caratterizza la cinetica delle reazioni chimiche mediate da enzimi:
+\begin{equation}
+    v = \frac{V_{max}s}{k_m + s}
+\end{equation}
+dove:
+\begin{itemize}
+    \item $v$ è il flusso della reazione chimica (velocità di formazione del prodotto);
+    \item $V_{max}$ è il flusso massimo a cui tende la reazione per saturazione del substrato ($s \to \infty$);
+    \item $s$ è la concentrazione di substrato;
+    \item $k_m$ (costante di Michaelis) è la concentrazione di substrato in corrispondenza della quale la velocità della reazione è pari a $V_{max}/2$.
+\end{itemize}
+Per basse concentrazioni di substrato, questo modello ammette un'\textbf{approssimazione lineare} (la curva si comporta in modo approssimativamente proporzionale prima della saturazione).
+
+\section{Dal Modello Statico al Dinamico}
+L'analisi in condizioni di \textit{steady-state} (stato stazionario) fornisce informazioni utili ma limitate sulla fisiologia del sistema. Spesso è necessario modellizzare la risposta del sistema a uno stimolo nel tempo, seguendone il comportamento dinamico anziché limitarsi allo stato finale.
+
+Assunzioni di partenza per la transizione: si considera inizialmente un modello deterministico, lineare, tempo-invariante (parametri costanti) e concentrato (nessuna dimensione spaziale).
+
+\subsection{Esempio: Modello di regolazione del glucosio}
+Il sistema di regolazione glicemica può essere visto come un sistema a feedback negativo in cui il Sistema Insulina agisce da \textit{Controller} e il Sistema Glucosio da \textit{Controlled System}. Le equazioni dinamiche a parametri concentrati per glucosio ($Q_1$) e insulina ($Q_2$) sono:
+\begin{align}
+    \dot{Q}_1(t) &= P(Q_1, Q_2) - U(Q_1, Q_2) + J(t) \\
+    \dot{Q}_2(t) &= S(Q_1, Q_2) - D(Q_2)
+\end{align}
+Le relative concentrazioni si ottengono scalando per i volumi di distribuzione:
+\begin{equation}
+    C_1(t) = \frac{Q_1(t)}{V_1}, \quad C_2(t) = \frac{Q_2(t)}{V_2}
+\end{equation}
+con condizioni iniziali $Q_1(0) = Q_{10}$ e $Q_2(0) = Q_{20}$, e dove $J(t)$ rappresenta un ingresso esterno di glucosio (es. un pasto).
+
+\subsection{Dinamiche Lineari e Non Lineari}
+Nel dominio dinamico (descritto tramite equazioni differenziali ordinarie - ODE), la transizione dalla linearità alla non linearità si riflette nella struttura delle equazioni:
+\begin{itemize}
+    \item \textbf{Lineare:} $\frac{dx(t)}{dt} = -a \, x(t) + b \, u(t)$
+    \item \textbf{Non lineare:} $\frac{dx(t)}{dt} = -c \, x^2(t) + b \, u(t)$
+\end{itemize}
+
+\section{Dal Modello Concentrato al Distribuito}
+Nel modello a parametri \textbf{concentrati}, si assume omogeneità spaziale: la sostanza (es. farmaco) è uniformemente distribuita all'interno del compartimento e il sistema è descritto tramite ODE (dipendenza esclusiva dal tempo $t$).
+Quando l'assunzione di omogeneità cade, si passa ai modelli a parametri \textbf{distribuiti}. Essi includono variazioni spaziali (variabile $z$ o $x$) e richiedono Equazioni Differenziali alle Derivate Parziali (PDE), analizzando la derivata temporale $\partial c / \partial t$ in associazione alla derivata spaziale $\partial c / \partial x$.
+
+\subsection{Esempio: Modello di scambio sangue-tessuti}
+Lo scambio di sostanze a livello di organo avviene nella rete capillare. Il flusso si divide in bracci multipli disomogenei e il trasporto molecolare avviene in fasi successive: convezione (plasma) $\to$ diffusione (membrana capillare) $\to$ trasporto attivo (membrana cellulare) $\to$ metabolismo.
+
+\noindent \textbf{1. Modello a capillare singolo (1 compartimento, solo Plasma):}
+Assumendo l'assenza di diffusione assiale e una velocità di convezione $v(x)$ costante:
+\begin{equation}
+    \frac{\partial c_p(x,t)}{\partial t} = -\frac{F_p L}{V_p} \frac{\partial c_p(x,t)}{\partial x}
+\end{equation}
+dove $F_p$ è il flusso plasmatico, $L$ la lunghezza, $V_p$ il volume capillare.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/modellocapillaresingolo.png}
+    \label{fig:capillare}
+\end{figure}
+\newpage
+\noindent \textbf{2. Modello a due regioni (Plasma + Fluido Interstiziale - ISF):}
+Si introduce un termine di scambio proporzionale al gradiente di concentrazione e al parametro di permeabilità/superficie $PS_g$:
+\begin{align}
+    \frac{\partial c_p(x,t)}{\partial t} &= -\frac{F_p L}{V_p} \frac{\partial c_p(x,t)}{\partial x} - \frac{PS_g}{V_p}[c_p(x,t) - c_{isf}(x,t)] \\
+    \frac{\partial c_{isf}(x,t)}{\partial t} &= \frac{PS_g}{V_{isf}}[c_p(x,t) - c_{isf}(x,t)]
+\end{align}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Immagini/modellocapillaredoppio.png}
+    \label{fig:capillare2regioni}
+\end{figure}
+
+\noindent \textbf{3. Modello a tre regioni (Plasma + ISF + Cellula Parenchimale - PC):}
+Si aggiungono le dinamiche interne alla cellula, mediate dal parametro di trasporto di membrana $PS_{pc}$ e dal tasso metabolico irreversibile $G_{pc}$:
+\begin{align}
+    \frac{\partial c_{isf}}{\partial t} &= \frac{PS_g}{V_{isf}}[c_p - c_{isf}] - \frac{PS_{pc}}{V_{isf}}[c_{isf} - c_{pc}] \\
+    \frac{\partial c_{pc}}{\partial t} &= \frac{PS_{pc}}{V_{pc}}[c_{isf} - c_{pc}] - \frac{G_{pc}}{V_{pc}}c_{pc}
+\end{align}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Immagini/modellocapillaretriplo.png}
+    \label{fig:capillare3regioni}
+\end{figure}
+\section{Modelli Tempo-Varianti}
+Un sistema in cui i parametri non sono costanti ma variano in funzione del tempo è detto \textbf{tempo-variante}. Tale approccio è un modo per modellizzare una specifica classe di comportamenti non lineari. 
+
+\subsection{Esempio: Modello Emodinamico Cardiaco}
+Nel modellizzare la dinamica del cuore su scala temporale prolungata (es. minuti), le proprietà elastiche delle camere cardiache durante il ciclo cardiaco sono descritte con un'elastanza tempo-variante $a(t)$:
+\begin{equation}
+    P = a(t)[V - V_u]
+\end{equation}
+Le funzioni di attivazione per atri e ventricoli seguono profili basati su funzioni sinusoidali. Ad esempio, per l'atrio sinistro durante la sistole atriale ($0 < t_c < T_{AS}$):
+\begin{equation}
+    a_{LA} = \sin\left(\frac{\pi t_c}{T_{AS}}\right) (a_{LAS} - a_{LAD}) + a_{LAD}
+\end{equation}
+Terminato $T_{AS}$, l'elastanza ritorna al valore diastolico.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Immagini/elastanzadellecamere.png}
+    \label{fig:elastanza}
+\end{figure}
+
+\section{Dal Modello Deterministico allo Stocastico}
+Sebbene i modelli deterministici siano ampiamente utilizzati per descrizioni quantitative continue, essi risultano inadeguati per descrivere fenomeni fisiologici governati dal caso, come quelli a livello cellulare.
+Per incorporare la randomicità si usano i modelli \textbf{stocastici}, applicando distribuzioni di probabilità alle variabili o ai parametri di flusso del sistema.
+
+\subsection{Esempio: Differenziazione cellulare}
+Nella pathway di differenziazione dei granulociti macrofagi, la proliferazione dipende dalla concentrazione di uno stimolo (CSA). Il processo è diviso in stadi (generazioni $1, 2, \dots, N$) e l'evoluzione è modellizzata assegnando a intervalli di tempo discreti (es. $k \to k+1$ = 8 ore) probabilità specifiche:
+\begin{itemize}
+    \item $p_i$: probabilità che una cellula nella generazione $i$ si divida passando alla generazione $i+1$;
+    \item $\alpha_i$: probabilità di morte cellulare nella medesima generazione.
+\end{itemize}
+Tali probabilità sono descritte in funzione della concentrazione della molecola di stimolo.

@@ -64,7 +64,11 @@ Un generico modello è descritto da un sistema di equazioni differenziali ordina
 \dot{x}(t, p) &= f[x(t, p), u(t), t; p], \quad x(t_0, p) = x_0 \\
 y(t, p) &= g[x(t, p); p]
 \end{align}
-dove $x$ è il vettore di stato ($n \times 1$), $u$ è il vettore degli ingressi ($r \times 1$), $y$ è il vettore delle uscite misurate ($m \times 1$), $f$ e $g$ sono funzioni che definiscono la struttura, parametrizzate da $p$. Nel caso in cui l'equazione di uscita sia lineare, $g$ assume la forma matriciale $y(t,p) = C(p)x(t,p)$.
+dove $x$ è il vettore di stato ($n \times 1$), $u$ è il vettore degli ingressi ($r \times 1$), $y$ è il vettore delle uscite misurate ($m \times 1$).
+\begin{itemize}
+    \item $f$ è il vettore delle n funzioni non lineari che definiscono la struttura del modello ovvero
+    \item $g$ è il vettore delle m funzioni non lineari che definiscono la relazione stato-uscita, parametrizzata in funzione di p. Se g è funzione lineare, l'equazione di uscita diventa: $y(t,p) = C(p)x(t,p)$ con C matrice di dimensione $m \times n$.
+\end{itemize} 
 
 Definiamo il vettore dei \textbf{parametri osservazionali} $\Phi = [\phi_1, \dots, \phi_R]^T$. Questi parametri rappresentano tutte le grandezze macroscopiche che è possibile dedurre (osservare) in modo univoco direttamente dai dati dell'esperimento input/output ideale. Tali parametri osservazionali sono funzioni algebriche dei parametri incogniti di base $p_i$, ossia $\Phi = \Phi(p)$.
 
@@ -127,8 +131,15 @@ Sostituendolo nell'equazione di uscita, si ottiene la \textbf{matrice di trasfer
 \begin{equation}
 H(s, p) = \frac{Y(s, p)}{U(s)} = C(p)[sI - A(p)]^{-1}B(p)
 \end{equation}
-
-
+dove ogni elemento $H_{ij}$ di $H$ rappresenta la trasformata di Laplace della risposta misurata in uscita $y(t, p)$ alla porta $i$ quando in ingresso viene applicato un impulso $u_j(t) = \delta(t)$ alla porta $j$. Possiamo scrivere il riassunto esaustivo in funzione della matrice di trasferimento:
+\begin{equation}
+\begin{cases}
+    \beta_1^{11}(\bf{p}) =\phi_1^{11} \\
+    \alpha_n^{11}(\bf{p}) =\phi_{2n}^{11} \\
+    \beta_1^{rm}(\bf{p}) = \phi_1^{rm} \\
+    \alpha_n^{rm}(\bf{p}) = \phi_{2n}^{rm}
+\end{cases} 
+\end{equation}
 \subsection{Esempio 1 con metodo di Laplace}
 Sia dato un modello a singolo compartimento, con ingresso impulsivo a tempo zero $U(t) = D\delta(t)$.
 Equazioni:
@@ -212,7 +223,12 @@ Essendo $k_{21} = \alpha - k_{01}$ e richiedendo $k_{21} \ge 0$, si deduce che $
     \centering
     \includegraphics[width=0.5\linewidth]{immagini/esempio3identificazione.png}
 \end{figure}
+\newpage
 \subsection{Esempio Complesso: Modello di Controllo Glucosio-Insulina}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/modelloglucosioinsulina.png}
+\end{figure}
 Sia dato un sistema di interazione tra glucosio ($q_1$) e insulina ($q_2$) nel circolo ematico:
 \begin{align}
 \dot{q}_1(t) &= -p_1 q_1(t) + p_2 q_2(t) + \delta(t) \quad \text{(ingresso impulsivo sul glucosio)}\\

@@ -25,11 +25,18 @@
 \usepackage{hyperref}
 \usepackage[margin=3cm]{geometry}
 \usepackage{titlesec}
+\usepackage{xcolor}
+\definecolor{capitoli}{HTML}{1A365D}
+\definecolor{sezioni}{HTML}{2B6CB0}
+\definecolor{sottosezioni}{HTML}{63B3ED}
+
+\titleformat{\chapter}[block]
+  {\color{capitoli}\normalfont\huge\bfseries}{\thechapter.}{1em}{\Huge}
 \titleformat{\section}
-  {\color{teal}\normalfont\Large\bfseries}
+  {\color{sezioni}\normalfont\LARGE\bfseries}
   {\thesection}{1em}{}
 \titleformat{\subsection}
-  {\color{teal!80}\bfseries\normalfont\large}
+  {\color{sottosezioni}\bfseries\normalfont\Large}
   {\thesubsection}{1em}{}
 
 \usepackage{caption}
@@ -78,7 +85,8 @@
 
 \input{Capitoli/0-introduzione}
 \input{Capitoli/1-introduzione_alla_modellizzazione}
-%\input{Capitoli/2-Modelli_di_dati}
+\input{Capitoli/2-Modelli_di_dati}
+\input{Capitoli/3-Modelli_di_sistemi.tex}
 \input{Capitoli/4-Identificazione_del_modello}
 \input{Capitoli/5-Modello_parametrico.tex}
 
