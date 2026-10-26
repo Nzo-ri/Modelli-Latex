@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  25 OCT 2026 19:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  26 OCT 2026 10:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1280,18 +1280,18 @@ LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 3.
  (D:\Programmi\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-))
-\tf@toc=\write5
-\openout5 = `main.toc'.
-
- (Capitoli/0-Richiami_di_elettrofisiologia.tex
+)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Richiami di elettrofisiologia cellulare e [1
+l.39 ...oltaggio-dipendenti}{29}{subsection.3.2.1}
+                                                  % [1
 
-]
+])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ (Capitoli/0-Richiami_di_elettrofisiologia.tex [2]
 Capitolo 1.
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
 (Font)              scaled to size 20.74pt on input line 2.
@@ -1311,62 +1311,62 @@ LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 16.
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 16.
- [2
+ [3
 
 {D:/Programmi/MiKTeX/fonts/enc/dvips/universalis/unvsl_fe7xck.enc}]
-<immagini/neurone.png, id=146, 1156.32pt x 644.4075pt>
+<immagini/neurone.png, id=195, 1156.32pt x 644.4075pt>
 File: immagini/neurone.png Graphic file (type png)
 <use immagini/neurone.png>
 Package pdftex.def Info: immagini/neurone.png  used on input line 28.
 (pdftex.def)             Requested size: 310.50357pt x 173.03856pt.
-<immagini/potenzialedimembrana.png, id=149, 1146.2825pt x 513.92pt>
+<immagini/potenzialedimembrana.png, id=198, 1146.2825pt x 513.92pt>
 File: immagini/potenzialedimembrana.png Graphic file (type png)
 <use immagini/potenzialedimembrana.png>
 Package pdftex.def Info: immagini/potenzialedimembrana.png  used on input line 44.
 (pdftex.def)             Requested size: 332.68385pt x 149.1506pt.
- [3 <./immagini/neurone.png>] [4 <./immagini/potenzialedimembrana.png>]
+ [4 <./immagini/neurone.png>] [5 <./immagini/potenzialedimembrana.png>]
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 106.
-<immagini/depolarizzazione.png, id=168, 726.715pt x 435.6275pt>
+<immagini/depolarizzazione.png, id=217, 726.715pt x 435.6275pt>
 File: immagini/depolarizzazione.png Graphic file (type png)
 <use immagini/depolarizzazione.png>
 Package pdftex.def Info: immagini/depolarizzazione.png  used on input line 110.
 (pdftex.def)             Requested size: 177.42868pt x 106.3541pt.
-<immagini/ripolarizzazione.png, id=169, 678.535pt x 501.875pt>
+<immagini/ripolarizzazione.png, id=218, 678.535pt x 501.875pt>
 File: immagini/ripolarizzazione.png Graphic file (type png)
 <use immagini/ripolarizzazione.png>
 Package pdftex.def Info: immagini/ripolarizzazione.png  used on input line 112.
 (pdftex.def)             Requested size: 155.25517pt x 114.8315pt.
- [5 <./immagini/depolarizzazione.png> <./immagini/ripolarizzazione.png>]
+ [6 <./immagini/depolarizzazione.png> <./immagini/ripolarizzazione.png>]
 Overfull \hbox (40.04181pt too wide) in paragraph at lines 127--144
  [][] 
  []
 
-[6]
-<immagini/potenziale dazione.png, id=184, 1957.3125pt x 319.1925pt>
+[7]
+<immagini/potenziale dazione.png, id=233, 1957.3125pt x 319.1925pt>
 File: immagini/potenziale dazione.png Graphic file (type png)
 <use immagini/potenziale dazione.png>
 Package pdftex.def Info: immagini/potenziale dazione.png  used on input line 163.
 (pdftex.def)             Requested size: 443.57848pt x 72.33635pt.
- [7 <./immagini/potenziale dazione.png>]
-<immagini/porpagazionecontinua.png, id=191, 993.7125pt x 710.655pt>
+ [8 <./immagini/potenziale dazione.png>]
+<immagini/porpagazionecontinua.png, id=240, 993.7125pt x 710.655pt>
 File: immagini/porpagazionecontinua.png Graphic file (type png)
 <use immagini/porpagazionecontinua.png>
 Package pdftex.def Info: immagini/porpagazionecontinua.png  used on input line 180.
 (pdftex.def)             Requested size: 332.68385pt x 237.9218pt.
- [8 <./immagini/porpagazionecontinua.png>]
-<immagini/sinapsielettrica.png, id=198, 1158.3275pt x 483.8075pt>
+ [9 <./immagini/porpagazionecontinua.png>]
+<immagini/sinapsielettrica.png, id=247, 1158.3275pt x 483.8075pt>
 File: immagini/sinapsielettrica.png Graphic file (type png)
 <use immagini/sinapsielettrica.png>
 Package pdftex.def Info: immagini/sinapsielettrica.png  used on input line 211.
 (pdftex.def)             Requested size: 354.86412pt x 148.2144pt.
- [9 <./immagini/sinapsielettrica.png>] [10]
-<immagini/sinapsichimica.png, id=209, 983.675pt x 600.2425pt>
+ [10 <./immagini/sinapsielettrica.png>] [11]
+<immagini/sinapsichimica.png, id=258, 983.675pt x 600.2425pt>
 File: immagini/sinapsichimica.png Graphic file (type png)
 <use immagini/sinapsichimica.png>
 Package pdftex.def Info: immagini/sinapsichimica.png  used on input line 228.
 (pdftex.def)             Requested size: 288.32329pt x 175.93428pt.
-<immagini/neurotrasmettitore.png, id=210, 682.55pt x 397.485pt>
+<immagini/neurotrasmettitore.png, id=259, 682.55pt x 397.485pt>
 File: immagini/neurotrasmettitore.png Graphic file (type png)
 <use immagini/neurotrasmettitore.png>
 Package pdftex.def Info: immagini/neurotrasmettitore.png  used on input line 229.
@@ -1375,8 +1375,8 @@ Package pdftex.def Info: immagini/neurotrasmettitore.png  used on input line 229
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11]
-<immagini/eccitatoriinibitori.png, id=222, 1493.58pt x 839.135pt>
+[12]
+<immagini/eccitatoriinibitori.png, id=272, 1493.58pt x 839.135pt>
 File: immagini/eccitatoriinibitori.png Graphic file (type png)
 <use immagini/eccitatoriinibitori.png>
 Package pdftex.def Info: immagini/eccitatoriinibitori.png  used on input line 256.
@@ -1385,7 +1385,7 @@ Package pdftex.def Info: immagini/eccitatoriinibitori.png  used on input line 25
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<immagini/integrazionepotenzialegraduato.png, id=223, 1979.395pt x 955.57pt>
+<immagini/integrazionepotenzialegraduato.png, id=273, 1979.395pt x 955.57pt>
 File: immagini/integrazionepotenzialegraduato.png Graphic file (type png)
 <use immagini/integrazionepotenzialegraduato.png>
 Package pdftex.def Info: immagini/integrazionepotenzialegraduato.png  used on input line 266.
@@ -1393,20 +1393,20 @@ Package pdftex.def Info: immagini/integrazionepotenzialegraduato.png  used on in
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<immagini/propagazionepsp.png, id=224, 1750.54pt x 497.86pt>
+<immagini/propagazionepsp.png, id=274, 1750.54pt x 497.86pt>
 File: immagini/propagazionepsp.png Graphic file (type png)
 <use immagini/propagazionepsp.png>
 Package pdftex.def Info: immagini/propagazionepsp.png  used on input line 271.
 (pdftex.def)             Requested size: 332.68385pt x 94.60957pt.
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 275.
-[12 <./immagini/sinapsichimica.png> <./immagini/neurotrasmettitore.png>]
+[13 <./immagini/sinapsichimica.png> <./immagini/neurotrasmettitore.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13 <./immagini/eccitatoriinibitori.png> <./immagini/integrazionepotenzialegraduato.png> <./immagini/propagazionepsp.png>]) (Capitoli/1-Modelli_di_Encoding_e_Decoding_Neuronale.tex [14]
+[14 <./immagini/eccitatoriinibitori.png> <./immagini/integrazionepotenzialegraduato.png> <./immagini/propagazionepsp.png>]) (Capitoli/1-Modelli_di_Encoding_e_Decoding_Neuronale.tex [15]
 Capitolo 2.
-[15
+[16
 
 ]
 
@@ -1449,13 +1449,13 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
 (Font)              size <5> substituted on input line 30.
 
-[16]
-<immagini/multitrial.png, id=264, 485.815pt x 291.0875pt>
+[17]
+<immagini/multitrial.png, id=313, 485.815pt x 291.0875pt>
 File: immagini/multitrial.png Graphic file (type png)
 <use immagini/multitrial.png>
 Package pdftex.def Info: immagini/multitrial.png  used on input line 46.
 (pdftex.def)             Requested size: 221.78923pt x 132.88918pt.
- [17 <./immagini/multitrial.png>]
+ [18 <./immagini/multitrial.png>]
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 51.
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
@@ -1469,69 +1469,77 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 54.
 
-<immagini/rt1.png, id=271, 933.4875pt x 411.5375pt>
+<immagini/rt1.png, id=321, 933.4875pt x 411.5375pt>
 File: immagini/rt1.png Graphic file (type png)
 <use immagini/rt1.png>
 Package pdftex.def Info: immagini/rt1.png  used on input line 66.
 (pdftex.def)             Requested size: 221.78923pt x 97.77257pt.
-[18 <./immagini/rt1.png>]
-<immagini/rt2.png, id=283, 273.27094pt x 173.14688pt>
+[19 <./immagini/rt1.png>]
+<immagini/rt2.png, id=332, 273.27094pt x 173.14688pt>
 File: immagini/rt2.png Graphic file (type png)
 <use immagini/rt2.png>
 Package pdftex.def Info: immagini/rt2.png  used on input line 80.
 (pdftex.def)             Requested size: 221.78923pt x 140.52824pt.
-<immagini/rt3.png, id=284, 295.85532pt x 182.18062pt>
+<immagini/rt3.png, id=333, 295.85532pt x 182.18062pt>
 File: immagini/rt3.png Graphic file (type png)
 <use immagini/rt3.png>
 Package pdftex.def Info: immagini/rt3.png  used on input line 89.
 (pdftex.def)             Requested size: 221.78923pt x 136.57674pt.
- [19 <./immagini/rt2.png> <./immagini/rt3.png>]
-<immagini/rt4.png, id=299, 383.18156pt x 260.47313pt>
+ [20 <./immagini/rt2.png> <./immagini/rt3.png>]
+<immagini/rt4.png, id=348, 383.18156pt x 260.47313pt>
 File: immagini/rt4.png Graphic file (type png)
 <use immagini/rt4.png>
 Package pdftex.def Info: immagini/rt4.png  used on input line 96.
 (pdftex.def)             Requested size: 310.50357pt x 211.08144pt.
- [20 <./immagini/rt4.png>]
-<immagini/tuningintro.png, id=308, 454.69875pt x 170.13562pt>
+ [21 <./immagini/rt4.png>]
+<immagini/tuningintro.png, id=357, 454.69875pt x 170.13562pt>
 File: immagini/tuningintro.png Graphic file (type png)
 <use immagini/tuningintro.png>
 Package pdftex.def Info: immagini/tuningintro.png  used on input line 123.
 (pdftex.def)             Requested size: 266.14978pt x 99.58734pt.
-<immagini/esempiocurva1.png, id=309, 304.13625pt x 155.07938pt>
+<immagini/esempiocurva1.png, id=358, 304.13625pt x 155.07938pt>
 File: immagini/esempiocurva1.png Graphic file (type png)
 <use immagini/esempiocurva1.png>
 Package pdftex.def Info: immagini/esempiocurva1.png  used on input line 136.
 (pdftex.def)             Requested size: 221.78923pt x 113.0934pt.
- [21 <./immagini/tuningintro.png> <./immagini/esempiocurva1.png>]
-<immagini/esempiocurva2.png, id=323, 395.97937pt x 146.04562pt>
+ [22 <./immagini/tuningintro.png> <./immagini/esempiocurva1.png>]
+<immagini/esempiocurva2.png, id=372, 395.97937pt x 146.04562pt>
 File: immagini/esempiocurva2.png Graphic file (type png)
 <use immagini/esempiocurva2.png>
 Package pdftex.def Info: immagini/esempiocurva2.png  used on input line 145.
 (pdftex.def)             Requested size: 310.50357pt x 114.52126pt.
-<immagini/esempiocurva3.png, id=324, 288.3272pt x 148.30406pt>
+<immagini/esempiocurva3.png, id=373, 288.3272pt x 148.30406pt>
 File: immagini/esempiocurva3.png Graphic file (type png)
 <use immagini/esempiocurva3.png>
 Package pdftex.def Info: immagini/esempiocurva3.png  used on input line 154.
 (pdftex.def)             Requested size: 266.14978pt x 136.90302pt.
- [22 <./immagini/esempiocurva2.png> <./immagini/esempiocurva3.png>]
-<immagini/decodingneuronale.png, id=336, 430.60875pt x 160.34906pt>
+ [23 <./immagini/esempiocurva2.png> <./immagini/esempiocurva3.png>]
+<immagini/decodingneuronale.png, id=385, 430.60875pt x 160.34906pt>
 File: immagini/decodingneuronale.png Graphic file (type png)
 <use immagini/decodingneuronale.png>
 Package pdftex.def Info: immagini/decodingneuronale.png  used on input line 164.
 (pdftex.def)             Requested size: 310.50357pt x 115.6274pt.
-<immagini/esempiodecoding.png, id=337, 344.03531pt x 188.20313pt>
+<immagini/esempiodecoding.png, id=386, 344.03531pt x 188.20313pt>
 File: immagini/esempiodecoding.png Graphic file (type png)
 <use immagini/esempiodecoding.png>
 Package pdftex.def Info: immagini/esempiodecoding.png  used on input line 171.
 (pdftex.def)             Requested size: 266.14978pt x 145.59744pt.
-<immagini/daticomportamentali.png, id=338, 228.10219pt x 194.22563pt>
+<immagini/daticomportamentali.png, id=387, 228.10219pt x 194.22563pt>
 File: immagini/daticomportamentali.png Graphic file (type png)
 <use immagini/daticomportamentali.png>
 Package pdftex.def Info: immagini/daticomportamentali.png  used on input line 176.
 (pdftex.def)             Requested size: 266.14978pt x 226.62958pt.
- [23 <./immagini/decodingneuronale.png> <./immagini/esempiodecoding.png>] [24 <./immagini/daticomportamentali.png>]) (Capitoli/appendice.tex [25]
+ [24 <./immagini/decodingneuronale.png> <./immagini/esempiodecoding.png>] [25 <./immagini/daticomportamentali.png>]) (Capitoli/2-Modelli_a_1_compartimento.tex [26]
+Capitolo 3.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 7.
+
+[27
+
+] [28] [29]) (Capitoli/appendice.tex [30]
 Appendice A.
-) [26
+) [31
 
 ] (main.aux)
  ***********
@@ -1547,20 +1555,20 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 57B2735F37BDF838E5701E91E3EF7538;6936.
+(rerunfilecheck)             Checksum: 63EC6DA93713D9D6EB715FCDF3C8DC49;8992.
  ) 
 Here is how much of TeX's memory you used:
- 21690 strings out of 467392
- 382235 string characters out of 5417708
- 1116768 words of memory out of 5000000
- 50125 multiletter control sequences out of 15000+600000
- 705779 words of font info for 391 fonts, out of 8000000 for 9000
+ 21759 strings out of 467392
+ 383752 string characters out of 5417708
+ 1117768 words of memory out of 5000000
+ 50137 multiletter control sequences out of 15000+600000
+ 708245 words of font info for 411 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,16n,118p,1091b,658s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,16n,118p,1091b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Bold.pfb><D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Italic.pfb><D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Regular.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (27 pages, 8474669 bytes).
+Output written on main.pdf (32 pages, 8505226 bytes).
 PDF statistics:
- 461 PDF objects out of 1000 (max. 8388607)
- 110 named destinations out of 1000 (max. 500000)
- 96577 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 541 PDF objects out of 1000 (max. 8388607)
+ 134 named destinations out of 1000 (max. 500000)
+ 96649 words of extra memory for PDF output out of 106986 (max. 10000000)
 

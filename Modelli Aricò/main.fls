@@ -304,12 +304,6 @@ INPUT D:\Programmi\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
 INPUT D:\Programmi\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT D:\Programmi\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
 INPUT D:\Programmi\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-OUTPUT main.toc
-INPUT .\Capitoli\0-Richiami_di_elettrofisiologia.tex
-INPUT .\Capitoli\0-Richiami_di_elettrofisiologia.tex
-INPUT .\Capitoli\0-Richiami_di_elettrofisiologia.tex
-INPUT .\Capitoli\0-Richiami_di_elettrofisiologia.tex
-INPUT Capitoli\0-Richiami_di_elettrofisiologia.tex
 INPUT D:\Programmi\MiKTeX\fonts\vf\arkandis\universalis\UniversalisADFStd-Bold-lf-t1.vf
 INPUT D:\Programmi\MiKTeX\fonts\tfm\arkandis\universalis\UniversalisADFStd-Bold-lf-t1--base.tfm
 INPUT D:\Programmi\MiKTeX\fonts\tfm\arkandis\universalis\UniversalisADFStd-Bold-lf-t1--lcdfj.tfm
@@ -319,6 +313,12 @@ INPUT D:\Programmi\MiKTeX\fonts\tfm\arkandis\universalis\UniversalisADFStd-Bold-
 INPUT D:\Programmi\MiKTeX\fonts\vf\arkandis\universalis\UniversalisADFStd-Regular-lf-t1.vf
 INPUT D:\Programmi\MiKTeX\fonts\tfm\arkandis\universalis\UniversalisADFStd-Regular-lf-t1--base.tfm
 INPUT D:\Programmi\MiKTeX\fonts\tfm\arkandis\universalis\UniversalisADFStd-Regular-lf-t1--lcdfj.tfm
+OUTPUT main.toc
+INPUT .\Capitoli\0-Richiami_di_elettrofisiologia.tex
+INPUT .\Capitoli\0-Richiami_di_elettrofisiologia.tex
+INPUT .\Capitoli\0-Richiami_di_elettrofisiologia.tex
+INPUT .\Capitoli\0-Richiami_di_elettrofisiologia.tex
+INPUT Capitoli\0-Richiami_di_elettrofisiologia.tex
 INPUT D:\Programmi\MiKTeX\fonts\tfm\arkandis\universalis\UniversalisADFStd-Regular-lf-t1.tfm
 INPUT D:\Programmi\MiKTeX\fonts\tfm\arkandis\universalis\UniversalisADFStd-Bold-lf-t1.tfm
 INPUT D:\Programmi\MiKTeX\tex\latex\universalis\ts1universalisadfstd-lf.fd
@@ -535,6 +535,9 @@ INPUT .\immagini\daticomportamentali.png
 INPUT .\immagini\daticomportamentali.png
 INPUT .\immagini\daticomportamentali.png
 INPUT .\immagini\daticomportamentali.png
+INPUT .\Capitoli\2-Modelli_a_1_compartimento.tex
+INPUT .\Capitoli\2-Modelli_a_1_compartimento.tex
+INPUT Capitoli\2-Modelli_a_1_compartimento.tex
 INPUT .\Capitoli\appendice.tex
 INPUT .\Capitoli\appendice.tex
 INPUT .\Capitoli\appendice.tex

@@ -1,0 +1,83 @@
+\chapter{Introduzione ai modelli elettrici di membrana}
+
+La membrana della cellula nervosa possiede caratteristiche fisiche che regolano il flusso di ioni e che si traducono in proprietà elettriche specifiche, le quali possono essere modellate matematicamente e fisicamente. Le correnti ioniche attraverso la membrana possono essere dovute a trasporti passivi (secondo gradiente), attraverso canali selettivi o non selettivi, oppure a trasporti attivi (contro gradiente) mediati dalle pompe ioniche (es. pompe ATP-asi).
+
+Per modellizzare un neurone, è necessario definire il livello di astrazione. Si parte dal neurone biologico completo, dotato di soma, dendriti e assone ramificati, per passare a schematizzazioni a compartimenti in cui i rami dendritici sono resi come blocchi lineari. Un'ulteriore semplificazione riduce l'albero dendritico a pochi rami principali. Infine, si giunge al \textbf{modello a punto singolo (one-compartment model)}, un'estrema semplificazione in cui il neurone è rappresentato esclusivamente da una sfera (il soma) e si trascura la propagazione spaziale del segnale. In questo modello, tutte le sinapsi contribuiscono alla medesima variabile di membrana e si assume che tutto il neurone abbia lo stesso potenziale elettrico $V$ in ogni istante.
+
+\subsection{Proprietà capacitive e resistive}
+La membrana cellulare può essere descritta tramite elementi circuitali equivalenti. Il doppio strato fosfolipidico funge da isolante, separando le cariche negative interne da quelle positive esterne, e si comporta come un \textbf{condensatore}. La capacità di membrana $C_m$ (in nF) è direttamente proporzionale alla superficie $A$ della membrana. Si definisce pertanto la capacità specifica $c_m = C_m / A$. La variazione della carica nel tempo dà origine alla corrente capacitiva:
+\begin{equation}
+I_c = C_m \frac{dV}{dt}
+\end{equation}
+
+I canali ionici si comportano invece come \textbf{resistenze} (o conduttanze) variabili. La conduttanza $G_m$ (espressa in pS) è anch'essa proporzionale all'area della membrana ($g_m = G_m / A$), mentre la resistenza $R_m$ è inversamente proporzionale all'area ($r_m = R_m A$). I gradienti di concentrazione ionica, mantenuti dalle pompe, generano forze elettromotrici modellabili come \textbf{generatori di tensione}, descritti dall'equazione di Nernst. Il potenziale di Nernst $E_j$ è il potenziale al quale le forze di diffusione e gradienti elettrici si bilanciano per un dato ione $j$.
+
+La corrente di membrana totale (riferita all'unità di superficie $i_m = I_m / A$) è la somma delle correnti dei singoli canali. Alcune conduttanze si considerano fisse e generano le cosiddette \emph{leakage currents} (correnti di perdita), modellate come $i_L = \bar{g}_L (V - E_L)$. Unendole in un circuito equivalente e applicando la legge di Kirchhoff per le correnti in presenza di uno stimolo esterno $i_e$, otteniamo l'equazione di bilancio:
+\begin{equation}
+i_e = i_{Na} + i_K + i_L + i_C
+\end{equation}
+
+\section{Il modello integra-e-spara}
+
+Come sottolineava Einstein, un modello dovrebbe essere "il più semplice possibile, ma non più semplice di così". Il modello \emph{Integrate-and-Fire} (integra-e-spara), proposto da Lapicque nel 1907, incarna questa filosofia: ignora la complessa fisiologia dei canali ionici, modellando il neurone con un semplice circuito RC sotto la soglia e con un meccanismo di ripristino per simulare il potenziale d'azione.
+
+\subsection{Comportamento sotto soglia}
+Quando il potenziale è inferiore al valore di soglia ($V_{th}$), le conduttanze voltaggio-dipendenti vengono trascurate. Il circuito si semplifica e l'equazione differenziale che descrive la membrana diventa:
+\begin{equation}
+\tau_m \frac{dV}{dt} = E_L - V + R_m I_e
+\end{equation}
+dove $\tau_m = R_m C_m$ è la costante di tempo del circuito. In assenza di corrente esterna ($I_e = 0$), il potenziale tende esponenzialmente al potenziale di riposo $E_L$:
+\begin{equation}
+V(t) = E_L + (V_0 - E_L)e^{-t/\tau_m}
+\end{equation}
+
+\subsection{Comportamento sopra soglia e limiti}
+Nel momento $t_i$ in cui $V(t)$ raggiunge la soglia $V_{th}$, il modello assume che venga generato uno \emph{spike} (idealizzato come una delta di Dirac $\delta(t-t_i)$). Immediatamente dopo, il potenziale viene forzato a un valore di \emph{reset} $V_{reset}$ e mantenuto costante per un periodo di refrattarietà $t_{ref}$. 
+
+Sebbene questo modello riproduca bene il comportamento iniziale del neurone (una relazione lineare tra la corrente $I_e$ e la frequenza di sparo), esso fallisce nel descrivere l'adattamento della frequenza di spike (spike frequency adaptation) osservato fisiologicamente. Per superare questo limite, è possibile arricchire il modello introducendo una \textbf{conduttanza inibitoria dinamica} $g_{inh}(t)$ che aumenta dopo ogni spike e decade esponenzialmente, simulando così sia la refrattarietà relativa sia l'adattamento della frequenza a stimolazioni continue.
+
+\section{Modello di Hodgkin e Huxley}
+
+Per una fedeltà fisiologica maggiore, si ricorre al modello sviluppato da Hodgkin e Huxley nel 1952. Studiando l'assone gigante di calamaro, essi formularono equazioni che descrivono dinamicamente l'apertura e la chiusura dei canali ionici per il Sodio ($Na^+$) e il Potassio ($K^+$). Per isolare le correnti ed evitare la mutua interazione tra apertura dei canali e variazioni del potenziale, utilizzarono la tecnica del \textbf{voltage clamp}, che mantiene il potenziale di membrana a un valore costante di comando ($V_{cmd}$) iniettando una corrente compensatoria, rendendo possibile misurare l'esatta corrente ionica transmembranaria.
+
+\subsection{Conduttanze voltaggio-dipendenti}
+Nel modello di H\&H, la conduttanza per un dato ione dipende da una conduttanza massima $\bar{g}$ moltiplicata per la probabilità che i canali siano aperti.
+Per il potassio, il canale presenta 4 \emph{gate} identici, da cui la probabilità di apertura $P_K = n^4$. La variabile di attivazione $n$ evolve secondo la legge:
+\begin{equation}
+\frac{dn}{dt} = \alpha_n(V)(1-n) - \beta_n(V)n = \frac{n_\infty(V) - n}{\tau_n(V)}
+\end{equation}
+dove $\alpha_n$ e $\beta_n$ sono i tassi voltaggio-dipendenti di apertura e chiusura. 
+
+Per il sodio, il canale possiede un meccanismo combinato di attivazione e inattivazione, per cui la probabilità di apertura è $P_{Na} = m^3 h$. Le variabili $m$ (attivazione) e $h$ (inattivazione) seguono equazioni differenziali del primo ordine analoghe a quella di $n$.
+
+\subsection{Generazione del potenziale d'azione}
+L'equazione completa del modello H\&H è:
+\begin{equation}
+c_m \frac{dV}{dt} = -\left[ \bar{g}_L(V-E_L) + \bar{g}_K n^4(V-E_K) + \bar{g}_{Na} m^3 h(V-E_{Na}) \right] + \frac{I_e}{A}
+\end{equation}
+
+La dinamica del potenziale d'azione si spiega tramite il gioco incrociato di queste variabili. Una iniziale depolarizzazione causa un rapido incremento di $m$ (apertura dei canali $Na^+$), creando un \emph{feedback positivo} e un massiccio afflusso di ioni $Na^+$ (picco di depolarizzazione). Successivamente, la variabile $h$ inizia a diminuire (inattivazione dei canali del sodio) mentre la variabile $n$, più lenta, aumenta (apertura dei canali $K^+$). Questo porta all'uscita di ioni potassio, un \emph{feedback negativo} che ripolarizza e temporaneamente iperpolarizza la membrana, fino al ripristino delle condizioni di riposo.
+
+\section{Modello delle correnti sinaptiche}
+
+I modelli visti finora descrivono l'attività intrinseca, ma i neuroni in una rete comunicano attraverso \textbf{sinapsi chimiche}. In queste, il potenziale d'azione presinaptico innesca il rilascio di neurotrasmettitore, che si lega a recettori (ionotropici o metabotropici) sulla membrana postsinaptica, causando l'apertura di canali chimicamente controllati (non voltaggio-dipendenti).
+
+La conduttanza sinaptica è modellata come $g_s(t) = \bar{g}_s \cdot P(t)$, dove $P(t) = P_{rel} \cdot P_s(t)$. 
+$P_{rel}$ rappresenta la probabilità presinaptica di rilascio del neurotrasmettitore. Sebbene spesso considerata costante, l'attività ripetuta può causare plasticità a breve termine:
+\begin{itemize}
+    \item \textbf{Depressione sinaptica}: $P_{rel}$ diminuisce (es. $P_{rel, nuovo} = f_D \cdot P_{rel}$ con $f_D < 1$) a causa dell'esaurimento delle vescicole.
+    \item \textbf{Facilitazione sinaptica}: $P_{rel}$ aumenta (es. $P_{rel, nuovo} = P_{rel} + f_F(1 - P_{rel})$) per l'accumulo di calcio residuo.
+\end{itemize}
+
+La variabile $P_s(t)$ descrive la probabilità postsinaptica di apertura del canale nel tempo. Essa si innalza per via del tasso di legame del neurotrasmettitore e decade a causa del distacco o degradazione dello stesso. In letteratura sono utilizzate diverse funzioni fenomenologiche per modellarla:
+\begin{enumerate}
+    \item \textbf{Funzione esponenziale} ($P_s = P_{max} e^{-t/\tau_s}$): assume salita istantanea e decadimento esponenziale.
+    \item \textbf{Funzione alfa} ($P_s = P_{max} \frac{t}{\tau_s} e^{1-t/\tau_s}$): modellizza una salita e discesa graduale governate dalla stessa costante di tempo.
+    \item \textbf{Differenza di esponenziali} ($P_s = P_{max} B (e^{-t/\tau_1} - e^{-t/\tau_2})$): altamente flessibile, utilizza due costanti di tempo separate per attivazione e disattivazione.
+\end{enumerate}
+
+Le correnti sinaptiche possono essere eccitatorie (depolarizzanti, verso $E_{exc}$) o inibitorie (iperpolarizzanti, verso $E_{inh}$). La corrente sinaptica totale $i_s$ si calcola come:
+\begin{equation}
+i_s = \bar{g}_{exc} P_{exc}(V - E_{exc}) + \bar{g}_{inh} P_{inh}(V - E_{inh})
+\end{equation}
+Queste correnti vengono infine aggiunte nell'equazione di bilancio generale del modello (che sia esso H\&H o Integra-e-Spara) per includere l'influenza del network neurale sulla singola cellula.

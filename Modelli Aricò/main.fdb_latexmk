@@ -1,9 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1792951870.38219 "d:/Lorenzo/Desktop/Università/Magistrale/1° anno/Modelli/Modelli Latex/Modelli Aricò/main.tex" "main.pdf" "main" 1792951873.30163 0
+["pdflatex"] 1793005895.89334 "d:/Lorenzo/Desktop/Università/Magistrale/1° anno/Modelli/Modelli Latex/Modelli Aricò/main.tex" "main.pdf" "main" 1793005898.80245 0
   "C:/Users/Lorenzo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1792951507 378199 296937178919f6134db2b5bff7eef6ad ""
   "C:/Users/Lorenzo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1791281334 13390644 a4c5b7ff06820cefc710eac5e9015397 ""
   "Capitoli/0-Richiami_di_elettrofisiologia.tex" 1791293157 24172 0579217fb79082b65bcceadcb417bdf1 ""
   "Capitoli/1-Modelli_di_Encoding_e_Decoding_Neuronale.tex" 1792085246 19189 fec4002bf0a6c38912afef584e2409da ""
+  "Capitoli/2-Modelli_a_1_compartimento.tex" 1793005834 9835 6509a3aa39e3a6338b0fd7096e01bcbc ""
   "Capitoli/appendice.tex" 1791293157 123 09bf0526b2d6a45d989421cb5d689baf ""
   "D:/Programmi/MiKTeX/fonts/enc/dvips/universalis/unvsl_fe7xck.enc" 1398992164 3336 f7cec7f56b21ee58cf5236daa4923cf7 ""
   "D:/Programmi/MiKTeX/fonts/enc/dvips/universalis/unvsl_sjpjw4.enc" 1398992164 2947 e80b60b99205c2dd3127da8a76c58280 ""
@@ -171,7 +172,7 @@
   "D:/Programmi/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "D:/Programmi/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "D:/Programmi/MiKTeX/tex/latex/yfonts/yfonts.sty" 1554482334 4491 ce392d5b8dc51027fcbcd62c6c980bc3 ""
-  "d:/Lorenzo/Desktop/Università/Magistrale/1° anno/Modelli/Modelli Latex/Modelli Aricò/main.tex" 1792951866 2116 37576e5c315586db9247817907bbb283 ""
+  "d:/Lorenzo/Desktop/Università/Magistrale/1° anno/Modelli/Modelli Latex/Modelli Aricò/main.tex" 1793005892 2165 1ef5b6a4a9bde4352992647ca950c5a7 ""
   "immagini/daticomportamentali.png" 1792085246 125651 ff6f935d74080f5b45b936b776b5b6ae ""
   "immagini/decodingneuronale.png" 1792085246 200775 b93bd4cefba9a8de9ffbfeba5aad9893 ""
   "immagini/depolarizzazione.png" 1791293157 195614 72fbd86b0335b3ecd954cffc1b250213 ""
@@ -196,10 +197,10 @@
   "immagini/sinapsichimica.png" 1791293157 559886 518d8698662c315cee9e627fb9501390 ""
   "immagini/sinapsielettrica.png" 1791293157 660372 e422e8ea71330b34493c9789601433f7 ""
   "immagini/tuningintro.png" 1792085246 205042 6fd02b37aa26b5be9c6129948a47b98e ""
-  "main.aux" 1792951872 6574 baf9038715519df23d47affa0c40b229 "pdflatex"
-  "main.out" 1792951872 6936 57b2735f37bdf838e5701e91e3ef7538 "pdflatex"
-  "main.tex" 1792951866 2116 37576e5c315586db9247817907bbb283 ""
-  "main.toc" 1792951872 3229 9c1d58a6d450ae301732fa46aca18b97 "pdflatex"
+  "main.aux" 1793005898 7909 22e2cc8448c4a34a172ef1aecdabab6f "pdflatex"
+  "main.out" 1793005898 8992 63ec6da93713d9d6eb715fcdf3c8dc49 "pdflatex"
+  "main.tex" 1793005892 2165 1ef5b6a4a9bde4352992647ca950c5a7 ""
+  "main.toc" 1793005898 4119 4d7ce716211387267963c58d55462e9b "pdflatex"
   (generated)
   "main.aux"
   "main.log"
