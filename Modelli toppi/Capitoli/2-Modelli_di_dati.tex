@@ -68,13 +68,13 @@ Questi modelli sono tipici dei sistemi fisiologici di regolazione (omeostasi), r
         \label{fig:pupilla}
     \end{figure}
     \item \textbf{Regolazione del glucosio:} In condizioni di salute, l'insulina secreta dal pancreas regola il glucosio. Nei soggetti con diabete di tipo 1, le cellule beta pancreatiche perdono la loro funzione. Il sistema di controllo fisiologico viene meno e deve essere sostituito da un "controllore esterno" (infusione di insulina esogena), concetto alla base dello sviluppo del \textit{pancreas artificiale}.
-    \begin{figure}[h]
+    \begin{figure}[h!]
         \centering
         \includegraphics[width=0.5\textwidth]{Immagini/glucosio.png}
         \label{fig:glucosio}
     \end{figure}
 \end{itemize}
-
+\newpage
 \subsection{5. Modelli input-output: Deconvoluzione}
 La stima della risposta impulsiva è fondamentale per caratterizzare compiutamente un sistema lineare. Considerando un sistema LTI, l'uscita $c(t)$ in base all'ingresso $u(t)$ è data dall'\textbf{integrale di convoluzione}:
 \begin{equation}
@@ -92,6 +92,7 @@ L'uso dell'integrale di convoluzione si distingue in due branche:
     \includegraphics[width=0.8\textwidth]{Immagini/deconvoluzione.png}
     \label{fig:deconvoluzione}
 \end{figure}
+\newpage
 \subsubsection*{Esempio clinico di Deconvoluzione: Secrezione di Insulina}
 Per stimare il tasso di secrezione dell'insulina da parte del pancreas, si misurano i dati di concentrazione plasmatica del \textbf{C-peptide} (un sottoprodotto della sintesi dell'insulina).
 Si calcola innanzitutto la risposta impulsiva $g(t)$ del C-peptide somministrando un bolo ed effettuando campionamenti frequenti (la curva è approssimata tipicamente come somma di due esponenziali). Successivamente, misurando la concentrazione plasmatica nel tempo e applicando l'operazione matematica di \textbf{deconvoluzione}, si può ricostruire con precisione l'andamento pulsatile (ultradiano) del tasso di secrezione endogena di insulina ($u(t)$ espresso in pmol/min), sia in condizioni basali che durante un test endovenoso di tolleranza al glucosio (IVGTT).

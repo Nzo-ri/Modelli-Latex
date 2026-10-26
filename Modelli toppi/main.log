@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  22 OCT 2026 19:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  25 OCT 2026 19:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
 (D:\Programmi\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
-(D:\Programmi\MiKTeX\tex/latex/base\size10.clo
-File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(D:\Programmi\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count276
 \c@chapter=\count277
@@ -875,7 +875,34 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-) (D:\Programmi\MiKTeX\tex/latex/caption\caption.sty
+) (D:\Programmi\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+) (D:\Programmi\MiKTeX\tex/latex/universalis\universalis.sty
+Package: universalis 2022/09/25 (Bob Tennent) Supports Universalis fonts for all LaTeX engines.
+ (D:\Programmi\MiKTeX\tex/generic/iftex\ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (D:\Programmi\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (D:\Programmi\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (D:\Programmi\MiKTeX\tex/generic/xkeyval\xkeyval.tex (D:\Programmi\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks32
+\XKV@tempa@toks=\toks33
+)
+\XKV@depth=\count332
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (D:\Programmi\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (D:\Programmi\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+) (D:\Programmi\MiKTeX\tex/latex/fontaxes\fontaxes.sty
+Package: fontaxes 2026-01-02 v2.0.2 Font selection axes (deprecated)
+Applying: [2024-11-01] Use figureversions if present on input line 74.
+ (D:\Programmi\MiKTeX\tex/latex/figureversions\figureversions.sty
+Package: figureversions 2025-04-29 v1.0.1 Figure versions
+)
+Already applied: [0000-00-00] Fall back to v1 on input line 76.
+)) (D:\Programmi\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (D:\Programmi\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
@@ -889,16 +916,16 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@hangindent=\dimen273
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count332
-\c@continuedfloat=\count333
+\c@caption@flags=\count333
+\c@continuedfloat=\count334
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 ) (D:\Programmi\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count334
+\c@subfigure=\count335
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count335
+\c@subtable=\count336
 ) (D:\Programmi\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen274
@@ -911,12 +938,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen281
 \cmidrulekern=\dimen282
 \defaultaddspace=\dimen283
-\@cmidla=\count336
-\@cmidlb=\count337
+\@cmidla=\count337
+\@cmidlb=\count338
 \@aboverulesep=\dimen284
 \@belowrulesep=\dimen285
-\@thisruleclass=\count338
-\@lastruleclass=\count339
+\@thisruleclass=\count339
+\@lastruleclass=\count340
 \@thisrulewidth=\dimen286
 ) (D:\Programmi\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
@@ -925,7 +952,7 @@ Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
 \col@sep=\dimen287
 \ar@mcellbox=\box59
 \extrarowheight=\dimen288
-\NC@list=\toks32
+\NC@list=\toks34
 \extratabsurround=\skip71
 \backup@length=\skip72
 \ar@cellbox=\box60
@@ -935,19 +962,11 @@ Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
 \TX@old@col=\dimen291
 \TX@target=\dimen292
 \TX@delta=\dimen293
-\TX@cols=\count340
-\TX@ftn=\toks33
+\TX@cols=\count341
+\TX@ftn=\toks35
 ) (D:\Programmi\MiKTeX\tex/latex/adjustbox\adjustbox.sty
 Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
- (D:\Programmi\MiKTeX\tex/latex/xkeyval\xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (D:\Programmi\MiKTeX\tex/generic/xkeyval\xkeyval.tex (D:\Programmi\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks34
-\XKV@tempa@toks=\toks35
-)
-\XKV@depth=\count341
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (D:\Programmi\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+ (D:\Programmi\MiKTeX\tex/latex/adjustbox\adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
 ) (D:\Programmi\MiKTeX\tex/latex/adjustbox\trimclip.sty
 Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
@@ -1014,9 +1033,6 @@ File: listings.cfg 2025/11/14 1.11b listings configuration
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
  (D:\Programmi\MiKTeX\tex/latex/matlab-prettifier\matlab-prettifier.sty
 Package: matlab-prettifier 2014/06/19 v0.3 A package for prettyprinting Matlab source code
- (D:\Programmi\MiKTeX\tex/latex/base\textcomp.sty
-Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-)
 \netBracketCount@mlpr=\count353
 \blkLvl@mlpr=\count354
 \blkLvlAtClassdef@mlpr=\count355
@@ -1027,37 +1043,44 @@ Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 ) (D:\Programmi\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 73.
+Package hyperref Info: Option `colorlinks' set `true' on input line 76.
  (D:\Programmi\MiKTeX\tex/latex/lipsum\lipsum.sty
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count356
 \l__lipsum_a_int=\count357
 \l__lipsum_b_int=\count358
- (D:\Programmi\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (main.aux)
+ (D:\Programmi\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
+LaTeX Font Info:    Trying to load font information for T1+UniversalisADFStd-LF on input line 83.
+ (D:\Programmi\MiKTeX\tex/latex/universalis\t1universalisadfstd-lf.fd
+File: T1UniversalisADFStd-LF.fd 2014/05/01 (autoinst) Font definitions for T1/UniversalisADFStd-LF.
+)
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 83.
+ (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for LY/yfrak/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for LYG/ygoth/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for LY/yfrak/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for LYG/ygoth/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
  (D:\Programmi\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count359
@@ -1077,27 +1100,18 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (D:\Programmi\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \it@ocap on input line 80.
-LaTeX Info: Redefining \it@ccap on input line 80.
-
-
-File italian.ldf warning: 
-italian.ldf    With OT1 encoding guillemets are poorly faked
-italian.ldf    Use T1 encoding
-italian.ldf    or specify a font with command \CaporaliFrom
-italian.ldf    See the documentation concerning the babel-italian typesetting
-italian.ldf    on input line 80.
-
+LaTeX Info: Redefining \it@ocap on input line 83.
+LaTeX Info: Redefining \it@ccap on input line 83.
 Package microtype Info: Patching varwidth to enable character protrusion.
 \MT@vwid@leftmargin=\dimen315
 \MT@vwid@rightmargin=\dimen316
-LaTeX Info: Redefining \microtypecontext on input line 80.
-Package microtype Info: Applying patch `item' on input line 80.
-Package microtype Info: Applying patch `toc' on input line 80.
-Package microtype Info: Applying patch `eqnum' on input line 80.
-Package microtype Info: Applying patch `footnote' on input line 80.
-Package microtype Info: Applying patch `verbatim' on input line 80.
-LaTeX Info: Redefining \microtypesetup on input line 80.
+LaTeX Info: Redefining \microtypecontext on input line 83.
+Package microtype Info: Applying patch `item' on input line 83.
+Package microtype Info: Applying patch `toc' on input line 83.
+Package microtype Info: Applying patch `eqnum' on input line 83.
+Package microtype Info: Applying patch `footnote' on input line 83.
+Package microtype Info: Applying patch `verbatim' on input line 83.
+LaTeX Info: Redefining \microtypesetup on input line 83.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1108,13 +1122,14 @@ Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-(D:\Programmi\MiKTeX\tex/latex/microtype\mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `UniversalisADFStd-LF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-Package chemgreek Info: Activating mapping `default' on line 80.
+Package chemgreek Info: Activating mapping `default' on line 83.
 
-Package hyperref Info: Link coloring ON on input line 80.
+Package hyperref Info: Link coloring ON on input line 83.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -1139,12 +1154,12 @@ Package hyperref Info: Link coloring ON on input line 80.
 * \topmargin=-23.91173pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1154,18 +1169,36 @@ Package hyperref Info: Link coloring ON on input line 80.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\c@mv@tabular=\count365
+\c@mv@boldtabular=\count366
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count365
+\c@lstlisting=\count367
 Package babel Info: Main language set to 'italian'.
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
+(Font)              scaled to size 17.28pt on input line 87.
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 87.
 [1
 
-{C:/Users/Lorenzo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.toc
+{C:/Users/Lorenzo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/Programmi/MiKTeX/fonts/enc/dvips/universalis/unvsl_sjpjw4.enc}]
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
+(Font)              scaled to size 20.74pt on input line 87.
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/b/n' will be
+(Font)              scaled to size 20.74pt on input line 87.
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/b/n' will be
+(Font)              scaled to size 24.88pt on input line 87.
+ (main.toc
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/b/n' will be
+(Font)              scaled to size 10.95pt on input line 3.
+ (D:\Programmi\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 ...nziazione cellulare}{22}{subsection.4.5.1}
+l.40 ...mbio sangue-tessuti}{21}{subsection.4.3.1}
                                                   % [1
 
 ])
@@ -1174,52 +1207,68 @@ l.44 ...nziazione cellulare}{22}{subsection.4.5.1}
 
  (Capitoli/0-introduzione.tex [2]
 Capitolo 1.
-[3
+LaTeX Font Info:    Trying to load font information for TS1+UniversalisADFStd-LF on input line 4.
+(D:\Programmi\MiKTeX\tex/latex/universalis\ts1universalisadfstd-lf.fd
+File: TS1UniversalisADFStd-LF.fd 2014/05/01 (autoinst) Font definitions for TS1/UniversalisADFStd-LF.
+)
+LaTeX Font Info:    Font shape `TS1/UniversalisADFStd-LF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 4.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `UniversalisADFStd-LF' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/b/n' will be
+(Font)              scaled to size 17.28pt on input line 10.
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
+(Font)              scaled to size 14.4pt on input line 26.
+ [3
 
-] [4]
-<immagini/enzima.png, id=329, 855.195pt x 331.2375pt>
+{D:/Programmi/MiKTeX/fonts/enc/dvips/universalis/unvsl_fe7xck.enc}] [4]
+<immagini/enzima.png, id=327, 855.195pt x 331.2375pt>
 File: immagini/enzima.png Graphic file (type png)
 <use immagini/enzima.png>
 Package pdftex.def Info: immagini/enzima.png  used on input line 73.
 (pdftex.def)             Requested size: 332.68385pt x 128.85356pt.
- [5 <./immagini/enzima.png>]) (Capitoli/1-introduzione_alla_modellizzazione.tex [6]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5]) (Capitoli/1-introduzione_alla_modellizzazione.tex [6 <./immagini/enzima.png>]
 Capitolo 2.
-<immagini/tipidimodelli.png, id=343, 813.0375pt x 780.9175pt>
+<immagini/tipidimodelli.png, id=341, 813.0375pt x 780.9175pt>
 File: immagini/tipidimodelli.png Graphic file (type png)
 <use immagini/tipidimodelli.png>
 Package pdftex.def Info: immagini/tipidimodelli.png  used on input line 5.
 (pdftex.def)             Requested size: 221.78923pt x 213.01921pt.
-
-Underfull \hbox (badness 1430) in paragraph at lines 13--14
-[]\OT1/cmr/bx/n/10 (+20) Modello ma-te-ma-ti-co\OT1/cmr/m/n/10 (+20) , in-ve-ce, for-ma-
- []
-
-<immagini/itipidimodello.png, id=344, 1513.655pt x 409.53pt>
+<immagini/itipidimodello.png, id=342, 1513.655pt x 409.53pt>
 File: immagini/itipidimodello.png Graphic file (type png)
 <use immagini/itipidimodello.png>
 Package pdftex.def Info: immagini/itipidimodello.png  used on input line 29.
 (pdftex.def)             Requested size: 443.57848pt x 120.01044pt.
 [7
 
- <./immagini/tipidimodelli.png>] [8 <./immagini/itipidimodello.png>]
-<immagini/modellodatidiagramma.png, id=359, 448.67625pt x 281.05pt>
+ <./immagini/tipidimodelli.png>]
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/it' will be
+(Font)              scaled to size 10.95pt on input line 37.
+ [8 <./immagini/itipidimodello.png>]
+<immagini/modellodatidiagramma.png, id=357, 448.67625pt x 281.05pt>
 File: immagini/modellodatidiagramma.png Graphic file (type png)
 <use immagini/modellodatidiagramma.png>
 Package pdftex.def Info: immagini/modellodatidiagramma.png  used on input line 56.
 (pdftex.def)             Requested size: 221.78923pt x 138.92934pt.
  [9 <./immagini/modellodatidiagramma.png>]
-<immagini/modellodelsistema.png, id=369, 466.74374pt x 238.8925pt>
+<immagini/modellodelsistema.png, id=364, 466.74374pt x 238.8925pt>
 File: immagini/modellodelsistema.png Graphic file (type png)
 <use immagini/modellodelsistema.png>
 Package pdftex.def Info: immagini/modellodelsistema.png  used on input line 72.
 (pdftex.def)             Requested size: 243.96951pt x 124.87001pt.
  [10 <./immagini/modellodelsistema.png>]
-<immagini/indentificazionedelmodello.png, id=378, 541.02126pt x 388.45125pt>
+<immagini/indentificazionedelmodello.png, id=376, 541.02126pt x 388.45125pt>
 File: immagini/indentificazionedelmodello.png Graphic file (type png)
 <use immagini/indentificazionedelmodello.png>
 Package pdftex.def Info: immagini/indentificazionedelmodello.png  used on input line 87.
 (pdftex.def)             Requested size: 221.78923pt x 159.24232pt.
-<immagini/validazionedelmodello.png, id=379, 582.175pt x 573.14125pt>
+<immagini/validazionedelmodello.png, id=377, 582.175pt x 573.14125pt>
 File: immagini/validazionedelmodello.png Graphic file (type png)
 <use immagini/validazionedelmodello.png>
 Package pdftex.def Info: immagini/validazionedelmodello.png  used on input line 107.
@@ -1230,104 +1279,117 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./immagini/indentificazionedelmodello.png>]) (Capitoli/2-Modelli_di_dati.tex [12 <./immagini/validazionedelmodello.png>]
 Capitolo 3.
-<Immagini/temperaturacorporea.png, id=393, 524.71031pt x 325.215pt>
+[13
+
+]
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 20.
+LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 20.
+<Immagini/temperaturacorporea.png, id=398, 524.71031pt x 325.215pt>
 File: Immagini/temperaturacorporea.png Graphic file (type png)
 <use Immagini/temperaturacorporea.png>
 Package pdftex.def Info: Immagini/temperaturacorporea.png  used on input line 23.
 (pdftex.def)             Requested size: 221.78923pt x 137.46274pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13
-
-]
-<Immagini/datiintestino.png, id=405, 296.60812pt x 418.56375pt>
+<Immagini/datiintestino.png, id=399, 296.60812pt x 418.56375pt>
 File: Immagini/datiintestino.png Graphic file (type png)
 <use Immagini/datiintestino.png>
 Package pdftex.def Info: Immagini/datiintestino.png  used on input line 34.
 (pdftex.def)             Requested size: 177.42868pt x 250.39293pt.
-<Immagini/sistemaintestino.png, id=406, 402.75468pt x 552.56438pt>
+<Immagini/sistemaintestino.png, id=400, 402.75468pt x 552.56438pt>
 File: Immagini/sistemaintestino.png Graphic file (type png)
 <use Immagini/sistemaintestino.png>
 Package pdftex.def Info: Immagini/sistemaintestino.png  used on input line 35.
 (pdftex.def)             Requested size: 177.42868pt x 243.42416pt.
- [14 <./Immagini/temperaturacorporea.png> <./Immagini/datiintestino.png> <./Immagini/sistemaintestino.png>]
-<Immagini/coerenza.png, id=417, 505.89pt x 379.4175pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14 <./Immagini/temperaturacorporea.png>]
+<Immagini/coerenza.png, id=414, 505.89pt x 379.4175pt>
 File: Immagini/coerenza.png Graphic file (type png)
 <use Immagini/coerenza.png>
 Package pdftex.def Info: Immagini/coerenza.png  used on input line 52.
 (pdftex.def)             Requested size: 266.14978pt x 199.614pt.
- [15 <./Immagini/coerenza.png>]
-<Immagini/pupilla.png, id=426, 583.42969pt x 126.4725pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Immagini/pupilla.png, id=415, 583.42969pt x 126.4725pt>
 File: Immagini/pupilla.png Graphic file (type png)
 <use Immagini/pupilla.png>
 Package pdftex.def Info: Immagini/pupilla.png  used on input line 67.
 (pdftex.def)             Requested size: 354.86412pt x 76.9281pt.
-<Immagini/glucosio.png, id=427, 405.76593pt x 299.61937pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Immagini/glucosio.png, id=416, 405.76593pt x 299.61937pt>
 File: Immagini/glucosio.png Graphic file (type png)
 <use Immagini/glucosio.png>
 Package pdftex.def Info: Immagini/glucosio.png  used on input line 73.
 (pdftex.def)             Requested size: 221.78923pt x 163.77164pt.
- [16 <./Immagini/pupilla.png> <./Immagini/glucosio.png>]
-<Immagini/deconvoluzione.png, id=439, 502.87875pt x 149.05687pt>
+[15 <./Immagini/datiintestino.png> <./Immagini/sistemaintestino.png>] [16 <./Immagini/coerenza.png> <./Immagini/pupilla.png> <./Immagini/glucosio.png>]
+<Immagini/deconvoluzione.png, id=435, 502.87875pt x 149.05687pt>
 File: Immagini/deconvoluzione.png Graphic file (type png)
 <use Immagini/deconvoluzione.png>
 Package pdftex.def Info: Immagini/deconvoluzione.png  used on input line 92.
 (pdftex.def)             Requested size: 354.86412pt x 105.1829pt.
-<Immagini/concentrazionecpeptide.png, id=440, 291.33844pt x 330.48468pt>
+ [17 <./Immagini/deconvoluzione.png>]
+<Immagini/concentrazionecpeptide.png, id=445, 291.33844pt x 330.48468pt>
 File: Immagini/concentrazionecpeptide.png Graphic file (type png)
 <use Immagini/concentrazionecpeptide.png>
-Package pdftex.def Info: Immagini/concentrazionecpeptide.png  used on input line 100.
+Package pdftex.def Info: Immagini/concentrazionecpeptide.png  used on input line 101.
 (pdftex.def)             Requested size: 155.25517pt x 176.11922pt.
-<Immagini/decovoluzione2.png, id=441, 508.90125pt x 318.43968pt>
+<Immagini/decovoluzione2.png, id=446, 508.90125pt x 318.43968pt>
 File: Immagini/decovoluzione2.png Graphic file (type png)
 <use Immagini/decovoluzione2.png>
-Package pdftex.def Info: Immagini/decovoluzione2.png  used on input line 101.
+Package pdftex.def Info: Immagini/decovoluzione2.png  used on input line 102.
 (pdftex.def)             Requested size: 266.14978pt x 166.5468pt.
-) (Capitoli/3-Modelli_di_sistemi.tex [17 <./Immagini/deconvoluzione.png> <./Immagini/concentrazionecpeptide.png> <./Immagini/decovoluzione2.png>]
+) (Capitoli/3-Modelli_di_sistemi.tex [18 <./Immagini/concentrazionecpeptide.png> <./Immagini/decovoluzione2.png>]
 Capitolo 4.
-[18
+[19
 
-] [19]
-<Immagini/modellocapillaresingolo.png, id=467, 344.03531pt x 91.09032pt>
+] [20]
+<Immagini/modellocapillaresingolo.png, id=469, 344.03531pt x 91.09032pt>
 File: Immagini/modellocapillaresingolo.png Graphic file (type png)
 <use Immagini/modellocapillaresingolo.png>
 Package pdftex.def Info: Immagini/modellocapillaresingolo.png  used on input line 82.
 (pdftex.def)             Requested size: 354.86412pt x 93.95747pt.
- [20 <./Immagini/modellocapillaresingolo.png>]
-<Immagini/modellocapillaredoppio.png, id=475, 353.06906pt x 150.5625pt>
+ [21 <./Immagini/modellocapillaresingolo.png>]
+<Immagini/modellocapillaredoppio.png, id=477, 353.06906pt x 150.5625pt>
 File: Immagini/modellocapillaredoppio.png Graphic file (type png)
 <use Immagini/modellocapillaredoppio.png>
 Package pdftex.def Info: Immagini/modellocapillaredoppio.png  used on input line 94.
 (pdftex.def)             Requested size: 310.50357pt x 132.41269pt.
-<Immagini/modellocapillaretriplo.png, id=476, 350.05782pt x 201.00093pt>
+<Immagini/modellocapillaretriplo.png, id=478, 350.05782pt x 201.00093pt>
 File: Immagini/modellocapillaretriplo.png Graphic file (type png)
 <use Immagini/modellocapillaretriplo.png>
 Package pdftex.def Info: Immagini/modellocapillaretriplo.png  used on input line 106.
 (pdftex.def)             Requested size: 310.50357pt x 178.30138pt.
- [21 <./Immagini/modellocapillaredoppio.png> <./Immagini/modellocapillaretriplo.png>]
-<Immagini/elastanzadellecamere.png, id=489, 392.21532pt x 146.79843pt>
+ [22 <./Immagini/modellocapillaredoppio.png> <./Immagini/modellocapillaretriplo.png>]
+<Immagini/elastanzadellecamere.png, id=491, 392.21532pt x 146.79843pt>
 File: Immagini/elastanzadellecamere.png Graphic file (type png)
 <use Immagini/elastanzadellecamere.png>
 Package pdftex.def Info: Immagini/elastanzadellecamere.png  used on input line 124.
-(pdftex.def)             Requested size: 266.14978pt x 99.62001pt.
-) (Capitoli/4-Identificazione_del_modello.tex [22 <./Immagini/elastanzadellecamere.png>]
+(pdftex.def)             Requested size: 310.50357pt x 116.2226pt.
+ [23 <./Immagini/elastanzadellecamere.png>]) (Capitoli/4-Identificazione_del_modello.tex [24]
 Capitolo 5.
-[23
+[25
 
 ]
-<immagini/segnali_di_test_transitori.png, id=502, 703.62875pt x 383.4325pt>
+<immagini/segnali_di_test_transitori.png, id=509, 703.62875pt x 383.4325pt>
 File: immagini/segnali_di_test_transitori.png Graphic file (type png)
 <use immagini/segnali_di_test_transitori.png>
 Package pdftex.def Info: immagini/segnali_di_test_transitori.png  used on input line 21.
 (pdftex.def)             Requested size: 221.78923pt x 120.85793pt.
-<immagini/segnali di test armonici.png, id=503, 839.135pt x 127.47626pt>
+ [26 <./immagini/segnali_di_test_transitori.png>]
+<immagini/segnali di test armonici.png, id=519, 839.135pt x 127.47626pt>
 File: immagini/segnali di test armonici.png Graphic file (type png)
 <use immagini/segnali di test armonici.png>
 Package pdftex.def Info: immagini/segnali di test armonici.png  used on input line 39.
 (pdftex.def)             Requested size: 310.50357pt x 47.16936pt.
- [24 <./immagini/segnali_di_test_transitori.png>] [25 <./immagini/segnali di test armonici.png>]
-<immagini/sorgenti di errore.png, id=520, 711.65875pt x 464.73625pt>
+ [27 <./immagini/segnali di test armonici.png>]
+<immagini/sorgenti di errore.png, id=526, 711.65875pt x 464.73625pt>
 File: immagini/sorgenti di errore.png Graphic file (type png)
 <use immagini/sorgenti di errore.png>
 Package pdftex.def Info: immagini/sorgenti di errore.png  used on input line 60.
@@ -1345,63 +1407,67 @@ Package wrapfig Warning: Stationary wrapfigure forced to float on input line 66.
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 67.
 
-[26 <./immagini/sorgenti di errore.png>]
-Overfull \hbox (2.73619pt too wide) in paragraph at lines 82--83
-[]\OT1/cmr/m/n/10 (-20) Prima di lan-cia-re al-go-rit-mi per la sti-ma nu-me-ri-ca, oc-cor-re ne-ces-sa-ria-men-te ve-ri-fi-ca-re l'\OT1/cmr/bx/n/10 (-20) identificabilit^^Ra
+[28 <./immagini/sorgenti di errore.png>]
+Overfull \hbox (15.29118pt too wide) in paragraph at lines 82--83
+[]\T1/UniversalisADFStd-LF/m/n/10.95 (-20) Prima di lan-cia-re al-go-rit-mi per la sti-ma nu-me-ri-ca, oc-cor-re ne-ces-sa-ria-men-te ve-ri-fi-ca-re l'\T1/UniversalisADFStd-LF/b/n/10.95 (-20) identificabilità
  []
 
-) (Capitoli/5-Modello_parametrico.tex [27]
+) (Capitoli/5-Modello_parametrico.tex [29]
 Capitolo 6.
-<Immagini/sistemafisiologico.png, id=534, 451.6875pt x 115.93312pt>
+<Immagini/sistemafisiologico.png, id=540, 451.6875pt x 115.93312pt>
 File: Immagini/sistemafisiologico.png Graphic file (type png)
 <use Immagini/sistemafisiologico.png>
 Package pdftex.def Info: Immagini/sistemafisiologico.png  used on input line 18.
 (pdftex.def)             Requested size: 443.57848pt x 113.85779pt.
-<immagini/modellofarmaco.png, id=535, 470.50781pt x 223.58531pt>
+<immagini/modellofarmaco.png, id=541, 470.50781pt x 223.58531pt>
 File: immagini/modellofarmaco.png Graphic file (type png)
 <use immagini/modellofarmaco.png>
 Package pdftex.def Info: immagini/modellofarmaco.png  used on input line 26.
 (pdftex.def)             Requested size: 221.78923pt x 105.39555pt.
-[28
+[30
 
  <./Immagini/sistemafisiologico.png>]
-<immagini/modellofarmaco2.png, id=544, 250.68657pt x 176.15813pt>
+<immagini/modellofarmaco2.png, id=551, 250.68657pt x 176.15813pt>
 File: immagini/modellofarmaco2.png Graphic file (type png)
 <use immagini/modellofarmaco2.png>
 Package pdftex.def Info: immagini/modellofarmaco2.png  used on input line 46.
 (pdftex.def)             Requested size: 133.07489pt x 93.51656pt.
- [29 <./immagini/modellofarmaco.png> <./immagini/modellofarmaco2.png>] [30]
-<immagini/esempio1identificazione.png, id=568, 171.64125pt x 179.16937pt>
+ [31 <./immagini/modellofarmaco.png>] [32 <./immagini/modellofarmaco2.png>]
+<immagini/esempio1identificazione.png, id=571, 171.64125pt x 179.16937pt>
 File: immagini/esempio1identificazione.png Graphic file (type png)
 <use immagini/esempio1identificazione.png>
 Package pdftex.def Info: immagini/esempio1identificazione.png  used on input line 108.
 (pdftex.def)             Requested size: 177.42868pt x 185.21085pt.
- [31 <./immagini/esempio1identificazione.png>] [32]
-<immagini/esempio2identificazione.png, id=591, 398.23781pt x 246.1697pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[33] [34 <./immagini/esempio1identificazione.png>] [35]
+<immagini/esempio2identificazione.png, id=606, 398.23781pt x 246.1697pt>
 File: immagini/esempio2identificazione.png Graphic file (type png)
 <use immagini/esempio2identificazione.png>
 Package pdftex.def Info: immagini/esempio2identificazione.png  used on input line 199.
 (pdftex.def)             Requested size: 221.78923pt x 137.09908pt.
-<immagini/graficoesempio2.png, id=592, 167.87718pt x 164.11313pt>
+<immagini/graficoesempio2.png, id=607, 167.87718pt x 164.11313pt>
 File: immagini/graficoesempio2.png Graphic file (type png)
 <use immagini/graficoesempio2.png>
 Package pdftex.def Info: immagini/graficoesempio2.png  used on input line 200.
 (pdftex.def)             Requested size: 133.07489pt x 130.09117pt.
- [33 <./immagini/esempio2identificazione.png> <./immagini/graficoesempio2.png>]
-<immagini/esempio3identificazione.png, id=605, 260.47313pt x 175.40532pt>
+ [36 <./immagini/esempio2identificazione.png> <./immagini/graficoesempio2.png>]
+<immagini/esempio3identificazione.png, id=617, 260.47313pt x 175.40532pt>
 File: immagini/esempio3identificazione.png Graphic file (type png)
 <use immagini/esempio3identificazione.png>
 Package pdftex.def Info: immagini/esempio3identificazione.png  used on input line 224.
 (pdftex.def)             Requested size: 221.78923pt x 149.35483pt.
- [34 <./immagini/esempio3identificazione.png>]
-<immagini/modelloglucosioinsulina.png, id=616, 237.13594pt x 218.31563pt>
+ [37 <./immagini/esempio3identificazione.png>]
+<immagini/modelloglucosioinsulina.png, id=628, 237.13594pt x 218.31563pt>
 File: immagini/modelloglucosioinsulina.png Graphic file (type png)
 <use immagini/modelloglucosioinsulina.png>
 Package pdftex.def Info: immagini/modelloglucosioinsulina.png  used on input line 230.
 (pdftex.def)             Requested size: 221.78923pt x 204.19402pt.
- [35 <./immagini/modelloglucosioinsulina.png>] [36]) (Capitoli/appendice_domande.tex [37]
+ [38 <./immagini/modelloglucosioinsulina.png>] [39]) (Capitoli/appendice_domande.tex [40]
 Appendice A.
-) [38
+) [41
 
 ] (main.aux)
  ***********
@@ -1412,17 +1478,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 9A12E701E82D524ACE9F2E6079CE1158;13008.
  ) 
 Here is how much of TeX's memory you used:
- 20932 strings out of 467392
- 357362 string characters out of 5417708
- 1016661 words of memory out of 5000000
- 49575 multiletter control sequences out of 15000+600000
- 638343 words of font info for 149 fonts, out of 8000000 for 9000
+ 21726 strings out of 467392
+ 384521 string characters out of 5417708
+ 1018092 words of memory out of 5000000
+ 50047 multiletter control sequences out of 15000+600000
+ 699158 words of font info for 388 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,17n,118p,1090b,642s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Lorenzo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (39 pages, 2029843 bytes).
+ 74i,17n,118p,1090b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Bold.pfb><D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Italic.pfb><D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Regular.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (42 pages, 1998717 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 205 named destinations out of 1000 (max. 500000)
- 31348 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 765 PDF objects out of 1000 (max. 8388607)
+ 208 named destinations out of 1000 (max. 500000)
+ 78452 words of extra memory for PDF output out of 89155 (max. 10000000)
 
