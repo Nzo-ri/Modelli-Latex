@@ -1,42 +1,42 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {chapter}{\numberline {1}Richiami di elettrofisiologia cellulare e registrazioni su singola cellula}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Struttura del neurone, potenziale di membrana, meccanismi di trasporto}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Meccanismi di trasporto}{6}{subsection.1.1.1}%
-\contentsline {subsubsection}{Il canale $\ce {Na+}$ voltaggio-dipendente}{7}{figure.caption.4}%
-\contentsline {subsubsection}{Il canale $\ce {K+}$ voltaggio-dipendente}{7}{figure.caption.4}%
-\contentsline {section}{\numberline {1.2}Generazione e propagazione del potenziale d'azione, potenziali graduati}{7}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Propagazione del potenziale d'azione}{9}{subsection.1.2.1}%
-\contentsline {subsubsection}{Propagazione continua}{9}{subsection.1.2.1}%
-\contentsline {subsubsection}{Propagazione saltatoria}{9}{figure.caption.7}%
-\contentsline {section}{\numberline {1.3}La trasmissione sinaptica e l'integrazione dell'informazione da parte della cellula nervosa}{10}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Tipologie di Sinapsi}{10}{subsection.1.3.1}%
-\contentsline {subsubsection}{Sinapsi Elettriche}{10}{subsection.1.3.1}%
-\contentsline {subsubsection}{Sinapsi Chimiche}{11}{figure.caption.8}%
-\contentsline {subsection}{\numberline {1.3.2}Classi di Recettori Sinaptici}{12}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Integrazione dell'Informazione e Potenziali}{12}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Sommazione Spaziale e Temporale}{13}{subsection.1.3.4}%
-\contentsline {section}{\numberline {1.4}Registrazione della risposta neuronale: registrazioni intra ed extracellulari}{14}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Registrazioni Intracellulari}{15}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Registrazioni Extracellulari}{15}{subsection.1.4.2}%
-\contentsline {chapter}{\numberline {2}Modelli di Encoding e Decoding Neuronale}{16}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Funzione di risposta neuronale e frequenza di scarica}{16}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Treni di Impulsi e Frequenza di Scarica}{17}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}L'Ipotesi della Codifica in Frequenza (Rate Coding)}{17}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Metodologie Avanzate per il Calcolo di $r(t)$}{19}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Le Curve di Tuning}{22}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Fondamenti del Decoding Neuronale e Probabilità}{24}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Esempio di decoding}{24}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Classificazione a Soglia}{25}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Accuratezza e Curve ROC}{25}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Conclusioni e Prospettive Cliniche}{26}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Introduzione ai modelli elettrici di membrana}{27}{chapter.3}%
-\contentsline {subsection}{\numberline {3.0.1}Proprietà capacitive e resistive}{27}{subsection.3.0.1}%
-\contentsline {section}{\numberline {3.1}Il modello integra-e-spara}{28}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Comportamento sotto soglia}{28}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Comportamento sopra soglia e limiti}{28}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Modello di Hodgkin e Huxley}{29}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Conduttanze voltaggio-dipendenti}{29}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Generazione del potenziale d'azione}{29}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Modello delle correnti sinaptiche}{29}{section.3.3}%
-\contentsline {chapter}{\numberline {A}Domande delle lezioni}{31}{appendix.A}%
+\contentsline {chapter}{\numberline {1}Richiami di elettrofisiologia cellulare e registrazioni su singola cellula}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Struttura del neurone, potenziale di membrana, meccanismi di trasporto}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Meccanismi di trasporto}{5}{subsection.1.1.1}%
+\contentsline {subsubsection}{Il canale $\ce {Na+}$ voltaggio-dipendente}{6}{figure.caption.4}%
+\contentsline {subsubsection}{Il canale $\ce {K+}$ voltaggio-dipendente}{6}{figure.caption.4}%
+\contentsline {section}{\numberline {1.2}Generazione e propagazione del potenziale d'azione, potenziali graduati}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Propagazione del potenziale d'azione}{8}{subsection.1.2.1}%
+\contentsline {subsubsection}{Propagazione continua}{8}{subsection.1.2.1}%
+\contentsline {subsubsection}{Propagazione saltatoria}{8}{figure.caption.7}%
+\contentsline {section}{\numberline {1.3}La trasmissione sinaptica e l'integrazione dell'informazione da parte della cellula nervosa}{9}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Tipologie di Sinapsi}{9}{subsection.1.3.1}%
+\contentsline {subsubsection}{Sinapsi Elettriche}{9}{subsection.1.3.1}%
+\contentsline {subsubsection}{Sinapsi Chimiche}{10}{figure.caption.8}%
+\contentsline {subsection}{\numberline {1.3.2}Classi di Recettori Sinaptici}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Integrazione dell'Informazione e Potenziali}{11}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Sommazione Spaziale e Temporale}{12}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Registrazione della risposta neuronale: registrazioni intra ed extracellulari}{13}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Registrazioni Intracellulari}{14}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Registrazioni Extracellulari}{14}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2}Modelli di Encoding e Decoding Neuronale}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Funzione di risposta neuronale e frequenza di scarica}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Treni di Impulsi e Frequenza di Scarica}{16}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}L'Ipotesi della Codifica in Frequenza (Rate Coding)}{16}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Metodologie Avanzate per il Calcolo di $r(t)$}{18}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Le Curve di Tuning}{21}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Fondamenti del Decoding Neuronale e Probabilità}{23}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Esempio di decoding}{23}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Classificazione a Soglia}{24}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Accuratezza e Curve ROC}{24}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Conclusioni e Prospettive Cliniche}{28}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Introduzione ai modelli elettrici di membrana}{29}{chapter.3}%
+\contentsline {subsection}{\numberline {3.0.1}Proprietà capacitive e resistive}{29}{subsection.3.0.1}%
+\contentsline {section}{\numberline {3.1}Il modello integra-e-spara}{30}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Comportamento sotto soglia}{30}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Comportamento sopra soglia e limiti}{30}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Modello di Hodgkin e Huxley}{31}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Conduttanze voltaggio-dipendenti}{31}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Generazione del potenziale d'azione}{31}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Modello delle correnti sinaptiche}{31}{section.3.3}%
+\contentsline {chapter}{\numberline {A}Domande delle lezioni}{33}{appendix.A}%

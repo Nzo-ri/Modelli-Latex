@@ -12656,8 +12656,13 @@ endobj
 <<
 /Producer (MiKTeX pdfTeX-1.40.29)
 /Author()/Title()/Subject()/Creator(LaTeX with hyperref)/Keywords()
+<<<<<<< Updated upstream
 /CreationDate (D:20261025190922+01'00')
 /ModDate (D:20261025190922+01'00')
+=======
+/CreationDate (D:20261026113836+01'00')
+/ModDate (D:20261026113836+01'00')
+>>>>>>> Stashed changes
 /Trapped /False
 /PTEX.Fullbanner (This is MiKTeX-pdfTeX 4.27.0 (1.40.29))
 >>
@@ -13431,10 +13436,17 @@ xref
 0001982792 00000 n 
 0001982960 00000 n 
 trailer
+<<<<<<< Updated upstream
 << /Size 766
 /Root 764 0 R
 /Info 765 0 R
 /ID [<88359C6E17BE52701AE976A7B61FB51C> <88359C6E17BE52701AE976A7B61FB51C>] >>
+=======
+<< /Size 523
+/Root 521 0 R
+/Info 522 0 R
+/ID [<7D69490A8C96744FAFBB9F7A5A7F0E70> <7D69490A8C96744FAFBB9F7A5A7F0E70>] >>
+>>>>>>> Stashed changes
 startxref
 1983234
 %%EOF

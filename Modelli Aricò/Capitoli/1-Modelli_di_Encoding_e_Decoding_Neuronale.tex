@@ -52,7 +52,6 @@ P(\text{spike in } [t, t+\Delta t]) \approx r(t)\Delta t
 \end{equation}
 
 \subsection{Metodologie Avanzate per il Calcolo di $r(t)$}
-
 La scelta di come calcolare $r(t)$ determina il compromesso tra risoluzione temporale e regolarità della stima (smoothness). Possiamo identificare quattro approcci principali, basati sull'utilizzo di diverse funzioni di finestratura (kernel). 
 Il calcolo della frequenza istantanea può essere generalizzato come l'integrale di convoluzione tra la funzione di risposta $\rho(t)$ e una determinata funzione finestra $\omega(\tau)$ a energia unitaria:
 \begin{equation}
@@ -124,7 +123,7 @@ Sperimentalmente, la curva si costruisce facendo variare sistematicamente il par
 \end{figure}
 
 La risposta neuronale può variare lungo le ripetizioni (trial) anche se lo stimolo presentato è identico. Non è possibile descrivere in modo deterministico l’apparire del singolo potenziale d’azione quindi si usa un approccio probabilistico.\\
-Esempi classici di curve di tuning includono:
+Esempi di curve di tuning includono:
 \begin{enumerate}
     \item \textbf{Neuroni della corteccia visiva primaria (orientamento)}: Rispondono in maniera selettiva a barre luminose presentate in determinati angoli. La curva di tuning assume spesso una forma Gaussiana:
     \begin{equation}
@@ -156,14 +155,11 @@ Esempi classici di curve di tuning includono:
 \end{enumerate}
 \newpage
 \section{Fondamenti del Decoding Neuronale e Probabilità}
-
-Nel decodificare una risposta neuronale ci affidiamo all'uso della probabilità condizionata. L'encoding determina la probabilità $P[r \mid s]$ (la probabilità di registrare il tasso di scarica $r$ se l'ambiente presenta lo stimolo $s$). Il decoding, mediante l'inversione Bayesiana, indaga invece la $P[s \mid r]$: ricevendo un segnale di frequenza $r$, qual è lo stimolo $s$ che ha massimizzato tale probabilità?
-
+Nel decodificare una risposta neuronale ci affidiamo all'uso della probabilità condizionata. L'\textbf{encoding} determina la probabilità $P[r \mid s]$ (la probabilità di registrare il tasso di scarica $r$ se l'ambiente presenta lo stimolo $s$). Il \textbf{decoding}, mediante l'inversione Bayesiana, indaga invece la $P[s \mid r]$: ricevendo un segnale di frequenza $r$, qual è lo stimolo $s$ che ha massimizzato tale probabilità? Vogliamo quindi risalire ad uno stimolo a partire dal treno di potenziali d'azione che esso induce.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\linewidth]{immagini/decodingneuronale.png}
 \end{figure}
-
 \subsection{Esempio di decoding}
 Nell'esempio preso in cosiderazione si hanno due fattori: la direzione del movimento (positiva o negativa) e la coerenza del movimento (0\%, 25\%, 50\%, 75\%, 100\%). Per ogni combinazione di questi fattori, si registra il firing rate $r$ del neurone. Le distribuzioni di $r$ per le due direzioni a ciascun livello di coerenza vengono quindi confrontate per valutare quanto bene il neurone può discriminare tra le due direzioni.
 \begin{figure}[h]
@@ -171,12 +167,13 @@ Nell'esempio preso in cosiderazione si hanno due fattori: la direzione del movim
     \includegraphics[width=0.6\linewidth]{immagini/esempiodecoding.png}
 \end{figure}\\
 Vengono registrati i dati comportamentali del soggetto (ad esempio, la percentuale di risposte corrette) e confrontati con le prestazioni del neurone singolo. Questo confronto permette di valutare quanto l'informazione codificata nel firing rate del neurone sia sufficiente per spiegare il comportamento osservato.
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\linewidth]{immagini/daticomportamentali.png}
+    \includegraphics[width=0.5\linewidth]{immagini/daticomportamentali.png}
 \end{figure}
 
-Registrando il tasso di scarica $r$ del neurone a vari livelli di coerenza per entrambe le direzioni, possiamo generare due distribuzioni statistiche: $P[r \mid +]$ e $P[r \mid -]$. Assumendo che si tratti di distribuzioni gaussiane con medie distinte $\langle r \rangle_+$ e $\langle r \rangle_-$ ma varianza comune $\sigma_r^2$, possiamo definire l'indice di discriminabilità $d'$:
+Registrando il tasso di scarica $r$ del neurone a vari livelli di coerenza per entrambe le direzioni, possiamo generare due distribuzioni statistiche: $P[r \mid +]$ e $P[r \mid -]$. Assumendo che si tratti di distribuzioni gaussiane con medie distinte $\langle r \rangle_+$ e $\langle r \rangle_-$ ma varianza comune $\sigma_r^2$, possiamo definire l'indice di \textbf{discriminabilità} $d
+'$:
 \begin{equation}
 d' = \frac{\langle r \rangle_+ - \langle r \rangle_-}{\sigma_r}
 \end{equation}
@@ -193,14 +190,31 @@ Scegliere la corretta posizione della soglia $z$ lungo l'asse delle ascisse è u
     \item \textbf{Vero Negativo (TN)}: $1 - \alpha(z) = P[r < z \mid -]$ (direzione - corretta).
     \item \textbf{Falso Negativo (FN)}: $1 - \beta(z) = P[r < z \mid +]$ (direzione + ignorata).
 \end{itemize}
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/classificazioneasoglia.png}
+\end{figure}
 \subsection{Accuratezza e Curve ROC}
-
-In ambito clinico e neuroscientifico, il compromesso tra l'identificazione corretta di eventi rari e l'evitamento dei falsi allarmi è studiato mediante la Sensibilità (\textit{True Positive Rate}, TPR) e la Specificità (\textit{True Negative Rate}, TNR). 
+Se le classi si sovrappongono, possono verificarsi errori di
+classificazione. Esistono diversi metodi per quantificare l’errore di
+classificazione: uno dei più usati è dato dalla teoria delle
+\emph{Receiver Operating Characteristic} (ROC), per mezzo delle
+misure di \textbf{sensibilità} e \textbf{specificità}. Le misure di sensibilità e specificità vengono utilizzate solo quando sono coinvolte due classi.
+Sono molto diffuse in ambito medico, viene considerata una \emph{classe insolita} e una \emph{classe nominale} (per esempio malattia e salute). Nelle nostre circostanze, il problema di classificazione diventa un
+problema di rilevamento, con la classe insolita definita
+positiva e la classe normale negativa. La corretta individuazione (cioè la classificazione) di una condizione anormale è nota come \textbf{vero positivo}, mentre la corretta classificazione di una condizione normale è definita \textbf{vero negativo}. Gli errori di classificazione sono costituiti da falsi positivi, che classificano erroneamente una condizione normale (0) come anormale (1), o da falsi negativi, in cui l'anormale (1) viene classificato come normale (0). Per estensione quindi, possiamo definire anche il False Positive Rate (FPR), ed il False Negative Rate (FNR), e l'accuratezza di classificazione:
 \begin{equation}
-\text{TPR} = \frac{\text{TP}}{\text{TP} + \text{FN}}, \quad \text{TNR} = \frac{\text{TN}}{\text{TN} + \text{FP}}, \quad \text{FPR} = 1 - \text{TNR}
+    \begin{split}
+        \text{TPR} &= \frac{\text{TP}}{\text{P}} = \frac{\text{TP}}{\text{TP} + \text{FN}} = 1 - \text{FNR}, \quad \text{TNR} = \frac{\text{TN}}{\text{N}} =\frac{\text{TN}}{\text{TN} + \text{FP}} = 1- \text{FPR} \\
+        \text{FPR} &= \frac{\text{FP}}{\text{N}} = \frac{\text{FP}}{\text{TN} + \text{FP}}, \quad \text{FNR} = \frac{\text{FN}}{\text{P}} = \frac{\text{FN}}{\text{TP} + \text{FN}} \\ 
+    \end{split}
 \end{equation}
-
+Spesso è possibile variare il confine decisionale per aumentare o diminuire il rilevamento delle anomalie. In questo modo si ottiene un compromesso regolabile in cui l'aumento del rilevamento dei veri positivi aumenta il numero di falsi positivi.Il compromesso è dunque anche tra sensibilità e specificità, dove l'aumento della sensibilità (diminuzione dei falsi negativi) diminuisce la specificità (aumento dei falsi positivi).
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{immagini/specificitasensibilita.png}
+\end{figure}
+\\
 La \textbf{curva ROC} (\textit{Receiver Operating Characteristic}) è un grafico in cui viene tracciato il TPR in funzione del FPR (cioè Sensibilità contro $1 - \text{Specificità}$) per ogni valore possibile della soglia $z$.
 \begin{itemize}
     \item Se $z = 0$, tutti gli eventi cadono nella classe positiva (FPR=1, TPR=1).
@@ -208,11 +222,38 @@ La \textbf{curva ROC} (\textit{Receiver Operating Characteristic}) è un grafico
     \item Una curva coincidente con la diagonale corrisponde a un classificatore casuale (nessun guadagno predittivo, prestazioni del 50\%).
     \item Una classificazione perfetta genererebbe un punto nelle coordinate (0,1).
 \end{itemize}
-
-L'area sottesa dalla curva ROC si chiama \textbf{AUC} (\textit{Area Under Curve}). Fornisce un punteggio scalare, indipendente da una specifica soglia, che varia tra $0.5$ (caso pessimo) e $1.0$ (predizione perfetta). Statisticamente, l'AUC rappresenta la probabilità che il classificatore assegni un valore di funzione (nel nostro caso un firing rate) superiore a un'istanza positiva presa a caso rispetto a una negativa.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/curvaroc.png}
+\end{figure}
+\newpage
+Se le curve si trovassero al di sotto della diagonale, il classificatore sarebbe peggiore del caso casuale. In tal caso, invertendo la decisione (cioè scambiando le etichette delle classi) si otterrebbe un classificatore migliore del caso casuale.
+L'area sottesa dalla curva ROC si chiama \textbf{AUC} (\textit{Area Under Curve}). Fornisce un punteggio scalare, indipendente da una specifica soglia, che varia tra $0.5$ (caso pessimo) e $1.0$ (predizione perfetta). Statisticamente, l'AUC rappresenta la probabilità che il classificatore assegni un valore di funzione (nel nostro caso un firing rate) superiore a un'istanza positiva presa a caso rispetto a una negativa. Una curva ROC può essere ottenuta
+variando la soglia utilizzata per generare il confine decisionale e calcolando la sensibilità e la specificità a ciascun livello. è possibile trovare la soglia ottima in due modi:
+\begin{itemize}
+    \item \textbf{Metodo geometrico}: si sceglie il punto della curva ROC più vicino al vertice (0,1), minimizzando la distanza euclidea:
+    \begin{equation}   
+    min(\sqrt{(x_1-0)^2+(x_2-1)^2})
+    \end{equation}
+    \item Threshold ad accuratezza massima: si sceglie la soglia che massimizza l'accuratezza di classificazione:
+    \begin{equation}
+        max(Accuracy)
+    \end{equation}
+\end{itemize}
 
 Applicando l'analisi ROC ai trial neurofisiologici precedentemente discussi (l'esperimento della direzione di movimento dei punti a diverse coerenze), si nota che l'AUC della risposta di un singolo neurone della corteccia visiva (misurata matematicamente) si sovrappone in maniera sorprendente alla curva psicometrica del comportamento manifesto del soggetto. In termini semplici, l'informazione codificata nella frequenza di scarica di una singola cellula è sufficiente per spiegare le decisioni motorie e percettive dell'organismo. 
-
+\newpage
+\textbf{Step per la rappresentazione di una curva ROC}:
+\begin{itemize}
+    \item Costruire la matrice formata da $[y;d]$, dove $y$ rappresenta la funzione discriminante (<r> neurone), e $d$ è il vettore della classe corretta $[00000...,1111...]$.
+    \item Ordinare la matrice in modo che $y$ vada dal valore più piccolo al più grande.
+    \item Calcolare i tp, tn, fp, fn, e di conseguenza TPR ed FPR
+    per la curva ROC, e Acc per l'accuratezza massima,
+    per ogni valore di soglia, ySoglia=y(i), con
+    i=1:length(y).
+    \item Rappresentare TPR in funzione di FPR.
+    \item $AUC  =1- |trapz(TPR,FPR)|$
+\end{itemize}
 \section{Conclusioni e Prospettive Cliniche}
 
 Il modello a soglia dimostra che un decoder biologico o artificiale può sfruttare la sola frequenza statistica per interpretare il mondo in presenza di rumore. Tuttavia, si tratta di un costrutto puramente matematico e descrittivo: non considera l'architettura biologica reale delle reti cerebrali, l'integrazione di centinaia di migliaia di sinapsi o le complesse tempistiche elettrochimiche, che andrebbero investigate tramite modelli a rete più evoluti.
