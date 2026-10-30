@@ -190,10 +190,12 @@ Scegliere la corretta posizione della soglia $z$ lungo l'asse delle ascisse è u
     \item \textbf{Vero Negativo (TN)}: $1 - \alpha(z) = P[r < z \mid -]$ (direzione - corretta).
     \item \textbf{Falso Negativo (FN)}: $1 - \beta(z) = P[r < z \mid +]$ (direzione + ignorata).
 \end{itemize}
+\iffalse
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{immagini/classificazioneasoglia.png}
 \end{figure}
+\fi
 \subsection{Accuratezza e Curve ROC}
 Se le classi si sovrappongono, possono verificarsi errori di
 classificazione. Esistono diversi metodi per quantificare l’errore di
@@ -210,11 +212,13 @@ positiva e la classe normale negativa. La corretta individuazione (cioè la clas
     \end{split}
 \end{equation}
 Spesso è possibile variare il confine decisionale per aumentare o diminuire il rilevamento delle anomalie. In questo modo si ottiene un compromesso regolabile in cui l'aumento del rilevamento dei veri positivi aumenta il numero di falsi positivi.Il compromesso è dunque anche tra sensibilità e specificità, dove l'aumento della sensibilità (diminuzione dei falsi negativi) diminuisce la specificità (aumento dei falsi positivi).
+\iffalse
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{immagini/specificitasensibilita.png}
 \end{figure}
 \\
+\fi
 La \textbf{curva ROC} (\textit{Receiver Operating Characteristic}) è un grafico in cui viene tracciato il TPR in funzione del FPR (cioè Sensibilità contro $1 - \text{Specificità}$) per ogni valore possibile della soglia $z$.
 \begin{itemize}
     \item Se $z = 0$, tutti gli eventi cadono nella classe positiva (FPR=1, TPR=1).
@@ -222,10 +226,12 @@ La \textbf{curva ROC} (\textit{Receiver Operating Characteristic}) è un grafico
     \item Una curva coincidente con la diagonale corrisponde a un classificatore casuale (nessun guadagno predittivo, prestazioni del 50\%).
     \item Una classificazione perfetta genererebbe un punto nelle coordinate (0,1).
 \end{itemize}
+\iffalse
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{immagini/curvaroc.png}
 \end{figure}
+\fi
 \newpage
 Se le curve si trovassero al di sotto della diagonale, il classificatore sarebbe peggiore del caso casuale. In tal caso, invertendo la decisione (cioè scambiando le etichette delle classi) si otterrebbe un classificatore migliore del caso casuale.
 L'area sottesa dalla curva ROC si chiama \textbf{AUC} (\textit{Area Under Curve}). Fornisce un punteggio scalare, indipendente da una specifica soglia, che varia tra $0.5$ (caso pessimo) e $1.0$ (predizione perfetta). Statisticamente, l'AUC rappresenta la probabilità che il classificatore assegni un valore di funzione (nel nostro caso un firing rate) superiore a un'istanza positiva presa a caso rispetto a una negativa. Una curva ROC può essere ottenuta

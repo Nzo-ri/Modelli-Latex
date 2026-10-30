@@ -1,22 +1,66 @@
 \chapter{Introduzione ai modelli elettrici di membrana}
 
-La membrana della cellula nervosa possiede caratteristiche fisiche che regolano il flusso di ioni e che si traducono in proprietà elettriche specifiche, le quali possono essere modellate matematicamente e fisicamente. Le correnti ioniche attraverso la membrana possono essere dovute a trasporti passivi (secondo gradiente), attraverso canali selettivi o non selettivi, oppure a trasporti attivi (contro gradiente) mediati dalle pompe ioniche (es. pompe ATP-asi).
+La membrana della cellula nervosa possiede caratteristiche fisiche che regolano il flusso di ioni e che si traducono in proprietà elettriche specifiche, le quali possono essere modellate matematicamente e fisicamente. Le correnti ioniche attraverso la membrana possono essere dovute a trasporti passivi (secondo gradiente), attraverso canali selettivi o non selettivi, oppure a trasporti attivi (contro gradiente) mediati dalle pompe ioniche (es. pompe ATP-asi).\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/pompeneurone.png}
+\end{figure}\\
+Per modellizzare un neurone, è necessario definire il livello di astrazione. 
+\begin{itemize}
+    \item \textbf{Neurone biologico completo} Questa struttura è molto fedele all’anatomia, ma troppo complessa da modellare direttamente nei calcoli.
+    \item \textbf{Semplificazione a compartimenti} Il neurone viene schematizzato in segmenti rettilinei connessi: Le ramificazioni dendritiche sono rese come blocchi lineari. Le sinapsi (i “triangolini blu”) sono ancora visibili e posizionate su vari compartimenti. Si mantiene ancora una certa fedeltà alla geometria, ma è più facile da analizzare.
+    \item \textbf{Modello semplificato} a pochi rami
+Ulteriore astrazione:
+Il neurone è rappresentato da pochi rami principali,
+più grandi.
+La forma complessa viene appiattita in pochi
+elementi.
+Le sinapsi sono ancora lì: si vede dove avviene
+l’integrazione dell’informazione.
+A questo punto si può cominciare a studiare la
+risposta elettrica in modo semplificato, riducendo il
+carico computazionale.
+    \item \textbf{Modello a punto singolo (one-compartment model)} Estrema semplificazione:Il neurone è rappresentato da una sfera (il soma).
+I rami sono indicati solo simbolicamente.
+Le sinapsi si trovano tutte vicine, come se le
+informazioni si fondessero in un solo punto.
+Questo modello è detto “a punto” o “integratore”:
+Tutte le sinapsi contribuiscono alla stessa variabile di
+membrana.
+Non si considera più la distribuzione spaziale, ma solo
+l’attività globale.
+È evidenziato anche il cono di emergenza
+dell’assone, il punto da cui si genera il potenziale
+d’azione.
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/modellineurone.png}
+\end{figure}
 
-Per modellizzare un neurone, è necessario definire il livello di astrazione. Si parte dal neurone biologico completo, dotato di soma, dendriti e assone ramificati, per passare a schematizzazioni a compartimenti in cui i rami dendritici sono resi come blocchi lineari. Un'ulteriore semplificazione riduce l'albero dendritico a pochi rami principali. Infine, si giunge al \textbf{modello a punto singolo (one-compartment model)}, un'estrema semplificazione in cui il neurone è rappresentato esclusivamente da una sfera (il soma) e si trascura la propagazione spaziale del segnale. In questo modello, tutte le sinapsi contribuiscono alla medesima variabile di membrana e si assume che tutto il neurone abbia lo stesso potenziale elettrico $V$ in ogni istante.
-
-\subsection{Proprietà capacitive e resistive}
+\section{Proprietà capacitive e resistive}
 La membrana cellulare può essere descritta tramite elementi circuitali equivalenti. Il doppio strato fosfolipidico funge da isolante, separando le cariche negative interne da quelle positive esterne, e si comporta come un \textbf{condensatore}. La capacità di membrana $C_m$ (in nF) è direttamente proporzionale alla superficie $A$ della membrana. Si definisce pertanto la capacità specifica $c_m = C_m / A$. La variazione della carica nel tempo dà origine alla corrente capacitiva:
 \begin{equation}
 I_c = C_m \frac{dV}{dt}
 \end{equation}
+Questa equazione descrive il comportamento elettrico della membrana come componente capacitiva (un condensatore). $I$ è la corrente che occorre che passi attraverso una membrana di capacità totale $C_m$ per cambiare la tensione $V$ ad una velocità $dV/dt$.\\
 
-I canali ionici si comportano invece come \textbf{resistenze} (o conduttanze) variabili. La conduttanza $G_m$ (espressa in pS) è anch'essa proporzionale all'area della membrana ($g_m = G_m / A$), mentre la resistenza $R_m$ è inversamente proporzionale all'area ($r_m = R_m A$). I gradienti di concentrazione ionica, mantenuti dalle pompe, generano forze elettromotrici modellabili come \textbf{generatori di tensione}, descritti dall'equazione di Nernst. Il potenziale di Nernst $E_j$ è il potenziale al quale le forze di diffusione e gradienti elettrici si bilanciano per un dato ione $j$.
+I canali ionici si comportano invece come resistenze (o conduttanze) variabili, il comportamento elettrico della membrana dipende fortemente da quanti canali sono aperti, e da quanto “facilmente” passano gli ioni: questi due aspetti si traducono nella \textbf{conduttanza} (G) o \textbf{resistenza} (R). La conduttanza $G_m$ (espressa in pS) è anch'essa proporzionale all'area della membrana ($g_m = G_m / A$), mentre la resistenza $R_m$ è inversamente proporzionale all'area ($r_m = R_m A$).
+\medskip
+I gradienti di concentrazione ionica, mantenuti dalle pompe, generano forze elettromotrici modellabili come \textbf{generatori di tensione}, descritti dall'equazione di Nernst. Il potenziale di Nernst $E_j$ è il potenziale al quale le forze di diffusione e gradienti elettrici si bilanciano per un dato ione $j$.Un potenziale di equilibrio $E_j$ tende a spostare il potenziale di membrana verso quel valore:
+\begin{itemize}
+    \item Se $V < E_j$, correnti positive verso l’interno della membrana, causando depolarizzazione (es: apertura dei canali del sodio)
+    \item Se $V > E_j$, correnti positive verso l’esterno della membrana, causando iperpolarizzazione/ripolarizzazione (es: apertura dei canali del potassio)
+\end{itemize}
 
-La corrente di membrana totale (riferita all'unità di superficie $i_m = I_m / A$) è la somma delle correnti dei singoli canali. Alcune conduttanze si considerano fisse e generano le cosiddette \emph{leakage currents} (correnti di perdita), modellate come $i_L = \bar{g}_L (V - E_L)$. Unendole in un circuito equivalente e applicando la legge di Kirchhoff per le correnti in presenza di uno stimolo esterno $i_e$, otteniamo l'equazione di bilancio:
+La \textbf{corrente di membrana} rappresenta il movimento netto di cariche elettriche (ioni) che attraversano la membrana cellulare, in entrata o in uscita dalla cellula. è (per convenzione) definita positiva quando ioni positivi escono dalla cellula e negativa quando ioni positivi entrano (direzione opposta per gli ioni negativi). è data dalla somma di tutte le correnti dovute ai canali ionici (inclusi quelli voltaggio- dipendenti e quelli sinaptici) e alle pompe ionichetotale (riferita all'unità di superficie $i_m = I_m / A$). Alcune conduttanze si considerano fisse e generano le cosiddette \emph{leakage currents} (correnti di perdita), modellate come $i_L = \bar{g}_L (V - E_L)$. Unendole in un circuito equivalente e applicando la legge di Kirchhoff per le correnti in presenza di uno stimolo esterno $i_e$, otteniamo l'equazione di bilancio:
 \begin{equation}
 i_e = i_{Na} + i_K + i_L + i_C
 \end{equation}
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/causeneuronecorrente.png}
+\end{figure}
 \section{Il modello integra-e-spara}
 
 Come sottolineava Einstein, un modello dovrebbe essere "il più semplice possibile, ma non più semplice di così". Il modello \emph{Integrate-and-Fire} (integra-e-spara), proposto da Lapicque nel 1907, incarna questa filosofia: ignora la complessa fisiologia dei canali ionici, modellando il neurone con un semplice circuito RC sotto la soglia e con un meccanismo di ripristino per simulare il potenziale d'azione.
