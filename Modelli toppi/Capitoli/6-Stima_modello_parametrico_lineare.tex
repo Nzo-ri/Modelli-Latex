@@ -1,0 +1,202 @@
+\chapter{Stima di Modelli Parametrici Lineari}
+Nella modellizzazione dei sistemi biologici, dopo aver formulato il modello del sistema (che esso sia input/output o strutturale), ci si trova di fronte a un modello contenente dei parametri ai quali è necessario assegnare dei valori sulla base dei dati raccolti sperimentalmente.
+
+Se il modello è strutturale, è fondamentale aver verificato preventivamente l'identificabilità \textit{a priori}. Al contrario, se il modello è input/output, questa verifica non è necessaria in quanto risulta sempre identificabile (i parametri incogniti coincidono con quelli osservazionali). I dati sperimentali si assumono disponibili solo dopo aver accuratamente pianificato l'esperimento.
+
+\section{Ingredienti del Problema di Stima}
+Da un punto di vista matematico, gli ingredienti principali del problema sono due:
+\begin{itemize}
+    \item L'uscita teorica del modello, espressa come $y(t) = g(t,p)$.
+    \item Le misure tempo-discrete e rumorose dell'uscita, denotate con $z_i$, descritte dall'equazione:
+    \begin{equation}
+        z(t_i) = z_i = y_i + v_i = g(t_i, p) + v_i
+    \end{equation}
+    dove $v_i$ rappresenta l'errore (o rumore) commesso all'i-esima misura.
+\end{itemize}
+
+Il \textbf{problema di stima} consiste nell'assegnare valori numerici al vettore dei parametri $p$ a partire dall'insieme delle misure $z_i$. I parametri devono essere aggiustati fino a trovare un set di valori che fornisce il miglior fitting (adattamento) ai dati, procedura nota come \textit{Analisi di Regressione}.
+
+\subsection{Esempi}
+\begin{enumerate}
+    \item \textbf{Modello Polinomiale:} Supponiamo che il modello per descrivere le misure $z_i$ sia $y(t) = p_1 + p_2 t + p_3 t^2$. Il problema di stima consiste nell'assegnare i valori al vettore $p = [p_1, p_2, p_3]^T$.
+    \item \textbf{Modello Esponenziale:} Supponiamo che un candidato per descrivere le misure sia \\ $y(t) = A_1 e^{-\alpha_1 t} + A_2 e^{-\alpha_2 t}$. In questo caso, il problema è assegnare valori al vettore $p = [A_1, \alpha_1, A_2, \alpha_2]^T$.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/schemastimaparametri.png}
+    \label{fig:6-1}
+\end{figure}
+Il sistema riceve in input un segnale fisico, i dati raccolti da l'esperimento vengono utilizzati all'interno di un algoritmo di stima. Parallelamente viene fornito in ingresso al modello lo stesso input ma matematico, il modello produrrà un fascio di predizioni $y=g(t,\textbf{p})$ che dipendono dai parametri $p$. L'algoritmo di stima confronta le predizioni con i dati sperimentali e aggiorna i valori dei parametri fino a trovare il miglior fitting possibile.
+
+\section{Regressione: Parametri Lineari e Non Lineari}
+La regressione ha lo scopo di determinare i valori dei parametri che definiscono la funzione in grado di approssimare al meglio i dati raccolti.
+Esistono due tipologie di regressione, dipendenti dalla linearità del modello rispetto ai parametri:
+\begin{itemize}
+    \item \textbf{Regressione Lineare:} Matematicamente più precisa, ammette una soluzione in forma chiusa per la stima dei parametri: nota la struttura dei parametri e la misura dell'errore, è possibile calcolare direttamente i valori ottimi dei parametri.
+    \item \textbf{Regressione Non lineare:} Computazionalmente più complessa; i valori stimati tramite algoritmi iterativi rappresentano solo un'approssimazione del valore vero. 
+\end{itemize}
+In entrambe le regressioni è fondamentale considerare l'errore di misura e conoscerne le caratteristiche statistiche (regressione pesata). La regressione lineare è più semplice da implementare e più precisa, pertanto è preferibile formulare il modello in modo che sia lineare nei parametri. Tuttavia non sempre è possibile, e in tal caso si ricorre alla regressione non lineare: quando i parametri sono lineari applichiamo la regressione lineare, quando sono non lineari applichiamo la regressione non lineare.
+
+\subsection{Definizione di Linearità}
+Un modello è lineare \textbf{nei parametri} se soddisfa il principio di sovrapposizione rispetto ai parametri stessi. Ad esempio, il polinomio $y(t) = p_1 + p_2 t + \dots + p_n t^{n-1}$ è lineare nei parametri.
+Prendendo il caso semplice $y(p,t) = pt$, esso è lineare poiché:
+\begin{equation}
+    y(p+p', t) = (p+p')t = pt + p't = y(p,t) + y(p',t)
+\end{equation}
+Raddoppiando il valore di $p$, si raddoppia il valore della funzione $y(t)$.
+
+\subsection{Modelli Non Lineari}
+Se $y(t)$ è non lineare in almeno uno dei parametri (o in tutti), la regressione diventa non lineare. Ad esempio, nell'esponenziale $y(t) = A_1 e^{-\alpha_1 t} + A_2 e^{-\alpha_2 t}$, la funzione è lineare rispetto ad $A_1$ e $A_2$, ma non lineare rispetto ad $\alpha_1$ e $\alpha_2$. Non vale infatti la relazione di linearità additiva sugli esponenti. Un'altra tipica funzione non lineare è quella che caratterizza i modelli dinamici lineari, dove la soluzione presenta parametri all'esponente.
+\begin{equation}
+    \begin{split}
+            \dot{q}(t) = -kq(t) + d\delta(t) \\
+            q(t) = d e^{-kt}
+    \end{split}
+\end{equation}
+
+\section{Residui e Funzioni di Costo}
+\subsection{Residui}
+Regressione significa determinare i valori dei parametri che definiscono la funzione che
+meglio fitta i dati raccolti. Supponiamo vogliamo trovare il miglior fitting per i dati mediante una retta: $y(t)=\textbf{p}t$, al variare di \textbf{p} si ottengono diverse rette e diversi valori dell’uscita del modello.
+Ad ogni misura $z_i$ effettuata all'istante $t_i$ corrisponde un valore predetto dal modello $y(t_i)$ (o semplicemente $y_i$).
+Si definisce \textbf{residuo} la differenza puntuale tra il dato misurato sperimentalmente e il valore stimato dal modello:
+\begin{equation}
+    \text{res}_i = z_i - y_i
+\end{equation}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/grafico residui.png}
+    \label{fig:6-2}
+\end{figure}
+\subsection{Somma del Quadrato dei Residui (RSS)}
+La \textit{Residual Sum of Squares} (RSS) è una misura della bontà del fitting:
+\begin{equation}
+    \text{RSS} = \sum_{i=1}^{N} (z_i - y_i)^2 = \sum_{i=1}^{N} \text{res}_i^2
+\end{equation}
+dove $N$ è il numero di osservazioni. La regressione ai minimi quadrati (Least Squares, LS) si basa sulla minimizzazione dell'RSS rispetto ai parametri. L'accuratezza dipende dai gradi di libertà (\text{dof} $= N - p$, con $N$ numero di misurazioni e $p$ numero di parametri, si richiede $\text{dof} > 1$).
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/esempiregressione.png}
+    \label{fig:6-3}
+\end{figure}
+\subsection{Somma Pesata del Quadrato dei Residui (WRSS)}
+I dati sperimentali sono spesso contaminati dal rumore in maniera variabile, pertanto non hanno tutti la stessa affidabilità. Per dati poco rumorosi si esigono residui bassi, mentre per dati molto rumorosi si tollerano residui maggiori. Si introduce quindi la \textit{Weighted Residual Sum of Squares} (WRSS):
+\begin{equation}
+    \text{WRSS} = \sum_{i=1}^{N} w_i (z_i - y_i)^2 = \sum_{i=1}^{N} w_i \text{res}_i^2
+\end{equation}
+dove $w_i$ sono i pesi da associare ai residui. La minimizzazione di questa funzione porta alla regressione ai minimi quadrati pesati (Weighted Least Squares, WLS).
+
+\section{Caratteristiche dell'Errore e Scelta dei Pesi}
+Risulta naturale legare la scelta dei pesi alla precisione individuale dei dati (maggiore
+credibilità o peso ai dati con precisione più alta). Supponiamo che vogliamo fittare i dati con una funzione $y(t)$: si assume che l'errore di misura $v_i = z_i - y_i$ sia un processo random con le seguenti caratteristiche:
+\begin{itemize}
+    \item Media nulla: $E(v_i) = 0$ (assenza di errori sistematici).
+    \item Campioni indipendenti: $\text{Cov}(v_i, v_j) = 0$ per $t_i \neq t_j$.
+    \item Varianza nota: $\text{Var}(v_i) = \sigma_i^2$.
+\end{itemize}
+
+\noindent Una misura standardizzata dell'errore è la \textit{Fractional Standard Deviation} (FSD) o \textit{Coefficient of Variation} (CV):
+\begin{equation}
+    \text{FSD}(v_i) = \text{CV}(v_i) = \frac{\text{SD}(v_i)}{z_i}
+\end{equation}
+La scelta più naturale per i pesi è $w_i = \frac{1}{\sigma_i^2}$, in quanto produce la minima varianza dei parametri stimati. La varianza dell'errore può essere stimata tramite ipotesi \textit{a priori}, repliche indipendenti delle misure, o definendo un modello dell'errore i cui parametri si aggiungono a quelli da stimare (es. $\sigma_i^2 = \alpha + \beta (z_i)^\gamma$).
+
+\section{Risoluzione della Regressione Lineare Scalare}
+Consideriamo il modello semplice $y(p,t) = pt$. Poiché si considerano gli errori di misura, si minimizza la WRSS:
+\begin{equation}
+    \text{WRSS}(p) = \sum_{i=1}^{N} \frac{1}{\sigma_i^2} (z_i - p t_i)^2
+\end{equation}
+Per trovare l'unico valore di $p$ che minimizza la funzione, si calcola la derivata rispetto a $p$ e la si pone uguale a zero:
+\begin{equation}
+    \frac{d(\text{WRSS}(p))}{dp} = -2 \sum_{i=1}^{N} \frac{t_i}{\sigma_i^2} (z_i - p t_i) = 0
+\end{equation}
+Risolvendo rispetto a $p$, si ottiene la stima ottima $\hat{p}$:
+\begin{equation}
+    \hat{p} = \frac{\sum_{i=1}^{N} \frac{z_i \cdot t_i}{\sigma_i^2}}{\sum_{i=1}^{N} \frac{t_i^2}{\sigma_i^2}}
+\end{equation}
+
+La precisione di $\hat{p}$ è espressa mediante la sua varianza. L'errore di stima è $\tilde{p} = p - \hat{p}$, e valgono le seguenti relazioni:
+\begin{align}
+    \text{Var}(\tilde{p}) &= E(\tilde{p}^2) = \text{Var}(\hat{p}) \\
+    \text{SD}(\hat{p}) &= \sqrt{\text{Var}(\hat{p})} \\
+    \text{FSD}(\hat{p}) &= \text{CV}(\hat{p}) = \frac{\text{SD}(\hat{p})}{\hat{p}}
+\end{align}
+
+\section{Test sui Residui}
+Una volta stimati i parametri, si assume che il modello $y(t) = \hat{p}t$ fornisca una corretta descrizione funzionale. Essendo $\text{res}_i = z_i - \hat{p}t_i$, i residui devono riflettere le assunzioni statistiche originarie sull'errore $v_i$, a condizione che il modello scelto sia corretto e che i parametri stimati siano convergenti al valore vero.
+
+Attraverso test statistici, si verifica che i residui abbiano media nulla e siano indipendenti. In un grafico dei residui nel tempo, ci si aspetta che oscillino randomicamente intorno allo zero. 
+\begin{itemize}
+    \item Residui sistematici o pattern evidenti indicano che il modello è inappropriato.
+    \item Il \textbf{Run test} è un test formale per valutare la randomicità: un \textit{run} è una sotto-sequenza di residui con lo stesso segno. Pochi run indicano un errore sistematico; troppi run indicano una periodicità.
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/testsuiresidui.png}
+    \label{fig:6-4}
+\end{figure}
+\subsection{Test sui Residui nella WLS}
+Nella regressione pesata (WLS), i residui pesati sono definiti come $\text{wres}_i = \frac{\text{res}_i}{\sigma_i}$.
+Dato che l'assunzione di base è $\text{Var}(v_i) = \sigma_i^2$, si ha:
+\begin{equation}
+    \text{Var}\left(\frac{v_i}{\sigma_i}\right) = \frac{1}{\sigma_i^2} \text{Var}(v_i) = 1
+\end{equation}
+Pertanto, i residui pesati devono avere varianza unitaria. In un grafico temporale, i residui pesati devono ricadere quasi interamente nella banda $[-1, 1]$. Se questa condizione non è verificata, allora è errato il modello del sistema oppure è errato il modello assunto per l'errore di misura.
+
+\section{Esempio Pratico e Schemi di Pesi}
+Applicando due diversi schemi di pesi a un ipotetico set di dati, si osserva l'impatto della formulazione dell'errore sulla stima. 
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+ & \textbf{Varianza Costante} & \textbf{FSD Costante} \\
+ & $\text{Var}(v_i) = 900$ & $\text{Var}(v_i) = z_i^2 \cdot 0.015$ \\
+ & $w_i = 1 / 900$ & $w_i = 1 / (z_i^2 \cdot 0.015)$ \\
+\midrule
+$p$ & $3.977$ & $3.845$ \\
+$\text{Var}(\hat{p})$ & $0.023$ & $0.034$ \\
+$\text{SD}(\hat{p})$ & $0.153$ & $0.185$ \\
+$\text{FSD}(\hat{p})$ & $4\%$ & $5\%$ \\
+$\text{WRSS}$ & $0.095$ & $2.074$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Estensione al Caso Vettoriale}
+L'estensione dal caso di un solo parametro al caso generale matriciale permette la risoluzione per modelli lineari multivariati. Consideriamo dapprima un modello con due parametri $y(t) = mt + q$. L'equazione di misura diventa $z_i = mt_i + q + v_i$.
+La WRSS diventa una funzione di due variabili, e per trovare il minimo bisogna annullare le derivate parziali: $\frac{\partial \text{WRSS}(m,q)}{\partial m} = 0$ e $\frac{\partial \text{WRSS}(m,q)}{\partial q} = 0$.
+
+\subsection{Notazione Matriciale e Soluzione Generale}
+Riscrivendo l'equazione per tutte le $N$ misure in forma matriciale:
+\begin{equation}
+    z = y + v = Gp + v
+\end{equation}
+dove:
+$z = [z_1, \dots, z_N]^T$, $y = [y_1, \dots, y_N]^T$, $v = [v_1, \dots, v_N]^T$.
+La matrice di regressione $G$ e il vettore dei parametri $p$ (di dimensione $M$) assumono la forma:
+\begin{equation}
+    G = \begin{bmatrix}
+    g_{11} & \dots & g_{1M} \\
+    \vdots & \ddots & \vdots \\
+    g_{N1} & \dots & g_{NM}
+    \end{bmatrix}, \quad p = [p_1, \dots, p_M]^T
+\end{equation}
+
+L'errore è caratterizzato da matrice di covarianza $\Sigma_v = \text{diag}(\sigma_1^2, \sigma_2^2, \dots, \sigma_N^2)$.
+Definendo il vettore dei residui $r = z - Gp$, la WRSS in forma matriciale risulta:
+\begin{equation}
+    \text{WRSS}(p) = r^T \Sigma_v^{-1} r = (z - Gp)^T \Sigma_v^{-1} (z - Gp)
+\end{equation}
+
+La minimizzazione della funzione di costo:
+\begin{equation}
+    \hat{p}_{\text{WLS}} = \arg \min_p (z - Gp)^T \Sigma_v^{-1} (z - Gp)
+\end{equation}
+fornisce la soluzione esplicita ai minimi quadrati pesati:
+\begin{equation}
+    \hat{p}_{\text{WLS}} = (G^T \Sigma_v^{-1} G)^{-1} G^T \Sigma_v^{-1} z
+\end{equation}
+
+\vspace{1cm}
+\noindent \textit{Nota: Il questionario interattivo citato nelle slide è accessibile al link: bit.ly/poll1g1.}

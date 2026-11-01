@@ -1,25 +1,16 @@
-<<<<<<< Updated upstream
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  25 OCT 2026 19:09
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  26 OCT 2026 11:38
->>>>>>> Stashed changes
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  30 OCT 2026 09:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Lorenzo/Desktop/Università/Magistrale/Modelli/Modelli-Latex/Modelli toppi/main.tex"
-(c:/Users/Lorenzo/Desktop/Università/Magistrale/Modelli/Modelli-Latex/Modelli toppi/main.tex
+**"d:/Lorenzo/Desktop/Università/Magistrale/1° anno/Modelli/Modelli Latex/Modelli toppi/main.tex"
+(d:/Lorenzo/Desktop/Università/Magistrale/1° anno/Modelli/Modelli Latex/Modelli toppi/main.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
-(C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+(D:\Programmi\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
-<<<<<<< Updated upstream
 (D:\Programmi\MiKTeX\tex/latex/base\size11.clo
 File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
-=======
-(C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
-File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
->>>>>>> Stashed changes
 )
 \c@part=\count276
 \c@chapter=\count277
@@ -33,25 +24,25 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen150
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (D:\Programmi\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+ (D:\Programmi\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2026-05-17 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+) (D:\Programmi\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (D:\Programmi\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+) (D:\Programmi\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (D:\Programmi\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen151
 \Gin@req@width=\dimen152
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+) (D:\Programmi\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2026/09/09 v26.12 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count285
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2095.
@@ -63,7 +54,7 @@ LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) o
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2128.
 \U@D=\dimen153
 \l@unhyphenated=\language79
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+ (D:\Programmi\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count286
 Package babel Info: Configuration files are deprecated, as
@@ -73,38 +64,38 @@ Package babel Info: Configuration files are deprecated, as
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+(D:\Programmi\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/it\babel-italian.tex)
+) (D:\Programmi\MiKTeX\tex/generic/babel/locale/it\babel-italian.tex)
 Package babel Info: Importing font and identification data for 'italian'
 (babel)             from babel-it.ini. Reported on input line 4459.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/babel-italian\italian.ldf
+ (D:\Programmi\MiKTeX\tex/latex/babel-italian\italian.ldf
 Language: italian 2026/01/13 v.1.5.02 Italian support for the babel system
 \it@lettering=\count287
 \it@doublequoteactive=\count288
 \it@ISOcompliance=\count289
-)) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+)) (D:\Programmi\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count290
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/inputenx\inputenx.sty
+) (D:\Programmi\MiKTeX\tex/latex/inputenx\inputenx.sty
 Package: inputenx 2019/11/29 v1.12 Enhanced input encoding handling (HO)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/inputenx\ix-alias.def
+ (D:\Programmi\MiKTeX\tex/latex/inputenx\ix-alias.def
 File: ix-alias.def 2019/11/29 v1.12 Alias list (inputenx)
 )
 Package inputenx Info: Encoding name: utf8
 (inputenx)             Encoding file: utf8.def
 (inputenx)              on input line 175.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+ (D:\Programmi\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\utf8.def
+) (D:\Programmi\MiKTeX\tex/latex/base\utf8.def
 File: utf8.def 2022/06/07 v1.3c UTF-8 support
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\omsenc.dfu
+ (D:\Programmi\MiKTeX\tex/latex/base\omsenc.dfu
 File: omsenc.dfu 2022/06/07 v1.3c UTF-8 support
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -115,7 +106,7 @@ File: omsenc.dfu 2022/06/07 v1.3c UTF-8 support
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\ot1enc.dfu
+ (D:\Programmi\MiKTeX\tex/latex/base\ot1enc.dfu
 File: ot1enc.dfu 2022/06/07 v1.3c UTF-8 support
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -163,7 +154,7 @@ File: ot1enc.dfu 2022/06/07 v1.3c UTF-8 support
 )
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\t1enc.dfu
+ (D:\Programmi\MiKTeX\tex/latex/base\t1enc.dfu
 File: t1enc.dfu 2022/06/07 v1.3c UTF-8 support
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -442,7 +433,7 @@ File: t1enc.dfu 2022/06/07 v1.3c UTF-8 support
 )
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1enc.dfu
+ (D:\Programmi\MiKTeX\tex/latex/base\ts1enc.dfu
 File: ts1enc.dfu 2022/06/07 v1.3c UTF-8 support
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -534,9 +525,9 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
    defining Unicode char U+FEFF (decimal 65279)
-)) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
+)) (D:\Programmi\MiKTeX\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
+) (D:\Programmi\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
 \MT@toks=\toks20
 \MT@tempbox=\box53
@@ -550,27 +541,27 @@ LaTeX Info: Redefining \textls on input line 1449.
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
 \MT@listname@count=\count292
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-pdftex.def
+ (D:\Programmi\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2026/03/01 v3.2d Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 944.
 LaTeX Info: Redefining \lslig on input line 944.
 \MT@outer@space=\skip51
 )
 Package microtype Info: Loading configuration file microtype.cfg.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cfg
+ (D:\Programmi\MiKTeX\tex/latex/microtype\microtype.cfg
 File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/mhchem\mhchem.sty
+) (D:\Programmi\MiKTeX\tex/latex/mhchem\mhchem.sty
 Package: mhchem 2024/01/29 v4.10 for typesetting chemical formulae
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+ (D:\Programmi\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2026-09-09 L3 programming layer (loader) 
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\l3backend-pdftex.def
+ (D:\Programmi\MiKTeX\tex/latex/l3kernel\l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-09-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count293
-)) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
+)) (D:\Programmi\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
 Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+) (D:\Programmi\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count294
 \calc@Bcount=\count295
@@ -582,21 +573,21 @@ LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
 \calc@Ccount=\count296
 \calc@Cskip=\skip54
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (D:\Programmi\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2026/05/19 v2.18d AMS math features
 \@mathmargin=\skip55
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(D:\Programmi\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (D:\Programmi\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks22
 \ex@=\dimen157
-)) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (D:\Programmi\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen158
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (D:\Programmi\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count297
@@ -646,7 +637,7 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2965.
 LaTeX Info: Redefining \] on input line 2966.
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/chemgreek\chemgreek.sty (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+) (D:\Programmi\MiKTeX\tex/latex/chemgreek\chemgreek.sty (D:\Programmi\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
@@ -677,9 +668,9 @@ Package mhchem Warning: You did not specify a 'version' option for the mhchem
 (mhchem)                compatibility mode), because you might get slightly
 (mhchem)                different output with the same input in future versions.
 
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+) (D:\Programmi\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/yfonts\yfonts.sty
+) (D:\Programmi\MiKTeX\tex/latex/yfonts\yfonts.sty
 Package: yfonts 2019/04/04 v1.4 (WaS&NP)
 Now handling font encoding LY ...
 ... no UTF-8 mapping file for font encoding LY
@@ -687,22 +678,22 @@ Now handling font encoding LYG ...
 ... no UTF-8 mapping file for font encoding LYG
 LaTeX Encoding Info:    Redeclaring text command \" (encoding LYG) on input line 58.
 LaTeX Encoding Info:    Text composite with undeclared \" in encoding LYG on input line 58.
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+) (D:\Programmi\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2026-05-17 v1.3f Standard LaTeX Color (DPC)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+ (D:\Programmi\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
+ (D:\Programmi\MiKTeX\tex/latex/graphics\mathcolor.ltx)) (D:\Programmi\MiKTeX\tex/latex/comment\comment.sty
 \CommentStream=\write3
- Excluding comment 'comment') (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+ Excluding comment 'comment') (D:\Programmi\MiKTeX\tex/latex/wrapfig\wrapfig.sty
 \wrapoverhang=\dimen170
 \WF@size=\dimen171
 \c@WF@wrappedlines=\count313
 \WF@box=\box56
 \WF@everypar=\toks27
 Package: wrapfig 2003/01/31  v 3.6
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/lettrine\lettrine.sty
+) (D:\Programmi\MiKTeX\tex/latex/lettrine\lettrine.sty
 File: lettrine.sty 2025-12-06 v2.83 (Daniel Flipo)
 \c@DefaultLines=\count314
 \c@DefaultDepth=\count315
@@ -732,63 +723,63 @@ File: lettrine.sty 2025-12-06 v2.83 (Daniel Flipo)
 \L@finaldp=\dimen192
 
 Loading lettrine.cfg
-(C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/lettrine\lettrine.cfg)
+(D:\Programmi\MiKTeX\tex/latex/lettrine\lettrine.cfg)
 \Lettrine@tweaks=\toks28
 \Llist@everypar=\toks29
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/tocbibind\tocbibind.sty
+) (D:\Programmi\MiKTeX\tex/latex/tocbibind\tocbibind.sty
 Package: tocbibind 2026/06/01 v1.5l extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+) (D:\Programmi\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2026-06-17 v7.01r Hypertext links for LaTeX
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (D:\Programmi\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+) (D:\Programmi\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+) (D:\Programmi\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+) (D:\Programmi\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+ (D:\Programmi\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+) (D:\Programmi\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+ (D:\Programmi\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)) (D:\Programmi\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+) (D:\Programmi\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+ (D:\Programmi\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+) (D:\Programmi\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+ (D:\Programmi\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count318
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+) (D:\Programmi\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen193
 \Hy@linkcounter=\count319
 \Hy@pagecounter=\count320
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+ (D:\Programmi\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2026-06-17 v7.01r Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (D:\Programmi\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count321
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+ (D:\Programmi\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2026-06-17 v7.01r Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -801,15 +792,15 @@ Package hyperref Info: Backreferencing OFF on input line 4219.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4466.
 \c@Hy@tempcnt=\count322
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+ (D:\Programmi\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4805.
 \XeTeXLinkMargin=\dimen194
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+ (D:\Programmi\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+ (D:\Programmi\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count323
@@ -827,21 +818,21 @@ Package hyperref Info: PDF/A mode OFF on input line 6121.
 \c@Hfootnote=\count326
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+ (D:\Programmi\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2026-06-17 v7.01r Hyperref driver for pdfTeX
 \Fld@listcount=\count327
 \c@bookmark@seq@number=\count328
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+ (D:\Programmi\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+ (D:\Programmi\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip68
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+) (D:\Programmi\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+ (D:\Programmi\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count329
@@ -856,7 +847,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen259
 \Gm@layoutvoffset=\dimen260
 \Gm@dimlist=\toks30
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+ (D:\Programmi\MiKTeX\tex/latex/geometry\geometry.cfg)) (D:\Programmi\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box58
 \beforetitleunit=\skip69
@@ -867,7 +858,6 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidth=\dimen263
 \titlewidthlast=\dimen264
 \titlewidthfirst=\dimen265
-<<<<<<< Updated upstream
 ) (D:\Programmi\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
  (D:\Programmi\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -913,11 +903,8 @@ Package: figureversions 2025-04-29 v1.0.1 Figure versions
 )
 Already applied: [0000-00-00] Fall back to v1 on input line 76.
 )) (D:\Programmi\MiKTeX\tex/latex/caption\caption.sty
-=======
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
->>>>>>> Stashed changes
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+ (D:\Programmi\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen266
 \captionmargin=\dimen267
@@ -933,18 +920,13 @@ Package caption Info: Standard document class detected.
 \c@continuedfloat=\count334
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+) (D:\Programmi\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count335
 Package caption Info: New subtype `subtable' on input line 238.
-<<<<<<< Updated upstream
 \c@subtable=\count336
 ) (D:\Programmi\MiKTeX\tex/latex/booktabs\booktabs.sty
-=======
-\c@subtable=\count335
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
->>>>>>> Stashed changes
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen274
 \lightrulewidth=\dimen275
@@ -963,9 +945,9 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count339
 \@lastruleclass=\count340
 \@thisrulewidth=\dimen286
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+) (D:\Programmi\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+ (D:\Programmi\MiKTeX\tex/latex/tools\array.sty
 Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
 \col@sep=\dimen287
 \ar@mcellbox=\box59
@@ -980,31 +962,15 @@ Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
 \TX@old@col=\dimen291
 \TX@target=\dimen292
 \TX@delta=\dimen293
-<<<<<<< Updated upstream
 \TX@cols=\count341
 \TX@ftn=\toks35
 ) (D:\Programmi\MiKTeX\tex/latex/adjustbox\adjustbox.sty
 Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
  (D:\Programmi\MiKTeX\tex/latex/adjustbox\adjcalc.sty
-=======
-\TX@cols=\count340
-\TX@ftn=\toks33
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
-Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks34
-\XKV@tempa@toks=\toks35
-)
-\XKV@depth=\count341
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
->>>>>>> Stashed changes
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+) (D:\Programmi\MiKTeX\tex/latex/adjustbox\trimclip.sty
 Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.sty
+ (D:\Programmi\MiKTeX\tex/latex/collectbox\collectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
 \collectedbox=\box61
 )
@@ -1013,7 +979,7 @@ Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
 \tc@urx=\dimen296
 \tc@ury=\dimen297
 Package trimclip Info: Using driver 'tc-pdftex.def'.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+ (D:\Programmi\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
 File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
 ))
 \adjbox@Width=\dimen298
@@ -1024,10 +990,10 @@ File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
 \adjbox@pheight=\dimen303
 \adjbox@pdepth=\dimen304
 \adjbox@ptotalheight=\dimen305
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+ (D:\Programmi\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
 \c@checkoddpage=\count342
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
+) (D:\Programmi\MiKTeX\tex/latex/varwidth\varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box62
 \sift@deathcycles=\count343
@@ -1035,13 +1001,13 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@roff=\dimen307
 )
 ==> First Aid for varwidth.sty applied!
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+) (D:\Programmi\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip73
 \multirow@cntb=\count344
 \multirow@dima=\skip74
 \bigstrutjot=\dimen308
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+) (D:\Programmi\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count345
 \lst@gtempboxa=\box63
 \lst@token=\toks36
@@ -1054,42 +1020,19 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \lst@newlines=\count349
 \lst@lineno=\count350
 \lst@maxwidth=\dimen312
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+ (D:\Programmi\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+) (D:\Programmi\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 \c@lstnumber=\count351
 \lst@skipnumbers=\count352
 \lst@framebox=\box64
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+) (D:\Programmi\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/matlab-prettifier\matlab-prettifier.sty
+ (D:\Programmi\MiKTeX\tex/latex/matlab-prettifier\matlab-prettifier.sty
 Package: matlab-prettifier 2014/06/19 v0.3 A package for prettyprinting Matlab source code
-<<<<<<< Updated upstream
-=======
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
-Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
-LaTeX Info: Redefining \color on input line 762.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-)
->>>>>>> Stashed changes
 \netBracketCount@mlpr=\count353
 \blkLvl@mlpr=\count354
 \blkLvlAtClassdef@mlpr=\count355
@@ -1097,21 +1040,15 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 \jayDepth@mlpr=\skip76
 \sectionRuleOffset@mlpr=\skip77
 \toks@mlpr=\toks37
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+) (D:\Programmi\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-<<<<<<< Updated upstream
 Package hyperref Info: Option `colorlinks' set `true' on input line 76.
  (D:\Programmi\MiKTeX\tex/latex/lipsum\lipsum.sty
-=======
-Package hyperref Info: Option `colorlinks' set `true' on input line 66.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
->>>>>>> Stashed changes
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count356
 \l__lipsum_a_int=\count357
 \l__lipsum_b_int=\count358
-<<<<<<< Updated upstream
  (D:\Programmi\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
 LaTeX Font Info:    Trying to load font information for T1+UniversalisADFStd-LF on input line 83.
  (D:\Programmi\MiKTeX\tex/latex/universalis\t1universalisadfstd-lf.fd
@@ -1145,34 +1082,6 @@ LaTeX Font Info:    ... okay on input line 83.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
 LaTeX Font Info:    ... okay on input line 83.
  (D:\Programmi\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
-=======
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (main.aux)
-\openout1 = `main.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for LY/yfrak/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for LYG/ygoth/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
->>>>>>> Stashed changes
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count359
 \scratchdimen=\dimen313
@@ -1185,10 +1094,10 @@ LaTeX Font Info:    ... okay on input line 73.
 \MPnumerator=\count363
 \makeMPintoPDFobject=\count364
 \everyMPtoPDFconversion=\toks39
-) (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (D:\Programmi\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+ (D:\Programmi\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Info: Redefining \it@ocap on input line 83.
@@ -1213,16 +1122,10 @@ Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-<<<<<<< Updated upstream
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `UniversalisADFStd-LF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-=======
-(C:\Users\Lorenzo\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-)
->>>>>>> Stashed changes
 
 Package chemgreek Info: Activating mapping `default' on line 83.
 
@@ -1295,14 +1198,14 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.40 ...mbio sangue-tessuti}{21}{subsection.4.3.1}
+l.40 ...mbio sangue-tessuti}{22}{subsection.4.3.1}
                                                   % [1
 
-])
+] [2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- (Capitoli/0-introduzione.tex [2]
+ (Capitoli/0-introduzione.tex [3]
 Capitolo 1.
 LaTeX Font Info:    Trying to load font information for TS1+UniversalisADFStd-LF on input line 4.
 (D:\Programmi\MiKTeX\tex/latex/universalis\ts1universalisadfstd-lf.fd
@@ -1318,10 +1221,10 @@ LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/b/n' will be
 (Font)              scaled to size 17.28pt on input line 10.
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 26.
- [3
+ [4
 
-{D:/Programmi/MiKTeX/fonts/enc/dvips/universalis/unvsl_fe7xck.enc}] [4]
-<immagini/enzima.png, id=327, 855.195pt x 331.2375pt>
+{D:/Programmi/MiKTeX/fonts/enc/dvips/universalis/unvsl_fe7xck.enc}] [5]
+<immagini/enzima.png, id=416, 855.195pt x 331.2375pt>
 File: immagini/enzima.png Graphic file (type png)
 <use immagini/enzima.png>
 Package pdftex.def Info: immagini/enzima.png  used on input line 73.
@@ -1330,42 +1233,42 @@ Package pdftex.def Info: immagini/enzima.png  used on input line 73.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5]) (Capitoli/1-introduzione_alla_modellizzazione.tex [6 <./immagini/enzima.png>]
+[6]) (Capitoli/1-introduzione_alla_modellizzazione.tex [7 <./immagini/enzima.png>]
 Capitolo 2.
-<immagini/tipidimodelli.png, id=341, 813.0375pt x 780.9175pt>
+<immagini/tipidimodelli.png, id=430, 813.0375pt x 780.9175pt>
 File: immagini/tipidimodelli.png Graphic file (type png)
 <use immagini/tipidimodelli.png>
 Package pdftex.def Info: immagini/tipidimodelli.png  used on input line 5.
 (pdftex.def)             Requested size: 221.78923pt x 213.01921pt.
-<immagini/itipidimodello.png, id=342, 1513.655pt x 409.53pt>
+<immagini/itipidimodello.png, id=431, 1513.655pt x 409.53pt>
 File: immagini/itipidimodello.png Graphic file (type png)
 <use immagini/itipidimodello.png>
 Package pdftex.def Info: immagini/itipidimodello.png  used on input line 29.
 (pdftex.def)             Requested size: 443.57848pt x 120.01044pt.
-[7
+[8
 
  <./immagini/tipidimodelli.png>]
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 37.
- [8 <./immagini/itipidimodello.png>]
-<immagini/modellodatidiagramma.png, id=357, 448.67625pt x 281.05pt>
+ [9 <./immagini/itipidimodello.png>]
+<immagini/modellodatidiagramma.png, id=446, 448.67625pt x 281.05pt>
 File: immagini/modellodatidiagramma.png Graphic file (type png)
 <use immagini/modellodatidiagramma.png>
 Package pdftex.def Info: immagini/modellodatidiagramma.png  used on input line 56.
 (pdftex.def)             Requested size: 221.78923pt x 138.92934pt.
- [9 <./immagini/modellodatidiagramma.png>]
-<immagini/modellodelsistema.png, id=364, 466.74374pt x 238.8925pt>
+ [10 <./immagini/modellodatidiagramma.png>]
+<immagini/modellodelsistema.png, id=453, 466.74374pt x 238.8925pt>
 File: immagini/modellodelsistema.png Graphic file (type png)
 <use immagini/modellodelsistema.png>
 Package pdftex.def Info: immagini/modellodelsistema.png  used on input line 72.
 (pdftex.def)             Requested size: 243.96951pt x 124.87001pt.
- [10 <./immagini/modellodelsistema.png>]
-<immagini/indentificazionedelmodello.png, id=376, 541.02126pt x 388.45125pt>
+ [11 <./immagini/modellodelsistema.png>]
+<immagini/indentificazionedelmodello.png, id=465, 541.02126pt x 388.45125pt>
 File: immagini/indentificazionedelmodello.png Graphic file (type png)
 <use immagini/indentificazionedelmodello.png>
 Package pdftex.def Info: immagini/indentificazionedelmodello.png  used on input line 87.
 (pdftex.def)             Requested size: 221.78923pt x 159.24232pt.
-<immagini/validazionedelmodello.png, id=377, 582.175pt x 573.14125pt>
+<immagini/validazionedelmodello.png, id=466, 582.175pt x 573.14125pt>
 File: immagini/validazionedelmodello.png Graphic file (type png)
 <use immagini/validazionedelmodello.png>
 Package pdftex.def Info: immagini/validazionedelmodello.png  used on input line 107.
@@ -1374,26 +1277,26 @@ Package pdftex.def Info: immagini/validazionedelmodello.png  used on input line 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11 <./immagini/indentificazionedelmodello.png>]) (Capitoli/2-Modelli_di_dati.tex [12 <./immagini/validazionedelmodello.png>]
+[12 <./immagini/indentificazionedelmodello.png>]) (Capitoli/2-Modelli_di_dati.tex [13 <./immagini/validazionedelmodello.png>]
 Capitolo 3.
-[13
+[14
 
 ]
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 20.
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 20.
-<Immagini/temperaturacorporea.png, id=398, 524.71031pt x 325.215pt>
+<Immagini/temperaturacorporea.png, id=487, 524.71031pt x 325.215pt>
 File: Immagini/temperaturacorporea.png Graphic file (type png)
 <use Immagini/temperaturacorporea.png>
 Package pdftex.def Info: Immagini/temperaturacorporea.png  used on input line 23.
 (pdftex.def)             Requested size: 221.78923pt x 137.46274pt.
-<Immagini/datiintestino.png, id=399, 296.60812pt x 418.56375pt>
+<Immagini/datiintestino.png, id=488, 296.60812pt x 418.56375pt>
 File: Immagini/datiintestino.png Graphic file (type png)
 <use Immagini/datiintestino.png>
 Package pdftex.def Info: Immagini/datiintestino.png  used on input line 34.
 (pdftex.def)             Requested size: 177.42868pt x 250.39293pt.
-<Immagini/sistemaintestino.png, id=400, 402.75468pt x 552.56438pt>
+<Immagini/sistemaintestino.png, id=489, 402.75468pt x 552.56438pt>
 File: Immagini/sistemaintestino.png Graphic file (type png)
 <use Immagini/sistemaintestino.png>
 Package pdftex.def Info: Immagini/sistemaintestino.png  used on input line 35.
@@ -1402,8 +1305,8 @@ Package pdftex.def Info: Immagini/sistemaintestino.png  used on input line 35.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./Immagini/temperaturacorporea.png>]
-<Immagini/coerenza.png, id=414, 505.89pt x 379.4175pt>
+[15 <./Immagini/temperaturacorporea.png>]
+<Immagini/coerenza.png, id=503, 505.89pt x 379.4175pt>
 File: Immagini/coerenza.png Graphic file (type png)
 <use Immagini/coerenza.png>
 Package pdftex.def Info: Immagini/coerenza.png  used on input line 52.
@@ -1412,7 +1315,7 @@ Package pdftex.def Info: Immagini/coerenza.png  used on input line 52.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Immagini/pupilla.png, id=415, 583.42969pt x 126.4725pt>
+<Immagini/pupilla.png, id=504, 583.42969pt x 126.4725pt>
 File: Immagini/pupilla.png Graphic file (type png)
 <use Immagini/pupilla.png>
 Package pdftex.def Info: Immagini/pupilla.png  used on input line 67.
@@ -1420,73 +1323,73 @@ Package pdftex.def Info: Immagini/pupilla.png  used on input line 67.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Immagini/glucosio.png, id=416, 405.76593pt x 299.61937pt>
+<Immagini/glucosio.png, id=505, 405.76593pt x 299.61937pt>
 File: Immagini/glucosio.png Graphic file (type png)
 <use Immagini/glucosio.png>
 Package pdftex.def Info: Immagini/glucosio.png  used on input line 73.
 (pdftex.def)             Requested size: 221.78923pt x 163.77164pt.
-[15 <./Immagini/datiintestino.png> <./Immagini/sistemaintestino.png>] [16 <./Immagini/coerenza.png> <./Immagini/pupilla.png> <./Immagini/glucosio.png>]
-<Immagini/deconvoluzione.png, id=435, 502.87875pt x 149.05687pt>
+[16 <./Immagini/datiintestino.png> <./Immagini/sistemaintestino.png>] [17 <./Immagini/coerenza.png> <./Immagini/pupilla.png> <./Immagini/glucosio.png>]
+<Immagini/deconvoluzione.png, id=524, 502.87875pt x 149.05687pt>
 File: Immagini/deconvoluzione.png Graphic file (type png)
 <use Immagini/deconvoluzione.png>
 Package pdftex.def Info: Immagini/deconvoluzione.png  used on input line 92.
 (pdftex.def)             Requested size: 354.86412pt x 105.1829pt.
- [17 <./Immagini/deconvoluzione.png>]
-<Immagini/concentrazionecpeptide.png, id=445, 291.33844pt x 330.48468pt>
+ [18 <./Immagini/deconvoluzione.png>]
+<Immagini/concentrazionecpeptide.png, id=535, 291.33844pt x 330.48468pt>
 File: Immagini/concentrazionecpeptide.png Graphic file (type png)
 <use Immagini/concentrazionecpeptide.png>
 Package pdftex.def Info: Immagini/concentrazionecpeptide.png  used on input line 101.
 (pdftex.def)             Requested size: 155.25517pt x 176.11922pt.
-<Immagini/decovoluzione2.png, id=446, 508.90125pt x 318.43968pt>
+<Immagini/decovoluzione2.png, id=536, 508.90125pt x 318.43968pt>
 File: Immagini/decovoluzione2.png Graphic file (type png)
 <use Immagini/decovoluzione2.png>
 Package pdftex.def Info: Immagini/decovoluzione2.png  used on input line 102.
 (pdftex.def)             Requested size: 266.14978pt x 166.5468pt.
-) (Capitoli/3-Modelli_di_sistemi.tex [18 <./Immagini/concentrazionecpeptide.png> <./Immagini/decovoluzione2.png>]
+) (Capitoli/3-Modelli_di_sistemi.tex [19 <./Immagini/concentrazionecpeptide.png> <./Immagini/decovoluzione2.png>]
 Capitolo 4.
-[19
+[20
 
-] [20]
-<Immagini/modellocapillaresingolo.png, id=469, 344.03531pt x 91.09032pt>
+] [21]
+<Immagini/modellocapillaresingolo.png, id=558, 344.03531pt x 91.09032pt>
 File: Immagini/modellocapillaresingolo.png Graphic file (type png)
 <use Immagini/modellocapillaresingolo.png>
 Package pdftex.def Info: Immagini/modellocapillaresingolo.png  used on input line 82.
 (pdftex.def)             Requested size: 354.86412pt x 93.95747pt.
- [21 <./Immagini/modellocapillaresingolo.png>]
-<Immagini/modellocapillaredoppio.png, id=477, 353.06906pt x 150.5625pt>
+ [22 <./Immagini/modellocapillaresingolo.png>]
+<Immagini/modellocapillaredoppio.png, id=566, 353.06906pt x 150.5625pt>
 File: Immagini/modellocapillaredoppio.png Graphic file (type png)
 <use Immagini/modellocapillaredoppio.png>
 Package pdftex.def Info: Immagini/modellocapillaredoppio.png  used on input line 94.
 (pdftex.def)             Requested size: 310.50357pt x 132.41269pt.
-<Immagini/modellocapillaretriplo.png, id=478, 350.05782pt x 201.00093pt>
+<Immagini/modellocapillaretriplo.png, id=567, 350.05782pt x 201.00093pt>
 File: Immagini/modellocapillaretriplo.png Graphic file (type png)
 <use Immagini/modellocapillaretriplo.png>
 Package pdftex.def Info: Immagini/modellocapillaretriplo.png  used on input line 106.
 (pdftex.def)             Requested size: 310.50357pt x 178.30138pt.
- [22 <./Immagini/modellocapillaredoppio.png> <./Immagini/modellocapillaretriplo.png>]
-<Immagini/elastanzadellecamere.png, id=491, 392.21532pt x 146.79843pt>
+ [23 <./Immagini/modellocapillaredoppio.png> <./Immagini/modellocapillaretriplo.png>]
+<Immagini/elastanzadellecamere.png, id=580, 392.21532pt x 146.79843pt>
 File: Immagini/elastanzadellecamere.png Graphic file (type png)
 <use Immagini/elastanzadellecamere.png>
 Package pdftex.def Info: Immagini/elastanzadellecamere.png  used on input line 124.
 (pdftex.def)             Requested size: 310.50357pt x 116.2226pt.
- [23 <./Immagini/elastanzadellecamere.png>]) (Capitoli/4-Identificazione_del_modello.tex [24]
+ [24 <./Immagini/elastanzadellecamere.png>]) (Capitoli/4-Identificazione_del_modello.tex [25]
 Capitolo 5.
-[25
+[26
 
 ]
-<immagini/segnali_di_test_transitori.png, id=509, 703.62875pt x 383.4325pt>
+<immagini/segnali_di_test_transitori.png, id=598, 703.62875pt x 383.4325pt>
 File: immagini/segnali_di_test_transitori.png Graphic file (type png)
 <use immagini/segnali_di_test_transitori.png>
 Package pdftex.def Info: immagini/segnali_di_test_transitori.png  used on input line 21.
 (pdftex.def)             Requested size: 221.78923pt x 120.85793pt.
- [26 <./immagini/segnali_di_test_transitori.png>]
-<immagini/segnali di test armonici.png, id=519, 839.135pt x 127.47626pt>
+ [27 <./immagini/segnali_di_test_transitori.png>]
+<immagini/segnali di test armonici.png, id=608, 839.135pt x 127.47626pt>
 File: immagini/segnali di test armonici.png Graphic file (type png)
 <use immagini/segnali di test armonici.png>
 Package pdftex.def Info: immagini/segnali di test armonici.png  used on input line 39.
 (pdftex.def)             Requested size: 310.50357pt x 47.16936pt.
- [27 <./immagini/segnali di test armonici.png>]
-<immagini/sorgenti di errore.png, id=526, 711.65875pt x 464.73625pt>
+ [28 <./immagini/segnali di test armonici.png>]
+<immagini/sorgenti di errore.png, id=615, 711.65875pt x 464.73625pt>
 File: immagini/sorgenti di errore.png Graphic file (type png)
 <use immagini/sorgenti di errore.png>
 Package pdftex.def Info: immagini/sorgenti di errore.png  used on input line 60.
@@ -1504,33 +1407,33 @@ Package wrapfig Warning: Stationary wrapfigure forced to float on input line 66.
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 67.
 
-[28 <./immagini/sorgenti di errore.png>]
+[29 <./immagini/sorgenti di errore.png>]
 Overfull \hbox (15.29118pt too wide) in paragraph at lines 82--83
 []\T1/UniversalisADFStd-LF/m/n/10.95 (-20) Prima di lan-cia-re al-go-rit-mi per la sti-ma nu-me-ri-ca, oc-cor-re ne-ces-sa-ria-men-te ve-ri-fi-ca-re l'\T1/UniversalisADFStd-LF/b/n/10.95 (-20) identificabilit�
  []
 
-) (Capitoli/5-Modello_parametrico.tex [29]
+) (Capitoli/5-Modello_parametrico.tex [30]
 Capitolo 6.
-<Immagini/sistemafisiologico.png, id=540, 451.6875pt x 115.93312pt>
+<Immagini/sistemafisiologico.png, id=630, 451.6875pt x 115.93312pt>
 File: Immagini/sistemafisiologico.png Graphic file (type png)
 <use Immagini/sistemafisiologico.png>
 Package pdftex.def Info: Immagini/sistemafisiologico.png  used on input line 18.
 (pdftex.def)             Requested size: 443.57848pt x 113.85779pt.
-<immagini/modellofarmaco.png, id=541, 470.50781pt x 223.58531pt>
+<immagini/modellofarmaco.png, id=631, 470.50781pt x 223.58531pt>
 File: immagini/modellofarmaco.png Graphic file (type png)
 <use immagini/modellofarmaco.png>
 Package pdftex.def Info: immagini/modellofarmaco.png  used on input line 26.
 (pdftex.def)             Requested size: 221.78923pt x 105.39555pt.
-[30
+[31
 
  <./Immagini/sistemafisiologico.png>]
-<immagini/modellofarmaco2.png, id=551, 250.68657pt x 176.15813pt>
+<immagini/modellofarmaco2.png, id=640, 250.68657pt x 176.15813pt>
 File: immagini/modellofarmaco2.png Graphic file (type png)
 <use immagini/modellofarmaco2.png>
 Package pdftex.def Info: immagini/modellofarmaco2.png  used on input line 46.
 (pdftex.def)             Requested size: 133.07489pt x 93.51656pt.
- [31 <./immagini/modellofarmaco.png>] [32 <./immagini/modellofarmaco2.png>]
-<immagini/esempio1identificazione.png, id=571, 171.64125pt x 179.16937pt>
+ [32 <./immagini/modellofarmaco.png>] [33 <./immagini/modellofarmaco2.png>]
+<immagini/esempio1identificazione.png, id=660, 171.64125pt x 179.16937pt>
 File: immagini/esempio1identificazione.png Graphic file (type png)
 <use immagini/esempio1identificazione.png>
 Package pdftex.def Info: immagini/esempio1identificazione.png  used on input line 108.
@@ -1539,32 +1442,66 @@ Package pdftex.def Info: immagini/esempio1identificazione.png  used on input lin
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33] [34 <./immagini/esempio1identificazione.png>] [35]
-<immagini/esempio2identificazione.png, id=606, 398.23781pt x 246.1697pt>
+[34] [35 <./immagini/esempio1identificazione.png>] [36]
+<immagini/esempio2identificazione.png, id=696, 398.23781pt x 246.1697pt>
 File: immagini/esempio2identificazione.png Graphic file (type png)
 <use immagini/esempio2identificazione.png>
 Package pdftex.def Info: immagini/esempio2identificazione.png  used on input line 199.
 (pdftex.def)             Requested size: 221.78923pt x 137.09908pt.
-<immagini/graficoesempio2.png, id=607, 167.87718pt x 164.11313pt>
+<immagini/graficoesempio2.png, id=697, 167.87718pt x 164.11313pt>
 File: immagini/graficoesempio2.png Graphic file (type png)
 <use immagini/graficoesempio2.png>
 Package pdftex.def Info: immagini/graficoesempio2.png  used on input line 200.
 (pdftex.def)             Requested size: 133.07489pt x 130.09117pt.
- [36 <./immagini/esempio2identificazione.png> <./immagini/graficoesempio2.png>]
-<immagini/esempio3identificazione.png, id=617, 260.47313pt x 175.40532pt>
+ [37 <./immagini/esempio2identificazione.png> <./immagini/graficoesempio2.png>]
+<immagini/esempio3identificazione.png, id=706, 260.47313pt x 175.40532pt>
 File: immagini/esempio3identificazione.png Graphic file (type png)
 <use immagini/esempio3identificazione.png>
 Package pdftex.def Info: immagini/esempio3identificazione.png  used on input line 224.
 (pdftex.def)             Requested size: 221.78923pt x 149.35483pt.
- [37 <./immagini/esempio3identificazione.png>]
-<immagini/modelloglucosioinsulina.png, id=628, 237.13594pt x 218.31563pt>
+ [38 <./immagini/esempio3identificazione.png>]
+<immagini/modelloglucosioinsulina.png, id=717, 237.13594pt x 218.31563pt>
 File: immagini/modelloglucosioinsulina.png Graphic file (type png)
 <use immagini/modelloglucosioinsulina.png>
 Package pdftex.def Info: immagini/modelloglucosioinsulina.png  used on input line 230.
 (pdftex.def)             Requested size: 221.78923pt x 204.19402pt.
- [38 <./immagini/modelloglucosioinsulina.png>] [39]) (Capitoli/appendice_domande.tex [40]
+ [39 <./immagini/modelloglucosioinsulina.png>] [40]) (Capitoli/6-Stima_modello_parametrico_lineare.tex [41]
+Capitolo 7.
+<Immagini/schemastimaparametri.png, id=741, 648.17157pt x 393.72093pt>
+File: Immagini/schemastimaparametri.png Graphic file (type png)
+<use Immagini/schemastimaparametri.png>
+Package pdftex.def Info: Immagini/schemastimaparametri.png  used on input line 27.
+(pdftex.def)             Requested size: 443.57848pt x 269.44489pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[42
+
+] [43 <./Immagini/schemastimaparametri.png>]
+<Immagini/grafico residui.png, id=756, 295.1025pt x 146.04562pt>
+File: Immagini/grafico residui.png Graphic file (type png)
+<use Immagini/grafico residui.png>
+Package pdftex.def Info: Immagini/grafico residui.png  used on input line 69.
+(pdftex.def)             Requested size: 221.78923pt x 109.76569pt.
+ [44 <./Immagini/grafico residui.png>]
+<Immagini/esempiregressione.png, id=766, 1131.47719pt x 351.56343pt>
+File: Immagini/esempiregressione.png Graphic file (type png)
+<use Immagini/esempiregressione.png>
+Package pdftex.def Info: Immagini/esempiregressione.png  used on input line 80.
+(pdftex.def)             Requested size: 443.57848pt x 137.82265pt.
+ [45 <./Immagini/esempiregressione.png>] [46]
+<Immagini/testsuiresidui.png, id=786, 971.88094pt x 294.34969pt>
+File: Immagini/testsuiresidui.png Graphic file (type png)
+<use Immagini/testsuiresidui.png>
+Package pdftex.def Info: Immagini/testsuiresidui.png  used on input line 136.
+(pdftex.def)             Requested size: 443.57848pt x 134.34251pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[47 <./Immagini/testsuiresidui.png>]) (Capitoli/appendice_domande.tex [48]
 Appendice A.
-) [41
+) [49
 
 ] (main.aux)
  ***********
@@ -1572,32 +1509,20 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9A12E701E82D524ACE9F2E6079CE1158;13008.
+(rerunfilecheck)             Checksum: E024A9A464AE7C8F207EA4CD97061541;16730.
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< Updated upstream
- 21726 strings out of 467392
- 384521 string characters out of 5417708
- 1018092 words of memory out of 5000000
- 50047 multiletter control sequences out of 15000+600000
- 699158 words of font info for 388 fonts, out of 8000000 for 9000
+ 21873 strings out of 467392
+ 388068 string characters out of 5417708
+ 1021092 words of memory out of 5000000
+ 50108 multiletter control sequences out of 15000+600000
+ 705718 words of font info for 409 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,17n,118p,1090b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Bold.pfb><D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Italic.pfb><D:/Programmi/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Regular.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programmi/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (42 pages, 1998717 bytes).
-=======
- 20692 strings out of 467392
- 358875 string characters out of 5404667
- 1014098 words of memory out of 5000000
- 49430 multiletter control sequences out of 15000+600000
- 637203 words of font info for 138 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 74i,17n,118p,1087b,642s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Lorenzo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (28 pages, 1076924 bytes).
->>>>>>> Stashed changes
+Output written on main.pdf (50 pages, 2181604 bytes).
 PDF statistics:
- 765 PDF objects out of 1000 (max. 8388607)
- 208 named destinations out of 1000 (max. 500000)
- 78452 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 931 PDF objects out of 1000 (max. 8388607)
+ 259 named destinations out of 1000 (max. 500000)
+ 86800 words of extra memory for PDF output out of 89155 (max. 10000000)
 
