@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  26 OCT 2026 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.6)  2 NOV 2026 12:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1285,7 +1285,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 ...oltaggio-dipendenti}{32}{subsection.3.3.1}
+l.39 ...i dati sperimentali}{34}{subsection.3.2.3}
                                                   % [1
 
 ])
@@ -1306,7 +1306,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/b/n' will be
 (Font)              scaled to size 17.28pt on input line 16.
-<immagini/neurone.png, id=190, 1156.32pt x 644.4075pt>
+<immagini/neurone.png, id=200, 1156.32pt x 644.4075pt>
 File: immagini/neurone.png Graphic file (type png)
 <use immagini/neurone.png>
 Package pdftex.def Info: immagini/neurone.png  used on input line 28.
@@ -1314,7 +1314,7 @@ Package pdftex.def Info: immagini/neurone.png  used on input line 28.
  [3
 
 {C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/universalis/unvsl_fe7xck.enc}]
-<immagini/potenzialedimembrana.png, id=198, 1146.2825pt x 513.92pt>
+<immagini/potenzialedimembrana.png, id=208, 1146.2825pt x 513.92pt>
 File: immagini/potenzialedimembrana.png Graphic file (type png)
 <use immagini/potenzialedimembrana.png>
 Package pdftex.def Info: immagini/potenzialedimembrana.png  used on input line 44.
@@ -1324,12 +1324,12 @@ LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 93.
 LaTeX Font Info:    Font shape `T1/UniversalisADFStd-LF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 106.
-<immagini/depolarizzazione.png, id=217, 726.715pt x 435.6275pt>
+<immagini/depolarizzazione.png, id=227, 726.715pt x 435.6275pt>
 File: immagini/depolarizzazione.png Graphic file (type png)
 <use immagini/depolarizzazione.png>
 Package pdftex.def Info: immagini/depolarizzazione.png  used on input line 110.
 (pdftex.def)             Requested size: 177.42868pt x 106.3541pt.
-<immagini/ripolarizzazione.png, id=218, 678.535pt x 501.875pt>
+<immagini/ripolarizzazione.png, id=228, 678.535pt x 501.875pt>
 File: immagini/ripolarizzazione.png Graphic file (type png)
 <use immagini/ripolarizzazione.png>
 Package pdftex.def Info: immagini/ripolarizzazione.png  used on input line 112.
@@ -1339,30 +1339,30 @@ Overfull \hbox (40.04181pt too wide) in paragraph at lines 127--144
  [][] 
  []
 
-<immagini/potenziale dazione.png, id=228, 1957.3125pt x 319.1925pt>
+<immagini/potenziale dazione.png, id=238, 1957.3125pt x 319.1925pt>
 File: immagini/potenziale dazione.png Graphic file (type png)
 <use immagini/potenziale dazione.png>
 Package pdftex.def Info: immagini/potenziale dazione.png  used on input line 163.
 (pdftex.def)             Requested size: 443.57848pt x 72.33635pt.
 [7] [8 <./immagini/potenziale dazione.png>]
-<immagini/porpagazionecontinua.png, id=240, 993.7125pt x 710.655pt>
+<immagini/porpagazionecontinua.png, id=250, 993.7125pt x 710.655pt>
 File: immagini/porpagazionecontinua.png Graphic file (type png)
 <use immagini/porpagazionecontinua.png>
 Package pdftex.def Info: immagini/porpagazionecontinua.png  used on input line 180.
 (pdftex.def)             Requested size: 332.68385pt x 237.9218pt.
  [9 <./immagini/porpagazionecontinua.png>]
-<immagini/sinapsielettrica.png, id=247, 1158.3275pt x 483.8075pt>
+<immagini/sinapsielettrica.png, id=257, 1158.3275pt x 483.8075pt>
 File: immagini/sinapsielettrica.png Graphic file (type png)
 <use immagini/sinapsielettrica.png>
 Package pdftex.def Info: immagini/sinapsielettrica.png  used on input line 211.
 (pdftex.def)             Requested size: 354.86412pt x 148.2144pt.
  [10 <./immagini/sinapsielettrica.png>] [11]
-<immagini/sinapsichimica.png, id=258, 983.675pt x 600.2425pt>
+<immagini/sinapsichimica.png, id=268, 983.675pt x 600.2425pt>
 File: immagini/sinapsichimica.png Graphic file (type png)
 <use immagini/sinapsichimica.png>
 Package pdftex.def Info: immagini/sinapsichimica.png  used on input line 228.
 (pdftex.def)             Requested size: 288.32329pt x 175.93428pt.
-<immagini/neurotrasmettitore.png, id=259, 682.55pt x 397.485pt>
+<immagini/neurotrasmettitore.png, id=269, 682.55pt x 397.485pt>
 File: immagini/neurotrasmettitore.png Graphic file (type png)
 <use immagini/neurotrasmettitore.png>
 Package pdftex.def Info: immagini/neurotrasmettitore.png  used on input line 229.
@@ -1372,7 +1372,7 @@ Package pdftex.def Info: immagini/neurotrasmettitore.png  used on input line 229
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12]
-<immagini/eccitatoriinibitori.png, id=272, 1493.58pt x 839.135pt>
+<immagini/eccitatoriinibitori.png, id=282, 1493.58pt x 839.135pt>
 File: immagini/eccitatoriinibitori.png Graphic file (type png)
 <use immagini/eccitatoriinibitori.png>
 Package pdftex.def Info: immagini/eccitatoriinibitori.png  used on input line 256.
@@ -1381,7 +1381,7 @@ Package pdftex.def Info: immagini/eccitatoriinibitori.png  used on input line 25
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<immagini/integrazionepotenzialegraduato.png, id=273, 1979.395pt x 955.57pt>
+<immagini/integrazionepotenzialegraduato.png, id=283, 1979.395pt x 955.57pt>
 File: immagini/integrazionepotenzialegraduato.png Graphic file (type png)
 <use immagini/integrazionepotenzialegraduato.png>
 Package pdftex.def Info: immagini/integrazionepotenzialegraduato.png  used on input line 266.
@@ -1389,7 +1389,7 @@ Package pdftex.def Info: immagini/integrazionepotenzialegraduato.png  used on in
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<immagini/propagazionepsp.png, id=274, 1750.54pt x 497.86pt>
+<immagini/propagazionepsp.png, id=284, 1750.54pt x 497.86pt>
 File: immagini/propagazionepsp.png Graphic file (type png)
 <use immagini/propagazionepsp.png>
 Package pdftex.def Info: immagini/propagazionepsp.png  used on input line 271.
@@ -1445,7 +1445,7 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
 (Font)              size <5> substituted on input line 30.
 
-<immagini/multitrial.png, id=305, 485.815pt x 291.0875pt>
+<immagini/multitrial.png, id=315, 485.815pt x 291.0875pt>
 File: immagini/multitrial.png Graphic file (type png)
 <use immagini/multitrial.png>
 Package pdftex.def Info: immagini/multitrial.png  used on input line 46.
@@ -1467,62 +1467,62 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 54.
 
-<immagini/rt1.png, id=319, 933.4875pt x 411.5375pt>
+<immagini/rt1.png, id=329, 933.4875pt x 411.5375pt>
 File: immagini/rt1.png Graphic file (type png)
 <use immagini/rt1.png>
 Package pdftex.def Info: immagini/rt1.png  used on input line 65.
 (pdftex.def)             Requested size: 221.78923pt x 97.77257pt.
 [19 <./immagini/multitrial.png> <./immagini/rt1.png>]
-<immagini/rt2.png, id=332, 273.27094pt x 173.14688pt>
+<immagini/rt2.png, id=342, 273.27094pt x 173.14688pt>
 File: immagini/rt2.png Graphic file (type png)
 <use immagini/rt2.png>
 Package pdftex.def Info: immagini/rt2.png  used on input line 79.
 (pdftex.def)             Requested size: 221.78923pt x 140.52824pt.
-<immagini/rt3.png, id=333, 295.85532pt x 182.18062pt>
+<immagini/rt3.png, id=343, 295.85532pt x 182.18062pt>
 File: immagini/rt3.png Graphic file (type png)
 <use immagini/rt3.png>
 Package pdftex.def Info: immagini/rt3.png  used on input line 88.
 (pdftex.def)             Requested size: 221.78923pt x 136.57674pt.
  [20 <./immagini/rt2.png> <./immagini/rt3.png>]
-<immagini/rt4.png, id=348, 383.18156pt x 260.47313pt>
+<immagini/rt4.png, id=358, 383.18156pt x 260.47313pt>
 File: immagini/rt4.png Graphic file (type png)
 <use immagini/rt4.png>
 Package pdftex.def Info: immagini/rt4.png  used on input line 95.
 (pdftex.def)             Requested size: 310.50357pt x 211.08144pt.
  [21 <./immagini/rt4.png>]
-<immagini/tuningintro.png, id=357, 454.69875pt x 170.13562pt>
+<immagini/tuningintro.png, id=367, 454.69875pt x 170.13562pt>
 File: immagini/tuningintro.png Graphic file (type png)
 <use immagini/tuningintro.png>
 Package pdftex.def Info: immagini/tuningintro.png  used on input line 122.
 (pdftex.def)             Requested size: 266.14978pt x 99.58734pt.
-<immagini/esempiocurva1.png, id=358, 304.13625pt x 155.07938pt>
+<immagini/esempiocurva1.png, id=368, 304.13625pt x 155.07938pt>
 File: immagini/esempiocurva1.png Graphic file (type png)
 <use immagini/esempiocurva1.png>
 Package pdftex.def Info: immagini/esempiocurva1.png  used on input line 135.
 (pdftex.def)             Requested size: 221.78923pt x 113.0934pt.
  [22 <./immagini/tuningintro.png> <./immagini/esempiocurva1.png>]
-<immagini/esempiocurva2.png, id=372, 395.97937pt x 146.04562pt>
+<immagini/esempiocurva2.png, id=382, 395.97937pt x 146.04562pt>
 File: immagini/esempiocurva2.png Graphic file (type png)
 <use immagini/esempiocurva2.png>
 Package pdftex.def Info: immagini/esempiocurva2.png  used on input line 144.
 (pdftex.def)             Requested size: 310.50357pt x 114.52126pt.
-<immagini/esempiocurva3.png, id=373, 288.3272pt x 148.30406pt>
+<immagini/esempiocurva3.png, id=383, 288.3272pt x 148.30406pt>
 File: immagini/esempiocurva3.png Graphic file (type png)
 <use immagini/esempiocurva3.png>
 Package pdftex.def Info: immagini/esempiocurva3.png  used on input line 153.
 (pdftex.def)             Requested size: 266.14978pt x 136.90302pt.
  [23 <./immagini/esempiocurva2.png> <./immagini/esempiocurva3.png>]
-<immagini/decodingneuronale.png, id=385, 430.60875pt x 160.34906pt>
+<immagini/decodingneuronale.png, id=395, 430.60875pt x 160.34906pt>
 File: immagini/decodingneuronale.png Graphic file (type png)
 <use immagini/decodingneuronale.png>
 Package pdftex.def Info: immagini/decodingneuronale.png  used on input line 161.
 (pdftex.def)             Requested size: 310.50357pt x 115.6274pt.
-<immagini/esempiodecoding.png, id=386, 344.03531pt x 188.20313pt>
+<immagini/esempiodecoding.png, id=396, 344.03531pt x 188.20313pt>
 File: immagini/esempiodecoding.png Graphic file (type png)
 <use immagini/esempiodecoding.png>
 Package pdftex.def Info: immagini/esempiodecoding.png  used on input line 167.
 (pdftex.def)             Requested size: 266.14978pt x 145.59744pt.
-<immagini/daticomportamentali.png, id=387, 228.10219pt x 194.22563pt>
+<immagini/daticomportamentali.png, id=397, 228.10219pt x 194.22563pt>
 File: immagini/daticomportamentali.png Graphic file (type png)
 <use immagini/daticomportamentali.png>
 Package pdftex.def Info: immagini/daticomportamentali.png  used on input line 172.
@@ -1538,15 +1538,15 @@ Overfull \hbox (13.24014pt too wide) in paragraph at lines 1--1
 |\T1/UniversalisADFStd-LF/b/n/20.74 (-20) 3. \T1/UniversalisADFStd-LF/b/n/24.88 (-20) In-tro-du-zio-ne ai mo-del-li elet-tri-ci di mem-
  []
 
-<immagini/pompeneurone.png, id=419, 295.1025pt x 218.31563pt>
+<immagini/pompeneurone.png, id=429, 295.1025pt x 218.31563pt>
 File: immagini/pompeneurone.png Graphic file (type png)
 <use immagini/pompeneurone.png>
 Package pdftex.def Info: immagini/pompeneurone.png  used on input line 6.
-(pdftex.def)             Requested size: 221.78923pt x 164.08275pt.
+(pdftex.def)             Requested size: 266.14978pt x 196.89864pt.
 [29
 
  <./immagini/pompeneurone.png>]
-<immagini/modellineurone.png, id=426, 338.01282pt x 222.07968pt>
+<immagini/modellineurone.png, id=436, 338.01282pt x 222.07968pt>
 File: immagini/modellineurone.png Graphic file (type png)
 <use immagini/modellineurone.png>
 Package pdftex.def Info: immagini/modellineurone.png  used on input line 38.
@@ -1557,14 +1557,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--47
  []
 
 [30 <./immagini/modellineurone.png>]
-<immagini/causeneuronecorrente.png, id=435, 457.71pt x 216.05719pt>
+<immagini/causeneuronecorrente.png, id=445, 457.71pt x 216.05719pt>
 File: immagini/causeneuronecorrente.png Graphic file (type png)
 <use immagini/causeneuronecorrente.png>
-Package pdftex.def Info: immagini/causeneuronecorrente.png  used on input line 62.
+Package pdftex.def Info: immagini/causeneuronecorrente.png  used on input line 70.
 (pdftex.def)             Requested size: 221.78923pt x 104.69199pt.
- [31 <./immagini/causeneuronecorrente.png>] [32] [33]) (Capitoli/appendice.tex [34]
+ [31 <./immagini/causeneuronecorrente.png>]
+<immagini/modelloelettricoequivalente.png, id=454, 685.05937pt x 431.36156pt>
+File: immagini/modelloelettricoequivalente.png Graphic file (type png)
+<use immagini/modelloelettricoequivalente.png>
+Package pdftex.def Info: immagini/modelloelettricoequivalente.png  used on input line 98.
+(pdftex.def)             Requested size: 221.78923pt x 139.65111pt.
+<immagini/circuitoequivalentesottosoglia.png, id=455, 404.26031pt x 235.63031pt>
+File: immagini/circuitoequivalentesottosoglia.png Graphic file (type png)
+<use immagini/circuitoequivalentesottosoglia.png>
+Package pdftex.def Info: immagini/circuitoequivalentesottosoglia.png  used on input line 105.
+(pdftex.def)             Requested size: 266.14978pt x 155.13176pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32 <./immagini/modelloelettricoequivalente.png>]
+<immagini/sottosoglia.png, id=462, 264.99pt x 183.68625pt>
+File: immagini/sottosoglia.png Graphic file (type png)
+<use immagini/sottosoglia.png>
+Package pdftex.def Info: immagini/sottosoglia.png  used on input line 124.
+(pdftex.def)             Requested size: 221.78923pt x 153.74042pt.
+<immagini/espara.png, id=463, 537.50812pt x 178.41656pt>
+File: immagini/espara.png Graphic file (type png)
+<use immagini/espara.png>
+Package pdftex.def Info: immagini/espara.png  used on input line 131.
+(pdftex.def)             Requested size: 221.78923pt x 73.6195pt.
+<immagini/circuitoespara.png, id=464, 384.6872pt x 174.6525pt>
+File: immagini/circuitoespara.png Graphic file (type png)
+<use immagini/circuitoespara.png>
+Package pdftex.def Info: immagini/circuitoespara.png  used on input line 132.
+(pdftex.def)             Requested size: 221.78923pt x 100.69623pt.
+ [33 <./immagini/circuitoequivalentesottosoglia.png> <./immagini/sottosoglia.png>]
+<immagini/spikeintegraespara.png, id=476, 569.12625pt x 237.88875pt>
+File: immagini/spikeintegraespara.png Graphic file (type png)
+<use immagini/spikeintegraespara.png>
+Package pdftex.def Info: immagini/spikeintegraespara.png  used on input line 138.
+(pdftex.def)             Requested size: 221.78923pt x 92.70726pt.
+<immagini/datiintegraespara.png, id=477, 453.94594pt x 185.19188pt>
+File: immagini/datiintegraespara.png Graphic file (type png)
+<use immagini/datiintegraespara.png>
+Package pdftex.def Info: immagini/datiintegraespara.png  used on input line 144.
+(pdftex.def)             Requested size: 310.50357pt x 126.6748pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34 <./immagini/espara.png> <./immagini/circuitoespara.png> <./immagini/spikeintegraespara.png>]
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family UniversalisADFStd-LF in TS1 encoding.
+            Default family used instead on input line 151.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmss' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+<immagini/circuitointegraesparacorretto.png, id=487, 421.575pt x 170.88844pt>
+File: immagini/circuitointegraesparacorretto.png Graphic file (type png)
+<use immagini/circuitointegraesparacorretto.png>
+Package pdftex.def Info: immagini/circuitointegraesparacorretto.png  used on input line 161.
+(pdftex.def)             Requested size: 266.14978pt x 107.88713pt.
+<immagini/confrontodatiintegraespara.png, id=488, 362.85562pt x 178.41656pt>
+File: immagini/confrontodatiintegraespara.png Graphic file (type png)
+<use immagini/confrontodatiintegraespara.png>
+Package pdftex.def Info: immagini/confrontodatiintegraespara.png  used on input line 174.
+(pdftex.def)             Requested size: 266.14978pt x 130.86914pt.
+ [35 <./immagini/datiintegraespara.png> <./immagini/circuitointegraesparacorretto.png>]
+<immagini/tabellaintegraespara.png, id=500, 549.55313pt x 180.675pt>
+File: immagini/tabellaintegraespara.png Graphic file (type png)
+<use immagini/tabellaintegraespara.png>
+Package pdftex.def Info: immagini/tabellaintegraespara.png  used on input line 183.
+(pdftex.def)             Requested size: 310.50357pt x 102.08707pt.
+<immagini/circuitohuxley.png, id=501, 414.79968pt x 268.75406pt>
+File: immagini/circuitohuxley.png Graphic file (type png)
+<use immagini/circuitohuxley.png>
+Package pdftex.def Info: immagini/circuitohuxley.png  used on input line 190.
+(pdftex.def)             Requested size: 266.14978pt x 172.449pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[36 <./immagini/confrontodatiintegraespara.png> <./immagini/tabellaintegraespara.png>] [37 <./immagini/circuitohuxley.png>]) (Capitoli/appendice.tex [38]
 Appendice A.
-) [35
+) [39
 
 ] (main.aux)
  ***********
@@ -1580,20 +1663,20 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E86CFB2E504CC8AED199B2EEB1C63FEC;8987.
+(rerunfilecheck)             Checksum: 72A3E2DB8D676840E7F845557CE22F4E;9518.
  ) 
 Here is how much of TeX's memory you used:
- 21830 strings out of 467392
- 393810 string characters out of 5404667
- 1118348 words of memory out of 5000000
- 50169 multiletter control sequences out of 15000+600000
- 709716 words of font info for 438 fonts, out of 8000000 for 9000
+ 21942 strings out of 467392
+ 397334 string characters out of 5404667
+ 1118347 words of memory out of 5000000
+ 50257 multiletter control sequences out of 15000+600000
+ 710612 words of font info for 440 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,18n,118p,1088b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Bold.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Italic.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Regular.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (36 pages, 9698535 bytes).
+ <C:\Users\Lorenzo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1095.pk><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Bold.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Italic.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/arkandis/universalis/UniversalisADFStd-Regular.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (40 pages, 11729354 bytes).
 PDF statistics:
- 569 PDF objects out of 1000 (max. 8388607)
- 143 named destinations out of 1000 (max. 500000)
- 100760 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 164 named destinations out of 1000 (max. 500000)
+ 101855 words of extra memory for PDF output out of 106986 (max. 10000000)
 

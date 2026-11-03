@@ -3,11 +3,11 @@
 La membrana della cellula nervosa possiede caratteristiche fisiche che regolano il flusso di ioni e che si traducono in proprietà elettriche specifiche, le quali possono essere modellate matematicamente e fisicamente. Le correnti ioniche attraverso la membrana possono essere dovute a trasporti passivi (secondo gradiente), attraverso canali selettivi o non selettivi, oppure a trasporti attivi (contro gradiente) mediati dalle pompe ioniche (es. pompe ATP-asi).\\
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\linewidth]{immagini/pompeneurone.png}
+    \includegraphics[width=0.6\linewidth]{immagini/pompeneurone.png}
 \end{figure}\\
 Per modellizzare un neurone, è necessario definire il livello di astrazione. 
 \begin{itemize}
-    \item \textbf{Neurone biologico completo} Questa struttura è molto fedele all’anatomia, ma troppo complessa da modellare direttamente nei calcoli.
+    \item \textbf{Neurone biologico completo} Questa struttura è molto fedele all'anatomia con: soma albero dendritico esteso, assone e terminali assonici; tuttavia è troppo complessa da modellare direttamente nei calcoli.
     \item \textbf{Semplificazione a compartimenti} Il neurone viene schematizzato in segmenti rettilinei connessi: Le ramificazioni dendritiche sono rese come blocchi lineari. Le sinapsi (i “triangolini blu”) sono ancora visibili e posizionate su vari compartimenti. Si mantiene ancora una certa fedeltà alla geometria, ma è più facile da analizzare.
     \item \textbf{Modello semplificato} a pochi rami
 Ulteriore astrazione:
@@ -16,7 +16,7 @@ più grandi.
 La forma complessa viene appiattita in pochi
 elementi.
 Le sinapsi sono ancora lì: si vede dove avviene
-l’integrazione dell’informazione.
+l'integrazione dell'informazione.
 A questo punto si può cominciare a studiare la
 risposta elettrica in modo semplificato, riducendo il
 carico computazionale.
@@ -28,10 +28,10 @@ Questo modello è detto “a punto” o “integratore”:
 Tutte le sinapsi contribuiscono alla stessa variabile di
 membrana.
 Non si considera più la distribuzione spaziale, ma solo
-l’attività globale.
+l'attività globale.
 È evidenziato anche il cono di emergenza
-dell’assone, il punto da cui si genera il potenziale
-d’azione.
+dell'assone, il punto da cui si genera il potenziale
+d'azione.
 \end{itemize}
 \begin{figure}[h!]
     \centering
@@ -45,15 +45,23 @@ I_c = C_m \frac{dV}{dt}
 \end{equation}
 Questa equazione descrive il comportamento elettrico della membrana come componente capacitiva (un condensatore). $I$ è la corrente che occorre che passi attraverso una membrana di capacità totale $C_m$ per cambiare la tensione $V$ ad una velocità $dV/dt$.\\
 
-I canali ionici si comportano invece come resistenze (o conduttanze) variabili, il comportamento elettrico della membrana dipende fortemente da quanti canali sono aperti, e da quanto “facilmente” passano gli ioni: questi due aspetti si traducono nella \textbf{conduttanza} (G) o \textbf{resistenza} (R). La conduttanza $G_m$ (espressa in pS) è anch'essa proporzionale all'area della membrana ($g_m = G_m / A$), mentre la resistenza $R_m$ è inversamente proporzionale all'area ($r_m = R_m A$).
-\medskip
-I gradienti di concentrazione ionica, mantenuti dalle pompe, generano forze elettromotrici modellabili come \textbf{generatori di tensione}, descritti dall'equazione di Nernst. Il potenziale di Nernst $E_j$ è il potenziale al quale le forze di diffusione e gradienti elettrici si bilanciano per un dato ione $j$.Un potenziale di equilibrio $E_j$ tende a spostare il potenziale di membrana verso quel valore:
+\noindent I canali ionici si comportano invece come \textbf{resistori} (o conduttanze) variabili, il comportamento elettrico della membrana dipende fortemente da quanti canali sono aperti, e da quanto “facilmente” passano gli ioni: questi due aspetti si traducono nella \textbf{conduttanza} (G) o \textbf{resistenza} (R). La conduttanza $G_m$ (espressa in pS) è anch'essa proporzionale all'area della membrana ($g_m = G_m / A$), mentre la resistenza $R_m$ è inversamente proporzionale all'area ($r_m = R_m A$).
+\begin{equation}
+    \begin{split}
+            G_m &= \frac{I}{\Delta V} \quad [pS]\\
+            g_m &= \frac{G_m}{A} \quad [pS/\mu m^2]\\
+            R_m &= \frac{\Delta V}{I} \quad [M\Omega]\\
+            r_m &= R_m A \quad [M\Omega \cdot \mu m^2]
+    \end{split}
+\end{equation}
+
+\noindent I gradienti di concentrazione ionica, mantenuti dalle pompe, generano forze elettromotrici modellabili come \textbf{generatori di tensione}, descritti dall'equazione di Nernst. Il potenziale di Nernst $E_j$ è il potenziale al quale le forze di diffusione e gradienti elettrici si bilanciano per un dato ione $j$.Un potenziale di equilibrio $E_j$ tende a spostare il potenziale di membrana verso quel valore:
 \begin{itemize}
-    \item Se $V < E_j$, correnti positive verso l’interno della membrana, causando depolarizzazione (es: apertura dei canali del sodio)
-    \item Se $V > E_j$, correnti positive verso l’esterno della membrana, causando iperpolarizzazione/ripolarizzazione (es: apertura dei canali del potassio)
+    \item Se $V < E_j$, correnti positive verso l'interno della membrana, causando depolarizzazione (es: apertura dei canali del sodio)
+    \item Se $V > E_j$, correnti positive verso l'esterno della membrana, causando iperpolarizzazione/ripolarizzazione (es: apertura dei canali del potassio)
 \end{itemize}
 
-La \textbf{corrente di membrana} rappresenta il movimento netto di cariche elettriche (ioni) che attraversano la membrana cellulare, in entrata o in uscita dalla cellula. è (per convenzione) definita positiva quando ioni positivi escono dalla cellula e negativa quando ioni positivi entrano (direzione opposta per gli ioni negativi). è data dalla somma di tutte le correnti dovute ai canali ionici (inclusi quelli voltaggio- dipendenti e quelli sinaptici) e alle pompe ionichetotale (riferita all'unità di superficie $i_m = I_m / A$). Alcune conduttanze si considerano fisse e generano le cosiddette \emph{leakage currents} (correnti di perdita), modellate come $i_L = \bar{g}_L (V - E_L)$. Unendole in un circuito equivalente e applicando la legge di Kirchhoff per le correnti in presenza di uno stimolo esterno $i_e$, otteniamo l'equazione di bilancio:
+\noindent La \textbf{corrente di membrana} rappresenta il movimento netto di cariche elettriche (ioni) che attraversano la membrana cellulare, in entrata o in uscita dalla cellula. è (per convenzione) definita positiva quando ioni positivi escono dalla cellula e negativa quando ioni positivi entrano (direzione opposta per gli ioni negativi). è data dalla somma di tutte le correnti dovute ai canali ionici (inclusi quelli voltaggio- dipendenti e quelli sinaptici) e alle pompe ionichetotale (riferita all'unità di superficie $i_m = I_m / A$). Alcune conduttanze si considerano fisse e generano le cosiddette \emph{leakage currents} (correnti di perdita), modellate come $i_L = \bar{g}_L (V - E_L)$. Unendole in un circuito equivalente e applicando la legge di Kirchhoff per le correnti in presenza di uno stimolo esterno $i_e$, otteniamo l'equazione di bilancio:
 \begin{equation}
 i_e = i_{Na} + i_K + i_L + i_C
 \end{equation}
@@ -61,31 +69,134 @@ i_e = i_{Na} + i_K + i_L + i_C
     \centering
     \includegraphics[width=0.5\linewidth]{immagini/causeneuronecorrente.png}
 \end{figure}
+\subsection{Esempio di circuito equivalente di membrana}
+È un modello elettrico semplificato del comportamento della membrana neuronale. Ci consente di usare le leggi dell'elettrotecnica per descrivere e prevedere l'evoluzione del potenziale di membrana nel tempo. Il \textbf{condensatore} $C_m$ rappresenta la capacità della membrana di accumulare cariche (proprietà capacitiva del doppio strato fosfolipidico).
+Corrente associata:
+
+IC = Cm
+dV
+dt
+Generatori di tensione ENa, EK, EL
+Sono le forze elettromotrici corrispondenti ai potenziali di Nernst per Na
++ ,K
++e
+
+alle correnti di perdita (leakage).
+Spingono gli ioni a muoversi secondo il loro gradiente elettrochimico.
+Resistenze / Conduttanze gNa, $g_K$, gL
+Rappresentano i canali ionici.
+gNae $g_K$dipendono dal potenziale di membrana V
+(sono variabili e voltage-dependent).
+gLè costante e rappresenta i canali di perdita sempre aperti.
+Generatore di corrente esterna ie
+Simula una corrente iniettata dall'esterno, come in una stimolazione fisiologica
+(sinapsi) o sperimentale (es. patch clamp, al fine di simulare input sinaptici o
+altri segnali che normalmente il neurone riceverebbe da altri neuroni).
+Anch'essa è riferita all'unità di superficie:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/modelloelettricoequivalente.png}
+\end{figure}
+
 \section{Il modello integra-e-spara}
-
-Come sottolineava Einstein, un modello dovrebbe essere "il più semplice possibile, ma non più semplice di così". Il modello \emph{Integrate-and-Fire} (integra-e-spara), proposto da Lapicque nel 1907, incarna questa filosofia: ignora la complessa fisiologia dei canali ionici, modellando il neurone con un semplice circuito RC sotto la soglia e con un meccanismo di ripristino per simulare il potenziale d'azione.
-
+Come sottolineava Einstein, un modello dovrebbe essere "il più semplice possibile, ma non più semplice di così". Il modello \emph{Integrate-and-Fire} (integra-e-spara), proposto da Lapicque nel 1907, incarna questa filosofia: ignora la complessa fisiologia dei canali ionici, modellando il neurone con un semplice circuito RC sotto la soglia e con un meccanismo di ripristino per simulare il potenziale d'azione. Quindi abbiamo un sistema a due compartimenti: uno quando il potenziale è sotto soglia e uno quando il potenziale supera la soglia.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/circuitoequivalentesottosoglia.png}
+\end{figure}
+\newpage
 \subsection{Comportamento sotto soglia}
-Quando il potenziale è inferiore al valore di soglia ($V_{th}$), le conduttanze voltaggio-dipendenti vengono trascurate. Il circuito si semplifica e l'equazione differenziale che descrive la membrana diventa:
+Quando il potenziale è inferiore al valore di soglia ($V_{th}$), le conduttanze voltaggio-dipendenti vengono trascurate.
+Scriviamo il bilancio delle correnti per il circuito equivalente sotto soglia:
+\begin{equation}
+    I_c + I_L = I_e \Rightarrow c_m \frac{dV}{dt} = -\bar{g}_L(V-E_L) + \frac{I_e}{A}
+\end{equation}
+Il termine $\bar{g}_L$ è l'unico resistore del circuito, lo chiamiamo resistenza di membrana $g_m(r_m)$. Moltiplicando entrambi i membri per $r_m$ otteniamo:
 \begin{equation}
 \tau_m \frac{dV}{dt} = E_L - V + R_m I_e
 \end{equation}
-dove $\tau_m = R_m C_m$ è la costante di tempo del circuito. In assenza di corrente esterna ($I_e = 0$), il potenziale tende esponenzialmente al potenziale di riposo $E_L$:
+dove $\tau_m = R_m C_m$ è la costante di tempo del circuito. In assenza di corrente esterna ($I_e = 0$), il potenziale tende esponenzialmente al potenziale di riposo $E_L$ x:
 \begin{equation}
 V(t) = E_L + (V_0 - E_L)e^{-t/\tau_m}
 \end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/sottosoglia.png}
+\end{figure}
 
 \subsection{Comportamento sopra soglia e limiti}
 Nel momento $t_i$ in cui $V(t)$ raggiunge la soglia $V_{th}$, il modello assume che venga generato uno \emph{spike} (idealizzato come una delta di Dirac $\delta(t-t_i)$). Immediatamente dopo, il potenziale viene forzato a un valore di \emph{reset} $V_{reset}$ e mantenuto costante per un periodo di refrattarietà $t_{ref}$. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/espara.png}
+    \includegraphics[width=0.5\linewidth]{immagini/circuitoespara.png}
+\end{figure}
 
-Sebbene questo modello riproduca bene il comportamento iniziale del neurone (una relazione lineare tra la corrente $I_e$ e la frequenza di sparo), esso fallisce nel descrivere l'adattamento della frequenza di spike (spike frequency adaptation) osservato fisiologicamente. Per superare questo limite, è possibile arricchire il modello introducendo una \textbf{conduttanza inibitoria dinamica} $g_{inh}(t)$ che aumenta dopo ogni spike e decade esponenzialmente, simulando così sia la refrattarietà relativa sia l'adattamento della frequenza a stimolazioni continue.
+\noindent Sebbene questo modello riproduca bene il comportamento iniziale del neurone (una relazione lineare tra la corrente $I_e$ e la frequenza di sparo), esso fallisce nel descrivere l'adattamento della frequenza di spike (spike frequency adaptation) osservato fisiologicamente. Per superare questo limite, è possibile arricchire il modello introducendo una \textbf{conduttanza inibitoria dinamica} $g_{inh}(t)$ che aumenta dopo ogni spike e decade esponenzialmente, simulando così sia la refrattarietà relativa sia l'adattamento della frequenza a stimolazioni continue.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/spikeintegraespara.png}
+\end{figure}
+\subsection{Confronto con i dati sperimentali}
+Nel modello integra-e-spara si dimostra un legame lineare tra corrente $I_e$ e la frequenza di scarica $r_{isi}$ (calcolata come l'inverso della distanza temporale tra due spike, ISI - Inter Spike Interval)
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/datiintegraespara.png}
+\end{figure}
+Per i primi spike, il modello spiega bene i dati (retta in figura e
+pallini pieni). Per i successivi (pallini bianchi) si discosta, perché non tiene conto dell’adattamento fisiologico della frequenza di spike che segue a stimolazioni continue (figura a destra, dati reali). Per rendere il modello più accurato gli intervalli di refrattarietà possono essere modellizzati inserendo una conduttanza inibitoria a valori variabili
+nel tempo, che:
+\begin{itemize}
+    \item Aumenta subito dopo lo spike (rendendo il neurone meno eccitabile) - Refrattarietà assoluta.
+    \item Decresce esponenzialmente nel tempo → il neurone torna
+gradualmente eccitabile - Refrattarietà relativa.
+\end{itemize}
+Quando il potenziale di soglia è raggiunto a breve distanza dal precedente, si inibisce un nuovo spike (refrattarietà assoluta). Quando la distanza temporale aumenta, si permette un nuovo spike ma con più difficoltà (refrattarietà relativa). Quando torna a riposo, lo spike può generarsi normalmente. La conduttanza inibitoria dinamica è: 
+\begin{equation}
+g_{inh}(t) =  g_{inh}^{max} e^{-(t-t_i)/\tau_{inh}}
+\end{equation}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/circuitointegraesparacorretto.png}
+\end{figure}
+\begin{equation}
+    C\frac{dV}{dt} = -g_L(V-E_L) - g_{inh}(t)(V-E_{inh}) + I_e
+\end{equation}
+Quando il neurone genera uno spike succedono due cose: 
+\begin{itemize}
+    \item L'interruttore di reset si chiude, mantenedo il poteniale al valore di reseti durante il periodo refrattario assoluto $t_{ref}$.
+    \item La conduttanza inibitoria dinamica $g_{inh}(t)$ aumenta a $g_{inh}^{max}$ e poi decade esponenzialmente con costante di tempo $\tau_{inh}$.
+\end{itemize}
+Quando l'interruttore si apre la conduttanza inibitoria può essere ancora elevata. Questo significa che una parte della corrente iniettata $I_e$ viene assorbita da questa conduttanza, rendendo più difficile raggiungere la soglia e generare un nuovo spike. Questo meccanismo simula l'adattamento della frequenza di spike osservato fisiologicamente. Con il diminuire di $g_{inh}(t)$, il neurone torna a essere più eccitabile e può generare un nuovo spike. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/confrontodatiintegraespara.png}
+\end{figure}
+
+Inserendo una conduttanza inibitoria variabile (come per la
+refrattarietà, ma con un tempo di recupero più lungo), si può
+modellizzare l'adattamento del neurone alla stimolazione
+ripetuta.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/tabellaintegraespara.png}
+\end{figure}
 \section{Modello di Hodgkin e Huxley}
 
 Per una fedeltà fisiologica maggiore, si ricorre al modello sviluppato da Hodgkin e Huxley nel 1952. Studiando l'assone gigante di calamaro, essi formularono equazioni che descrivono dinamicamente l'apertura e la chiusura dei canali ionici per il Sodio ($Na^+$) e il Potassio ($K^+$). Per isolare le correnti ed evitare la mutua interazione tra apertura dei canali e variazioni del potenziale, utilizzarono la tecnica del \textbf{voltage clamp}, che mantiene il potenziale di membrana a un valore costante di comando ($V_{cmd}$) iniettando una corrente compensatoria, rendendo possibile misurare l'esatta corrente ionica transmembranaria.
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{immagini/circuitohuxley.png}
+\end{figure}
 \subsection{Conduttanze voltaggio-dipendenti}
 Nel modello di H\&H, la conduttanza per un dato ione dipende da una conduttanza massima $\bar{g}$ moltiplicata per la probabilità che i canali siano aperti.
+ 
+• Il canale $\ce{K^+}$ ha solo due stati (aperto e chiuso) controllati dal potenziale di membrana
+• La conduttanza $g_K$ si attiva quando il canale si apre e si deattiva quando si chiude Per un numero di canali > 1 avremo una probabilità di apertura PK che modula il valore di $g_K$ (più canali sono aperti, maggiore è $g_K$):
+\begin{equation}
+    g_K = \bar{g}_K P_K(V)
+\end{equation}
 Per il potassio, il canale presenta 4 \emph{gate} identici, da cui la probabilità di apertura $P_K = n^4$. La variabile di attivazione $n$ evolve secondo la legge:
 \begin{equation}
 \frac{dn}{dt} = \alpha_n(V)(1-n) - \beta_n(V)n = \frac{n_\infty(V) - n}{\tau_n(V)}

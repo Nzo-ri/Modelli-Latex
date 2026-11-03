@@ -32,11 +32,13 @@
 \contentsline {section}{\numberline {2.4}Conclusioni e Prospettive Cliniche}{28}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Introduzione ai modelli elettrici di membrana}{29}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Proprietà capacitive e resistive}{30}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Il modello integra-e-spara}{31}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Comportamento sotto soglia}{32}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Comportamento sopra soglia e limiti}{32}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Modello di Hodgkin e Huxley}{32}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Conduttanze voltaggio-dipendenti}{32}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Generazione del potenziale d'azione}{33}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Modello delle correnti sinaptiche}{33}{section.3.4}%
-\contentsline {chapter}{\numberline {A}Domande delle lezioni}{35}{appendix.A}%
+\contentsline {subsection}{\numberline {3.1.1}Esempio di circuito equivalente di membrana}{32}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Il modello integra-e-spara}{32}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Comportamento sotto soglia}{33}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Comportamento sopra soglia e limiti}{34}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Confronto con i dati sperimentali}{34}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Modello di Hodgkin e Huxley}{36}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Conduttanze voltaggio-dipendenti}{36}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Generazione del potenziale d'azione}{37}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Modello delle correnti sinaptiche}{38}{section.3.4}%
+\contentsline {chapter}{\numberline {A}Domande delle lezioni}{39}{appendix.A}%
