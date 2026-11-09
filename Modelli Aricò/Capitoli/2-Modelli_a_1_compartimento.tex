@@ -184,55 +184,335 @@ ripetuta.
 \end{figure}
 \section{Modello di Hodgkin e Huxley}
 
-Per una fedeltà fisiologica maggiore, si ricorre al modello sviluppato da Hodgkin e Huxley nel 1952. Studiando l'assone gigante di calamaro, essi formularono equazioni che descrivono dinamicamente l'apertura e la chiusura dei canali ionici per il Sodio ($Na^+$) e il Potassio ($K^+$). Per isolare le correnti ed evitare la mutua interazione tra apertura dei canali e variazioni del potenziale, utilizzarono la tecnica del \textbf{voltage clamp}, che mantiene il potenziale di membrana a un valore costante di comando ($V_{cmd}$) iniettando una corrente compensatoria, rendendo possibile misurare l'esatta corrente ionica transmembranaria.
+Per una fedeltà fisiologica maggiore riguardante il comportamento soprasoglia, si ricorre al modello sviluppato da Hodgkin e Huxley nel 1952. Studiando l'assone gigante di calamaro, essi formularono equazioni che descrivono dinamicamente l'apertura e la chiusura dei canali ionici per il Sodio ($Na^+$) e il Potassio ($K^+$). Per isolare le correnti ed evitare la mutua interazione tra apertura dei canali e variazioni del potenziale, utilizzarono la tecnica del \textbf{voltage clamp}, che mantiene il potenziale di membrana a un valore costante di comando ($V_{cmd}$) iniettando una corrente compensatoria, rendendo possibile misurare l'esatta corrente ionica transmembranaria.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{immagini/circuitohuxley.png}
 \end{figure}
+
 \subsection{Conduttanze voltaggio-dipendenti}
 Nel modello di H\&H, la conduttanza per un dato ione dipende da una conduttanza massima $\bar{g}$ moltiplicata per la probabilità che i canali siano aperti.
- 
-• Il canale $\ce{K^+}$ ha solo due stati (aperto e chiuso) controllati dal potenziale di membrana
-• La conduttanza $g_K$ si attiva quando il canale si apre e si deattiva quando si chiude Per un numero di canali > 1 avremo una probabilità di apertura PK che modula il valore di $g_K$ (più canali sono aperti, maggiore è $g_K$):
+
+\medskip
+Il canale $\ce{K^+}$ ha solo due stati (aperto e chiuso) controllati dal potenziale di membrana, la conduttanza $g_K$ si attiva quando il canale si apre e si deattiva quando si chiude: per un numero di canali > 1 avremo una probabilità di apertura $P_K$ che modula il valore di $g_K$ (più canali sono aperti, maggiore è $g_K$):
 \begin{equation}
     g_K = \bar{g}_K P_K(V)
 \end{equation}
-Per il potassio, il canale presenta 4 \emph{gate} identici, da cui la probabilità di apertura $P_K = n^4$. La variabile di attivazione $n$ evolve secondo la legge:
+Hodgkin e Husxley hanno proposto la forma: 
+\begin{equation}
+    P_K = n^4
+\end{equation}
+K, esponente intero, è un parametro da fittare sui dati (numero di sottocomponenti, o gate, del canale che permettono una apertura completa, gating), n è la \textbf{variabile di attivazione} (compresa tra 0 e 1) → probabilità che un singolo sottocomponente del canale sia attivo. Sperimentalmente, H\&H trovarono che k=4 (in seguito è stata trovata una spiegazione a questa formula empirica)
+\begin{itemize}
+    \item La transizione da chiusi ad aperti avviene con una velocità (voltaggio dipendente) indicata con $\alpha_n$  (V) (tasso di apertura, quanto velocemente i canali passano da chiusi  ad aperti) 
+    \item La transizione da aperti a chiusi avviene con velocità $\beta_n$  (V) (tasso di chiusura, quanto  velocemente i canali si richiudono)
+\end{itemize} 
+La velocità con cui cambia la probabilità di apertura dei canali è data dalla seguente equazione differenziale, che descrive come varia nel tempo la variabile di attivazione n, cioè la probabilità che una subunità del canale K+ sia aperta: 
 \begin{equation}
 \frac{dn}{dt} = \alpha_n(V)(1-n) - \beta_n(V)n = \frac{n_\infty(V) - n}{\tau_n(V)}
 \end{equation}
 dove $\alpha_n$ e $\beta_n$ sono i tassi voltaggio-dipendenti di apertura e chiusura. 
 
 Per il sodio, il canale possiede un meccanismo combinato di attivazione e inattivazione, per cui la probabilità di apertura è $P_{Na} = m^3 h$. Le variabili $m$ (attivazione) e $h$ (inattivazione) seguono equazioni differenziali del primo ordine analoghe a quella di $n$.
-
+\subsection{Voltage Clamp}
+Per effettuare il fitting, occorrere misurare l’ampiezza della corrente di K+ che fluisce attraverso la membrana a diversi livelli del potenziale di membrana V. \\
+\textbf{Problema}: La corrente che fluisce attraverso la membrana fa cambiare il potenziale di membrana e di conseguenza la conduttanza della membrana. $g_K$  si modifica sia al variare del potenziale di membrana che nel tempo. \\
+\textbf{Soluzione}: bloccare (clamp) il potenziale di membrana ad un valore costante nel tempo e registrare le correnti ioniche transmembranarie generate. Studiare la dipendenza di gK  (V, t) dal solo tempo (bloccando V).
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{immagini/voltageclamp.png}
+    \caption{Esempio di esperimento di voltage clamp}
+\end{figure}
+La funzione fondamentale del circuito di blocco del voltaggio è quella di impedire la mutua interazione fra apertura e chiusura dei canali ionici voltaggio-dipendenti (conduttanza) e potenziale di membranai: il potenziale di membrana viene misurato istante per istante e confrontato con il valore di riferimento (command voltage) iene iniettata corrente sufficiente a compensare le variazioni e mantenere $V_m$ costante Si misura la $I$ nel tempo, ottendendo $g_m$ nel tempo. Possiamo dividere i vari passi del processo: 
+\begin{enumerate}
+    \item Misura del potenziale di membrana ($V_m$): o Un elettrodo di registrazione misura continuamente il potenziale di membrana reale dell'assone. 
+    \item Confronto con il command voltage: o Il valore misurato di Vm viene confrontato con un valore di riferimento predefinito (detto command voltage), impostato dallo sperimentatore. 
+    \item Correzione tramite amplificatore: o Se $V_m$ $\ne$ command voltage, un amplificatore di voltage clamp genera una corrente iniettata attraverso un secondo elettrodo (current-passing electrode), per riportare Vm al valore desiderato.  \\
+    \item Corrente misurata = corrente ionica:
+    \begin{itemize}
+        \item La corrente necessaria per mantenere Vm costante è esattamente uguale (e opposta) alla corrente ionica che passerebbe attraverso i canali.
+        \item Quindi misurando questa corrente iniettata, si ottiene la corrente ionica da analizzare.
+    \end{itemize} 
+\end{enumerate}
+\subsection{Conduttanze dei canali}
+\subsubsection{Canale del Potassio}
+Finisci
+\subsubsection{Canale del sodio}
+Meccanismo diverso rispetto al K+: presente anche lo stato di inattivazione. I canali sono aperti se non sono chiusi né inattivi. Per questo, la probabilità di apertura è data da:  
+\begin{equation}
+    P_{\ce{Na}} = m^kh
+\end{equation}  in cui:
+\begin{itemize}
+    \item m è la probabilità che il singolo sottocomponente del canale di attivazione non sia chiuso (ha lo stesso significato di n, variabile di attivazione)
+    \item  h è la probabilità che i canali non siano inattivati (variabile di inattivazione)
+    \item k è una costante
+\end{itemize}
+Sperimentalmente, H\&H trovarono che k=3
 \subsection{Generazione del potenziale d'azione}
 L'equazione completa del modello H\&H è:
 \begin{equation}
 c_m \frac{dV}{dt} = -\left[ \bar{g}_L(V-E_L) + \bar{g}_K n^4(V-E_K) + \bar{g}_{Na} m^3 h(V-E_{Na}) \right] + \frac{I_e}{A}
 \end{equation}
-
 La dinamica del potenziale d'azione si spiega tramite il gioco incrociato di queste variabili. Una iniziale depolarizzazione causa un rapido incremento di $m$ (apertura dei canali $Na^+$), creando un \emph{feedback positivo} e un massiccio afflusso di ioni $Na^+$ (picco di depolarizzazione). Successivamente, la variabile $h$ inizia a diminuire (inattivazione dei canali del sodio) mentre la variabile $n$, più lenta, aumenta (apertura dei canali $K^+$). Questo porta all'uscita di ioni potassio, un \emph{feedback negativo} che ripolarizza e temporaneamente iperpolarizza la membrana, fino al ripristino delle condizioni di riposo.
 
 \section{Modello delle correnti sinaptiche}
 
 I modelli visti finora descrivono l'attività intrinseca, ma i neuroni in una rete comunicano attraverso \textbf{sinapsi chimiche}. In queste, il potenziale d'azione presinaptico innesca il rilascio di neurotrasmettitore, che si lega a recettori (ionotropici o metabotropici) sulla membrana postsinaptica, causando l'apertura di canali chimicamente controllati (non voltaggio-dipendenti).
 
-La conduttanza sinaptica è modellata come $g_s(t) = \bar{g}_s \cdot P(t)$, dove $P(t) = P_{rel} \cdot P_s(t)$. 
-$P_{rel}$ rappresenta la probabilità presinaptica di rilascio del neurotrasmettitore. Sebbene spesso considerata costante, l'attività ripetuta può causare plasticità a breve termine:
+\subsection*{Sinapsi chimica - richiamo (vedere modulo 1)}
+
 \begin{itemize}
-    \item \textbf{Depressione sinaptica}: $P_{rel}$ diminuisce (es. $P_{rel, nuovo} = f_D \cdot P_{rel}$ con $f_D < 1$) a causa dell'esaurimento delle vescicole.
-    \item \textbf{Facilitazione sinaptica}: $P_{rel}$ aumenta (es. $P_{rel, nuovo} = P_{rel} + f_F(1 - P_{rel})$) per l'accumulo di calcio residuo.
+    \item Due eventi costituiscono la sinapsi chimica: il rilascio del neurotrasmettitore e la sua azione sulla membrana post-sinaptica
+    \item Il potenziale d'azione arriva al bottone presinaptico $\rightarrow$ rilascio del neurotrasmettitore nella fessura sinaptica
+    \item Le molecole di neurotrasmettitore si legano ai recettori sulla membrana postsinaptica
+    \item Il legame tra neurotrasmettitore e recettore determina l'apertura dei canali ionici postsinaptici e la relativa depolarizzazione (EPSP) o iperpolarizzazione (IPSP) della membrana
 \end{itemize}
 
-La variabile $P_s(t)$ descrive la probabilità postsinaptica di apertura del canale nel tempo. Essa si innalza per via del tasso di legame del neurotrasmettitore e decade a causa del distacco o degradazione dello stesso. In letteratura sono utilizzate diverse funzioni fenomenologiche per modellarla:
-\begin{enumerate}
-    \item \textbf{Funzione esponenziale} ($P_s = P_{max} e^{-t/\tau_s}$): assume salita istantanea e decadimento esponenziale.
-    \item \textbf{Funzione alfa} ($P_s = P_{max} \frac{t}{\tau_s} e^{1-t/\tau_s}$): modellizza una salita e discesa graduale governate dalla stessa costante di tempo.
-    \item \textbf{Differenza di esponenziali} ($P_s = P_{max} B (e^{-t/\tau_1} - e^{-t/\tau_2})$): altamente flessibile, utilizza due costanti di tempo separate per attivazione e disattivazione.
-\end{enumerate}
+\paragraph*{Testo nelle immagini:}
+Assone del neurone presinaptico. Bottone sinaptico. Vescicole. Spazio sinaptico. Neurone postsinaptico. SINAPSI. 1 Arriva il potenziale d'azione. 2 La vescicola si fonde con la membrana cellulare. 3 Il neurotrasmettitore viene liberato nello spazio sinaptico. 4 Il neurotrasmettitore si lega al recettore. NEURONE PRESINAPTICO. SPAZIO SINAPTICO. Molecole di neurotrasmettitore. Canali ionici. NEURONE POSTSINAPTICO.
 
-Le correnti sinaptiche possono essere eccitatorie (depolarizzanti, verso $E_{exc}$) o inibitorie (iperpolarizzanti, verso $E_{inh}$). La corrente sinaptica totale $i_s$ si calcola come:
-\begin{equation}
-i_s = \bar{g}_{exc} P_{exc}(V - E_{exc}) + \bar{g}_{inh} P_{inh}(V - E_{inh})
-\end{equation}
-Queste correnti vengono infine aggiunte nell'equazione di bilancio generale del modello (che sia esso H\&H o Integra-e-Spara) per includere l'influenza del network neurale sulla singola cellula.
+
+\subsection{Sinapsi chimica - richiamo (vedere modulo 1)}
+
+A cosa serve tutto ciò nel modello?\\
+Permette di descrivere come un neurone riceve segnali da altri neuroni, aggiungendo alle equazioni una corrente sinaptica ($I_{s}$), la cui intensità dipende da:
+\begin{itemize}
+    \item La presenza di neurotrasmettitore.
+    \item La probabilità che i canali sinaptici siano aperti.
+    \item Il potenziale di membrana e il gradiente elettrochimico.
+\end{itemize}
+Questo tipo di conduttanza è chimicamente controllata, non voltaggio-dipendente come nei canali di $Na^{+}$ e $K^{+}$.
+
+\paragraph*{Testo nelle immagini:}
+Assone del neurone presinaptico. Bottone sinaptico. Arriva il potenziale d'azione. Vescicole. Spazio sinaptico. Neurone postsinaptico. SINAPSI. La vescicola si fonde con la membrana cellulare. NEURONE PRESINAPTICO. Il neurotrasmettitore viene liberato nello spazio sinaptico. Il neurotrasmettitore si lega al recettore. SPAZIO SINAPTICO. Molecole di neurotrasmettitore. Canali ionici. NEURONE POSTSINAPTICO.
+
+
+\section*{ 3: Conduttanza sinaptica}
+
+Come per i canali voltaggio-dipendenti, ci serve la dipendenza di g dal tempo.\\
+Anche qui, esprimiamo la conduttanza come prodotto della conduttanza massima (costante) per la percentuale di canali aperti:
+\[ g_{s}(t) = \overline{g_{s}} \cdot P(t) \]
+\begin{itemize}
+    \item $\overline{g_{s}} =$ conduttanza massima (conduttanza di un singolo canale per la densità di canali nella membrana postsinaptica)
+    \item $P(t)$ dipende sia da fenomeni presinaptici (rilascio del neurotrasmettitore, influenzato dal potenziale d'azione presinaptico) che da fenomeni postsinaptici (legame del neurotrasmettitore ai recettori)
+\end{itemize}
+
+
+\subsection*{ 4: Probabilità P di apertura del canale}
+
+\[ P = P_{s} P_{rel} \]
+$P =$ Probabilità complessiva che un canale postsinaptico si apra
+\begin{itemize}
+    \item $P_{rel} =$ probabilità di rilascio del neurotrasmettitore (parte presinaptica). E' la probabilità che arrivi il potenziale d'azione e che segua il rilascio di neurotrasmettitore.
+    \item $P_{s} =$ probabilità di apertura sinaptica (parte postsinaptica). E' la probabilità che il canale postsinaptico si apra, posto che il neurotrasmettitore sia stato rilasciato dal terminale presinaptico (se ci sono molti canali, è la percentuale di canali aperti dal neurotrasmettitore). Dipende dalla quantità di neurotrasmettitore presente, e dalla densità e sensibilità dei recettori sulla membrana postsinaptica.
+\end{itemize}
+
+\paragraph*{Testo nelle immagini:}
+Neurotrasmettitore. Recettore. Ioni. 5 Il canale ionico si apre. Il neurotrasmettitore viene demolito ed eliminato. 6 Il canale ionico si chiude. Assone del neurone presinaptico. Bottone sinaptico. 1 Arriva il potenziale d'azione. Vescicole. Spazio sinaptico. Neurone postsinaptico. SINAPSI.
+
+
+\subsection*{ 5: Probabilità di apertura sinaptica-1}
+
+Analogamente a quanto visto per i canali voltaggio-dipendenti, usiamo una funzione del tipo:
+\[ \frac{dP_{s}}{dt} = \alpha_{s}(1 - P_{s}) - \beta_{s} P_{s} \]
+\begin{itemize}
+    \item $\alpha_{s} = \text{cost}[\text{neurotrasmettitore}]^{k}$: tasso di apertura del canale. Dipende dalla concentrazione [neurotrasmettitore] e dal numero di molecole k necessarie per aprire il canale. E' moltiplicato per la probabilità che il canale sia chiuso $(1-P_{s})$
+    \item $\beta_{s}$: tasso di chiusura del canale. Tipicamente costante. E' moltiplicato per la probabilità che il canale sia aperto $(P_{s})$
+\end{itemize}
+
+
+\subsection*{ 6: Probabilità di apertura sinaptica-2}
+
+\begin{itemize}
+    \item Quando arriva il potenziale d'azione, $\alpha_{s}$ aumenta rapidamente a causa della presenza di neurotrasmettitore e $P_{s}$ sale
+    \item Scattano meccanismi di degradazione enzimatica, riassorbimento, fuga dalla fessura sinaptica: $\alpha_{s}$ va rapidamente a zero e $P_{s}$ tende a zero esponenzialmente
+\end{itemize}
+Ci sono varie funzioni che rappresentano bene i dati (dipendendo dal tipo di recettore)
+
+
+\subsection*{ 7: Classi di recettori (richiamo)}
+
+\begin{itemize}
+    \item \textbf{Ionotropico}: Il neurotrasmettitore si lega al canale e lo attiva direttamente. E' più rapido (sia ad attivare che a deattivare il canale)
+    \item \textbf{Metabotropico}: Il neurotrasmettitore si lega ad un recettore distinto dal canale, il quale genera molecole dette «secondi messaggeri» che agiscono intracellularmente per attivare i canali. Più lento, ma può portare a cambiamenti nel tempo (plasticità)
+\end{itemize}
+
+\paragraph*{Testo nelle immagini:}
+Recettori ionotropici. Poro. Superficie extracellulare. Superficie citoplasmatica. Neurotrasmettitore. Recettori metabotropici. Neurotrasmettitore. Proteina G. Cancello. Enzima. Secondo messaggero.
+
+
+\subsection*{ 8: Probabilità di apertura sinaptica-3}
+
+\textbf{Funzione esponenziale:}
+\[ P_{S} = P_{max} e^{\left(-\frac{t}{\tau_{S}}\right)} \quad \text{con } \tau_{S} = \frac{1}{\beta_{S}} \]
+Rapida (istantanea) salita (apertura) e decadimento esponenziale (chiusura)
+
+\vspace{0.5cm}
+\textbf{Funzione alfa:}
+\[ P_{S} = P_{max} \frac{t}{\tau_{S}} e^{\left(1-\frac{t}{\tau_{S}}\right)} \]
+Tempo di salita e di discesa legati dalla stessa $\tau$
+
+\vspace{0.5cm}
+\textbf{Differenza tra due esponenziali:}
+\[ P_{S} = P_{max} B \left( e^{\left(-\frac{t}{\tau_{1}}\right)} - e^{\left(-\frac{t}{\tau_{2}}\right)} \right) \]
+Costanti di tempo diverse per salita e discesa
+
+\begin{itemize}
+    \item EPSC (Excitatory PostSynaptic Current): corrente indotta.
+    \item EPSP (Excitatory PostSynaptic Potential): variazione del potenziale postsinaptico.
+\end{itemize}
+
+\paragraph*{Testo nelle immagini:}
+Roth and van Rossum, 2009. pre spike. EPSC. EPSP. -10 0 10 20 30 40. Time (ms).
+
+
+\subsection*{ 9: Probabilità di apertura sinaptica-3}
+
+Queste funzioni modellano l'effetto temporale del rilascio del neurotrasmettitore: come cambia nel tempo la probabilità che un canale postsinaptico sia aperto, in modo da permettere il passaggio di ioni e quindi la generazione di una risposta sinaptica (EPSC, EPSP).
+
+I grafici a sinistra della  mostrano l'effetto di ciascuna funzione:
+\begin{itemize}
+    \item EPSC (Excitatory PostSynaptic Current): corrente indotta.
+    \item EPSP (Excitatory PostSynaptic Potential): variazione del potenziale postsinaptico.
+\end{itemize}
+
+\paragraph*{Testo nelle immagini:}
+Roth and van Rossum, 2009. pre spike. EPSC. EPSP. -10 0 10 20 30 40. Time (ms).
+
+
+\subsection*{ 10: Probabilità di apertura sinaptica-3}
+
+\textbf{Funzione esponenziale:}
+\[ P_{S} = P_{max} e^{\left(-\frac{t}{\tau_{S}}\right)} \quad \text{con } \tau_{S} = \frac{1}{\beta_{S}} \]
+Rapida (istantanea) salita (apertura) e decadimento esponenziale (chiusura)
+\begin{itemize}
+    \item $P_{s}(t)$: probabilità che un canale postsinaptico sia aperto al tempo t.
+    \item $P_{max}$: valore massimo che può raggiungere $P_{s}$ subito dopo il rilascio del neurotrasmettitore.
+    \item $\tau_{s}$: costante di tempo del decadimento della probabilità (quanto velocemente il canale si chiude).
+    \item $\beta_{s}$: tasso di chiusura dei canali sinaptici.
+\end{itemize}
+Interpretazione: apertura istantanea (appena il neurotrasmettitore è presente), poi chiusura esponenziale.
+
+\paragraph*{Testo nelle immagini:}
+Roth and van Rossum, 2009. pre spike. EPSC. EPSP. -10 0 10 20 30 40.
+
+
+\subsection*{ 11: Probabilità di apertura sinaptica-3}
+
+\textbf{Funzione alfa:}
+\[ P_{S} = P_{max} \frac{t}{\tau_{S}} e^{\left(1-\frac{t}{\tau_{S}}\right)} \]
+Tempo di salita e di discesa legati dalla stessa $\tau_{s}$
+\begin{itemize}
+    \item $\frac{t}{\tau_{s}}$: modellizza un tempo di attivazione graduale.
+    \item Il picco si raggiunge in corrispondenza di $t=\tau_{s}$, poi la funzione decresce.
+    \item Questa funzione modella sia la salita che la discesa con la stessa costante $\tau_{s}$.
+    \item Utile per sinapsi con risposta più realistica e non istantanea.
+\end{itemize}
+
+\paragraph*{Testo nelle immagini:}
+pre spike. EPSC. EPSP. -10 0 10 20 30 40.
+
+
+\subsection*{ 12: Probabilità di apertura sinaptica-3}
+
+\textbf{Differenza tra due esponenziali:}
+\[ P_{S} = P_{max} B \left( e^{\left(-\frac{t}{\tau_{1}}\right)} - e^{\left(-\frac{t}{\tau_{2}}\right)} \right) \]
+Costanti di tempo diverse per salita e discesa
+\begin{itemize}
+    \item $\tau_{1}$: costante di tempo della fase di salita (attivazione del canale).
+    \item $\tau_{2}$: costante di tempo della fase di discesa (chiusura/inattivazione).
+    \item B: fattore di normalizzazione per regolare il massimo della funzione (può essere scelto per far sì che $P_{s}(t)$ raggiunga $P_{max}$).
+\end{itemize}
+Questa forma è molto flessibile: consente di rappresentare risposte sinaptiche che si attivano e disattivano con velocità diverse.
+
+\paragraph*{Testo nelle immagini:}
+pre spike. EPSC. EPSP. -10 0 10 20 30 40. Time (ms).
+
+
+\subsection*{ 13: Probabilità di rilascio presinaptico - Pre}
+
+$P_{rel}$ di solito è costante. Tuttavia, per meccanismi di plasticità a breve termine (ovvero ai cambiamenti dinamici nella forza della trasmissione sinaptica): l'attivazione ripetuta (stimolazioni ripetute e ravvicinate) può portare ad una riduzione (depressione) o ad un aumento (facilitazione) della risposta $\rightarrow$ variazioni di $P_{rel}$ nel tempo
+
+\begin{itemize}
+    \item A. Depressione: $P_{rel} = f_{D} P_{rel}$ con $0 \le f_{D} \le 1$
+    \item B. Facilitazione: $P_{rel} = P_{rel} + f_{F}(1 - P_{rel})$ con $0 \le f_{F} \le 1$
+\end{itemize}
+
+\paragraph*{Testo nelle immagini:}
+A. 0.4 mV. 100 ms. B. 1.5 mV. 100 ms.
+
+
+\subsection*{ 14: Probabilità di rilascio presinaptico}
+
+In condizioni normali, la probabilità di rilascio $P_{rel}$ è costante: un potenziale d'azione presinaptico causa il rilascio di neurotrasmettitore con probabilità fissa.
+
+Tuttavia, con stimolazioni ripetute e ravvicinate, $P_{rel}$ può cambiare nel tempo per effetto di due meccanismi principali:
+
+\paragraph*{Testo nelle immagini:}
+A. 0.4 mV. 100 ms. B. 1.5 mV. 100 ms.
+
+
+\section*{ 15: Probabilità di rilascio presinaptico}
+
+\textbf{1. Depressione sinaptica}
+\begin{itemize}
+    \item Formula: $P_{rel} = f_{D} \cdot P_{rel}$ con $0 \le f_{D} \le 1$
+    \item Significato: Ogni volta che arriva uno stimolo, la probabilità di rilascio diminuisce. È un meccanismo che riduce la risposta sinaptica quando gli stimoli sono troppo ravvicinati, ad esempio perché le vescicole non hanno ancora fatto in tempo a riformarsi.
+    \item $f_{D}$: È un fattore moltiplicativo che regola quanto cala la probabilità. Più è vicino a 0, più forte è la depressione.
+    \item Effetto osservato: nella traccia A, la risposta postsinaptica (es. EPSP) si indebolisce progressivamente.
+\end{itemize}
+
+\paragraph*{Testo nelle immagini:}
+A. 0.4 mV. 100 ms.
+
+
+\subsection*{ 16: Probabilità di rilascio presinaptico}
+
+\textbf{2. Facilitazione sinaptica}
+\begin{itemize}
+    \item Formula: $P_{rel} = P_{rel} + f_{F}(1 - P_{rel})$ con $0 \le f_{F} \le 1$
+    \item Significato: In questo caso, la probabilità di rilascio aumenta ogni volta che arriva uno stimolo, perché la presenza continua di calcio residuo nel terminale presinaptico facilita il rilascio di neurotrasmettitore.
+    \item $f_{F}$: È un fattore additivo che regola quanto cresce la probabilità. Più è vicino a 1, più rapida è la facilitazione.
+    \item Effetto osservato: nella traccia B, la risposta postsinaptica aumenta di ampiezza con stimoli successivi.
+\end{itemize}
+
+\paragraph*{Testo nelle immagini:}
+B. 1.5 mV. 100 ms.
+
+
+\subsection*{ 17: Correnti sinaptiche}
+
+\[ g_{s} = \overline{g_{s}} P \rightarrow i_{s} = \overline{g_{s}} P (V - E_{s}) \]
+\begin{itemize}
+    \item $E_{s} =$ potenziale di equilibrio elettrochimico dello ione relativo a quel tipo di canale
+\end{itemize}
+Le sinapsi possono essere distinte in eccitatorie ed inibitorie (a seconda delle correnti ioniche generate):
+\[ i_{s} = \overline{g}_{s} P (V - E_{s}) = \overline{g}_{exc} P_{exc} (V - E_{exc}) + \overline{g}_{inh} P_{inh} (V - E_{inh}) \]
+Per k sinapsi, si sommano le correnti:
+\[ i_{s} = \sum i_{k} \]
+
+
+\subsection*{ 18: Correnti sinaptiche}
+
+\[ i_{s} = \overline{g}_{exc} \cdot P_{exc} \cdot (V - E_{exc}) + \overline{g}_{inh} \cdot P_{inh} \cdot (V - E_{inh}) \]
+La corrente totale può essere scomposta in due contributi:
+\begin{itemize}
+    \item Eccitatoria (es. glutammato): tende a depolarizzare la membrana (cioè aumentare V).
+    \item Inibitoria (es. GABA): tende a iperpolarizzare la membrana (cioè diminuire V).
+\end{itemize}
+Questa distinzione dipende dai valori di $E_{exc}$ e $E_{inh}$, che rappresentano i potenziali di equilibrio dei canali eccitatori e inibitori, rispettivamente.
+
+
+\subsection*{ 19: Correnti sinaptiche nel circuito}
+
+Possono essere aggiunte sia al modello integra-e-spara che al modello di Hodgkin-Huxley:
+
+\textbf{Integra-e-spara}
+\[ c_{m} \frac{dV}{dt} = -\overline{g}_{L}(V - E_{L}) - \overline{g}_{s} P (V - E_{s}) + \frac{I_{e}}{A} \]
+
+\textbf{Hodgkin-Huxley}
+\[ c_{m} \frac{dV}{dt} = -i_{m} + \frac{I_{e}}{A} \]
+con:
+\[ i_{m} = \overline{g}_{L}(V - E_{L}) + \overline{g}_{K} n^{4} (V - E_{K}) + \overline{g}_{Na} m^{3} h (V - E_{Na}) + \overline{g}_{s} P (V - E_{s}) \]
+

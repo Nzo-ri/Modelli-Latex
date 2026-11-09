@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1793620349.4933 "c:/Users/Lorenzo/Desktop/Università/Magistrale/Modelli/Modelli-Latex/Modelli Aricò/main.tex" "main.pdf" "main" 1793620356.09149 0
+["pdflatex"] 1794224683.16968 "c:/Users/Lorenzo/Desktop/Università/Magistrale/Modelli/Modelli-Latex/Modelli Aricò/main.tex" "main.pdf" "main" 1794224691.6488 0
   "C:/Users/Lorenzo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1793017252 88868 3f46b399ab0e9c721d52c1b435c8f465 ""
   "C:/Users/Lorenzo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcss1095.pk" 1793617716 11640 4efc17d5f2bb993fc32422332b8067ed ""
   "C:/Users/Lorenzo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1791299725 13403685 a1094b0c0c5909455d758c32dd91ea8d ""
@@ -173,7 +173,7 @@
   "C:/Users/Lorenzo/AppData/Local/Programs/MiKTeX/tex/latex/yfonts/yfonts.sty" 1554482334 4491 ce392d5b8dc51027fcbcd62c6c980bc3 ""
   "Capitoli/0-Richiami_di_elettrofisiologia.tex" 1791298956 24483 0579217fb79082b65bcceadcb417bdf1 ""
   "Capitoli/1-Modelli_di_Encoding_e_Decoding_Neuronale.tex" 1793012214 23057 4ca2132266fcba4ffee55a93c99c3093 ""
-  "Capitoli/2-Modelli_a_1_compartimento.tex" 1793620341 18734 9c89405892500acce2ade47d9feabcdf ""
+  "Capitoli/2-Modelli_a_1_compartimento.tex" 1794224682 35352 27bb08760f1ea7b5628809b982b865e8 ""
   "Capitoli/appendice.tex" 1791298956 129 09bf0526b2d6a45d989421cb5d689baf ""
   "c:/Users/Lorenzo/Desktop/Università/Magistrale/Modelli/Modelli-Latex/Modelli Aricò/main.tex" 1793017205 2510 5794594c8573be2d123e1b55d4745b86 ""
   "immagini/causeneuronecorrente.png" 1793017265 280012 6b588e550f9f26a1dd7a6cee0f2ad580 ""
@@ -214,10 +214,11 @@
   "immagini/spikeintegraespara.png" 1793617412 354835 73f45d416b9356436c70b4d43791122f ""
   "immagini/tabellaintegraespara.png" 1793618274 179877 6a6aba82f5200d8243bdd8f5d523311d ""
   "immagini/tuningintro.png" 1791798418 205042 6fd02b37aa26b5be9c6129948a47b98e ""
-  "main.aux" 1793620355 8199 4481f4595ac9730efc85a8a3b195b723 "pdflatex"
-  "main.out" 1793620355 9518 72a3e2db8d676840e7f845557ce22f4e "pdflatex"
+  "immagini/voltageclamp.png" 1794220420 480912 2910f79c398e26649e640906dbc630b6 ""
+  "main.aux" 1794224690 9003 fb37e0bc1507922ee5c3fe3e8dd78c39 "pdflatex"
+  "main.out" 1794224690 10132 05b081913ceb224c263dca2967e57801 "pdflatex"
   "main.tex" 1793017205 2510 5794594c8573be2d123e1b55d4745b86 ""
-  "main.toc" 1793620355 4327 6389eb965bccda392fcd7caee7296130 "pdflatex"
+  "main.toc" 1794224690 4764 c2dee093a0d62452a206fb290646156a "pdflatex"
   (generated)
   "main.aux"
   "main.log"
