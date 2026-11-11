@@ -70,29 +70,23 @@ i_e = i_{Na} + i_K + i_L + i_C
     \includegraphics[width=0.5\linewidth]{immagini/causeneuronecorrente.png}
 \end{figure}
 \subsection{Esempio di circuito equivalente di membrana}
-È un modello elettrico semplificato del comportamento della membrana neuronale. Ci consente di usare le leggi dell'elettrotecnica per descrivere e prevedere l'evoluzione del potenziale di membrana nel tempo. Il \textbf{condensatore} $C_m$ rappresenta la capacità della membrana di accumulare cariche (proprietà capacitiva del doppio strato fosfolipidico).
-Corrente associata:
-
-IC = Cm
-dV
-dt
-Generatori di tensione ENa, EK, EL
-Sono le forze elettromotrici corrispondenti ai potenziali di Nernst per Na
-+ ,K
-+e
-
-alle correnti di perdita (leakage).
-Spingono gli ioni a muoversi secondo il loro gradiente elettrochimico.
-Resistenze / Conduttanze gNa, $g_K$, gL
-Rappresentano i canali ionici.
-gNae $g_K$dipendono dal potenziale di membrana V
-(sono variabili e voltage-dependent).
-gLè costante e rappresenta i canali di perdita sempre aperti.
-Generatore di corrente esterna ie
-Simula una corrente iniettata dall'esterno, come in una stimolazione fisiologica
-(sinapsi) o sperimentale (es. patch clamp, al fine di simulare input sinaptici o
-altri segnali che normalmente il neurone riceverebbe da altri neuroni).
-Anch'essa è riferita all'unità di superficie:
+È un modello elettrico semplificato del comportamento della membrana neuronale. Ci consente di usare le leggi dell'elettrotecnica per descrivere e prevedere l'evoluzione del potenziale di membrana nel tempo.
+\begin{itemize}
+    \item Il \textbf{condensatore} $C_m$ rappresenta la capacità della membrana di accumulare cariche (proprietà capacitiva del doppio strato fosfolipidico).
+    \item Corrente associata:  $I_C = C_m \frac{dV}{dt}$
+    \item Generatori di tensione $E_{\ce{Na}}, E_{\ce{K}}, E_{\ce{L}}$ Sono le forze elettromotrici corrispondenti ai potenziali di Nernst per $\ce{Na+}$, $\ce{K+}$ e alle correnti di perdita (leakage). Spingono gli ioni a muoversi secondo il loro gradiente elettrochimico.
+    \item Resistenze / Conduttanze $g_{\ce{Na}}$, $g_{\ce{K}}$, $g_L$ Rappresentano i canali ionici. $g_{\ce{Na}}$ e $g_K$ dipendono dal potenziale di membrana V (sono variabili e voltage-dependent). $g_L$ è costante e rappresenta i canali di perdita sempre aperti.
+    \item Generatore di corrente esterna $i_e$ simula una corrente iniettata dall'esterno, come in una stimolazione fisiologica (sinapsi) o sperimentale (es. patch clamp, al fine di simulare input sinaptici o altri segnali che normalmente il neurone riceverebbe da altri neuroni). Anch'essa è riferita all'unità di superficie $i_e= \frac{I_e}{A}$
+\end{itemize}
+Tutte le correnti ($I_{\ce{Na}}$, $I_{\ce{K}}$, $I_L$, $i_c$) si sommano secondo la legge di Kirchhoff:
+\begin{equation}
+    i_e =  I_{\ce{Na}} +  I_{\ce{K}} +  I_L +  i_c \quad \text{dove} \quad \begin{cases}
+        I_{\ce{Na}} = g_{\ce{Na}}(V-E_{\ce{Na}})\\
+        I_{\ce{K}} = g_{\ce{K}}(V-E_{\ce{K}})\\
+        I_L = g_L(V-E_L)\\
+        i_c = C_m \frac{dV}{dt}
+    \end{cases}
+\end{equation}
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\linewidth]{immagini/modelloelettricoequivalente.png}
@@ -102,9 +96,8 @@ Anch'essa è riferita all'unità di superficie:
 Come sottolineava Einstein, un modello dovrebbe essere "il più semplice possibile, ma non più semplice di così". Il modello \emph{Integrate-and-Fire} (integra-e-spara), proposto da Lapicque nel 1907, incarna questa filosofia: ignora la complessa fisiologia dei canali ionici, modellando il neurone con un semplice circuito RC sotto la soglia e con un meccanismo di ripristino per simulare il potenziale d'azione. Quindi abbiamo un sistema a due compartimenti: uno quando il potenziale è sotto soglia e uno quando il potenziale supera la soglia.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\linewidth]{immagini/circuitoequivalentesottosoglia.png}
+    \includegraphics[width=0.4\linewidth]{immagini/sottosoglia.png}
 \end{figure}
-\newpage
 \subsection{Comportamento sotto soglia}
 Quando il potenziale è inferiore al valore di soglia ($V_{th}$), le conduttanze voltaggio-dipendenti vengono trascurate.
 Scriviamo il bilancio delle correnti per il circuito equivalente sotto soglia:
@@ -115,15 +108,15 @@ Il termine $\bar{g}_L$ è l'unico resistore del circuito, lo chiamiamo resistenz
 \begin{equation}
 \tau_m \frac{dV}{dt} = E_L - V + R_m I_e
 \end{equation}
-dove $\tau_m = R_m C_m$ è la costante di tempo del circuito. In assenza di corrente esterna ($I_e = 0$), il potenziale tende esponenzialmente al potenziale di riposo $E_L$ x:
+dove $\tau_m = R_m C_m$ è la costante di tempo del circuito. In assenza di corrente esterna ($I_e = 0$), il potenziale tende esponenzialmente al potenziale di riposo $E_L$:
 \begin{equation}
 V(t) = E_L + (V_0 - E_L)e^{-t/\tau_m}
 \end{equation}
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\linewidth]{immagini/sottosoglia.png}
+    \includegraphics[width=0.7\linewidth]{immagini/circuitoequivalentesottosoglia.png}
 \end{figure}
-
+\newpage
 \subsection{Comportamento sopra soglia e limiti}
 Nel momento $t_i$ in cui $V(t)$ raggiunge la soglia $V_{th}$, il modello assume che venga generato uno \emph{spike} (idealizzato come una delta di Dirac $\delta(t-t_i)$). Immediatamente dopo, il potenziale viene forzato a un valore di \emph{reset} $V_{reset}$ e mantenuto costante per un periodo di refrattarietà $t_{ref}$. 
 \begin{figure}[h]
@@ -131,8 +124,17 @@ Nel momento $t_i$ in cui $V(t)$ raggiunge la soglia $V_{th}$, il modello assume 
     \includegraphics[width=0.5\linewidth]{immagini/espara.png}
     \includegraphics[width=0.5\linewidth]{immagini/circuitoespara.png}
 \end{figure}
-
-\noindent Sebbene questo modello riproduca bene il comportamento iniziale del neurone (una relazione lineare tra la corrente $I_e$ e la frequenza di sparo), esso fallisce nel descrivere l'adattamento della frequenza di spike (spike frequency adaptation) osservato fisiologicamente. Per superare questo limite, è possibile arricchire il modello introducendo una \textbf{conduttanza inibitoria dinamica} $g_{inh}(t)$ che aumenta dopo ogni spike e decade esponenzialmente, simulando così sia la refrattarietà relativa sia l'adattamento della frequenza a stimolazioni continue.
+Possiamo dividere il modello in uno discreto a circuito chiuso e uno continuo a circuito aperto.
+\begin{equation}
+    \begin{split}
+        \text{se } V(t) &= V_{th} \begin{cases}
+            \sum_k \delta(t-t_k) \\
+            V([t,t + t_{ref}]) = V_{reset} 
+        \end{cases}\\
+        \text{se } V(t) &< V_{th} \quad C_m \frac{dV}{dt} = -g_L(V-E_L) + I_e
+    \end{split}
+\end{equation}
+il modello integra-e-spara riproduce bene i dati sperimentali, pur non facendo assunzioni sui meccanismi di generazione del potenziale d'azione.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\linewidth]{immagini/spikeintegraespara.png}
@@ -205,15 +207,18 @@ Hodgkin e Husxley hanno proposto la forma:
 \end{equation}
 K, esponente intero, è un parametro da fittare sui dati (numero di sottocomponenti, o gate, del canale che permettono una apertura completa, gating), n è la \textbf{variabile di attivazione} (compresa tra 0 e 1) → probabilità che un singolo sottocomponente del canale sia attivo. Sperimentalmente, H\&H trovarono che k=4 (in seguito è stata trovata una spiegazione a questa formula empirica)
 \begin{itemize}
-    \item La transizione da chiusi ad aperti avviene con una velocità (voltaggio dipendente) indicata con $\alpha_n$  (V) (tasso di apertura, quanto velocemente i canali passano da chiusi  ad aperti) 
-    \item La transizione da aperti a chiusi avviene con velocità $\beta_n$  (V) (tasso di chiusura, quanto  velocemente i canali si richiudono)
+    \item La transizione da chiusi ad aperti avviene con una velocità (voltaggio dipendente) indicata con \textcolor{red}{$\alpha_n$  (V) (tasso di apertura, quanto velocemente i canali passano da chiusi  ad aperti)} 
+    \item La transizione da aperti a chiusi avviene con velocità \textcolor{blue}{$\beta_n$  (V) (tasso di chiusura, quanto  velocemente i canali si richiudono)} 
 \end{itemize} 
 La velocità con cui cambia la probabilità di apertura dei canali è data dalla seguente equazione differenziale, che descrive come varia nel tempo la variabile di attivazione n, cioè la probabilità che una subunità del canale K+ sia aperta: 
 \begin{equation}
 \frac{dn}{dt} = \alpha_n(V)(1-n) - \beta_n(V)n = \frac{n_\infty(V) - n}{\tau_n(V)}
 \end{equation}
-dove $\alpha_n$ e $\beta_n$ sono i tassi voltaggio-dipendenti di apertura e chiusura. 
-
+dove $\alpha_n$ e $\beta_n$ sono i tassi voltaggio-dipendenti di apertura e chiusura.
+\begin{itemize}
+    \item Se $\alpha_n(V) \gg \beta_n(V)$, $n$ aumenta $\rightarrow$ più canali si aprono
+    \item Se $\beta_n(V) \gg \alpha_n(V)$, $n$ diminuisce $\rightarrow$ più canali si chiudono
+\end{itemize}
 Per il sodio, il canale possiede un meccanismo combinato di attivazione e inattivazione, per cui la probabilità di apertura è $P_{Na} = m^3 h$. Le variabili $m$ (attivazione) e $h$ (inattivazione) seguono equazioni differenziali del primo ordine analoghe a quella di $n$.
 \subsection{Voltage Clamp}
 Per effettuare il fitting, occorrere misurare l’ampiezza della corrente di K+ che fluisce attraverso la membrana a diversi livelli del potenziale di membrana V. \\
