@@ -1,0 +1,316 @@
+\section{Regressione non lineare nel caso scalare}
+
+\subsection{Formulazione del problema e impossibilità della soluzione analitica}
+
+Quando l'uscita di un modello matematico $y(t)$ viene descritta da un insieme di parametri non lineari, il problema della stima dei parametri diventa considerevolmente più complesso rispetto al caso lineare.
+
+Per illustrare il problema, consideriamo come esempio il modello esponenziale scalare:
+\begin{equation}
+y(t) = g(t, \alpha) = e^{-\alpha t}
+\end{equation}
+dove $\alpha$ è un parametro non lineare da stimare a partire dalle misure sperimentali $z_{i}$ rilevate agli istanti $t_{i}$ ($i = 1, 2, \dots, N$).
+
+Secondo il criterio dei minimi quadrati pesati, l'espressione (funzione di costo) da minimizzare rispetto al parametro $\alpha$ è la somma pesata dei residui quadrati (\textit{Weighted Residual Sum of Squares}, $WRSS$):
+\begin{equation}
+WRSS(\alpha) = \sum_{i=1}^{N} w_{i}(z_{i} - y_{i})^{2} = \sum_{i=1}^{N} w_{i}(z_{i} - e^{-\alpha t_{i}})^{2}
+\end{equation}
+dove $w_{i}$ rappresentano i pesi associati alle singole osservazioni.
+
+Poiché $y(t)$ è una funzione non lineare nel parametro $\alpha$, non è possibile ricavare una soluzione analitica in forma chiusa per il problema di minimizzazione. Infatti, calcolando la derivata prima di $WRSS(\alpha)$ rispetto ad $\alpha$ e imponendo la condizione di stazionarietà uguale a zero, si ottiene:
+\begin{equation}
+\frac{d\,WRSS(\alpha)}{d\alpha} = \frac{d\left(\sum_{i=1}^{N} w_{i}(z_{i} - e^{-\alpha t_{i}})^{2}\right)}{d\alpha} = 0
+\end{equation}
+sviluppando la derivata:
+\begin{equation}
+-2 \sum_{i=1}^{N} w_{i} t_{i} e^{-\alpha t_{i}} (z_{i} - e^{-\alpha t_{i}}) = 0
+\end{equation}
+Tale equazione trascendente non consente di isolare algebricamente l'incognita e non fornisce quindi un'espressione esplicita per $\alpha$.
+
+\subsection{Linearizzazione iterativa mediante il metodo di Gauss-Newton}
+
+Per superare l'assenza di una soluzione analitica chiusa, una possibile strategia consiste nel realizzare una linearizzazione iterativa del modello attraverso il \textbf{metodo di Gauss-Newton}.
+
+Si esegue innanzitutto l'espansione in serie di Taylor della funzione modello $y(t) = g(\alpha, t)$ intorno ad uno specifico valore iniziale $\alpha = \alpha^{0}$:
+\begin{equation}
+y(t) = g(\alpha, t) = g(\alpha^{0}, t) + \left.\frac{dg(\alpha, t)}{d\alpha}\right|_{\alpha=\alpha^{0}} (\alpha - \alpha^{0}) + \frac{1}{2}\left.\frac{d^{2}g(\alpha, t)}{d\alpha^{2}}\right|_{\alpha=\alpha^{0}} (\alpha - \alpha^{0})^{2} + \cdots
+\end{equation}
+Troncando lo sviluppo in serie al primo ordine (ovvero fermandosi alla derivata prima) e ipotizzando che la stima iniziale $\alpha^{0}$ sia nota, si ottiene l'approssimazione:
+\begin{equation}
+y(t) \approx \left.g(\alpha, t)\right|_{\alpha=\alpha^{0}} + \left.\frac{dg(\alpha, t)}{d\alpha}\right|_{\alpha=\alpha^{0}} (\alpha - \alpha^{0}) = e^{-\alpha^{0} t} - t e^{-\alpha^{0} t} (\alpha - \alpha^{0})
+\end{equation}
+Poiché $\alpha^{0}$ è noto, l'equazione risultante è ora lineare nel parametro $\alpha$.
+
+Definendo lo scostamento parametrico:
+\begin{equation}
+\Delta\alpha = \alpha - \alpha^{0}
+\end{equation}
+per il generico istante di campionamento $t_{i}$ l'uscita del modello linearizzato assume la forma:
+\begin{equation}
+y_{i} \approx \left.g(\alpha, t)\right|_{\substack{\alpha=\alpha^{0} \\ t=t_{i}}} + \left.\frac{dg(\alpha, t)}{d\alpha}\right|_{\substack{\alpha=\alpha^{0} \\ t=t_{i}}} \Delta\alpha = e^{-\alpha^{0} t_{i}} - t_{i} e^{-\alpha^{0} t_{i}} \Delta\alpha
+\end{equation}
+
+Sostituendo questa espressione linearizzata all'interno della funzione di costo $WRSS(\alpha)$, si ricava:
+\begin{align}
+WRSS(\alpha) &= \sum_{i=1}^{N} w_{i}(z_{i} - y_{i})^{2} \nonumber \\
+&\approx \sum_{i=1}^{N} w_{i}\left(z_{i} - \left.g(\alpha, t)\right|_{\substack{\alpha=\alpha^{0} \\ t=t_{i}}} - \left.\frac{dg(\alpha, t)}{d\alpha}\right|_{\substack{\alpha=\alpha^{0} \\ t=t_{i}}} \Delta\alpha\right)^{2} \nonumber \\
+&= \sum_{i=1}^{N} w_{i}\left(z_{i} - e^{-\alpha^{0} t_{i}} + t_{i} e^{-\alpha^{0} t_{i}} \Delta\alpha\right)^{2}
+\end{align}
+
+Per convenienza notazionale, definiamo il residuo iniziale $\Delta z_{i}$ come la differenza tra il dato misurato $z_{i}$ e la predizione del modello calcolata nella stima iniziale $\alpha^{0}$:
+\begin{equation}
+\Delta z_{i} = z_{i} - y(\alpha^{0}, t_{i}) = z_{i} - e^{-\alpha^{0} t_{i}}
+\end{equation}
+Sostituendo $\Delta z_{i}$ nell'espressione approssimata di $WRSS$, si ottiene:
+\begin{equation}
+WRSS(\alpha) \approx \sum_{i=1}^{N} w_{i}\left(\underbrace{z_{i} - e^{-\alpha^{0} t_{i}}}_{\Delta z_{i}} + t_{i} e^{-\alpha^{0} t_{i}} \Delta\alpha\right)^{2} = \sum_{i=1}^{N} w_{i}\left(\Delta z_{i} + t_{i} e^{-\alpha^{0} t_{i}} \Delta\alpha\right)^{2}
+\end{equation}
+In questa formulazione, il modello dei residui è lineare nell'incremento $\Delta\alpha$ (e la funzione $WRSS$ ridotta al problema ai minimi quadrati lineare in $\Delta\alpha$ permette di calcolare analiticamente la correzione ottima $\Delta\hat{\alpha}$).
+
+\subsection{Aggiornamento iterativo del parametro e minimi locali}
+
+Minimizzando rispetto a $\Delta\alpha$, la stima dell'incremento ottimo $\Delta\hat{\alpha}$ è data da:
+\begin{equation}
+\Delta\hat{\alpha} = \frac{\sum_{i=1}^{N} w_{i} \Delta z_{i} \left.\frac{dg(\alpha, t)}{d\alpha}\right|_{\substack{\alpha=\alpha^{0} \\ t=t_{i}}}}{\sum_{i=1}^{N} w_{i} \left(\left.\frac{dg(\alpha, t)}{d\alpha}\right|_{\substack{\alpha=\alpha^{0} \\ t=t_{i}}}\right)^{2}} = \frac{-\sum_{i=1}^{N} w_{i} \Delta z_{i} t_{i} e^{-\alpha^{0} t_{i}}}{\sum_{i=1}^{N} w_{i} t_{i}^{2} e^{-2\alpha^{0} t_{i}}} = \frac{-\sum_{i=1}^{N} \frac{1}{\sigma_{i}^{2}} \Delta z_{i} t_{i} e^{-\alpha^{0} t_{i}}}{\sum_{i=1}^{N} \frac{1}{\sigma_{i}^{2}} t_{i}^{2} e^{-2\alpha^{0} t_{i}}}
+\end{equation}
+dove nell'ultimo passaggio si è esplicitata la scelta standard dei pesi $w_{i} = 1/\sigma_{i}^{2}$, inversamente proporzionali alla varianza $\sigma_{i}^{2}$ dell'errore di misura all'istante $t_{i}$.
+
+Ricordando che $\Delta\alpha = \alpha - \alpha^{0}$, si ottiene una nuova stima aggiornata per il parametro $\alpha$:
+\begin{equation}
+\alpha^{1} = \alpha^{0} + \Delta\hat{\alpha}
+\end{equation}
+Il processo iterativo viene quindi ripetuto utilizzando $\alpha^{1}$ al posto di $\alpha^{0}$ nelle formule precedenti. Ad ogni passo dell'iterazione il valore di $WRSS$ si riduce progressivamente fino a raggiungere un punto di minimo, in corrispondenza del quale l'algoritmo iterativo si arresta.
+
+È fondamentale evidenziare una differenza strutturale rispetto al caso lineare:
+\begin{itemize}
+    \item nella \textbf{regressione lineare} esiste un unico minimo per la funzione di costo $WRSS$;
+    \item nella \textbf{regressione non lineare} l'andamento di $WRSS(\alpha)$ nel dominio del parametro può presentare più di un minimo locale (alcuni ben definiti o acuti, altri più graduali) e un solo minimo globale (adattato da Cobelli et al., 2001). Di conseguenza, la soluzione raggiunta dall'algoritmo iterativo è una soluzione approssimata che può convergere verso un minimo locale anziché al minimo globale, a seconda della scelta del punto iniziale $\alpha^{0}$.
+\end{itemize}
+
+\section{Estensione al caso vettoriale}
+
+\subsection{Modello esponenziale a due parametri}
+
+Estendiamo ora il procedimento al caso di un modello descritto da un vettore di due parametri, considerando la funzione:
+\begin{equation}
+y(t) = g(t, \mathbf{p}) = g(t, A, \alpha) = A e^{-\alpha t}
+\end{equation}
+Assumiamo di disporre di una stima iniziale del vettore dei parametri $\mathbf{p}^{0} = [A^{0}, \alpha^{0}]^{T}$. Sviluppando $g(t, A, \alpha)$ in serie di Taylor al primo ordine intorno a $(A^{0}, \alpha^{0})$, si ha:
+\begin{equation}
+g(t, A, \alpha) \cong g(t, A^{0}, \alpha^{0}) + \left.\frac{\partial g(t, A, \alpha)}{\partial \alpha}\right|_{\substack{A=A^{0} \\ \alpha=\alpha^{0}}} (\alpha - \alpha^{0}) + \left.\frac{\partial g(t, A, \alpha)}{\partial A}\right|_{\substack{A=A^{0} \\ \alpha=\alpha^{0}}} (A - A^{0})
+\end{equation}
+Calcolando il valore della funzione e delle sue derivate parziali nel punto iniziale $(A^{0}, \alpha^{0})$:
+\begin{align}
+g(t, A^{0}, \alpha^{0}) &= A^{0} e^{-\alpha^{0} t} \\
+\left.\frac{\partial g(t, A, \alpha)}{\partial \alpha}\right|_{\substack{A=A^{0} \\ \alpha=\alpha^{0}}} &= -A^{0} t e^{-\alpha^{0} t} \\
+\left.\frac{\partial g(t, A, \alpha)}{\partial A}\right|_{\substack{A=A^{0} \\ \alpha=\alpha^{0}}} &= e^{-\alpha^{0} t}
+\end{align}
+possiamo riscrivere l'approssimazione lineare come:
+\begin{equation}
+g(t, A, \alpha) \cong A^{0} e^{-\alpha^{0} t} - A^{0} t e^{-\alpha^{0} t} (\alpha - \alpha^{0}) + e^{-\alpha^{0} t} (A - A^{0})
+\end{equation}
+
+Consideriamo ora i dati sperimentali rumorosi acquisiti agli istanti $t_{i}$:
+\begin{equation}
+z_{i} = g(t_{i}, A, \alpha) + v_{i} = A e^{-\alpha t_{i}} + v_{i}
+\end{equation}
+dove $v_{i}$ rappresenta l'errore di misura. Utilizzando la linearizzazione precedente si ottiene:
+\begin{equation}
+z_{i} \cong A^{0} e^{-\alpha^{0} t_{i}} - A^{0} t_{i} e^{-\alpha^{0} t_{i}} (\alpha - \alpha^{0}) + e^{-\alpha^{0} t_{i}} (A - A^{0}) + v_{i}
+\end{equation}
+Definendo le variazioni incrementali:
+\begin{equation}
+\Delta z_{i} = z_{i} - A^{0} e^{-\alpha^{0} t_{i}}, \qquad \Delta\alpha = \alpha - \alpha^{0}, \qquad \Delta A = A - A^{0}
+\end{equation}
+l'equazione per la singola misura diventa:
+\begin{equation}
+\Delta z_{i} = -A^{0} t_{i} e^{-\alpha^{0} t_{i}} \Delta\alpha + e^{-\alpha^{0} t_{i}} \Delta A + v_{i}
+\end{equation}
+
+Considerando contemporaneamente tutte le $N$ misure ($i = 1, 2, \dots, N$), si ottiene la seguente formulazione matriciale:
+\begin{equation}
+\begin{bmatrix}
+\Delta z_{1} \\
+\Delta z_{2} \\
+\vdots \\
+\Delta z_{N-1} \\
+\Delta z_{N}
+\end{bmatrix}
+=
+\begin{bmatrix}
+e^{-\alpha^{0} t_{1}} & -A^{0} t_{1} e^{-\alpha^{0} t_{1}} \\
+e^{-\alpha^{0} t_{2}} & -A^{0} t_{2} e^{-\alpha^{0} t_{2}} \\
+\vdots & \vdots \\
+e^{-\alpha^{0} t_{N-1}} & -A^{0} t_{N-1} e^{-\alpha^{0} t_{N-1}} \\
+e^{-\alpha^{0} t_{N}} & -A^{0} t_{N} e^{-\alpha^{0} t_{N}}
+\end{bmatrix}
+\begin{bmatrix}
+\Delta A \\
+\Delta\alpha
+\end{bmatrix}
++
+\begin{bmatrix}
+v_{1} \\
+v_{2} \\
+\vdots \\
+v_{N-1} \\
+v_{N}
+\end{bmatrix}
+\end{equation}
+In forma compatta, tale formulazione è lineare nel vettore degli incrementi parametrici $\Delta\mathbf{p} = [\Delta A, \Delta\alpha]^{T}$:
+\begin{equation}
+\Delta\mathbf{z} = \mathbf{G}\Delta\mathbf{p} + \mathbf{v}
+\end{equation}
+La soluzione ai minimi quadrati pesati (\textit{Weighted Least Squares}, WLS) è fornita da:
+\begin{equation}
+\Delta\hat{\mathbf{p}} = (\mathbf{G}^{T}\mathbf{\Sigma}_{v}^{-1}\mathbf{G})^{-1}\mathbf{G}^{T}\mathbf{\Sigma}_{v}^{-1}\Delta\mathbf{z}
+\end{equation}
+dove $\mathbf{\Sigma}_{v}$ è la matrice di covarianza del vettore di rumore $\mathbf{v}$. Una volta stimato $\Delta\hat{\mathbf{p}}$, si aggiorna la stima del vettore dei parametri:
+\begin{equation}
+\mathbf{p}^{1} = \mathbf{p}^{0} + \Delta\hat{\mathbf{p}}
+\end{equation}
+e si procede per iterazioni successive fino al soddisfacimento del criterio di arresto prefissato.
+
+\subsection{Generalizzazione ad un generico modello non lineare a $M$ parametri}
+
+Estendiamo ora la trattazione ad un generico modello non lineare descritto in forma vettoriale da:
+\begin{equation}
+\mathbf{z} = \mathbf{y} + \mathbf{v} = \mathbf{G}(\mathbf{p}) + \mathbf{v}
+\end{equation}
+dove:
+\begin{itemize}
+    \item $\mathbf{z} = [z_{1}, z_{2}, \dots, z_{N}]^{T}$ è il vettore delle $N$ misure;
+    \item $\mathbf{y} = [y_{1}, y_{2}, \dots, y_{N}]^{T}$ è il vettore delle uscite ideali del modello;
+    \item $\mathbf{p} = [p_{1}, p_{2}, \dots, p_{M}]^{T}$ è il vettore degli $M$ parametri incogniti;
+    \item $\mathbf{G}(\mathbf{p}) = [g(t_{1}, \mathbf{p}), g(t_{2}, \mathbf{p}), \dots, g(t_{N}, \mathbf{p})]^{T}$ è il vettore delle predizioni non lineari;
+    \item $\mathbf{v} = [v_{1}, v_{2}, \dots, v_{N}]^{T}$ è il vettore degli errori di misura con matrice di covarianza $\mathbf{\Sigma}_{v} = \operatorname{cov}(\mathbf{v})$.
+\end{itemize}
+
+La stima WLS dei parametri è il vettore $\hat{\mathbf{p}}_{WLS}$ che minimizza la funzione di costo quadratica pesata:
+\begin{equation}
+\hat{\mathbf{p}}_{WLS} = \arg\min_{\mathbf{p}} [\mathbf{z} - \mathbf{G}(\mathbf{p})]^{T}\mathbf{\Sigma}_{v}^{-1}[\mathbf{z} - \mathbf{G}(\mathbf{p})]
+\end{equation}
+
+Definiamo $\mathbf{p}^{0} = [p_{1}^{0}, p_{2}^{0}, \dots, p_{M}^{0}]^{T}$ la stima iniziale del vettore dei parametri $\mathbf{p}$. Linearizzando al primo ordine intorno a $\mathbf{p}^{0}$, la predizione del modello al generico istante $t_{i}$ è:
+\begin{equation}
+g(t_{i}, \mathbf{p}) \cong g(t_{i}, \mathbf{p}^{0}) +
+\begin{bmatrix}
+\dfrac{\partial g(t_{i}, \mathbf{p}^{0})}{\partial p_{1}} & \dfrac{\partial g(t_{i}, \mathbf{p}^{0})}{\partial p_{2}} & \cdots & \dfrac{\partial g(t_{i}, \mathbf{p}^{0})}{\partial p_{M}}
+\end{bmatrix}
+\begin{bmatrix}
+p_{1} - p_{1}^{0} \\
+p_{2} - p_{2}^{0} \\
+\vdots \\
+p_{M} - p_{M}^{0}
+\end{bmatrix}
+\end{equation}
+Poiché le misure sono descritte da:
+\begin{equation}
+z_{i} = g(t_{i}, \mathbf{p}) + v_{i}, \qquad i = 1, 2, \dots, N
+\end{equation}
+sostituendo l'espressione linearizzata e raccogliendo tutte le $N$ equazioni in notazione vettoriale e matriciale, si ottiene:
+\begin{equation}
+\begin{bmatrix}
+z_{1} - g(t_{1}, \mathbf{p}^{0}) \\
+z_{2} - g(t_{2}, \mathbf{p}^{0}) \\
+z_{3} - g(t_{3}, \mathbf{p}^{0}) \\
+\vdots \\
+z_{N} - g(t_{N}, \mathbf{p}^{0})
+\end{bmatrix}
+=
+\begin{bmatrix}
+\dfrac{\partial g(t_{1}, \mathbf{p}^{0})}{\partial p_{1}} & \dfrac{\partial g(t_{1}, \mathbf{p}^{0})}{\partial p_{2}} & \cdots & \dfrac{\partial g(t_{1}, \mathbf{p}^{0})}{\partial p_{M}} \\[2.2ex]
+\dfrac{\partial g(t_{2}, \mathbf{p}^{0})}{\partial p_{1}} & \dfrac{\partial g(t_{2}, \mathbf{p}^{0})}{\partial p_{2}} & \cdots & \dfrac{\partial g(t_{2}, \mathbf{p}^{0})}{\partial p_{M}} \\[2.2ex]
+\dfrac{\partial g(t_{3}, \mathbf{p}^{0})}{\partial p_{1}} & \dfrac{\partial g(t_{3}, \mathbf{p}^{0})}{\partial p_{2}} & \cdots & \dfrac{\partial g(t_{3}, \mathbf{p}^{0})}{\partial p_{M}} \\[1.5ex]
+\vdots & \vdots & \ddots & \vdots \\[1.5ex]
+\dfrac{\partial g(t_{N}, \mathbf{p}^{0})}{\partial p_{1}} & \dfrac{\partial g(t_{N}, \mathbf{p}^{0})}{\partial p_{2}} & \cdots & \dfrac{\partial g(t_{N}, \mathbf{p}^{0})}{\partial p_{M}}
+\end{bmatrix}
+\begin{bmatrix}
+p_{1} - p_{1}^{0} \\
+p_{2} - p_{2}^{0} \\
+\vdots \\
+p_{M} - p_{M}^{0}
+\end{bmatrix}
++
+\begin{bmatrix}
+v_{1} \\
+v_{2} \\
+v_{3} \\
+\vdots \\
+v_{N}
+\end{bmatrix}
+\end{equation}
+
+Si perviene così al sistema di equazioni lineari nei parametri incrementali $\Delta\mathbf{p} = \mathbf{p} - \mathbf{p}^{0}$:
+\begin{equation}
+\Delta\mathbf{z} = \mathbf{S}\Delta\mathbf{p} + \mathbf{v}
+\end{equation}
+dove $\mathbf{S}$ (di dimensione $N \times M$) è la \textbf{matrice di sensitività} (o matrice Jacobiana) valutata in $\mathbf{p}^{0}$, mentre $\Delta\mathbf{z} = \mathbf{z} - \mathbf{G}(\mathbf{p}^{0})$.
+
+La soluzione WLS al passo corrente è data da:
+\begin{equation}
+\Delta\hat{\mathbf{p}} = (\mathbf{S}^{T}\mathbf{\Sigma}_{v}^{-1}\mathbf{S})^{-1}\mathbf{S}^{T}\mathbf{\Sigma}_{v}^{-1}\Delta\mathbf{z}
+\end{equation}
+e la nuova stima del vettore dei parametri si calcola come:
+\begin{equation}
+\mathbf{p}^{1} = \mathbf{p}^{0} + \Delta\hat{\mathbf{p}}
+\end{equation}
+
+Il processo iterativo può quindi ricominciare: il modello viene nuovamente linearizzato intorno a $\mathbf{p}^{1}$, si calcola una nuova matrice di sensitività e si ottiene una nuova stima $\mathbf{p}^{2}$. Si continua così fino a quando la funzione di costo smette di decrescere significativamente, ovvero quando la differenza tra due valori consecutivi di $WRSS(\mathbf{p})$ rientra all'interno di una tolleranza predefinita.
+
+\section{Test per l'ordine del modello e principio di parsimonia}
+
+\subsection{Criteri di informazione per la selezione dell'ordine}
+
+Consideriamo il caso in cui si disponga di diversi modelli candidati e il problema consista nel selezionare quello che meglio approssima i dati sperimentali. Un esempio tipico è rappresentato dal modello multiesponenziale di una curva di decadimento:
+\begin{equation}
+y(t) = \sum_{i=1}^{n} A_{i} e^{-\lambda_{i} t}
+\end{equation}
+In molte applicazioni pratiche, l'ordine del modello --- che corrisponde al numero $n$ di componenti esponenziali --- non è noto a priori ed è pertanto necessario scegliere un valore ottimo per $n$.
+
+Non è possibile definire l'ordine ottimo del modello basandosi esclusivamente sul valore minimo di $WRSS$ e sulla bianchezza dei residui. Infatti, all'aumentare dell'ordine del modello (ossia del numero di esponenziali), il valore di $WRSS$ decresce sistematicamente, ma contemporaneamente aumenta il numero $P$ di parametri da stimare. Di conseguenza, è necessario osservare congiuntamente sia il valore di $WRSS$ sia i gradi di libertà del sistema ($N - P$): bisogna cioè assicurarsi che la riduzione osservata in $WRSS$ rifletta un reale miglioramento nella descrizione del fenomeno e non sia dovuta semplicemente a una diminuzione dei gradi di libertà conseguente all'aumento del numero di parametri.
+
+I due test più utilizzati nella pratica modellistica che implementano il \textbf{principio di parsimonia} (bilanciando bontà dell'adattamento e complessità del modello) sono:
+\begin{enumerate}
+    \item \textbf{Akaike Information Criterion (AIC)}:
+    \begin{equation}
+    AIC = WRSS + 2P
+    \end{equation}
+    \item \textbf{Schwartz Criterion (SC)}:
+    \begin{equation}
+    SC = WRSS + P \ln N
+    \end{equation}
+\end{enumerate}
+dove:
+\begin{itemize}
+    \item $P \rightarrow$ numero totale dei parametri del modello;
+    \item $N \rightarrow$ numero dei punti di misura.
+\end{itemize}
+
+\subsection{Esempio applicativo: scelta tra modello bi- e tri-esponenziale}
+
+Consideriamo come esempio il confronto tra due modelli candidati --- un modello bi-esponenziale ($n = 2$, $P = 4$) e un modello tri-esponenziale ($n = 3$, $P = 6$) --- per descrivere un insieme di dati sperimentali di decadimento (adattato da Sparacino et al., 2000).
+
+La Tabella~\ref{tab:parsimony} riporta i valori stimati per le ampiezze $A_{i}$ e le costanti di decadimento $\alpha_{i}$ (con i relativi indici di precisione percentuale tra parentesi), insieme ai corrispondenti valori di $WRSS$, $AIC$ e $SC$ ottenuti per i due modelli candidati.
+
+\begin{table}[htbp]
+\centering
+\caption{Scelta dell'ordine del modello basata sul principio di parsimonia (adattato da Sparacino et al., 2000).}
+\label{tab:parsimony}
+{\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}lccccccccc@{}}
+\toprule
+Modello & $A_{1}$ & $A_{2}$ & $A_{3}$ & $\alpha_{1}$ & $\alpha_{2}$ & $\alpha_{3}$ & $WRSS$ & $AIC$ & $SC$ \\
+ & $(\mathrm{ml}^{-1})$ & $(\mathrm{ml}^{-1})$ & $(\mathrm{ml}^{-1})$ & $(\mathrm{min}^{-1})$ & $(\mathrm{min}^{-1})$ & $(\mathrm{min}^{-1})$ & & & \\
+\midrule
+2 Esponenziali & $1.79 \times 10^{-4}$ & $0.90 \times 10^{-4}$ & --- & $0.141$ & $0.025$ & --- & $61$ & $69$ & $75$ \\
+ & $(7.2)$ & $(4.8)$ & & $(9.2)$ & $(2.5)$ & & & & \\
+\addlinespace[4pt]
+3 Esponenziali & $1.29 \times 10^{-4}$ & $0.88 \times 10^{-4}$ & $0.81 \times 10^{-4}$ & $0.253$ & $0.085$ & $0.024$ & $40$ & $52$ & $60$ \\
+ & $(39)$ & $(66)$ & $(9)$ & $(49)$ & $(40)$ & $(3)$ & & & \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+Confrontando gli indici riportati nella Tabella~\ref{tab:parsimony}, il modello più parsimonioso risulta essere quello caratterizzato da \textbf{3 esponenziali}, poiché presenta i valori più bassi sia per il criterio di Akaike ($AIC = 52$ contro $69$) sia per il criterio di Schwartz ($SC = 60$ contro $75$).

@@ -1,0 +1,599 @@
+% ==============================================================================
+\chapter{Introduzione e importanza della deconvoluzione}
+% ==============================================================================
+
+\section{Introduzione al problema inverso}
+
+Così come molti parametri non possono essere direttamente misurati \textit{in vivo}, può accadere lo stesso per molti segnali di interesse alla comprensione del sistema biologico.
+
+\begin{itemize}
+    \item \textbf{Esempio:} Il tasso di secrezione di una ghiandola deve essere inferito a partire dalla concentrazione dell'ormone nel plasma (è possibile misurare solo l'effetto e non la causa).
+    \item \textbf{PROBLEMA INVERSO:} se il segnale di input del sistema non è noto, il problema inverso è un problema di stima dell'ingresso.
+\end{itemize}
+
+\noindent\textbf{Schema concettuale del sistema fisiologico (Deconvoluzione per sistemi LTI):}
+\begin{center}
+\begin{tabular}{ccc}
+    \textbf{Ingresso non noto} & \textbf{Sistema Fisiologico} & \textbf{Uscita misurata} \\
+    \textit{Production? Secretion?} & \textit{Physiological System} & \textit{Plasma Concentration} \\
+    \textit{Rate of Appearance} & & \\
+    $u(t)$ & $\longrightarrow \quad g(t-\tau) \quad \longrightarrow$ & $c(t)$ \\
+    \multicolumn{3}{c}{\textbf{DECONVOLUZIONE (sistemi LTI)}}
+\end{tabular}
+\end{center}
+
+\subsection{Importanza della deconvoluzione }
+
+Si potrebbe argomentare che la misura di concentrazione di una sostanza nel sangue fornisce sufficienti informazioni per comprendere il sistema e quindi non è necessario risolvere in $u(t)$ l'integrale perché $c(t)$ è sufficiente:
+\[
+    c(t) = \int_{-\infty}^{t} g(t-\tau) u(\tau) \, d\tau
+\]
+Tuttavia, le concentrazioni nel plasma non riflettono soltanto il processo di secrezione/produzione a cui siamo interessati, ma risentono anche della dinamica delle sostanze (distribuzione e metabolismo nell'organismo).
+
+\begin{center}
+    \textbf{DECONVOLUZIONE: rimuovere la distorsione introdotta dalla dinamica della sostanza}
+\end{center}
+
+\noindent\textbf{Confronto tra cinetica rapida e cinetica lenta ($g(t) = e^{-\alpha t}$) }
+
+\noindent Nell'analisi comparativa tra un sistema rapido (\textit{'Fast System'}, $\alpha = 12$) e un sistema lento (\textit{'Slow System'}, $\alpha = 2$) sottoposti al medesimo ingresso impulsivo bifasico, si osservano quattro livelli di segnale nel dominio del tempo ($t \in [0, 1]$):
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/confrontocinetica.png}
+    \label{fig:7-1}
+\caption{Influence of substance kinetics on concentration time series. Left and right panels describe a 'fast' and a 'slow' system, respectively. From top to bottom panels: impulse response, input, continuous output (continuous line) and noisy samples (open circles) and measurement time series (open circles, interpolation also shown) are shown, respectively (adapted from Sparacino et al., 2004).}
+\end{figure}
+\iffalse
+\begin{center}
+\begin{tabular}{p{4.2cm}p{5.0cm}p{5.0cm}}
+    \toprule
+    \textbf{Grandezza} & \textbf{'Fast System' ($\alpha = 12$)} & \textbf{'Slow System' ($\alpha = 2$)} \\
+    \midrule
+    \textit{Impulse Response} $g(t)$ & Decadimento rapido da $1$ a $0$ ($\text{l}^{-1}$) & Decadimento lento da $1$ a $\approx 0.14$ ($\text{l}^{-1}$) \\
+    \textit{Input} $u(t)$ & Due picchi a $t = 0.2$ e $t = 0.4$ ($\text{pmol/min}$) & Due picchi a $t = 0.2$ e $t = 0.4$ ($\text{pmol/min}$) \\
+    \textit{Output and Noisy Samples} & Uscita continua (range $0\text{--}0.1$) e campioni rumorosi (cerchi aperti) & Uscita continua fortemente smussata/ritardata (range $0\text{--}0.04$) e campioni rumorosi \\
+    \textit{Measured Time Series} & Serie temporale misurata e interpolazione ($\text{pmol/l}$, asse $x$: \textit{Time}) & Serie temporale misurata e interpolazione ($\text{pmol/l}$, asse $x$: \textit{Time}) \\
+    \bottomrule
+\end{tabular}
+\end{center}
+\fi
+% ==============================================================================
+\section{Formulazione matematica e criticità del problema}
+% ==============================================================================
+
+\subsection{Il problema e le assunzioni }
+
+Risolviamo l'integrale
+\[
+    c(t) = \int_{-\infty}^{t} g(t-\tau) u(\tau) \, d\tau
+\]
+in $u(t)$, essendo noti l'uscita del sistema $c(t)$ e la sua risposta impulsiva $g(t)$.
+
+\noindent\textbf{Assunzioni:}
+\begin{enumerate}
+    \item $u(t)$ è \textbf{causale}, ovvero $u(t) = 0$ per $t < 0$ (non sempre vero $\rightarrow$ secrezione ormonale spontanea). Se mi rifaccio alla fisiologia questa assunzione non ha senso, supponiamo semplicemente che la misura effettuato in zero sia il minimo delle concentrazioni che misureremo.
+    \item Sistema lineare e tempo invariante, altrimenti l'integrale diventa:
+    \[
+        c(t) = \int_{-\infty}^{t} g(t,\tau) u(\tau) \, d\tau \qquad \text{(integrale di Fredholm)}
+    \]
+\end{enumerate}
+
+\subsection{Natura mal-posta e mal-condizionata della deconvoluzione}
+
+La deconvoluzione è un problema:
+\begin{enumerate}
+    \item \textbf{mal-posto (sotto-determinato)} $\rightarrow$ il problema di ricostruire l'input $u(t)$ da un numero finito di campioni dell'uscita $c(t)$ non ammette un'unica soluzione; questo peroblema può essere risolto 
+    \item \textbf{mal-condizionato} $\rightarrow$ una piccola percentuale di errore nella misura produce un elevato errore nella stima dell'ingresso. (Può essere mitigato ma non può essere cancellato)
+\end{enumerate}
+
+\noindent\textbf{Esempio di deconvoluzione}
+Consideriamo l'ingresso dato da (unità arbitrarie, \textit{Arbitrary Units}):
+\[
+    u(t) = e^{-[(t-400)/75]^2} + e^{-[(t-600)/75]^2}, \qquad 0 \le t \le 1025
+\]
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/esempiodiconvoluzione.png}
+    \label{fig:7-2}
+\end{figure}
+
+\noindent E la risposta impulsiva del sistema (\textit{Impulse Response}, \textit{Arbitrary Units}):
+\[
+    g(t) = \begin{cases} 1, & t \le 250 \\ 0, & t > 250 \end{cases}
+\]
+Noti $u(t)$ e $g(t)$ è possibile calcolare $c(t)$.
+
+Assumiamo invece di conoscere $N$ campioni di $c(t)$: $\{c_k\} = c(t_k)$ misurati senza errore su una griglia uniforme $\Omega_s = \{kT\}$, $k = 1, 2, \dots, N$ con $T = 25$ e $N = 41$. (Abbiamo una griglia di 1025 punti)
+\begin{itemize}
+    \item Il problema di ricostruire una funzione tempo-continua $u(t)$ dalla serie temporale $\{c_k\}$ può \textbf{NON} risultare in un'unica soluzione.
+    \item Oltre alla soluzione vera, esisteranno altre soluzioni in grado di fornire perfettamente $\{c_k\}$ in uscita (problema mal posto).
+    \item Per trattare la mal posizione del problema, gli approcci di deconvoluzione devono restringere il campo di applicazione delle funzioni in una zona in cui la soluzione è unica (\textbf{DECONVOLUZIONE DISCRETA}).
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/esempiodiconvoluzione2.png}
+    \label{fig:7-3}
+\end{figure}
+Da 41 valori vorrei poter stimare solo 41 punti invece che infiniti, in questo modo il problema diventerebbe quadro e quindi con un'unica soluzione.
+% ==============================================================================
+\section{Deconvoluzione discreta}
+% ==============================================================================
+
+\subsection{Discretizzazione dell'ingresso e dell'integrale di convoluzione}
+
+Il segnale $u(t)$ si assume essere costante all'interno di ogni intervallo della griglia di campionamento $\Omega_s = \{t_1, t_2, \dots, t_N\}$, (costante a tratti), ovvero:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/deconvoluzionediscreta.png}
+    \label{fig:7-4}
+\end{figure}
+\[
+    u(t) = u_i \quad \text{per } t_{i-1} \le t \le t_i, \qquad i = 1, 2, \dots, N
+\]
+Sostituendo le espressioni discrete l'integrale di convoluzione diventa:
+\[
+    c(t_k) = \int_{0}^{t_k} g(t_k - \tau) \cdot u(\tau) \, d\tau = \sum_{i=1}^{k} u_i \cdot \int_{t_{i-1}}^{t_i} g(t_k - \tau) \, d\tau
+\]
+Considerando:
+\[
+    g_{k-i} = \int_{t_{i-1}}^{t_i} g(t_k - \tau) \, d\tau
+\]
+Si ottiene:
+\[
+    c_k = c(t_k) = \sum_{i=1}^{k} u_i \cdot g_{k-i}
+\]
+I cui primi termini sono:
+\begin{align*}
+    k = 1 &\Rightarrow c_1 = g_0 \cdot u_1 \\
+    k = 2 &\Rightarrow c_2 = g_0 \cdot u_2 + g_1 \cdot u_1 \\
+    k = 3 &\Rightarrow c_3 = g_0 \cdot u_3 + g_1 \cdot u_2 + g_2 \cdot u_1
+\end{align*}
+Questa deconvoluzione viene quindi risolta in modo discreto.\\
+
+\noindent In notazione matriciale, ovvero, esplicitando vettori e matrice (con $g_N$ indicato nella slide per l'elemento in basso a sinistra, corrispondente a $g_{N-1}$):
+\[
+    c = G u \qquad \begin{bmatrix}
+        c_1 \\
+        c_2 \\
+        c_3 \\
+        \vdots \\
+        c_N
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        g_0 & 0 & 0 & \dots & 0 \\
+        g_1 & g_0 & 0 & \dots & 0 \\
+        g_2 & g_1 & g_0 & \dots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        g_{N-1} & \dots & g_2 & g_1 & g_0
+    \end{bmatrix}
+    \begin{bmatrix}
+        u_1 \\
+        u_2 \\
+        \vdots \\
+        u_N
+    \end{bmatrix}
+\]
+
+
+Dove:
+\begin{itemize}
+    \item $c = [c_1, c_2, \dots, c_N]^T$ è il vettore $N$-dimensionale dell'uscita campionata;
+    \item $u = [u_1, u_2, \dots, u_N]^T$ è l'ingresso;
+    \item $G$ è una matrice triangolare inferiore $N \times N$.
+\end{itemize}
+
+\noindent Poiché $G$ è invertibile, si ottiene un'\textbf{unica soluzione}:
+\[
+    \hat{u} = G^{-1} c
+\]
+Una volta convoluto $\hat{u}$ con $g(t)$, l'uscita è perfettamente descritta.
+\medskip
+\noindent\textbf{Esempio deconvoluzione discreta}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/esempiodeconvoluzionediscreta.png}
+    \label{fig:7-5}
+\end{figure}
+
+% ==============================================================================
+\section{Deconvoluzione in presenza di rumore e mal-condizionamento}
+% ==============================================================================
+
+\subsection{Modello di misura con rumore e stima ai minimi quadrati (LS)}
+
+\noindent\textbf{Schema del sistema rumoroso }
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/deconvoluzioneinpresenzadirumore.png}
+    \label{fig:7-6}
+\end{figure}
+
+I campioni misurati in uscita sono affetti da errore di misura e questo complica il problema di deconvoluzione. Consideriamo la $k$-esima misura $z_k$:
+\[
+    z_k = c_k + v_k \qquad k = 1, 2, \dots, N
+\]
+dove $v_k$ è l'errore.
+
+In notazione matriciale:
+\[
+    z = G \cdot u + v
+\]
+dove:
+\begin{itemize}
+    \item $z = [z_1, z_2, \dots, z_N]^T$ è il vettore delle misure;
+    \item $v = [v_1, v_2, \dots, v_N]^T$ è il vettore degli errori di misura;
+    \item $v$ è un vettore a media nulla, campioni indipendenti e matrice di covarianza nota pari a $\Sigma_v$.
+\end{itemize}
+
+La più semplice stima di $u$ da $z$ è data dalla soluzione del problema ai minimi quadrati (\textit{Least Squares}), totalmente equivalente alla $w_{rss}$:
+\[
+    \min_{u} \underbrace{(z - G \cdot u)^T}_{\text{residuo}} \underbrace{\Sigma_v^{-1}}_{\substack{\text{Peso}}} (z - G \cdot u)
+\]
+
+\noindent La cui soluzione è:
+\[
+    \hat{u}_{LS} = (G^T \Sigma_v^{-1} G)^{-1} G^T \Sigma_v^{-1} z = G^{-1} (G^T \Sigma_v^{-1})^{-1} G^T \Sigma_v^{-1} z
+\]
+poiché $G$ è invertibile.
+
+In questo caso la riconvoluzione, ovvero la predizione dell'uscita $z(t)$, è:
+\[
+    z(t) = \int_{0}^{t} g(t-\tau) \cdot \hat{u}_{LS}(\tau) \, d\tau
+\]
+che descrive perfettamente i dati campionati, ovvero il vettore dei residui $r = z - G\hat{u}_{LS}$ è identicamente nullo.
+
+\subsection{Effetti del rumore, della frequenza di campionamento e della dinamica }
+
+\noindent\textbf{Effetti del rumore sulla stima}
+
+La presenza del rumore nel vettore delle misure ha un effetto drammatico sulla qualità della stima. Aggiunta di rumore gaussiano ($\text{SD} = 3$) alle misure del problema precedente:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Immagini/effettorumorestima.png}
+    \label{fig:7-7}
+\end{figure}
+\begin{itemize}
+    \item Nei pannelli \textit{Input}, \textit{Impulse Response}, \textit{Ill-Posedness: Two Possible Solution} e \textit{Output with Noise-Free Samples} si ripropone il caso ideale.
+    \item Nel pannello \textit{Output Noisy Samples \& Reconvolution} (asse $x$: \textit{Time}, $0\text{--}1000$; asse $y$: \textit{Arbitrary Units}, $0\text{--}200$), la riconvoluzione passa esattamente per i punti rumorosi.
+    \item Nel pannello \textit{Ill-conditioning: LS Deconvolution} (asse $x$: \textit{Time}, $0\text{--}1000$; asse $y$: \textit{Arbitrary Units}, $-0.5\text{--}2$), la stima $\hat{u}_{LS}$ presenta ampie oscillazioni spurie che mascherano completamente il profilo dei due picchi originali.
+\end{itemize}
+
+\noindent\textbf{Incremento del numero di campioni}
+
+Confronto tra passo di campionamento $T = 25$ (\textit{Ill-conditioning: LS Deconvolution} e \textit{Output Noisy Samples \& Reconvolution}) e passo di campionamento più fitto $T = 10$ (\textit{Ill-conditioning: Effect of Sampling} e \textit{Output Noisy Samples \& Reconvolution}, ordinate tra $-1$ e $2$):
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/incrementocampioni.png}
+    \label{fig:7-8}
+\end{figure}
+\begin{center}
+    \textbf{Maggiore è la frequenza di campionamento più sarà difficile ricostruire il tasso di secrezione dell'ormone mediante deconvoluzione}
+\end{center}
+
+\noindent\textbf{Risposta impulsiva lenta}
+
+Confronto a parità di passo di campionamento ($T = 25$) tra un sistema in cui $g(t)$ dura $250$ campioni (\textit{Ill-conditioning: LS Deconvolution}) e un sistema più lento in cui $g(t)$ dura $400$ campioni (\textit{Ill-conditioning: Effect of System Dynamics}):
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/rispostalenta.png}
+    \label{fig:7-9}
+\end{figure}
+\begin{center}
+    \textbf{Maggiore è il tempo di secrezione dell'ormone più sarà difficile ricostruire il tasso di secrezione dell'ormone mediante deconvoluzione}
+\end{center}
+
+% ==============================================================================
+\section{Approccio non parametrico: Metodo di regolarizzazione}
+% ==============================================================================
+
+\subsection{Strategie contro il mal-condizionamento}
+
+La deconvoluzione LS è semplice ma molto debole perché troppo sensibile al mal-condizionamento del problema. Esistono diversi approcci per limitare il mal-condizionamento:
+\begin{enumerate}
+    \item \textbf{Deconvoluzione parametrica} $\rightarrow$ si assume un'espressione analitica per l'input e si stimano i parametri che la descrivono (la deconvoluzione diventa un problema di stima dei parametri).
+    \item \textbf{Deconvoluzione non parametrica} $\rightarrow$ non richiede la formulazione analitica a priori dell'input (approccio di regolarizzazione).
+\end{enumerate}
+
+\subsection{Formulazione del metodo di regolarizzazione}
+Il metodo di regolarizzazione è un approccio non parametrico. L'idea alla base del metodo è di identificare una soluzione che non massimizzi soltanto la perfezione del fitting dei dati (come nella deconvoluzione LS), ma una soluzione che fornisca un buon fitting dei dati e simultaneamente garantisca un certo livello di \textit{«smoothness»}.
+\[
+\min_{\mu}{w_{rss}} \longrightarrow \min_{\mu}{(w_{rss} + \text{smooth})}
+\]
+Il problema di ottimizzazione da risolvere diventa:
+\[
+    \min_{u} (z - G \cdot u)^T \Sigma_v^{-1} (z - G \cdot u) + \gamma u^T F^T F u
+\]
+dove:
+\begin{itemize}
+    \item $\Sigma_v$ è la matrice di covarianza dell'errore di misura;
+    \item $F$ è una matrice quadrata di penalizzazione ($N \times N$);
+    \item $\gamma$ è un parametro reale non negativo.
+\end{itemize}
+Ovviamente c'è un trade-off tra fitting dei dati e smoothness della soluzione. La scelta di $\gamma$ è fondamentale per ottenere una stima soddisfacente, la smoothness è proporzionale all'errore che compieremo.
+
+A fronte della soluzione ai minimi quadrati $\hat{u}_{LS} = (G^T \Sigma_v^{-1} G)^{-1} G^T \Sigma_v^{-1} z$, il problema regolarizzato posto è quadratico e la sua soluzione è:
+\[
+    \hat{u} = (G^T \Sigma_v^{-1} G + \gamma F^T F)^{-1} G^T \Sigma_v^{-1} z
+\]
+che dipende linearmente dal vettore dei dati $z$.
+\begin{itemize}
+    \item Se $\gamma = 0$, la funzione di costo e la sua soluzione coincidono con la deconvoluzione LS.
+    \item Se $\gamma > 0$, la funzione di costo è composta da due termini:
+    \begin{itemize}
+        \item Il primo penalizza la distanza, pesata dall'inverso di $\Sigma_v$, tra la predizione del modello $Gu$ (vettore di riconvoluzione) e i dati.
+        \item Il secondo contributo $u^T F^T F u$ penalizza l'irregolarità della soluzione.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Costruzione della matrice di penalizzazione $F$}
+
+\noindent\textbf{Penalizzazione (1/2):} La scelta standard è di penalizzare l'energia della derivata temporale $m$-esima, con $m$ parametro intero. In genere si utilizza l'energia della derivata prima o seconda. Come si costruisce $F$?
+
+Consideriamo il caso di campionamento uniforme. $F$ viene costruita in modo tale che $Fu$ fornisce l'$m$-esima differenza di $u$ ($m = 1, 2, \dots$):
+\[
+    F = D^m
+\]
+\[
+    D = \begin{bmatrix}
+        1 & 0 & 0 & \dots & 0 \\
+        -1 & 1 & 0 & \dots & 0 \\
+        0 & -1 & 1 & \dots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & \dots & \dots & -1 & 1
+    \end{bmatrix}
+\]
+
+\noindent\textbf{Penalizzazione (2/2):}
+\begin{itemize}
+    \item \textbf{Se $m = 1$:}
+    \[
+        F = \begin{bmatrix}
+            1 & 0 & 0 & \dots & 0 \\
+            -1 & 1 & 0 & \dots & 0 \\
+            0 & -1 & 1 & \dots & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots \\
+            0 & \dots & \dots & -1 & 1
+        \end{bmatrix}
+        Du = \begin{bmatrix}
+            1 & 0 & 0 & \dots & 0 \\
+            -1 & 1 & 0 & \dots & 0 \\
+            0 & -1 & 1 & \dots & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots \\
+            0 & \dots & \dots & -1 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+            u_1 \\
+            u_2 \\
+            u_3 \\
+            \vdots \\
+            u_N
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            u_1 \\
+            u_2 - u_1 \\
+            u_3 - u_2 \\
+            \vdots \\
+            u_N - u_{N-1}
+        \end{bmatrix}
+    \]
+    \item \textbf{Se $m = 2$:}
+    \[
+        F = \begin{bmatrix}
+            1 & 0 & 0 & \dots & 0 \\
+            -2 & 1 & 0 & \dots & 0 \\
+            1 & -2 & 1 & \dots & 0 \\
+            \dots & 1 & -2 & \dots & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots \\
+            0 & \dots & 1 & -2 & 1
+        \end{bmatrix}
+    \]
+    \[
+        D^2 u = D(Du) = \begin{bmatrix}
+            1 & 0 & 0 & \dots & 0 \\
+            -1 & 1 & 0 & \dots & 0 \\
+            0 & -1 & 1 & \dots & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots \\
+            0 & \dots & \dots & -1 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+            u_1 \\
+            u_2 - u_1 \\
+            u_3 - u_2 \\
+            \vdots \\
+            u_N - u_{N-1}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            u_1 \\
+            u_2 - 2u_1 \\
+            u_3 - 2u_2 + u_1 \\
+            \vdots \\
+            u_N - 2u_{N-1} + u_{N-2}
+        \end{bmatrix}
+    \]
+\end{itemize}
+
+\subsection{Scelta del parametro di regolarizzazione $\gamma$ e criterio di discrepanza}
+Confronto grafico sul problema simulato di Hunt (\textit{Arbitrary Units}, $t \in [0, 1000]$):
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/effettisullaregolarizzazione.png}
+    \label{fig:7-10}
+\end{figure}
+\begin{itemize}
+    \item Pannelli superiori (\textit{(Under) regularized Deconvolution} vs \textit{Output Noisy Samples \& Reconvolution}): parametro di regolarizzazione troppo piccolo ($\gamma = 5$), la stima presenta ancora oscillazioni spurie.
+    \item Pannelli inferiori (\textit{(Over) regularized Deconvolution} vs \textit{Output Noisy Samples \& Reconvolution}): parametro di regolarizzazione troppo grande ($\gamma = 400$), la stima risulta eccessivamente appiattita (\textit{over-smoothing}) e sottostima i picchi.
+\end{itemize}
+
+\noindent\textbf{Ruolo del parametro $\gamma$}
+
+Il peso relativo dato ai dati e alla regolarità della soluzione viene gestito dal parametro di regolarizzazione $\gamma$:
+\begin{itemize}
+    \item Incrementando $\gamma$ si dà maggior peso alla regolarità della soluzione che al fitting dei dati.
+    \item Al contrario, riducendo $\gamma$, il costo della regolarizzazione viene ridotto e la fedeltà dei dati diventa importante.
+\end{itemize}
+
+La scelta del parametro di regolarizzazione è un problema cruciale:
+\begin{itemize}
+    \item valori troppo alti portano a stime di $u$ troppo \textit{smooth} che non permettono di spiegare i dati (\textit{over-smoothing});
+    \item valori troppo bassi portano a soluzioni mal-condizionate di $u$ che fittano i dati ma con oscillazioni spurie dovute alla loro eccessiva sensibilità al rumore.
+\end{itemize}
+
+
+\noindent Diversi sono gli approcci proposti per la scelta del parametro di regolarizzazione: \textbf{discrepanza}, \textbf{cross-validazione}, \textbf{cross-validazione generalizzata}, \textbf{L-curve}.
+
+\noindent\textbf{Criterio di discrepanza (approccio empirico):}
+\begin{itemize}
+    \item Confrontiamo il vettore dei residui:
+    \[
+        r = z - G\hat{u}
+    \]
+    dove $r$ dipende da $\gamma$ (essendo $\hat{u} = (G^T \Sigma_v^{-1} G + \gamma F^T F)^{-1} G^T \Sigma_v^{-1} z$).
+    \item Poiché $v = z - Gu$, allora si può dire che il vettore dei residui è una stima dell'errore di misura:
+    \[
+        \hat{v} = r \qquad \Longrightarrow \qquad r^T r \cong E[v^T v]
+    \]
+    \item Poiché $r^T r$ dipende da $\gamma$, bisogna iterativamente aggiustare $\gamma$ fino a che:
+    \[
+        \sum_{i=1}^{N} r_i^2 \cong \operatorname{trace}(\Sigma_v) = \sum_{i=1}^{N} \sigma_i^2
+    \]
+\end{itemize}
+Vogliamo che il residuo sia simile al rumore di misura, in questo modo il fitting dei dati è soddisfacente e la stima non è eccessivamente \textit{smooth}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/esempiocriteriodidiscrepanza.png}
+    \label{fig:7-11}
+\end{figure}
+
+
+% ==============================================================================
+\section{Campionamento non uniforme e griglia virtuale}
+% ==============================================================================
+
+\subsection{Problema del campionamento}
+I segnali biologici spesso sono campionati con un \textit{rate} basso e/o non uniforme.
+Il metodo di regolarizzazione è basato su un modello discreto derivato assumendo che l'ingresso sconosciuto è costante in ogni intervallo di campionamento, indipendentemente dalla sua lunghezza.
+Se il campionamento è lento, si ha una approssimazione povera del segnale ricostruito.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Immagini/problemacampionamento.png}
+    \label{fig:7-12}
+\end{figure}
+
+\subsection{Formulazione con griglia virtuale}
+Le performance deludenti sono dovute al fatto che si assume che il numero di componenti del segnale di input $u$ è uguale al numero $N$ di misure. Per rimuovere questa ipotesi bisogna usare una griglia di campionamento diversa per input e output.
+
+Consideriamo $\Omega_S$ la griglia di campionamento delle misure e $\Omega_v = \{T_1, T_2, \dots, T_k, \dots, T_V\}$ una griglia di campionamento più fine ($V \gg N$, possibilmente uniforme) per l'ingresso. $\Omega_v$ contiene $\Omega_S$ ma, a parte i campioni coincidenti, è arbitraria e non ha una controparte sperimentale (\textbf{griglia virtuale}).
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/grigliadicampionamento.png}
+    \label{fig:7-13}
+\end{figure}
+
+Assumendo che l'input $u(t)$ è costante in ogni intervallo temporale della griglia virtuale, si ottiene:
+\[
+    c_V(T_k) = \int_{0}^{T_k} g(T_k - \tau) u(\tau) \, d\tau = \sum_{i=1}^{k} u_i \int_{T_{i-1}}^{T_i} g(T_k - \tau) \, d\tau
+\]
+
+In notazione matriciale:
+\[
+    c_V = G_V u
+\]
+dove:
+\begin{itemize}
+    \item $V$ sta per virtuale;
+    \item $c_V$ e $u$ sono i vettori $V$-dimensionali ottenuti campionando $c(t)$ e $u(t)$ sulla griglia virtuale;
+    \item $G_V$ è una matrice triangolare inferiore $V \times V$.
+\end{itemize}
+
+Indicando con $G$ la matrice $N \times V$ ottenuta cancellando da $G_V$ le righe che non corrispondono ai dati campionati in uscita, si ottiene il vettore delle misure:
+\[
+    z = G u + v
+\]
+dove:
+\begin{itemize}
+    \item $v$ è il vettore $N$-dimensionale dell'errore di misura;
+    \item $u$ è il vettore $V$-dimensionale dell'input discretizzato sulla griglia virtuale.
+\end{itemize}
+
+\noindent\textbf{Griglia virtuale (3/3):} La stima di $\hat{u}$ è data da:
+\[
+    \hat{u} = (G^T \Sigma_v^{-1} G + \gamma F^T F)^{-1} G^T \Sigma_v^{-1} z
+\]
+Dove $F$ ha dimensione $V \times V$. La matrice $(G^T \Sigma_v^{-1} G + \gamma F^T F)$ è invertibile perché somma di una matrice semi-definita positiva e una matrice positiva.
+
+\subsection{Esempio numerico di costruzione della matrice $G$}
+
+Consideriamo una griglia di campionamento non uniforme e infrequente ($N = 5$ campioni agli istanti $1, 3, 6, 10, 15$) immersa in una griglia virtuale uniforme ($V = 15$ istanti):
+\begin{center}
+\begin{tabular}{rccccccccccccccc}
+    \textbf{Griglia di campionamento $\Omega_s$:} & $1$ & $?$ & $3$ & $?$ & $?$ & $6$ & $?$ & $?$ & $?$ & $10$ & $?$ & $?$ & $?$ & $?$ & $15$ \\
+    \textbf{Griglia virtuale $\Omega_V$:} & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ & $13$ & $14$ & $15$
+\end{tabular}
+\end{center}
+
+\noindent Nel sistema completo sulla griglia virtuale $c_V = G_V u$ (di dimensione $15 \times 15$), si eliminano le righe corrispondenti agli istanti non misurati ($c(2), c(4), c(5), c(7), c(8), c(9), c(11), c(12), c(13), c(14)$), conservando unicamente le righe $1, 3, 6, 10, 15$:
+\[
+    \begin{bmatrix}
+        c(1) \\
+        c(3) \\
+        c(6) \\
+        c(10) \\
+        c(15)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        g_0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        g_2 & g_1 & g_0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        g_5 & g_4 & g_3 & \dots & g_0 & 0 & 0 & 0 & 0 \\
+        g_9 & g_8 & g_7 & \dots & \dots & \dots & g_0 & 0 & 0 \\
+        g_{14} & g_{13} & g_{12} & \dots & \dots & \dots & \dots & g_1 & g_0
+    \end{bmatrix}
+    \begin{bmatrix}
+        u_1 \\
+        u_2 \\
+        u_3 \\
+        u_4 \\
+        \vdots \\
+        \vdots \\
+        \vdots \\
+        u_{15}
+    \end{bmatrix}
+\]
+
+\noindent\textbf{Schema dimensionale del modello con griglia virtuale:}
+\[
+    \underbrace{z}_{5 \times 1} = \underbrace{G}_{5 \times 15} \, \underbrace{u}_{15 \times 1} + \underbrace{v}_{5 \times 1}
+\]
+
+\subsection{Casi di studio ed esempi applicativi}
+
+\noindent\textbf{Esempio: Secrezione insulinica durante test IVGTT }
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/esempiocasiivgtt.png}
+    \label{fig:7-14}
+\end{figure}
+Confronto tra la deconvoluzione regolarizzata su griglia standard (\textit{Regularized Deconvolution (Discrepancy)}, sinistra) e con griglia virtuale (\textit{Regularized Deconvolution (Discrepancy \& Virtual Grid)}, destra), con relativi pannelli inferiori \textit{Output Noisy Samples \& Reconvolution} (ordinate: $\text{pmol/min}$ per la secrezione e $\text{pmol/ml}$ per la concentrazione plasmatica; ascisse: \textit{Minutes} da $0$ a $200$).
+
+\noindent\textbf{Didascalia originale (Figure 9.9):} \textit{IVGTT insulin secretion case study. Left: Regularized deconvolution obtained with a value of the regularization parameter determined by the discrepancy criterion ($\gamma = 0.0012$) from the noisy samples (lower panel, open circles). Also shown is reconvolution (lower panel, continuous line). Right: Same as left by employing the virtual grid ($\gamma = 0.25$) (adapted from Sparacino et al., 2001).}
+
+\noindent\textbf{Esempio 1: Problema simulato di Hunt con griglia virtuale}
+
+Confronto completo tra griglia standard (\textit{Regularized Deconvolution (Discrepancy)}, $\gamma = 105$) e griglia virtuale (\textit{Regularized Deconvolution (Discrepancy \& Virtual Grid)}, $\gamma = 1237455$), che mostra come l'introduzione della griglia virtuale consenta una ricostruzione quasi continua e altamente fedele del profilo vero $u(t)$.
+
+\noindent\textbf{Didascalia originale (Figure 9.6):} \textit{The Hunt simulated problem. Left panels: Regularized deconvolution vs true input (upper, thick vs thin line) obtained with the value of the regularization parameter determined by the discrepancy criterion ($\gamma = 105$) from the noisy samples (lower, open circles). Also shown is reconvolution (lower, continuous line). Right: Same as left by employing the virtual grid ($\gamma = 1237455$).}
+
+\vspace{12pt}
+\hrule
+\vspace{8pt}
+
+\noindent\textbf{Riferimento finale della lezione }
+\begin{itemize}
+    \item \textbf{Questionario 1:} \texttt{bit.ly/poll1h1} (accessibile tramite QR code nella slide finale).
+\end{itemize}
