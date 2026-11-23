@@ -1,0 +1,327 @@
+% ==============================================================================
+\chapter{Modello di propagazione \\ intracellulare}
+% ==============================================================================
+
+\section*{Obiettivi}
+Al termine di questa prima parte della lezione, sarete in grado di:
+\begin{itemize}
+    \item Definire le correnti e i valori di tensione in un segmento cilindrico che rappresenta un assone o un dendrite.
+    \item Definire la resistenza longitudinale in funzione della resistenza intracellulare e delle dimensioni geometriche del cilindro.
+    \item Effettuare il bilancio delle correnti, ricavando l'equazione dei telegrafisti.
+    \item Spiegare quali condizioni al contorno si considerano per la soluzione dell'equazione dei telegrafisti.
+    \item Ricavare l'equazione in forma semplificata per la propagazione passiva, indicando sotto quali ipotesi si ottiene.
+    \item Illustrare i casi in cui si usa l'equazione in forma semplificata e quando invece non è adatta.
+\end{itemize}
+
+\section{Introduzione}
+Finora abbiamo trascurato di considerare il fatto che il potenziale di membrana può assumere valori diversi in diversi punti della cellula e che questo comporta una propagazione passiva dovuta a correnti ioniche intracellulari ed extracellulari.
+
+Il meccanismo alla base di questo fenomeno coinvolge appunto le correnti intra- ed extracellulari: un evento locale di depolarizzazione (ad esempio una sinapsi attiva che genera un EPSP lungo un dendrite, come nel caso di un neurone piramidale della corteccia) crea una differenza di potenziale. Di conseguenza, gli ioni (come $\text{K}^+$) si muovono lateralmente all'interno e all'esterno della membrana, causando:
+\begin{itemize}
+    \item un flusso di corrente longitudinale di natura passiva;
+    \item un'attenuazione del segnale con l'aumentare della distanza dal sito di depolarizzazione (il segnale arriva attenuato al soma, con una decrescita più rapida nei neuroni piccoli non mielinizzati rispetto a quelli di grande diametro o mielinizzati).
+\end{itemize}
+
+La propagazione passiva è fondamentale per comprendere tre aspetti chiave della neurofisiologia:
+\begin{enumerate}
+    \item l'integrazione dei segnali sinaptici nei dendriti;
+    \item la perdita di segnale con la distanza;
+    \item la necessità di meccanismi attivi (potenziali d'azione) per coprire lunghe distanze.
+\end{enumerate}
+
+\section{Propagazione intracellulare e resistenza intracellulare}
+La propagazione del segnale incontra una resistenza intracellulare, che risulta maggiore nei segmenti lunghi e stretti, assimilabili a cilindri, come l'assone e i dendriti. Considerando un cilindro che rappresenta un tratto di dendrite o di assone, definiamo le seguenti grandezze:
+\begin{itemize}
+    \item $V_1$ e $V_2$: potenziale di membrana rispettivamente all'inizio e alla fine del segmento;
+    \item $L$: lunghezza del segmento;
+    \item $a$: raggio del cilindro (più piccolo è il raggio, maggiore è la resistenza);
+    \item $I_L$: corrente longitudinale che scorre all'interno del cilindro.
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/propagazioneintracellulare.png}
+\end{figure}
+Le dimensioni geometriche di assone e dendriti permettono di trascurare la propagazione in direzione radiale e di considerare esclusivamente la propagazione longitudinale.
+
+Lungo il cilindro scorre dunque una corrente intracellulare longitudinale regolata dalla legge di Ohm applicata al neurone:
+\begin{equation}
+    V_2 - V_1 = -I_L R_L
+\end{equation}
+dove $R_L$ è la resistenza longitudinale, proporzionale alla lunghezza del segmento e inversamente proporzionale alla sua sezione trasversale:
+\begin{equation}
+    R_L = \frac{r_L L}{\pi a^2}
+\end{equation}
+In questa espressione, $r_L$ rappresenta la resistenza (resistività) intracellulare, una costante caratteristica del materiale il cui valore tipico è di circa $1\text{ k}\Omega\cdot\text{mm}$.
+
+\section{Teoria dei cavi}
+Per descrivere l'andamento continuo del potenziale lungo il neurone, consideriamo un piccolo segmento cilindrico di lunghezza $\Delta x$ e raggio $a$, tenendo presente che il potenziale $V$ è funzione sia della posizione $x$ sia del tempo $t$, ovvero $V(x,t)$.
+
+Esprimendo le grandezze precedenti in funzione di $x$, la differenza di potenziale tra i due estremi del segmento è $\Delta V = V(x + \Delta x) - V(x)$, per cui:
+\begin{equation}
+    \Delta V = -I_L R_L = -I_L \frac{r_L \Delta x}{\pi a^2} \implies I_L = -\frac{\pi a^2}{r_L} \frac{\Delta V}{\Delta x}
+\end{equation}
+Passando al limite per $\Delta x \to 0$, si ottiene la forma continua della corrente longitudinale:
+
+%%%%%%%%%%%%%%% aggiungi box all'eq
+
+\begin{equation}
+    I_L = -\frac{\pi a^2}{r_L} \frac{\partial V}{\partial x}
+\end{equation}
+dove compare la derivata parziale rispetto a $x$ poiché $V$ dipende anche dal tempo $t$. Questa formula rappresenta un tassello fondamentale della teoria dei cavi, poiché descrive come varia il potenziale elettrico nei neuroni in risposta alla resistenza interna e alla geometria.
+
+Consideriamo ora il bilancio delle correnti sul segmento cilindrico di superficie laterale pari a $2\pi a \Delta x$. Deve valere il principio di equilibrio secondo cui la corrente che entra è uguale alla corrente che esce.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/bilanciocorrenti.png}
+\end{figure}
+Le correnti coinvolte sono:
+\begin{itemize}
+    \item \color{red} la corrente ionica di membrana \color{black} $i_m$ (radiale), moltiplicata per la superficie laterale ($2\pi a \Delta x i_m$);
+    \item \color{blue} la corrente capacitiva di membrana \color{black}, legata alla variazione del potenziale nel tempo e alla capacità di membrana ($2\pi a \Delta x c_m \frac{\partial V}{\partial t}$);
+    \item \color{green} la corrente esterna iniettata \color{black} $i_e$ (ad esempio tramite un elettrodo, pari a $I_e / A$), moltiplicata per la superficie ($2\pi a \Delta x i_e$);
+    \item \color{yellow} la corrente intracellulare longitudinale \color{black} $I_L$, che entra sul lato sinistro ($-$) ed esce sul lato destro ($+$).
+\end{itemize}
+
+Dall'equilibrio delle correnti si ricava:
+\begin{equation}
+    \color{blue} 2\pi a \Delta x c_m \frac{\partial V}{\partial t} = \color{yellow} \left.\left(\frac{\pi a^2}{r_L}\frac{\partial V}{\partial x}\right)\right|_{+} - \left.\left(\frac{\pi a^2}{r_L}\frac{\partial V}{\partial x}\right)\right|_{-} \color{red} - 2\pi a \Delta x i_m \color{green}+ 2\pi a \Delta x i_e \color{black}
+\end{equation}
+Dividendo entrambi i membri per la superficie $2\pi a \Delta x$ per ottenere un'espressione locale, si giunge alla forma discreta:
+\begin{equation}
+    c_m \frac{\partial V}{\partial t} = \frac{1}{2\pi a \Delta x} \left[ \left.\left(\frac{\pi a^2}{r_L}\frac{\partial V}{\partial x}\right)\right|_{+} - \left.\left(\frac{\pi a^2}{r_L}\frac{\partial V}{\partial x}\right)\right|_{-} \right] - (i_m - i_e)
+\end{equation}
+
+\section{Equazione dei telegrafisti}
+Calcolando il limite per $\Delta x \to 0$ del termine fra parentesi quadre (considerando un infinitesimo del cilindro) nella forma discreta:
+\begin{equation}
+    \lim_{\Delta x \to 0} \frac{1}{2\pi a \Delta x} \left[ \left.\left(\frac{\pi a^2}{r_L}\frac{\partial V}{\partial x}\right)\right|_{+} - \left.\left(\frac{\pi a^2}{r_L}\frac{\partial V}{\partial x}\right)\right|_{-} \right] = \frac{1}{2\pi a}\frac{\partial}{\partial x}\left(\frac{\pi a^2}{r_L}\frac{\partial V}{\partial x}\right) = \frac{1}{2 a r_L}\frac{\partial}{\partial x}\left(a^2 \frac{\partial V}{\partial x}\right)
+\end{equation}
+si ottiene l'\textbf{equazione dei telegrafisti} nella sua forma continua, che conclude la derivazione della teoria dei cavi applicata alla propagazione passiva dei potenziali in un tratto cilindrico del neurone. Si distinguono due casi:
+\begin{itemize}
+    \item Se la sezione cambia al variare di $x$ (raggio variabile $a(x)$):
+    \begin{equation}
+        c_m \frac{\partial V}{\partial t} = \frac{1}{2 a r_L} \frac{\partial}{\partial x}\left(a^2 \frac{\partial V}{\partial x}\right) - (i_m - i_e)
+    \end{equation}
+    \item Altrimenti, se il raggio $a$ è costante lungo l'asse:
+    \begin{equation}
+        c_m \frac{\partial V}{\partial t} = \frac{a}{2 r_L} \frac{\partial^2 V}{\partial x^2} - (i_m - i_e)
+    \end{equation}
+\end{itemize}
+
+\section{Condizioni al contorno}
+Per risolvere l'equazione dei telegrafisti è necessario applicare opportune condizioni al contorno ad ogni nodo (ovvero ogni punto in cui un cavo si dirama o in cui convergono più cavi, come un ramo dendritico). 
+
+Queste condizioni assicurano la continuità fisica del modello, la corretta propagazione del segnale e la coerenza elettrica nei nodi e alle estremità:
+\begin{enumerate}
+    \item \textbf{Continuità del potenziale}: $V(x,t)$ deve essere continua. Il potenziale di membrana deve avere lo stesso valore su tutti i rami che si incontrano in un nodo ($V_1 = V_2 = V_3 = \dots$), garantendo che la membrana sia fisicamente continua.
+    \item \textbf{Conservazione della carica (o corrente)}: la somma delle correnti longitudinali $I_L$ che entrano ed escono da ogni nodo deve essere nulla (Legge di Kirchhoff).
+    \item \textbf{Condizioni alle estremità}: al termine del cavo si possono imporre diverse condizioni; la più semplice consiste nell'assumere che non ci sia corrente che esce dal cavo ($I_L = 0$).
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/condizioni_al_contorno.png}
+\end{figure}
+
+\section{Propagazione passiva}
+Per descrivere la propagazione passiva si utilizza un'approssimazione dell'equazione dei telegrafisti basata sul modello \textit{integra e spara} nella sua versione sotto soglia ($V(t) < V_{\text{th}}$):
+\begin{equation}
+    c_m \frac{dV}{dt} = -\bar{g}_L (V - E_L) + \frac{I_e}{A}
+\end{equation}
+dove $-\bar{g}_L(V - E_L) = -(V - V_{\text{rest}})/r_m$, con $E_L$ tipicamente coincidente con il potenziale di riposo $V_{\text{rest}}$. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/propagazione_passiva.png}
+\end{figure}
+
+Sotto questa ipotesi, si ignorano le correnti sinaptiche e quelle dovute ai canali voltaggio-dipendenti, assumendo che la corrente di membrana $i_m$ dipenda linearmente dal potenziale di membrana:
+\begin{equation}
+    i_m = \frac{V - V_{\text{rest}}}{r_m}
+\end{equation}
+Sostituendo tale espressione nell'equazione dei telegrafisti e ponendo il raggio $a$ costante lungo l'asse (sezione costante), si ottiene l'\textbf{equazione dei telegrafisti in forma semplificata}:
+\begin{equation}
+    c_m \frac{\partial V}{\partial t} = \frac{a}{2 r_L} \frac{\partial^2 V}{\partial x^2} - \frac{V - V_{\text{rest}}}{r_m} + i_e
+\end{equation}
+I termini dell'equazione rappresentano rispettivamente:
+\begin{itemize}
+    \item $c_m \frac{\partial V}{\partial t}$: variazione nel tempo del potenziale di membrana;
+    \item $\frac{a}{2 r_L} \frac{\partial^2 V}{\partial x^2}$: diffusione del potenziale lungo il cavo;
+    \item $-\frac{V - V_{\text{rest}}}{r_m}$: corrente di perdita di membrana;
+    \item $i_e$: corrente esterna iniettata (es. stimolazione).
+\end{itemize}
+Poiché questa forma semplificata trascura i fenomeni legati ai canali ionici voltaggio-dipendenti, essa non è adeguata a spiegare i fenomeni di propagazione attiva (come il potenziale d'azione), per i quali è necessario ricorrere ai modelli multicompartimentali.
+
+% ==============================================================================
+\chapter{Modello multicompartimentale di \\ propagazione del potenziale d'azione}
+% ==============================================================================
+
+\section*{Obiettivi}
+Al termine di questa seconda parte della lezione, sarete in grado di:
+\begin{itemize}
+    \item Descrivere come si può scomporre la membrana in compartimenti e quali ipotesi essi devono verificare.
+    \item Calcolare le conduttanze di raccordo.
+    \item Utilizzare un modello multicompartimentale per descrivere la propagazione continua del potenziale d'azione.
+    \item Commentare l'andamento nel tempo di $V$ per ogni compartimento.
+    \item Commentare l'andamento di $V$ su tutti i compartimenti in un fissato istante temporale.
+    \item Descrivere il modello multicompartimentale della propagazione saltatoria del potenziale d'azione.
+    \item Descrivere la dipendenza della capacità e della resistenza della guaina mielinica dal raggio $a$.
+\end{itemize}
+
+\section{Complessità nei modelli di neurone}
+I modelli matematici del neurone possono essere classificati in ordine crescente di complessità:
+\begin{enumerate}
+    \item \textbf{Modello integra e spara (Integrate \& Fire)}: è un modello elettrico semplificato basato su un circuito RC, in cui il potenziale $V$ si integra nel tempo fino al raggiungimento di una soglia che genera uno \textit{spike}. È semplice e trattabile analiticamente (valido per la propagazione passiva), ma poco fedele dal punto di vista biologico.
+    \item \textbf{Modello di Hodgkin e Huxley}: descrive dinamicamente la variazione dei canali ionici ($\text{Na}^+$, $\text{K}^+$). È molto fedele alla fisiologia, ma più complesso e richiede metodi numerici.
+    \item \textbf{Modelli a più compartimenti}: il neurone viene suddiviso in segmenti (compartimenti), ciascuno caratterizzato dal proprio potenziale e dai propri canali. Tiene conto della geometria e della propagazione locale, ma non ammette soluzione analitica e necessita di risoluzione numerica.
+    \item \textbf{Reti di neuroni}: rappresentano un insieme di più neuroni interconnessi (ciascuno modellabile con uno degli approcci precedenti). Estendono la modellazione alla scala di rete cerebrale, comportando una complessità enorme.
+\end{enumerate}
+
+\section{Modelli multicompartimentali}
+Per risolvere l'equazione dei telegrafisti nei casi più complessi, si ricorre ai modelli multicompartimentali. Il modello viene suddiviso in più compartimenti e il potenziale continuo $V(x,t)$ viene approssimato tramite una serie di valori discreti che rappresentano il potenziale in ciascun compartimento (ossia una piccola sezione del neurone). Affinché tale approssimazione sia valida, ogni compartimento deve essere abbastanza piccolo da far sì che le variazioni spaziali di potenziale al suo interno siano trascurabili.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/modelli_multicompartimentali.png}
+\end{figure}
+
+In questa rappresentazione, per ogni compartimento vale il modello di Hodgkin-Huxley (comprendente canali ionici quali $\text{Na}^+$, $\text{K}^+$, $\text{Ca}^{2+}$, conduttanze variabili e potenziali di equilibrio $E_K$, $E_{Na}$, $E_{Ca}$, $E_L$), a cui si aggiunge l'accoppiamento resistivo con i compartimenti adiacenti. I compartimenti sono collegati tra loro tramite resistori che rappresentano la resistenza assiale del neurone, trasformando l'intero albero dendritico o neurone in una rete elettrica. In questo modo, il modello multicompartimentale consente di simulare con precisione la propagazione del potenziale di membrana lungo un neurone, accoppiando il comportamento locale (Hodgkin-Huxley) a quello di rete (connessioni resistive tra compartimenti).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/compartimenti.png}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Immagini/3compartimenti.png}
+\end{figure}
+\newpage
+Considerando ad esempio un generico compartimento $\mu$ connesso linearmente con altri due compartimenti adiacenti ($\mu-1$ e $\mu+1$, senza diramazioni), l'equazione di bilancio presenta due termini di raccordo:
+\begin{equation}
+    c_m \frac{dV_\mu}{dt} = -i_m^\mu + \frac{I_e^\mu}{A_\mu} + g_{\mu,\mu+1}(V_{\mu+1} - V_\mu) + g_{\mu,\mu-1}(V_{\mu-1} - V_\mu)
+\end{equation}
+dove:
+\begin{itemize}
+    \item $c_m \frac{dV_\mu}{dt}$ è la variazione del potenziale nel compartimento $\mu$;
+    \item $-i_m^\mu$ è la corrente di membrana dovuta ai canali ionici;
+    \item $\frac{I_e^\mu}{A_\mu}$ è la corrente esterna applicata al compartimento;
+    \item $g_{\mu,\mu+1}(V_{\mu+1} - V_\mu)$ è la corrente entrante dal compartimento successivo;
+    \item $g_{\mu,\mu-1}(V_{\mu-1} - V_\mu)$ è la corrente entrante dal compartimento precedente.
+\end{itemize}
+In presenza di diramazioni aumentano i termini di raccordo (ad esempio, per un compartimento che si dirama in due rami si avranno 3 termini), mentre per l'ultimo tratto del cavo sarà presente un solo termine di raccordo.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/diramazioni.png}
+\end{figure}
+\section{Calcolo della «conduttanza di raccordo»}
+La conduttanza di raccordo descrive l'accoppiamento resistivo tra due compartimenti adiacenti collegati da un tratto cilindrico di lunghezza $L$ e raggio $a$, ai cui capi si hanno i potenziali $V_1 = V_\mu$ e $V_2 = V_{\mu+1}$ e lungo il quale scorre la corrente longitudinale $I_L$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/cilindro.png}
+\end{figure}
+
+Partendo dalla resistenza longitudinale del tratto:
+\begin{equation}
+    R_{L(\mu,\mu+1)} = \frac{r_L L}{\pi a^2}
+\end{equation}
+si ricava la conduttanza longitudinale $G_{L(\mu,\mu+1)} = \frac{\pi a^2}{r_L L}$. La conduttanza specifica di raccordo $g_{\mu,\mu+1}$ viene quindi calcolata dividendo $G_L$ per la superficie laterale del cilindro ($2\pi a L$):
+\begin{equation}
+    g_{\mu,\mu+1} = \frac{\pi a^2}{r_L L} \cdot \frac{1}{2\pi a L} = \frac{a}{2 r_L L^2}
+\end{equation}
+La divisione per la superficie assicura che il valore della conduttanza sia espresso per unità di superficie, risultando così dimensionalmente coerente per l'uso nei modelli multicompartimentali.
+
+\section{Propagazione continua del potenziale d'azione}
+Consideriamo un assone non mielinizzato rappresentato mediante un modello a 100 compartimenti collegati in serie, senza diramazioni. Iniettando nel primo compartimento al tempo $t = 0$ una corrente $I_e$, si genera un potenziale d'azione che si propaga lungo la fibra.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/propagazionecontinua.png}
+\end{figure}
+
+Osservando l'andamento nel tempo del potenziale $V(t)$ in due compartimenti spazialmente distinti ($V_1$ e $V_2$), si nota che il medesimo profilo d'onda del potenziale d'azione raggiunge il secondo compartimento con un ritardo temporale proporzionale alla distanza percorsa. Per visualizzare come il potenziale viaggia lungo l'assone, è inoltre possibile scattare una «fotografia» del valore di $V$ in ciascun compartimento ad un istante fissato (ad esempio $t = 9,75\text{ ms}$), osservando la distribuzione spaziale dell'onda di depolarizzazione lungo la coordinata $x$.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Immagini/propagazionecontinua2.png}
+\end{figure}
+L'unidirezionalità della propagazione del potenziale d'azione è garantita dalla presenza, nel modello di Hodgkin-Huxley, dei canali $\text{Na}^+$ voltaggio-dipendenti e dalla conseguente fase refrattaria, che impedisce al segnale di propagarsi a ritroso.
+
+\section{Propagazione saltatoria del potenziale d'azione}
+Nel caso di una fibra mielinizzata, il circuito equivalente alterna due tipologie di compartimenti:
+\begin{itemize}
+    \item i \textbf{nodi di Ranvier} (elementi «attivi»), descritti dal modello di Hodgkin-Huxley (eventualmente limitato ai canali del sodio);
+    \item i \textbf{segmenti mielinizzati}, equiparati a zone «passive» dotate di una membrana particolarmente spessa e priva di canali ionici, caratterizzate da una piccola capacità di membrana, un'elevata resistenza di membrana (costante) e una resistenza longitudinale (propagazione passiva).
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/propagazionesaltatoria.png}    
+\end{figure}
+
+Osservando la sezione trasversale dell'assone mielinizzato, indichiamo con $a_1$ il raggio interno (raggio dell'assone vero e proprio) e con $a_2$ il raggio esterno (inclusa la guaina mielinica). La guaina mielinica circonda l'assone come un isolante: riduce drasticamente la capacità di membrana e aumenta la resistenza della membrana, consentendo una propagazione elettrica più efficiente lungo i tratti mielinizzati.
+
+Interpretando la guaina mielinica come una serie di cilindri concentrici di spessore infinitesimo $\Delta a$, per ciascun cilindro la capacità (capacità cilindriche in parallelo rispetto alla superficie) è pari a:
+\begin{equation}
+    C_i = \frac{c_m 2\pi a L d_m}{\Delta a}
+\end{equation}
+dove $c_m$ è la capacità specifica di membrana ($\text{F/m}^2$), $a$ è il raggio del cilindro, $L$ è la lunghezza del tratto considerato, $d_m$ è lo spessore della membrana cellulare, $\Delta a$ è l'incremento infinitesimo di raggio (spessore di ciascuno strato) e $2\pi a L$ è la superficie laterale del cilindro su cui si distribuisce la capacità. La capacità totale aumenta con la superficie e diminuisce all'aumentare dello spessore $\Delta a$: la mielina riduce quindi la capacità, rendendo più veloce la variazione di potenziale e favorendo una più rapida propagazione saltatoria.
+
+Considerando la guaina come formata da una serie di condensatori, la capacità equivalente è data dall'inverso della somma degli inversi delle singole capacità ($\frac{1}{C_{\text{tot}}} = \sum \frac{1}{C_i}$):
+\begin{equation}
+    \frac{1}{C_m} = \sum_{(a_1, a_2)} \frac{\Delta a}{c_m 2\pi a L d_m} = \frac{1}{c_m 2\pi L d_m} \sum_{(a_1, a_2)} \frac{\Delta a}{a}
+\end{equation}
+Passando al limite per spessori infinitesimi ($\Delta a \to 0$), la sommatoria diventa un integrale:
+\begin{equation}
+    \frac{1}{C_m} = \frac{1}{c_m 2\pi d_m L} \int_{a_1}^{a_2} \frac{da}{a} = \frac{\ln(a_2 / a_1)}{c_m 2\pi d_m L}
+\end{equation}
+Da questa relazione emerge che la capacità equivalente dipende dal rapporto $\frac{a_2}{a_1}$ (rapporto tra raggio esterno e raggio interno della guaina mielinica). Al contrario, la resistenza dipende dalla differenza $a_2 - a_1$, ossia dallo spessore assoluto della guaina: più la guaina è spessa, maggiore è la sua resistenza.
+\newpage
+% ==============================================================================
+\section{Schemi riassuntivi}
+% ==============================================================================
+
+{\renewcommand{\arraystretch}{1.3}
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}lp{10cm}@{}}
+\toprule
+\textbf{Caratteristica} & \textbf{Descrizione} \\ \midrule
+Tipo di modello & Modello integra e spara sotto soglia \\
+Correnti considerate & Solo correnti lineari di perdita (no canali voltaggio-dipendenti) \\
+Legge & Versione semplificata dell'equazione dei telegrafisti \\
+Equazione & $c_m \dfrac{dV}{dt} = -\dfrac{V - V_{\text{rest}}}{r_m} + i_e$ \\
+Limiti & Non spiega la rigenerazione attiva del segnale \\ \bottomrule
+\end{tabular}
+\caption{Schema riassuntivo: Propagazione Passiva}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}lp{10cm}@{}}
+\toprule
+\textbf{Caratteristica} & \textbf{Descrizione} \\ \midrule
+Tipo di modello & Hodgkin-Huxley (HH) \\
+Correnti considerate & Include canali voltaggio-dipendenti ($\text{Na}^+$, $\text{K}^+$, etc.) \\
+Equazione & Equazioni differenziali con molte variabili dinamiche \\
+Risultato & Propagazione attiva e continua lungo l'assone \\
+Esempio & Assone non mielinizzato modellato con 100 compartimenti \\
+Osservazione & Il potenziale si propaga nel tempo e nello spazio \\ \bottomrule
+\end{tabular}
+\caption{Schema riassuntivo: Propagazione Continua}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}lp{10cm}@{}}
+\toprule
+\textbf{Caratteristica} & \textbf{Descrizione} \\ \midrule
+Tipo di modello & Modello ibrido: HH nei nodi di Ranvier + propagazione passiva nei tratti mielinizzati \\
+Struttura dell'assone & Alternanza di segmenti mielinizzati e nodi di Ranvier \\
+Modello fisico & Guaina: condensatori in serie tra cilindri concentrici \\
+Capacità & $\dfrac{1}{C_m} = \dfrac{\ln(a_2 / a_1)}{c_m 2\pi d_m L}$ \\
+Conduzione & Velocità maggiore, minore dissipazione \\
+Unidirezionalità & Garantita dai canali $\text{Na}^+$ voltaggio-dipendenti nel modello HH \\ \bottomrule
+\end{tabular}
+\caption{Schema riassuntivo: Propagazione Saltatoria}
+\end{table}
